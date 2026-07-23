@@ -113,8 +113,33 @@
   .spk.sm{width:24px;height:24px;font-size:11px;background:var(--toggle-bg)}
   .spk.sm:hover{background:var(--brand);color:#fff}
   /* THEME TOGGLE */
-  .theme-btn{position:fixed;top:12px;right:16px;z-index:999;border:none;background:var(--card);border:1px solid var(--line);border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;transition:.2s}
+  .theme-btn{position:fixed;top:12px;right:16px;z-index:999;border:1px solid var(--line);background:var(--card);border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;transition:.2s}
   .theme-btn:hover{transform:scale(1.1);border-color:var(--brand)}
+  .mobile-toggle-btn{position:fixed;top:12px;right:60px;z-index:999;border:1px solid var(--line);background:var(--card);border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;box-shadow:var(--shadow);display:none;align-items:center;justify-content:center;transition:.2s}
+  .mobile-toggle-btn:hover{transform:scale(1.1);border-color:var(--brand)}
+  /* BOTTOM TAB BAR (mobile mode) */
+  .bottom-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--card);border-top:1px solid var(--line);padding:4px 2px env(safe-area-inset-bottom,4px);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  .bottom-tabs .tab-item{display:inline-flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px;border:none;background:transparent;color:var(--muted);font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;min-width:52px;transition:.15s}
+  .bottom-tabs .tab-item.active{color:var(--brand)}
+  .bottom-tabs .tab-item .tab-icon{font-size:18px}
+  /* Mobile mode: hide sidebar, show bottom tabs */
+  body.mobile-mode .sidebar{display:none}
+  body.mobile-mode .bottom-tabs{display:flex}
+  body.mobile-mode .mobile-toggle-btn{display:flex}
+  body.mobile-mode .content{padding:14px 10px 100px;max-width:100%}
+  body.mobile-mode .grid{grid-template-columns:1fr}
+  body.mobile-mode .plist{grid-template-columns:1fr}
+  body.mobile-mode .mgrid{grid-template-columns:1fr}
+  body.mobile-mode .hero h1{font-size:22px}
+  body.mobile-mode .toolbar{flex-direction:column;align-items:stretch}
+  body.mobile-mode .tool-actions{margin-left:0;justify-content:stretch}
+  body.mobile-mode .tool-actions button, body.mobile-mode .tool-actions select{flex:1;text-align:center}
+  body.mobile-mode .theme-btn{top:auto;bottom:80px;right:12px}
+  body.mobile-mode .mobile-toggle-btn{top:auto;bottom:80px;right:56px}
+  /* On small screens, auto-enable hints */
+  @media (max-width:760px){
+    .mobile-toggle-btn{display:flex}
+  }
   /* STATS BAR IN SIDEBAR */
   .stats-box{margin-top:auto;padding:10px 6px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.7}
   .stats-box .stat-row{display:flex;justify-content:space-between;align-items:center;margin:3px 0}
@@ -227,6 +252,19 @@
 </head>
 <body>
 <button class="theme-btn" id="themeBtn" title="切换暗色/亮色模式">🌙</button>
+<button class="mobile-toggle-btn" id="mobileToggleBtn" title="切换手机/桌面视图">📱</button>
+
+<!-- 底部 Tab 导航（手机模式） -->
+<nav class="bottom-tabs" id="bottomTabs">
+  <button class="tab-item active" data-view="words"><span class="tab-icon">📘</span>基础词</button>
+  <button class="tab-item" data-view="phrases"><span class="tab-icon">📗</span>短语</button>
+  <button class="tab-item" data-view="mnemonics"><span class="tab-icon">📙</span>口诀</button>
+  <button class="tab-item" data-view="tenses"><span class="tab-icon">📊</span>时态</button>
+  <button class="tab-item" data-view="infinitive"><span class="tab-icon">∞</span>不定式</button>
+  <button class="tab-item" data-view="roots"><span class="tab-icon">🌱</span>词根</button>
+  <button class="tab-item" data-view="roots-methods"><span class="tab-icon">💡</span>方法</button>
+  <button class="tab-item" data-view="irregular"><span class="tab-icon">📖</span>动词</button>
+</nav>
 
 <div class="app">
   <aside class="sidebar">
@@ -10464,6 +10502,7 @@ function showView(v){
   if(v !== 'words' && flashMode) exitFlash();
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
   document.querySelectorAll('.menu-btn').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
+  document.querySelectorAll('.bottom-tabs .tab-item').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
 }
 
 /* ---------- INIT ---------- */
@@ -10536,6 +10575,41 @@ try {
   const saved = localStorage.getItem('englishkit_theme');
   applyTheme(saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme:dark)').matches));
 } catch(e){}
+
+/* ---------- MOBILE / DESKTOP MODE TOGGLE ---------- */
+function applyMobileMode(on){
+  document.body.classList.toggle('mobile-mode', on);
+  document.getElementById('mobileToggleBtn').textContent = on ? '🖥' : '📱';
+  document.getElementById('mobileToggleBtn').title = on ? '切换桌面视图' : '切换手机视图';
+  try { localStorage.setItem('englishkit_mobile', on ? '1' : '0'); } catch(e){}
+}
+document.getElementById('mobileToggleBtn').addEventListener('click', ()=>{
+  applyMobileMode(!document.body.classList.contains('mobile-mode'));
+});
+// Bottom tab clicks
+document.querySelectorAll('.bottom-tabs .tab-item').forEach(b=>{
+  b.addEventListener('click', ()=>showView(b.dataset.view));
+});
+// Auto-detect small screen on load
+try {
+  const saved = localStorage.getItem('englishkit_mobile');
+  if(saved === '1') applyMobileMode(true);
+} catch(e){}
+// If user resizes to small screen, offer hint (but don't force)
+window.addEventListener('resize', ()=>{
+  const btn = document.getElementById('mobileToggleBtn');
+  if(window.innerWidth <= 760){
+    btn.style.display = 'flex';
+  } else {
+    if(!document.body.classList.contains('mobile-mode')){
+      btn.style.display = 'none';
+    }
+  }
+});
+// Initial check
+if(window.innerWidth <= 760){
+  document.getElementById('mobileToggleBtn').style.display = 'flex';
+}
 
 /* ---------- KEYBOARD SHORTCUTS ---------- */
 document.addEventListener('keydown', (e)=>{
