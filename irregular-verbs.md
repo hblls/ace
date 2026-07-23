@@ -1,0 +1,234 @@
+## AAA 型（三式同形：原形 = 过去式 = 过去分词）
+
+- **bet** / bet / bet | 打赌
+- **bid** / bid / bid | 出价，投标
+- **bid** / bid / bid | 命令，吩咐（古/正式；亦可作 bade/bidden）
+- **broadcast** / broadcast / broadcast | 广播，播送
+- **burst** / burst / burst | 爆炸，破裂
+- **cast** / cast / cast | 投，掷，铸造
+- **cost** / cost / cost | 花费，使付出代价
+- **cut** / cut / cut | 切，割
+- **fit** / fit / fit | 适合，安装
+- **forecast** / forecast / forecast | 预报，预测
+- **hit** / hit / hit | 打，撞击
+- **hurt** / hurt / hurt | 伤害，使疼痛
+- **input** / input / input | 输入
+- **knit** / knit / knit | 编织
+- **let** / let / let | 让，允许
+- **offset** / offset / offset | 抵消，弥补
+- **output** / output / output | 输出
+- **pit** / pit / pit | 使凹陷，使相对抗
+- **put** / put / put | 放，安置
+- **quit** / quit / quit | 离开，放弃，辞职
+- **read** / read / read | 读（过去式/分词读音 /red/）
+- **rid** / rid / rid | 使摆脱，除去
+- **set** / set / set | 放置，设定
+- **shed** / shed / shed | 流出，脱落
+- **shut** / shut / shut | 关闭
+- **slit** / slit / slit | 切开，撕裂
+- **split** / split / split | 分裂，劈开
+- **spread** / spread / spread | 传播，展开
+- **thrust** / thrust / thrust | 刺，戳，猛推
+- **upset** / upset / upset | 打乱，使心烦
+- **wed** / wed / wed | 娶，嫁，结婚
+- **wet** / wet / wet | 弄湿（美式亦可 wetted）
+- **bust** / bust / bust | 打破，破产（非正式）
+- **reset** / reset / reset | 重置
+
+## ABA 型（原形与过去分词同形：原形 = 过去分词 ≠ 过去式）
+
+- **become** / became / become | 变得，成为
+- **come** / came / come | 来
+- **overcome** / overcame / overcome | 克服，战胜
+- **run** / ran / run | 跑，运行
+- **outrun** / outran / outrun | 跑得比……快，超过
+- **overrun** / overran / overrun | 泛滥，占领
+- **underrun** / underran / underrun | 在……下通过；低于
+
+## ABB 型（过去式与过去分词同形：过去式 = 过去分词 ≠ 原形）
+
+- **abide** / abode / abode | 忍受，遵守（亦可 abided）
+- **beget** / begot / begot | 产生，引起（美式 begotten）
+- **bend** / bent / bent | 弯曲
+- **bereave** / bereft / bereft | 剥夺，使丧失（亦可 bereaved）
+- **bleed** / bled / bled | 流血
+- **blend** / blent / blent | 混合（亦可 blended）
+- **bless** / blest / blest | 祝福（亦可 blessed）
+- **bring** / brought / brought | 带来
+- **build** / built / built | 建造
+- **burn** / burnt / burnt | 燃烧（美式常 burned）
+- **buy** / bought / bought | 买
+- **catch** / caught / caught | 抓住，赶上
+- **cleave** / cleft / cleft | 劈开，裂开（亦可 clove/cloven）
+- **creep** / crept / crept | 爬行，匍匐
+- **deal** / dealt / dealt | 处理，交易
+- **dig** / dug / dug | 挖
+- **dream** / dreamt / dreamt | 做梦，梦想（美式常 dreamed）
+- **dwell** / dwelt / dwelt | 居住，细思（美式常 dwelled）
+- **feed** / fed / fed | 喂养
+- **feel** / felt / felt | 感觉
+- **fight** / fought / fought | 战斗，打架
+- **find** / found / found | 找到，发现
+- **flee** / fled / fled | 逃跑，逃离
+- **fling** / flung / flung | 抛，扔，猛冲
+- **gild** / gilt / gilt | 镀金（亦可 gilded）
+- **gird** / girt / girt | 束缚，环绕（亦可 girded）
+- **grind** / ground / ground | 磨碎，研磨
+- **hang** / hung / hung | 悬挂（处绞刑用 hanged）
+- **have** / had / had | 有，吃，从事
+- **hear** / heard / heard | 听见
+- **heave** / hove / hove | 举起，起伏（亦可 heaved）
+- **hold** / held / held | 握住，保持
+- **keep** / kept / kept | 保持，保留
+- **kneel** / knelt / knelt | 跪（美式常 kneeled）
+- **lay** / laid / laid | 放置，下蛋
+- **lead** / led / led | 领导，引导
+- **lean** / leant / leant | 倚靠，倾斜（美式常 leaned）
+- **leap** / leapt / leapt | 跳跃（美式常 leaped）
+- **learn** / learnt / learnt | 学习，得知（美式常 learned）
+- **leave** / left / left | 离开，留下
+- **lend** / lent / lent | 借出
+- **light** / lit / lit | 点燃，照亮（美式常 lighted）
+- **lose** / lost / lost | 失去，丢失
+- **make** / made / made | 制作，使
+- **mean** / meant / meant | 意思是，打算
+- **meet** / met / met | 遇见，会面
+- **pay** / paid / paid | 支付
+- **plead** / pled / pled | 恳求，辩护（亦可 pleaded）
+- **rend** / rent / rent | 撕裂，分开
+- **say** / said / said | 说
+- **seek** / sought / sought | 寻求，寻找
+- **sell** / sold / sold | 卖
+- **send** / sent / sent | 发送，寄
+- **shape** / shapen / shapen | 塑造（亦可 shaped）
+- **shoe** / shod / shod | 给……穿鞋，钉蹄铁
+- **shine** / shone / shone | 照耀，发光（亦可 shined）
+- **shoot** / shot / shot | 射击，发射
+- **sit** / sat / sat | 坐
+- **sleep** / slept / slept | 睡觉
+- **sling** / slung / slung | 投，吊，悬挂
+- **slink** / slunk / slunk | 溜走，潜行
+- **smell** / smelt / smelt | 闻，嗅（美式常 smelled）
+- **spell** / spelt / spelt | 拼写（美式常 spelled）
+- **spend** / spent / spent | 花费，度过
+- **spill** / spilt / spilt | 溢出，洒出（美式常 spilled）
+- **spin** / spun / spun | 旋转，纺（亦可 span/spun）
+- **spit** / spat / spat | 吐（唾沫）；美式亦作 spit/spit
+- **stand** / stood / stood | 站立，忍受
+- **stick** / stuck / stuck | 粘，刺，卡住
+- **sting** / stung / stung | 刺，蜇，激怒
+- **string** / strung / strung | 捆，上弦，串起
+- **strike** / struck / struck | 打击，罢工（表"击沉/侵袭"用 stricken）
+- **sweep** / swept / swept | 打扫，席卷
+- **swing** / swung / swung | 摇摆，荡
+- **teach** / taught / taught | 教
+- **tell** / told / told | 告诉，讲述
+- **think** / thought / thought | 思考，认为
+- **understand** / understood / understood | 理解，懂
+- **weep** / wept / wept | 哭泣
+- **win** / won / won | 赢，获胜
+- **wind** / wound / wound | 缠绕，蜿蜒
+- **wring** / wrung / wrung | 绞，拧，扭
+- **withhold** / withheld / withheld | 扣留，拒绝给予
+- **withstand** / withstood / withstood | 抵抗，经受住
+- **bind** / bound / bound | 绑，束缚
+- **cling** / clung / clung | 紧握，附着
+- **shit** / shit / shit | 拉屎（非正式；亦可 shat/shat）
+- **spoil** / spoilt / spoilt | 损坏，宠坏（美式常 spoiled）
+- **swell** / swelled / swollen | 膨胀，肿胀（过去分词亦可 swelled）
+- **speed** / sped / sped | 加速，促进（美式常 sped；表"限速"用 speeded）
+
+## ABC 型（三式完全不同：原形 ≠ 过去式 ≠ 过去分词）
+
+- **arise** / arose / arisen | 出现，升起
+- **awake** / awoke / awoken | 唤醒，醒来
+- **bear** / bore / borne | 承受，生育（被动 born）
+- **beat** / beat / beaten | 打，击败（过去式同原形）
+- **begin** / began / begun | 开始
+- **bid** / bade / bidden | 命令，吩咐（正式）
+- **bite** / bit / bitten | 咬
+- **blow** / blew / blown | 吹
+- **break** / broke / broken | 打破，折断
+- **chide** / chid / chidden | 责备（亦可 chided）
+- **choose** / chose / chosen | 选择
+- **cleave** / clove / cloven | 劈开（亦作 cleft/cleft）
+- **do** / did / done | 做，干
+- **draw** / drew / drawn | 画，拉，拖
+- **drink** / drank / drunk | 喝
+- **drive** / drove / driven | 驾驶，驱使
+- **eat** / ate / eaten | 吃
+- **fall** / fell / fallen | 落下，跌倒
+- **fly** / flew / flown | 飞
+- **forbid** / forbade / forbidden | 禁止
+- **forget** / forgot / forgotten | 忘记
+- **forgive** / forgave / forgiven | 原谅
+- **forsake** / forsook / forsaken | 抛弃，放弃
+- **freeze** / froze / frozen | 冻结，结冰
+- **get** / got / gotten | 得到，变得（英式 got/got；美式 got/gotten）
+- **give** / gave / given | 给
+- **go** / went / gone | 去，走
+- **grow** / grew / grown | 生长，变得
+- **hide** / hid / hidden | 隐藏
+- **know** / knew / known | 知道，认识
+- **lie** / lay / lain | 躺，位于
+- **mow** / mowed / mown | 割（草）（亦可 mowed）
+- **overtake** / overtook / overtaken | 超过，追上
+- **prove** / proved / proven | 证明（英式常 proved）
+- **ride** / rode / ridden | 骑
+- **ring** / rang / rung | 鸣，响，打电话
+- **rise** / rose / risen | 升起，上升
+- **rive** / rove / riven | 撕裂，劈开
+- **see** / saw / seen | 看见
+- **sew** / sewed / sewn | 缝纫（亦可 sewed）
+- **shake** / shook / shaken | 摇动，颤抖
+- **shear** / sheared / shorn | 剪（羊毛等）
+- **show** / showed / shown | 展示，表明（亦可 showed）
+- **shrink** / shrank / shrunk | 收缩，退缩（亦可 shrunk/shrunk）
+- **sing** / sang / sung | 唱
+- **sink** / sank / sunk | 下沉，沉没
+- **slay** / slew / slain | 杀死，残杀
+- **speak** / spoke / spoken | 说，讲话
+- **spring** / sprang / sprung | 跳，涌出（亦可 sprung/sprung）
+- **steal** / stole / stolen | 偷
+- **stink** / stank / stunk | 发臭，讨厌（亦可 stunk/stunk）
+- **stride** / strode / stridden | 大步走
+- **strive** / strove / striven | 努力，奋斗（亦可 strived）
+- **swear** / swore / sworn | 发誓，诅咒
+- **swim** / swam / swum | 游泳
+- **take** / took / taken | 拿，取，花费
+- **tear** / tore / torn | 撕，扯
+- **throw** / threw / thrown | 扔，投
+- **thrive** / throve / thriven | 繁荣，茁壮成长（亦可 thrived）
+- **tread** / trod / trodden | 踩，踏（亦可 trod）
+- **undertake** / undertook / undertaken | 承担，着手做
+- **undo** / undid / undone | 解开，取消
+- **wake** / woke / woken | 醒来，唤醒（亦可 waked）
+- **wear** / wore / worn | 穿，磨损
+- **weave** / wove / woven | 编织
+- **write** / wrote / written | 写
+- **smite** / smote / smitten | 重击，打动
+- **saw** / sawed / sawn | 锯（亦可 sawed）
+- **hew** / hewed / hewn | 砍，劈（亦可 hewed）
+- **sow** / sowed / sown | 播种（亦可 sowed）
+- **strew** / strewed / strewn | 撒，散播（亦可 strewed）
+- **crow** / crowed / crew | 啼叫，欢呼（亦作 crowed）
+- **mistake** / mistook / mistaken | 弄错，误解
+- **withdraw** / withdrew / withdrawn | 撤回，提取
+- **forbear** / forbore / forborne | 克制，忍耐
+- **behold** / beheld / beheld | 看见，注视（ABB 亦可）
+
+## 特殊型（核心助动词/高度不规则，难以并入上述规律）
+
+- **be** / was,were / been | 是，存在（am/is→was, are→were；过去分词 been）
+- **do** / did / done | 做，助动词（亦见 ABC 型）
+- **go** / went / gone | 去（过去式 went 源于 wend，完全不规则）
+- **have** / had / had | 有（亦见 ABB 型）
+- **get** / got / gotten | 得到（美式 got/gotten；亦见 ABC 型）
+- **will** / would / (无分词) | 将，愿意（情态动词）
+- **shall** / should / (无分词) | 将，应该（情态动词）
+- **can** / could / (无分词) | 能，会（情态动词）
+- **may** / might / (无分词) | 可能，可以（情态动词）
+- **must** / must / (无分词) | 必须（情态动词，三式同形）
+- **ought** / ought / (无分词) | 应该（情态动词，三式同形）
+- **dare** / dared / dared | 敢（亦作 durst/dared）
+- **need** / needed / needed | 需要（作情态动词时三式同形）
