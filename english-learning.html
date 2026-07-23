@@ -110,6 +110,8 @@
   .mn .text{font-size:15px;background:linear-gradient(0deg,#fff,var(--brand-soft));border-left:3px solid var(--brand);
        padding:8px 12px;border-radius:0 10px 10px 0;color:#2a3340;white-space:pre-line;line-height:1.6}
   .mn .note{font-size:13px;color:var(--muted);margin-top:8px}
+  .mn-ex{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+  .mn-ex-label{font-size:12px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:6px}
   /* TENSE TABLES */
   .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px}
   table{width:100%;border-collapse:collapse;min-width:680px;background:#fff}
@@ -1205,92 +1207,182 @@ const DATA = {
   {
     "name": "一般现在时",
     "text": "经常反复用现在，主语三单别忘 s。时间标志 often、every，状态习惯它最爱。",
-    "note": "表习惯性动作或客观真理，第三人称单数动词加 -s/-es。"
+    "note": "表习惯性动作或客观真理，第三人称单数动词加 -s/-es。",
+    "examples": [
+      {"en": "He goes to school by bike every day.", "cn": "他每天骑自行车上学。"},
+      {"en": "The sun rises in the east.", "cn": "太阳从东方升起。"},
+      {"en": "She often reads books in the library.", "cn": "她经常在图书馆读书。"}
+    ]
   },
   {
     "name": "一般过去时",
     "text": "过去的事儿用过去，规则动词加 ed。不规则的要记牢，yesterday、last 常提示。",
-    "note": "表过去发生的动作，规则动词加 -ed，须记不规则变化。"
+    "note": "表过去发生的动作，规则动词加 -ed，须记不规则变化。",
+    "examples": [
+      {"en": "We visited the museum yesterday.", "cn": "我们昨天参观了博物馆。"},
+      {"en": "He went to Beijing last week.", "cn": "他上周去了北京。"},
+      {"en": "They played football after school.", "cn": "他们放学后踢了足球。"}
+    ]
   },
   {
     "name": "冠词 a / an",
     "text": "泛指一个用 a/an，辅音前 a 元音 an。第一次提别忘记，特指 the 来登场。",
-    "note": "a 用于辅音音素开头的词前，an 用于元音音素开头的词前。"
+    "note": "a 用于辅音音素开头的词前，an 用于元音音素开头的词前。",
+    "examples": [
+      {"en": "She is a student.", "cn": "她是一名学生。"},
+      {"en": "I ate an apple for breakfast.", "cn": "我早餐吃了一个苹果。"},
+      {"en": "He is an honest boy.", "cn": "他是一个诚实的男孩。"}
+    ]
   },
   {
     "name": "there be 句型",
     "text": "there be 表存在，近主原则要记怀。桌上有书也有笔，is 近 are 远排。",
-    "note": "表“某处有某物”，be 动词与最近的主语保持一致。"
+    "note": "表“某处有某物”，be 动词与最近的主语保持一致。",
+    "examples": [
+      {"en": "There is a book on the desk.", "cn": "桌子上有一本书。"},
+      {"en": "There are some apples in the basket.", "cn": "篮子里有一些苹果。"},
+      {"en": "There is a pen and two books on the table.", "cn": "桌子上有一支笔和两本书。"}
+    ]
   },
   {
     "name": "宾语从句陈述语序",
     "text": "宾从不用疑问序，陈述语序才规矩。what、who 虽疑问，主谓摆放莫颠倒。",
-    "note": "宾语从句必须用陈述句语序（主语在前、谓语在后）。"
+    "note": "宾语从句必须用陈述句语序（主语在前、谓语在后）。",
+    "examples": [
+      {"en": "I don't know where he lives.", "cn": "我不知道他住在哪里。"},
+      {"en": "Could you tell me what time it is?", "cn": "你能告诉我现在几点了吗？"},
+      {"en": "She asked me who the man was.", "cn": "她问我那个男人是谁。"}
+    ]
   },
   {
     "name": "虚拟语气",
     "text": "虚拟非真表愿望，if 从句过去忙。were、did 上场去，主句 would 来帮忙。",
-    "note": "表与事实相反或假设，if 从句用过去式，主句用 would/could/should + do。"
+    "note": "表与事实相反或假设，if 从句用过去式，主句用 would/could/should + do。",
+    "examples": [
+      {"en": "If I were you, I would take the job.", "cn": "如果我是你，我会接受这份工作。"},
+      {"en": "If it rained tomorrow, we would stay at home.", "cn": "如果明天下雨，我们就待在家里。"},
+      {"en": "I wish I had more time.", "cn": "我希望我有更多时间。"}
+    ]
   },
   {
     "name": "非谓语动词",
     "text": "句中已有主谓全，再加动词变 -ing、to 前。分词作状定补位，不定式目的常相连。",
-    "note": "句中已有谓语时，其余动词用 to do / doing / done 形式。"
+    "note": "句中已有谓语时，其余动词用 to do / doing / done 形式。",
+    "examples": [
+      {"en": "I want to learn English well.", "cn": "我想学好英语。"},
+      {"en": "Reading in bed is bad for your eyes.", "cn": "躺在床上看书对眼睛有害。"},
+      {"en": "The book written by Lu Xun is famous.", "cn": "鲁迅写的书很有名。"}
+    ]
   },
   {
     "name": "现在完成时",
     "text": "完成看 have/has，加过分词莫迟疑。过去影响到现在，since、for 常相陪。",
-    "note": "have/has + done，强调过去动作对现在的影响，常与 since、for 连用。"
+    "note": "have/has + done，强调过去动作对现在的影响，常与 since、for 连用。",
+    "examples": [
+      {"en": "She has finished her homework.", "cn": "她已经完成了作业。"},
+      {"en": "I have lived here for ten years.", "cn": "我在这里住了十年了。"},
+      {"en": "He has worked here since 2020.", "cn": "自2020年以来他一直在这里工作。"}
+    ]
   },
   {
     "name": "比较级与最高级",
     "text": "两者比较用比较，er 结尾要记牢。三者以上最高级，the 加 est 错不了。",
-    "note": "比较级用于两者，最高级用于三者及以上，多音节词用 more/most。"
+    "note": "比较级用于两者，最高级用于三者及以上，多音节词用 more/most。",
+    "examples": [
+      {"en": "Tom runs faster than John.", "cn": "汤姆跑得比约翰快。"},
+      {"en": "This book is more interesting than that one.", "cn": "这本书比那本更有趣。"},
+      {"en": "He is the tallest boy in our class.", "cn": "他是我们班最高的男孩。"}
+    ]
   },
   {
     "name": "被动语态",
     "text": "被动 be 加过分，动作承受主语身。by 引出做动作，时态跟着 be 来分。",
-    "note": "be + done，主语是动作承受者，by 引出执行者，时态由 be 体现。"
+    "note": "be + done，主语是动作承受者，by 引出执行者，时态由 be 体现。",
+    "examples": [
+      {"en": "English is spoken all over the world.", "cn": "全世界都说英语。"},
+      {"en": "The house was built last year.", "cn": "这房子是去年建的。"},
+      {"en": "The letter was written by him.", "cn": "这封信是他写的。"}
+    ]
   },
   {
     "name": "情态动词",
     "text": "情态动词接原形，can能may可must硬。\nshould劝告would愿，推测might看情形。",
-    "note": "can表能力、may表许可、must表必须，后均接动词原形。"
+    "note": "can表能力、may表许可、must表必须，后均接动词原形。",
+    "examples": [
+      {"en": "He can swim very well.", "cn": "他游泳游得很好。"},
+      {"en": "You must finish your homework.", "cn": "你必须完成作业。"},
+      {"en": "May I use your dictionary?", "cn": "我可以用你的字典吗？"}
+    ]
   },
   {
     "name": "定语从句",
     "text": "定语从句紧跟名，who指人儿which物清。\nthat人事物都管，逗号后which不行。",
-    "note": "who/that指人、which/that指物，修饰前面的先行词。"
+    "note": "who/that指人、which/that指物，修饰前面的先行词。",
+    "examples": [
+      {"en": "The boy who is standing there is my brother.", "cn": "站在那里的男孩是我弟弟。"},
+      {"en": "This is the book which I bought yesterday.", "cn": "这是我昨天买的书。"},
+      {"en": "He is the man that helped me.", "cn": "他就是那个帮助过我的人。"}
+    ]
   },
   {
     "name": "状语从句",
     "text": "状语从句添枝叶，when时间if条件接。\nbecause说原因，unless除非莫忽略。",
-    "note": "when表时间、if表条件、because表原因，不作句子主干。"
+    "note": "when表时间、if表条件、because表原因，不作句子主干。",
+    "examples": [
+      {"en": "When it rains, I stay at home.", "cn": "下雨的时候，我待在家里。"},
+      {"en": "I will go if it is fine tomorrow.", "cn": "如果明天天气好，我就去。"},
+      {"en": "He was late because he missed the bus.", "cn": "他迟到了，因为他错过了公交车。"}
+    ]
   },
   {
     "name": "主谓一致",
     "text": "主谓一致随主语，单数单三复数复。\n不可名词当单数，就近原则别糊涂。",
-    "note": "谓语单复数由主语决定，不可数名词按单数处理。"
+    "note": "谓语单复数由主语决定，不可数名词按单数处理。",
+    "examples": [
+      {"en": "The teacher is very kind.", "cn": "这位老师很和蔼。"},
+      {"en": "Water is important to life.", "cn": "水对生命很重要。"},
+      {"en": "There is a book and two pens on the desk.", "cn": "桌子上有一本书和两支笔。"}
+    ]
   },
   {
     "name": "反义疑问句",
     "text": "反义疑问前定调，前肯后否莫忘掉。\n前否后肯是常理，时态人称要对好。",
-    "note": "前肯后否、前否后肯，疑问部分时态人称须一致。"
+    "note": "前肯后否、前否后肯，疑问部分时态人称须一致。",
+    "examples": [
+      {"en": "You are a student, aren't you?", "cn": "你是学生，不是吗？"},
+      {"en": "He can't swim, can he?", "cn": "他不会游泳，对吧？"},
+      {"en": "She went to the park, didn't she?", "cn": "她去了公园，不是吗？"}
+    ]
   },
   {
     "name": "倒装句",
     "text": "否定置首须倒装，never、seldom先上场。\nSo加助动表赞同，Neither否定也一样。",
-    "note": "否定副词置首或“So/Neither+助动词”时，主谓语部分倒装。"
+    "note": "否定副词置首或“So/Neither+助动词”时，主谓语部分倒装。",
+    "examples": [
+      {"en": "Never have I seen such a beautiful place.", "cn": "我从未见过如此美丽的地方。"},
+      {"en": "So do I.", "cn": "我也是。"},
+      {"en": "Neither can he.", "cn": "他也不能。"}
+    ]
   },
   {
     "name": "强调句",
     "text": "强调句型It is，被强调处that连。\n主宾状语都能强调，去框句子仍周全。",
-    "note": "It is/was + 强调部分 + that/who，删框架句意仍完整。"
+    "note": "It is/was + 强调部分 + that/who，删框架句意仍完整。",
+    "examples": [
+      {"en": "It was Tom that broke the window.", "cn": "是汤姆打破了窗户。"},
+      {"en": "It is tomorrow that we will leave.", "cn": "我们是明天离开。"},
+      {"en": "It was in the park that I met him.", "cn": "我是在公园遇见他的。"}
+    ]
   },
   {
     "name": "现在分词与过去分词",
     "text": "现在分词-ing，主动进行它表明。\n过去分词-ed，被动完成要记清。",
-    "note": "现在分词表主动/进行，过去分词表被动/完成。"
+    "note": "现在分词表主动/进行，过去分词表被动/完成。",
+    "examples": [
+      {"en": "The boy playing basketball is my brother.", "cn": "正在打篮球的男孩是我弟弟。"},
+      {"en": "The letter written by her is very long.", "cn": "她写的信很长。"},
+      {"en": "We saw fallen leaves on the ground.", "cn": "我们看见地上有落叶。"}
+    ]
   }
 ],
   infinitive: {
@@ -10550,6 +10642,19 @@ function renderMnemonics(){
     const text = document.createElement('div'); text.className='text'; text.textContent = it.text;
     const note = document.createElement('div'); note.className='note'; note.textContent = '说明：' + it.note;
     c.append(name, text, note);
+    if(it.examples && it.examples.length){
+      const exWrap = document.createElement('div'); exWrap.className='mn-ex';
+      const exLabel = document.createElement('span'); exLabel.className='mn-ex-label'; exLabel.textContent='经典例句';
+      exWrap.appendChild(exLabel);
+      it.examples.forEach(ex=>{
+        const exdiv = document.createElement('div'); exdiv.className='ex';
+        const en = document.createElement('span'); en.className='en'; en.textContent = ex.en + ' ';
+        const cn = document.createElement('span'); cn.className='cn'; cn.textContent = ex.cn;
+        exdiv.append(en, cn, spkBtn(ex.en, true));
+        exWrap.appendChild(exdiv);
+      });
+      c.appendChild(exWrap);
+    }
     root.appendChild(c);
   });
   document.getElementById('mnCount').textContent = `共 ${DATA.mnemonics.length} 条`;
