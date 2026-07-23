@@ -208,6 +208,13 @@
 .pos-card .abbr{color:var(--brand);font-weight:700;margin:0 4px}
 .en-name{color:#8a93a6;font-weight:500;font-size:13px;margin-left:6px}
 .pat-card .formula{display:inline-block;background:var(--brand-soft);color:var(--brand);border-radius:8px;padding:2px 10px;font-weight:700;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-right:8px}
+.clue{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line)}
+.clue-h,.tip-h{display:inline-block;font-size:12px;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:6px;padding:2px 8px;margin-bottom:6px}
+.clue-item{display:block;font-size:13px;line-height:1.75;color:var(--text)}
+.clue-item::before{content:"• ";color:var(--brand);font-weight:700}
+.tip{margin:10px 0 0;padding:10px 12px;background:#fffaf0;border:1px solid #f1e3c2;border-radius:10px;font-size:13px;line-height:1.75;color:#7a5b16}
+.tip-h{background:#fdf0d5;color:#a9791a;margin-bottom:6px}
+.tip .em{color:#a9791a;font-weight:700}
 </style>
 </head>
 <body>
@@ -9940,21 +9947,21 @@ const DATA = {
     ]}
   ],
   pos: [
-    { name:"名词", abbr:"n.", en:"Noun", def:"表示人、事物、地点或抽象概念的名称。", examples:[ {en:"The book is on the table.", cn:"书在桌子上。"}, {en:"She has a new book.", cn:"她有一本新书。"} ] },
-    { name:"代词", abbr:"pron.", en:"Pronoun", def:"用来代替名词，避免重复，让表达更简洁。", examples:[ {en:"He is my best friend.", cn:"他是我最好的朋友。"}, {en:"This is for you.", cn:"这是给你的。"} ] },
-    { name:"形容词", abbr:"adj.", en:"Adjective", def:"修饰名词，说明人或事物的性质、特征或状态。", examples:[ {en:"She is a happy girl.", cn:"她是个快乐的女孩。"}, {en:"We need a big house.", cn:"我们需要一所大房子。"} ] },
-    { name:"副词", abbr:"adv.", en:"Adverb", def:"修饰动词、形容词或其他副词，表示程度、方式、时间、地点等。", examples:[ {en:"He runs very quickly.", cn:"他跑得非常快。"}, {en:"She speaks English well.", cn:"她英语说得好。"} ] },
-    { name:"动词", abbr:"v.", en:"Verb", def:"表示动作或状态，是句子的核心。", examples:[ {en:"I eat an apple every day.", cn:"我每天吃完一个苹果。"}, {en:"They are students.", cn:"他们是学生。"} ] },
-    { name:"介词", abbr:"prep.", en:"Preposition", def:"用在名词或代词前，表示它与句中其他词的时间、方位、方式等关系。", examples:[ {en:"The cat is in the box.", cn:"猫在盒子里。"}, {en:"We go to school by bus.", cn:"我们乘公交车去上学。"} ] },
-    { name:"连词", abbr:"conj.", en:"Conjunction", def:"用来连接词、短语或句子，表示并列、转折、因果等关系。", examples:[ {en:"Tea and coffee are drinks.", cn:"茶和咖啡都是饮料。"}, {en:"I was late because it rained.", cn:"我迟到了，因为下雨了。"} ] },
-    { name:"感叹词", abbr:"int.", en:"Interjection", def:"表示喜、怒、哀、乐等强烈情感，常独立使用，后面多跟感叹号。", examples:[ {en:"Wow! That is amazing.", cn:"哇！那太神奇了。"}, {en:"Ouch! That hurts.", cn:"哎哟！好疼。"} ] }
+    { name:"名词", abbr:"n.", en:"Noun", def:"表示人、事物、地点或抽象概念的名称。", clues:["-tion / -sion → 动作或状态（education 教育、decision 决定）","-ment / -ness → 性质或结果（development 发展、happiness 幸福）","-ity / -ty → 抽象性质（ability 能力、safety 安全）","-er / -or / -ist → 人或职业（teacher 老师、actor 演员、artist 艺术家）"], examples:[ {en:"The book is on the table.", cn:"书在桌子上。"}, {en:"She has a new book.", cn:"她有一本新书。"} ] },
+    { name:"代词", abbr:"pron.", en:"Pronoun", def:"用来代替名词，避免重复，让表达更简洁。", clues:["多为短词，无明显后缀规律","人称：I / you / he / she / it / we / they","指示：this / that / these / those","不定：someone / anything / everybody"], examples:[ {en:"He is my best friend.", cn:"他是我最好的朋友。"}, {en:"This is for you.", cn:"这是给你的。"} ] },
+    { name:"形容词", abbr:"adj.", en:"Adjective", def:"修饰名词，说明人或事物的性质、特征或状态。", clues:["-ful / -less → 充满…的 / 缺乏…的（careful 小心的、hopeless 无望的）","-able / -ible → 能…的（readable 可读的、visible 可见的）","-al / -ous / -ive → 具…性质的（natural 自然的、famous 著名的、active 活跃的）","-y / -ic → 像…的（rainy 下雨的、scientific 科学的）"], examples:[ {en:"She is a happy girl.", cn:"她是个快乐的女孩。"}, {en:"We need a big house.", cn:"我们需要一所大房子。"} ] },
+    { name:"副词", abbr:"adv.", en:"Adverb", def:"修饰动词、形容词或其他副词，表示程度、方式、时间、地点等。", clues:["-ly → 副词（quickly 快速地、carefully 认真地）","注意：形容词 + ly 变副词；但 friendly / lovely 仍是形容词","程度：very / quite / too；时间：now / often；地点：here / there"], examples:[ {en:"He runs very quickly.", cn:"他跑得非常快。"}, {en:"She speaks English well.", cn:"她英语说得好。"} ] },
+    { name:"动词", abbr:"v.", en:"Verb", def:"表示动作或状态，是句子的核心。", clues:["-ize / -ise → 使…化（realize 实现、organize 组织）","-ate → 使…（create 创造、educate 教育）","-ify → 使成为…（simplify 简化、beautify 美化）","-en → 变得…（widen 加宽、sharpen 削尖）"], examples:[ {en:"I eat an apple every day.", cn:"我每天吃完一个苹果。"}, {en:"They are students.", cn:"他们是学生。"} ] },
+    { name:"介词", abbr:"prep.", en:"Preposition", def:"用在名词或代词前，表示它与句中其他词的时间、方位、方式等关系。", clues:["多为固定短词，无明显后缀规律","方位：in / on / at / under / behind","方向：to / from / into / out of","方式：by / with / without"], examples:[ {en:"The cat is in the box.", cn:"猫在盒子里。"}, {en:"We go to school by bus.", cn:"我们乘公交车去上学。"} ] },
+    { name:"连词", abbr:"conj.", en:"Conjunction", def:"用来连接词、短语或句子，表示并列、转折、因果等关系。", clues:["多为固定短词，无后缀规律","并列：and / but / or / so","因果：because / since / for","让步 / 条件：although / if / unless"], examples:[ {en:"Tea and coffee are drinks.", cn:"茶和咖啡都是饮料。"}, {en:"I was late because it rained.", cn:"我迟到了，因为下雨了。"} ] },
+    { name:"感叹词", abbr:"int.", en:"Interjection", def:"表示喜、怒、哀、乐等强烈情感，常独立使用，后面多跟感叹号。", clues:["多为独立短词，无后缀规律，常置句首","惊喜：Wow! / Oh! / Amazing!","疼痛：Ouch! / Ow!","呼唤：Hey! / Hello!"], examples:[ {en:"Wow! That is amazing.", cn:"哇！那太神奇了。"}, {en:"Ouch! That hurts.", cn:"哎哟！好疼。"} ] }
   ],
   patterns: [
-    { no:"①", formula:"S + V", name:"主谓结构", usage:"主语 + 不及物动词（vi.）。动词意思完整，后面不需要宾语。", examples:[ {en:"The sun rises in the east.", cn:"太阳从东方升起。"}, {en:"Birds sing.", cn:"鸟儿歌唱。"} ] },
-    { no:"②", formula:"S + V + O", name:"主谓宾结构", usage:"主语 + 及物动词（vt.）+ 宾语。动作作用于宾语。", examples:[ {en:"I love music.", cn:"我爱音乐。"}, {en:"She reads a book.", cn:"她读一本书。"} ] },
-    { no:"③", formula:"S + V + P", name:"主系表结构", usage:"主语 + 系动词（be / look / become 等）+ 表语。用来说明主语的身份或状态。", examples:[ {en:"She is a teacher.", cn:"她是一名老师。"}, {en:"He looks tired.", cn:"他看起来很累。"} ] },
-    { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"} ] },
-    { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"} ] }
+    { no:"①", formula:"S + V", name:"主谓结构", usage:"主语 + 不及物动词（vi.）。动词意思完整，后面不需要宾语。", tip:"判断：动词后没有宾语，句子意思已完整 → 主谓。常见不及物动词：rise / sing / exist / arrive / die。", examples:[ {en:"The sun rises in the east.", cn:"太阳从东方升起。"}, {en:"Birds sing.", cn:"鸟儿歌唱。"} ] },
+    { no:"②", formula:"S + V + O", name:"主谓宾结构", usage:"主语 + 及物动词（vt.）+ 宾语。动作作用于宾语。", tip:"判断：及物动词后必须接宾语（动作承受者）。常见及物动词：love / read / buy / make / eat。若去掉宾语句子就不完整 → 主谓宾。", examples:[ {en:"I love music.", cn:"我爱音乐。"}, {en:"She reads a book.", cn:"她读一本书。"} ] },
+    { no:"③", formula:"S + V + P", name:"主系表结构", usage:"主语 + 系动词（be / look / become 等）+ 表语。用来说明主语的身份或状态。", tip:"易混提醒：③ 与 ② 的区别在动词——系动词（be / look / sound / smell / feel / become / seem）不表动作、只连表语（名词或形容词）。口诀：<span class='em'>动词能换成 be 还通顺 → 主系表</span>。", examples:[ {en:"She is a teacher.", cn:"她是一名老师。"}, {en:"He looks tired.", cn:"他看起来很累。"} ] },
+    { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", tip:"判断：动词后接两个宾语，间接宾语（人）在前、直接宾语（物）在后。常见动词：give / send / buy / show / tell。验证法：可加 to / for → give a book to me。", examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"} ] },
+    { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", tip:"易混提醒：④ 与 ⑤ 的区别——④ 双宾两个都是“东西”（人、物都是名词），⑤ 的宾补说明宾语“是什么 / 怎么样”（名词或形容词）。口诀：<span class='em'>双宾能加 to / for，宾补要加 to be 才通</span>。", examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"} ] }
   ]
 };
 
@@ -10436,6 +10443,13 @@ function renderPos(){
     head.innerHTML = p.name + ' <span class="abbr">' + p.abbr + '</span><span class="en-name">' + p.en + '</span>';
     const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.def;
     c.append(head, txt);
+    if(p.clues && p.clues.length){
+      const clue = document.createElement('div'); clue.className = 'clue';
+      const ch = document.createElement('span'); ch.className = 'clue-h'; ch.textContent = '典型后缀线索';
+      const cl = document.createElement('div');
+      p.clues.forEach(cx=>{ const ci = document.createElement('span'); ci.className = 'clue-item'; ci.textContent = cx; cl.appendChild(ci); });
+      clue.append(ch, cl); c.appendChild(clue);
+    }
     const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
     p.examples.forEach(ex=>{
       const exdiv = document.createElement('div'); exdiv.className = 'ex';
@@ -10460,6 +10474,12 @@ function renderPatterns(){
     head.innerHTML = p.no + ' <span class="formula">' + p.formula + '</span><span class="en-name">' + p.name + '</span>';
     const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.usage;
     c.append(head, txt);
+    if(p.tip){
+      const tip = document.createElement('div'); tip.className = 'tip';
+      const th = document.createElement('span'); th.className = 'tip-h'; th.textContent = '判断口诀 / 易混提醒';
+      const tb = document.createElement('div'); tb.innerHTML = p.tip;
+      tip.append(th, tb); c.appendChild(tip);
+    }
     const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
     p.examples.forEach(ex=>{
       const exdiv = document.createElement('div'); exdiv.className = 'ex';
