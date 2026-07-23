@@ -204,6 +204,10 @@
   .mode-toggle:hover{background:var(--brand-soft)}
   .mode-toggle.active{background:var(--brand);color:#fff;border-color:var(--brand)}
   .app.is-mobile .mode-toggle{width:auto;margin:0 0 0 auto;font-size:13px;padding:6px 12px}
+/* ---------- 新增模块：八大词性 / 五大句型 ---------- */
+.pos-card .abbr{color:var(--brand);font-weight:700;margin:0 4px}
+.en-name{color:#8a93a6;font-weight:500;font-size:13px;margin-left:6px}
+.pat-card .formula{display:inline-block;background:var(--brand-soft);color:var(--brand);border-radius:8px;padding:2px 10px;font-weight:700;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-right:8px}
 </style>
 </head>
 <body>
@@ -220,6 +224,8 @@
       <button class="menu-btn" data-view="roots">🌱 英语词根</button>
       <button class="menu-btn" data-view="roots-methods">💡 记忆方法</button>
       <button class="menu-btn" data-view="irregular">📖 动词大全</button>
+      <button class="menu-btn" data-view="pos">🧩 八大词性</button>
+      <button class="menu-btn" data-view="patterns">🧱 五大句型</button>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
     <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
@@ -445,6 +451,18 @@
     </div>
     <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
     <div id="irrRoot"></div>
+  </section>
+
+  <section class="view" id="pos" data-view="pos">
+    <div class="sec-head"><h2>🧩 八大词性（Parts of Speech）</h2><span class="count" id="posCount"></span></div>
+    <p class="sec-sub">英语单词按语法功能分为八大词性。先搞清楚每个词性"做什么用、长什么样"，是看懂句子结构、学好语法的第一步。</p>
+    <div class="mgrid" id="posRoot"></div>
+  </section>
+
+  <section class="view" id="patterns" data-view="patterns">
+    <div class="sec-head"><h2>🧱 五大基本句型（Sentence Patterns）</h2><span class="count" id="patCount"></span></div>
+    <p class="sec-sub">无论多长多复杂的英语句子，基本骨架都逃不出这 5 种结构。先认结构，再把单词填进去。</p>
+    <div class="mgrid" id="patRoot"></div>
   </section>
 
   </main>
@@ -9920,6 +9938,23 @@ const DATA = {
       {name:"Future Perfect Continuous 将来完成进行时", formula:"will have been + doing", usage:"表示到将来某时前一直在进行中的动作。", en:"I will have been teaching for 10 years.", cn:"到时我将已教书 10 年。"},
       {name:"Past Future Perfect Continuous 过去将来完成进行时", formula:"would have been + doing", usage:"表示从过去看将来某时前一直在进行的动作。", en:"He said he would have been waiting for two hours.", cn:"他说到那时他将已等了两小时。"}
     ]}
+  ],
+  pos: [
+    { name:"名词", abbr:"n.", en:"Noun", def:"表示人、事物、地点或抽象概念的名称。", examples:[ {en:"The book is on the table.", cn:"书在桌子上。"}, {en:"She has a new book.", cn:"她有一本新书。"} ] },
+    { name:"代词", abbr:"pron.", en:"Pronoun", def:"用来代替名词，避免重复，让表达更简洁。", examples:[ {en:"He is my best friend.", cn:"他是我最好的朋友。"}, {en:"This is for you.", cn:"这是给你的。"} ] },
+    { name:"形容词", abbr:"adj.", en:"Adjective", def:"修饰名词，说明人或事物的性质、特征或状态。", examples:[ {en:"She is a happy girl.", cn:"她是个快乐的女孩。"}, {en:"We need a big house.", cn:"我们需要一所大房子。"} ] },
+    { name:"副词", abbr:"adv.", en:"Adverb", def:"修饰动词、形容词或其他副词，表示程度、方式、时间、地点等。", examples:[ {en:"He runs very quickly.", cn:"他跑得非常快。"}, {en:"She speaks English well.", cn:"她英语说得好。"} ] },
+    { name:"动词", abbr:"v.", en:"Verb", def:"表示动作或状态，是句子的核心。", examples:[ {en:"I eat an apple every day.", cn:"我每天吃完一个苹果。"}, {en:"They are students.", cn:"他们是学生。"} ] },
+    { name:"介词", abbr:"prep.", en:"Preposition", def:"用在名词或代词前，表示它与句中其他词的时间、方位、方式等关系。", examples:[ {en:"The cat is in the box.", cn:"猫在盒子里。"}, {en:"We go to school by bus.", cn:"我们乘公交车去上学。"} ] },
+    { name:"连词", abbr:"conj.", en:"Conjunction", def:"用来连接词、短语或句子，表示并列、转折、因果等关系。", examples:[ {en:"Tea and coffee are drinks.", cn:"茶和咖啡都是饮料。"}, {en:"I was late because it rained.", cn:"我迟到了，因为下雨了。"} ] },
+    { name:"感叹词", abbr:"int.", en:"Interjection", def:"表示喜、怒、哀、乐等强烈情感，常独立使用，后面多跟感叹号。", examples:[ {en:"Wow! That is amazing.", cn:"哇！那太神奇了。"}, {en:"Ouch! That hurts.", cn:"哎哟！好疼。"} ] }
+  ],
+  patterns: [
+    { no:"①", formula:"S + V", name:"主谓结构", usage:"主语 + 不及物动词（vi.）。动词意思完整，后面不需要宾语。", examples:[ {en:"The sun rises in the east.", cn:"太阳从东方升起。"}, {en:"Birds sing.", cn:"鸟儿歌唱。"} ] },
+    { no:"②", formula:"S + V + O", name:"主谓宾结构", usage:"主语 + 及物动词（vt.）+ 宾语。动作作用于宾语。", examples:[ {en:"I love music.", cn:"我爱音乐。"}, {en:"She reads a book.", cn:"她读一本书。"} ] },
+    { no:"③", formula:"S + V + P", name:"主系表结构", usage:"主语 + 系动词（be / look / become 等）+ 表语。用来说明主语的身份或状态。", examples:[ {en:"She is a teacher.", cn:"她是一名老师。"}, {en:"He looks tired.", cn:"他看起来很累。"} ] },
+    { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"} ] },
+    { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"} ] }
   ]
 };
 
@@ -10390,6 +10425,54 @@ function renderIrregular(){
 }
 
 /* ---------- VIEW SWITCH (left menu) ---------- */
+/* ---------- PARTS OF SPEECH (八大词性) ---------- */
+function renderPos(){
+  const root = document.getElementById('posRoot');
+  if(!root) return;
+  root.innerHTML = '';
+  DATA.pos.forEach(p=>{
+    const c = document.createElement('div'); c.className = 'card pos-card';
+    const head = document.createElement('div'); head.className = 'name';
+    head.innerHTML = p.name + ' <span class="abbr">' + p.abbr + '</span><span class="en-name">' + p.en + '</span>';
+    const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.def;
+    c.append(head, txt);
+    const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
+    p.examples.forEach(ex=>{
+      const exdiv = document.createElement('div'); exdiv.className = 'ex';
+      const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
+      const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
+      exdiv.append(en, cn, spkBtn(ex.en, true));
+      exWrap.appendChild(exdiv);
+    });
+    c.appendChild(exWrap);
+    root.appendChild(c);
+  });
+}
+
+/* ---------- FIVE SENTENCE PATTERNS (五大句型) ---------- */
+function renderPatterns(){
+  const root = document.getElementById('patRoot');
+  if(!root) return;
+  root.innerHTML = '';
+  DATA.patterns.forEach(p=>{
+    const c = document.createElement('div'); c.className = 'card pat-card';
+    const head = document.createElement('div'); head.className = 'name';
+    head.innerHTML = p.no + ' <span class="formula">' + p.formula + '</span><span class="en-name">' + p.name + '</span>';
+    const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.usage;
+    c.append(head, txt);
+    const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
+    p.examples.forEach(ex=>{
+      const exdiv = document.createElement('div'); exdiv.className = 'ex';
+      const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
+      const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
+      exdiv.append(en, cn, spkBtn(ex.en, true));
+      exWrap.appendChild(exdiv);
+    });
+    c.appendChild(exWrap);
+    root.appendChild(c);
+  });
+}
+
 function showView(v){
   if(v !== 'words' && flashMode) exitFlash();
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
@@ -10404,6 +10487,8 @@ renderTenses();
 renderInfinitive();
 renderRoots();
 renderIrregular();
+renderPos();
+renderPatterns();
 showView('words');
 
 document.getElementById('wordSearch').addEventListener('input', ()=>{
