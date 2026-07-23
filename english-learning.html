@@ -229,7 +229,6 @@
       <button class="menu-btn" data-view="tenses">📊 16 时态</button>
       <button class="menu-btn" data-view="infinitive">∞ 不定式</button>
       <button class="menu-btn" data-view="roots">🌱 英语词根</button>
-      <button class="menu-btn" data-view="roots-methods">💡 记忆方法</button>
       <button class="menu-btn" data-view="irregular">📖 动词大全</button>
       <button class="menu-btn" data-view="pos">🧩 八大词性</button>
       <button class="menu-btn" data-view="patterns">🧱 五大句型</button>
@@ -246,12 +245,14 @@
     </header>
 
     <section class="view active" id="words" data-view="words">
-    <div class="sec-head"><h2>① 基础词（A2 / B1 / B2 · 含发音）</h2><span class="count" id="wordCount"></span></div>
+    <div class="sec-head"><h2>① 基础词（A2 / B1 / B2 / C1 / C2 · 含发音）</h2><span class="count" id="wordCount"></span></div>
     <div class="toolbar">
       <div class="level-toggle wlevel">
         <button data-level="a2" class="active">A2 基础</button>
         <button data-level="b1">B1 进阶</button>
         <button data-level="b2">B2 进阶</button>
+        <button data-level="c1">C1 高阶</button>
+        <button data-level="c2">C2 精通</button>
       </div>
       <div class="tool-actions">
         <select id="masteryFilter" title="按掌握度筛选">
@@ -294,159 +295,167 @@
     <div id="infRoot"></div>
   </section>
 
-  <section class="view" id="roots" data-view="roots">
+    <section class="view" id="roots" data-view="roots">
     <div class="sec-head"><h2>🌱 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
     <div class="toolbar">
-      <div class="level-toggle rtype-toggle">
-        <button data-rtype="all" class="active">全部</button>
-        <button data-rtype="前缀">前缀 Prefix</button>
-        <button data-rtype="词根">词根 Root</button>
-        <button data-rtype="后缀">后缀 Suffix</button>
+      <div class="level-toggle subnav-toggle">
+        <button data-sub="browse" class="active">🔍 词根词缀</button>
+        <button data-sub="methods">💡 记忆方法</button>
       </div>
     </div>
-    <div class="search"><input id="rootSearch" type="text" placeholder="🔍 搜索词根 / 含义 / 例词；或点击词根查看全部单词，如 spect / 看 / 视觉" /></div>
-    <div id="rootsRoot"></div>
-  </section>
+    <div id="rootsBrowse">
+      <div class="toolbar">
+        <div class="level-toggle rtype-toggle">
+          <button data-rtype="all" class="active">全部</button>
+          <button data-rtype="前缀">前缀 Prefix</button>
+          <button data-rtype="词根">词根 Root</button>
+          <button data-rtype="后缀">后缀 Suffix</button>
+        </div>
+      </div>
+      <div class="search"><input id="rootSearch" type="text" placeholder="🔍 搜索词根 / 含义 / 例词；或点击词根查看全部单词，如 spect / 看 / 视觉" /></div>
+      <div id="rootsRoot"></div>
+    </div>
+    <div id="rootsMethods" style="display:none">
 
-  <section class="view" id="roots-methods" data-view="roots-methods">
-    <div class="sec-head"><h2>💡 词根记忆方法</h2></div>
-    <div class="guide">
-      <p class="guide-intro">你有没有这种感觉：单词背了又忘，背了这本忘那本？其实英语里约六成的单词都来自拉丁语和希腊语的词根词缀。一旦你掌握了"词根思维"，很多生词就不再是陌生的乱码，而是一串能拆解、能猜义的"密码"。</p>
-      <p class="guide-intro">本指南配合「🌱 英语词根」模块（收录约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）一起使用，给你 <b>10 条具体、可操作</b> 的记忆方法。建议收藏，作为长期的复习参考。</p>
+      <div class="sec-head"><h2>💡 词根记忆方法</h2></div>
+      <div class="guide">
+        <p class="guide-intro">你有没有这种感觉：单词背了又忘，背了这本忘那本？其实英语里约六成的单词都来自拉丁语和希腊语的词根词缀。一旦你掌握了"词根思维"，很多生词就不再是陌生的乱码，而是一串能拆解、能猜义的"密码"。</p>
+        <p class="guide-intro">本指南配合「🌱 英语词根」模块（收录约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）一起使用，给你 <b>10 条具体、可操作</b> 的记忆方法。建议收藏，作为长期的复习参考。</p>
 
-      <h3 class="guide-h">一、10 条词根记忆方法</h3>
+        <h3 class="guide-h">一、10 条词根记忆方法</h3>
 
-      <div class="method">
-        <h4>方法 1：词族归类法</h4>
-        <p><b>原理</b>：同一词根派生的词像一家人，成"族"记忆比单打独斗省力得多。</p>
-        <p><b>怎么做</b>：把含有同一个词根的词集中在一起，对比它们在<b>前缀 / 后缀</b>上的差异，找出"变与不变"，一次记住一整窝。</p>
-        <p><b>例子</b>：以词根 <b>spect / spec（看，视；Latin）</b> 为核心，建立你的"视觉家族"——</p>
+        <div class="method">
+          <h4>方法 1：词族归类法</h4>
+          <p><b>原理</b>：同一词根派生的词像一家人，成"族"记忆比单打独斗省力得多。</p>
+          <p><b>怎么做</b>：把含有同一个词根的词集中在一起，对比它们在<b>前缀 / 后缀</b>上的差异，找出"变与不变"，一次记住一整窝。</p>
+          <p><b>例子</b>：以词根 <b>spect / spec（看，视；Latin）</b> 为核心，建立你的"视觉家族"——</p>
+          <ul>
+            <li><b>inspect</b>（in 进入 + spect 看）= 检查——往里面"看"</li>
+            <li><b>spectator</b>（spect 看 + ator 人）= 观众——坐着"看"比赛的人</li>
+            <li><b>respect</b>（re 回 / 再 + spect 看）= 尊敬——回头"看"、仰视</li>
+            <li><b>perspective</b>（per 穿过 + spect 看 + ive）= 视角——穿过看到的那个角度</li>
+          </ul>
+        </div>
+
+        <div class="method">
+          <h4>方法 2：拆解公式法</h4>
+          <p><b>原理</b>：多数单词 = 前缀 + 词根 + 后缀，像套公式一样切开就懂。</p>
+          <p><b>怎么做</b>：遇到词先"三刀切"——① 前缀管方向 / 否定；② 词根管核心义；③ 后缀管词性；然后拼起来。</p>
+          <p><b>例子</b>：</p>
+          <ul>
+            <li><b>pre + dict</b>（预先 + 说）= <b>predict</b> 预测——提前"说"出结果</li>
+            <li><b>e(出) + duc(引导) + ate</b> = <b>educate</b> 教育——把人"引导"出来</li>
+            <li><b>bio(生命) + logy(…学)</b> = <b>biology</b> 生物——研究生命的学科</li>
+            <li><b>inform + ation</b> = information 信息；<b>edu + cate + ion</b> = education 教育</li>
+          </ul>
+        </div>
+
+        <div class="method">
+          <h4>方法 3：词源 / 画面联想法</h4>
+          <p><b>原理</b>：拉丁 / 希腊原义往往就是一幅画，把抽象词根变成具体画面，大脑记得更牢。</p>
+          <p><b>怎么做</b>：查词根的原义，给它编一个"脑内小剧场"，每次看到这个词就调用那幅画面。</p>
+          <p><b>例子</b>：</p>
+          <ul>
+            <li><b>spect = 看</b>：spectator 的画面是"坐着盯赛场的人"= 观众；inspect 是"拿手电筒往里照着看"= 检查。</li>
+            <li><b>bio = 生命（Greek）</b>：biology 是"研究生命"；<b>biography</b>（bio + graph 写 + y）是"把一个人的生命写下来"= 传记。</li>
+          </ul>
+        </div>
+
+        <div class="method">
+          <h4>方法 4：对比易混法</h4>
+          <p><b>原理</b>：最易混的不是难词，而是拼写、读音相近的词根，必须摆在一起对比才能分清。</p>
+          <p><b>怎么做</b>：把形近、音近的词根列成"对照表"，标清各自含义，看到词先判断它属于哪一家。</p>
+          <p><b>例子</b>：</p>
+          <ul>
+            <li><b>dict（说）vs duct（引导）</b>：<b>predict</b>（pre + dict 说）= 预测；<b>conduct</b>（con + duct 引导）= 引导 / 管理。读音相近，但一个管"嘴"（说），一个管"手"（引导）。</li>
+            <li><b>-tion vs -sion</b>：都是名词后缀。<b>-tion</b> 更常见（information、education）；<b>-sion</b> 常跟在 d / s 等字母后，如 decide → <b>decision</b> 决定、conclude → conclusion 结论。</li>
+          </ul>
+        </div>
+
+        <div class="method">
+          <h4>方法 5：故事串联法</h4>
+          <p><b>原理</b>：孤立的词是点，串成故事就成了线，情节能把多个同根词一次性绑进记忆。</p>
+          <p><b>怎么做</b>：用一句话或一个小场景，把几个同根词编进去，让它们互相"站台"。</p>
+          <p><b>例子</b>（全员来自 <b>duc / duct = 引导</b>）：</p>
+          <div class="quote">老师先 <b>introduce</b>（介绍，intro 向内 + duc）一个新概念，再 <b>educate</b>（教育，e 出 + duc）学生，最后 <b>conduct</b>（引导，con 一起 + duct）一场讨论。</div>
+          <p>三个词都围绕"引导"，一次记一串。</p>
+        </div>
+
+        <div class="method">
+          <h4>方法 6：例句中记忆法</h4>
+          <p><b>原理</b>：在语境里记的词，比孤立背拼写多一层"用法记忆"，更难忘记。</p>
+          <p><b>怎么做</b>：别只背单词本身，给每个目标词配一句简单、真实的例句，连同释义一起记。</p>
+          <p><b>例子</b>（前缀 <b>a- / an- = 无、非；Greek</b>）：</p>
+          <ul>
+            <li>"His <b>atypical</b> symptoms worried the doctor."（他的<b>非典型</b>症状让医生担心。）</li>
+            <li>"The <b>anonymous</b> letter exposed the truth."（那封<b>匿名</b>信揭露了真相。）</li>
+          </ul>
+          <div class="quote">同样可练 <b>mal-（坏；Latin）</b>："The sensor <b>malfunction</b>ed."（传感器<b>故障</b>了。）/ "The child suffered from <b>malnutrition</b>."（那孩子<b>营养不良</b>。）</div>
+        </div>
+
+        <div class="method">
+          <h4>方法 7：间隔重复法</h4>
+          <p><b>原理</b>：记忆会自然衰退，按"先密后疏"的节奏复习，能把短期记忆焊成长期记忆。</p>
+          <p><b>怎么做</b>：用 Anki 或闪卡把词根例词做成卡片；重点配合本页的 <b>🃏 自测模式</b>（翻卡自测）和 <b>掌握度筛选</b>（未学 → 学习中 → 已掌握，点击即可切换）。第 1 天学的 spect 家族，在第 2、4、7 天各复习一次；能流畅说出含义就标记为"已掌握"，减少无效重复。</p>
+        </div>
+
+        <div class="method">
+          <h4>方法 8：逆推法</h4>
+          <p><b>原理</b>：看到生词先"猜"它的词根构成，再回页面验证，猜对一次的印象胜过背十遍。</p>
+          <p><b>怎么做</b>：遇到新词，先凭前缀 / 词根 / 后缀推断大意，再去「🌱 英语词根」搜索框输入词根验证。</p>
+          <p><b>例子</b>：</p>
+          <ul>
+            <li>看到 <b>retrospect</b>：拆成 retro（向后）+ spect（看）= 回头看 → 推断为"回顾"，搜索 spect 确认无误。</li>
+            <li>看到 <b>prediction</b>：pre（预先）+ dict（说）+ ion（名词）= "预先说出的事" → 预测（名词）。</li>
+          </ul>
+        </div>
+
+        <div class="method">
+          <h4>方法 9：高频优先法</h4>
+          <p><b>原理</b>：少数高频词根覆盖了海量常用词，先拿下它们，性价比最高。</p>
+          <p><b>怎么做</b>：先集中攻克出现频率最高的前缀、词根、后缀，再向低频扩展。</p>
+          <p><b>例子</b>：优先掌握——</p>
+          <ul>
+            <li><b>pre-</b>（在前 / 预先）：preview 预览、predict 预测、prevent 预防</li>
+            <li><b>-tion / -sion</b>（名词后缀）：information 信息、education 教育、decision 决定</li>
+            <li><b>spect</b>（看）：inspect、respect、perspective</li>
+          </ul>
+          <p>等这三组滚瓜烂熟，再去啃 <b>phil（爱）</b>、<b>anonymous</b> 这类低频词根。</p>
+        </div>
+
+        <div class="method">
+          <h4>方法 10：Suffix-first 法</h4>
+          <p><b>原理</b>：后缀几乎直接决定词性，先认后缀定"身份"，再回头填词根含义，理解更稳。</p>
+          <p><b>怎么做</b>：看到长词先看尾巴：是 -tion（名词）、-ate（动词）还是 -logy（学科）？定好词性后，再拆解前面的词根。</p>
+          <p><b>例子</b>：</p>
+          <ul>
+            <li><b>education</b>：尾巴 -tion → 名词；edu（= e + duc 引导）→ "引导出来的东西" = 教育。</li>
+            <li><b>biology</b>：尾巴 -logy → 学科；bio（生命）→ 生命科学 = 生物。</li>
+          </ul>
+        </div>
+
+        <h3 class="guide-h">二、一周上手计划</h3>
+        <p>目标是前 7 天建立"词根直觉"，不贪多，每天 15–20 分钟：</p>
         <ul>
-          <li><b>inspect</b>（in 进入 + spect 看）= 检查——往里面"看"</li>
-          <li><b>spectator</b>（spect 看 + ator 人）= 观众——坐着"看"比赛的人</li>
-          <li><b>respect</b>（re 回 / 再 + spect 看）= 尊敬——回头"看"、仰视</li>
-          <li><b>perspective</b>（per 穿过 + spect 看 + ive）= 视角——穿过看到的那个角度</li>
+          <li><b>第 1 天 ｜ 建立词族</b>：打开「🌱 英语词根」→ 点开 spect 词根（点卡片展开全部例词），用<b>方法 1</b>把 inspect / spectator / respect / perspective 成族记一遍。</li>
+          <li><b>第 2 天 ｜ 学会拆解</b>：挑 pre- 前缀和 -tion 后缀，用<b>方法 2</b>练手，在纸上写下 pre+dict、bio+logy 这样的"公式"。</li>
+          <li><b>第 3 天 ｜ 编画面 + 串故事</b>：给 bio、duc/duct 造画面（<b>方法 3</b>），并用 duc 家族编一句故事（<b>方法 5</b>）。</li>
+          <li><b>第 4 天 ｜ 对比易混 + 例句</b>：整理 dict vs duct、-tion vs -sion 对照表（<b>方法 4</b>），给 a-/an- 各写一句例句（<b>方法 6</b>）。</li>
+          <li><b>第 5 天 ｜ 逆推实战</b>：随机翻「🃏 自测模式」卡片，用<b>方法 8</b>先猜再翻；猜错的加入"学习中"。</li>
+          <li><b>第 6 天 ｜ 间隔复习</b>：用<b>方法 7</b>回看前 5 天内容，能说出的标"已掌握"，卡壳的留"学习中"。</li>
+          <li><b>第 7 天 ｜ 高频收口 + 后缀定位</b>：用<b>方法 9</b>确认 pre- / -tion / spect 已牢固，再用<b>方法 10</b>快速给一批长词定性。</li>
         </ul>
-      </div>
+        <div class="guide-tip">小提示：每天结束前，在页面里把当天学的词根点一下掌握度，让"未学 → 学习中 → 已掌握"真实反映你的进度，复习才有抓手。</div>
 
-      <div class="method">
-        <h4>方法 2：拆解公式法</h4>
-        <p><b>原理</b>：多数单词 = 前缀 + 词根 + 后缀，像套公式一样切开就懂。</p>
-        <p><b>怎么做</b>：遇到词先"三刀切"——① 前缀管方向 / 否定；② 词根管核心义；③ 后缀管词性；然后拼起来。</p>
-        <p><b>例子</b>：</p>
+        <h3 class="guide-h">三、配套使用说明</h3>
+        <p>本指南里的所有词根与例词，都能在本页「🌱 英语词根」模块中找到对应数据（约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）。建议这样配合：</p>
         <ul>
-          <li><b>pre + dict</b>（预先 + 说）= <b>predict</b> 预测——提前"说"出结果</li>
-          <li><b>e(出) + duc(引导) + ate</b> = <b>educate</b> 教育——把人"引导"出来</li>
-          <li><b>bio(生命) + logy(…学)</b> = <b>biology</b> 生物——研究生命的学科</li>
-          <li><b>inform + ation</b> = information 信息；<b>edu + cate + ion</b> = education 教育</li>
+          <li><b>搜索</b>：在词根搜索框输入 spect、看、视觉 等关键词，可定位词根及其全部例词；</li>
+          <li><b>点击展开</b>：点任意词根卡片即可展开，查看它下面的所有单词；</li>
+          <li><b>自测 &amp; 掌握度</b>：用「🃏 自测模式」翻卡自测，用「掌握度」筛选与标记，把本指南的方法落到每天的复习里。</li>
         </ul>
+        <p>把这份指南和网页放在一起，你的词根记忆就有了"方法手册 + 数据字典"的双保险。</p>
       </div>
-
-      <div class="method">
-        <h4>方法 3：词源 / 画面联想法</h4>
-        <p><b>原理</b>：拉丁 / 希腊原义往往就是一幅画，把抽象词根变成具体画面，大脑记得更牢。</p>
-        <p><b>怎么做</b>：查词根的原义，给它编一个"脑内小剧场"，每次看到这个词就调用那幅画面。</p>
-        <p><b>例子</b>：</p>
-        <ul>
-          <li><b>spect = 看</b>：spectator 的画面是"坐着盯赛场的人"= 观众；inspect 是"拿手电筒往里照着看"= 检查。</li>
-          <li><b>bio = 生命（Greek）</b>：biology 是"研究生命"；<b>biography</b>（bio + graph 写 + y）是"把一个人的生命写下来"= 传记。</li>
-        </ul>
-      </div>
-
-      <div class="method">
-        <h4>方法 4：对比易混法</h4>
-        <p><b>原理</b>：最易混的不是难词，而是拼写、读音相近的词根，必须摆在一起对比才能分清。</p>
-        <p><b>怎么做</b>：把形近、音近的词根列成"对照表"，标清各自含义，看到词先判断它属于哪一家。</p>
-        <p><b>例子</b>：</p>
-        <ul>
-          <li><b>dict（说）vs duct（引导）</b>：<b>predict</b>（pre + dict 说）= 预测；<b>conduct</b>（con + duct 引导）= 引导 / 管理。读音相近，但一个管"嘴"（说），一个管"手"（引导）。</li>
-          <li><b>-tion vs -sion</b>：都是名词后缀。<b>-tion</b> 更常见（information、education）；<b>-sion</b> 常跟在 d / s 等字母后，如 decide → <b>decision</b> 决定、conclude → conclusion 结论。</li>
-        </ul>
-      </div>
-
-      <div class="method">
-        <h4>方法 5：故事串联法</h4>
-        <p><b>原理</b>：孤立的词是点，串成故事就成了线，情节能把多个同根词一次性绑进记忆。</p>
-        <p><b>怎么做</b>：用一句话或一个小场景，把几个同根词编进去，让它们互相"站台"。</p>
-        <p><b>例子</b>（全员来自 <b>duc / duct = 引导</b>）：</p>
-        <div class="quote">老师先 <b>introduce</b>（介绍，intro 向内 + duc）一个新概念，再 <b>educate</b>（教育，e 出 + duc）学生，最后 <b>conduct</b>（引导，con 一起 + duct）一场讨论。</div>
-        <p>三个词都围绕"引导"，一次记一串。</p>
-      </div>
-
-      <div class="method">
-        <h4>方法 6：例句中记忆法</h4>
-        <p><b>原理</b>：在语境里记的词，比孤立背拼写多一层"用法记忆"，更难忘记。</p>
-        <p><b>怎么做</b>：别只背单词本身，给每个目标词配一句简单、真实的例句，连同释义一起记。</p>
-        <p><b>例子</b>（前缀 <b>a- / an- = 无、非；Greek</b>）：</p>
-        <ul>
-          <li>"His <b>atypical</b> symptoms worried the doctor."（他的<b>非典型</b>症状让医生担心。）</li>
-          <li>"The <b>anonymous</b> letter exposed the truth."（那封<b>匿名</b>信揭露了真相。）</li>
-        </ul>
-        <div class="quote">同样可练 <b>mal-（坏；Latin）</b>："The sensor <b>malfunction</b>ed."（传感器<b>故障</b>了。）/ "The child suffered from <b>malnutrition</b>."（那孩子<b>营养不良</b>。）</div>
-      </div>
-
-      <div class="method">
-        <h4>方法 7：间隔重复法</h4>
-        <p><b>原理</b>：记忆会自然衰退，按"先密后疏"的节奏复习，能把短期记忆焊成长期记忆。</p>
-        <p><b>怎么做</b>：用 Anki 或闪卡把词根例词做成卡片；重点配合本页的 <b>🃏 自测模式</b>（翻卡自测）和 <b>掌握度筛选</b>（未学 → 学习中 → 已掌握，点击即可切换）。第 1 天学的 spect 家族，在第 2、4、7 天各复习一次；能流畅说出含义就标记为"已掌握"，减少无效重复。</p>
-      </div>
-
-      <div class="method">
-        <h4>方法 8：逆推法</h4>
-        <p><b>原理</b>：看到生词先"猜"它的词根构成，再回页面验证，猜对一次的印象胜过背十遍。</p>
-        <p><b>怎么做</b>：遇到新词，先凭前缀 / 词根 / 后缀推断大意，再去「🌱 英语词根」搜索框输入词根验证。</p>
-        <p><b>例子</b>：</p>
-        <ul>
-          <li>看到 <b>retrospect</b>：拆成 retro（向后）+ spect（看）= 回头看 → 推断为"回顾"，搜索 spect 确认无误。</li>
-          <li>看到 <b>prediction</b>：pre（预先）+ dict（说）+ ion（名词）= "预先说出的事" → 预测（名词）。</li>
-        </ul>
-      </div>
-
-      <div class="method">
-        <h4>方法 9：高频优先法</h4>
-        <p><b>原理</b>：少数高频词根覆盖了海量常用词，先拿下它们，性价比最高。</p>
-        <p><b>怎么做</b>：先集中攻克出现频率最高的前缀、词根、后缀，再向低频扩展。</p>
-        <p><b>例子</b>：优先掌握——</p>
-        <ul>
-          <li><b>pre-</b>（在前 / 预先）：preview 预览、predict 预测、prevent 预防</li>
-          <li><b>-tion / -sion</b>（名词后缀）：information 信息、education 教育、decision 决定</li>
-          <li><b>spect</b>（看）：inspect、respect、perspective</li>
-        </ul>
-        <p>等这三组滚瓜烂熟，再去啃 <b>phil（爱）</b>、<b>anonymous</b> 这类低频词根。</p>
-      </div>
-
-      <div class="method">
-        <h4>方法 10：Suffix-first 法</h4>
-        <p><b>原理</b>：后缀几乎直接决定词性，先认后缀定"身份"，再回头填词根含义，理解更稳。</p>
-        <p><b>怎么做</b>：看到长词先看尾巴：是 -tion（名词）、-ate（动词）还是 -logy（学科）？定好词性后，再拆解前面的词根。</p>
-        <p><b>例子</b>：</p>
-        <ul>
-          <li><b>education</b>：尾巴 -tion → 名词；edu（= e + duc 引导）→ "引导出来的东西" = 教育。</li>
-          <li><b>biology</b>：尾巴 -logy → 学科；bio（生命）→ 生命科学 = 生物。</li>
-        </ul>
-      </div>
-
-      <h3 class="guide-h">二、一周上手计划</h3>
-      <p>目标是前 7 天建立"词根直觉"，不贪多，每天 15–20 分钟：</p>
-      <ul>
-        <li><b>第 1 天 ｜ 建立词族</b>：打开「🌱 英语词根」→ 点开 spect 词根（点卡片展开全部例词），用<b>方法 1</b>把 inspect / spectator / respect / perspective 成族记一遍。</li>
-        <li><b>第 2 天 ｜ 学会拆解</b>：挑 pre- 前缀和 -tion 后缀，用<b>方法 2</b>练手，在纸上写下 pre+dict、bio+logy 这样的"公式"。</li>
-        <li><b>第 3 天 ｜ 编画面 + 串故事</b>：给 bio、duc/duct 造画面（<b>方法 3</b>），并用 duc 家族编一句故事（<b>方法 5</b>）。</li>
-        <li><b>第 4 天 ｜ 对比易混 + 例句</b>：整理 dict vs duct、-tion vs -sion 对照表（<b>方法 4</b>），给 a-/an- 各写一句例句（<b>方法 6</b>）。</li>
-        <li><b>第 5 天 ｜ 逆推实战</b>：随机翻「🃏 自测模式」卡片，用<b>方法 8</b>先猜再翻；猜错的加入"学习中"。</li>
-        <li><b>第 6 天 ｜ 间隔复习</b>：用<b>方法 7</b>回看前 5 天内容，能说出的标"已掌握"，卡壳的留"学习中"。</li>
-        <li><b>第 7 天 ｜ 高频收口 + 后缀定位</b>：用<b>方法 9</b>确认 pre- / -tion / spect 已牢固，再用<b>方法 10</b>快速给一批长词定性。</li>
-      </ul>
-      <div class="guide-tip">小提示：每天结束前，在页面里把当天学的词根点一下掌握度，让"未学 → 学习中 → 已掌握"真实反映你的进度，复习才有抓手。</div>
-
-      <h3 class="guide-h">三、配套使用说明</h3>
-      <p>本指南里的所有词根与例词，都能在本页「🌱 英语词根」模块中找到对应数据（约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）。建议这样配合：</p>
-      <ul>
-        <li><b>搜索</b>：在词根搜索框输入 spect、看、视觉 等关键词，可定位词根及其全部例词；</li>
-        <li><b>点击展开</b>：点任意词根卡片即可展开，查看它下面的所有单词；</li>
-        <li><b>自测 &amp; 掌握度</b>：用「🃏 自测模式」翻卡自测，用「掌握度」筛选与标记，把本指南的方法落到每天的复习里。</li>
-      </ul>
-      <p>把这份指南和网页放在一起，你的词根记忆就有了"方法手册 + 数据字典"的双保险。</p>
     </div>
   </section>
 
@@ -876,6 +885,262 @@ const DATA = {
       {w:"presumably", ipa:"/prɪˈzuːməbli/", pos:"adv.", zh:"大概，据推测", en:"He is presumably on his way.", cn:"他大概在路上了。"}
     ]}
   ],
+  c1words: [
+  { group:"学术与论证", items:[
+    {w:"elaborate", ipa:"/ɪˈlæbərət/", pos:"adj.", zh:"详尽的；精心制作的", en:"She gave an elaborate explanation of the theory.", cn:"她对这个理论做了详尽的解释。"},
+    {w:"ambiguous", ipa:"/æmˈbɪɡjuəs/", pos:"adj.", zh:"模棱两可的，含糊的", en:"The instructions were ambiguous and confusing.", cn:"这些说明含糊不清，令人困惑。"},
+    {w:"undermine", ipa:"/ˌʌndəˈmaɪn/", pos:"v.", zh:"削弱，破坏", en:"Constant criticism can undermine a child's confidence.", cn:"不断的批评会削弱孩子的自信心。"},
+    {w:"scrutinize", ipa:"/ˈskruːtənaɪz/", pos:"v.", zh:"仔细审查，详审", en:"The committee scrutinized every detail of the proposal.", cn:"委员会仔细审查了提案的每一个细节。"},
+    {w:"mitigate", ipa:"/ˈmɪtɪɡeɪt/", pos:"v.", zh:"减轻，缓解", en:"New policies aim to mitigate the effects of climate change.", cn:"新政策旨在减轻气候变化的影响。"},
+    {w:"coherent", ipa:"/kəʊˈhɪərənt/", pos:"adj.", zh:"连贯的，有条理的", en:"He presented a coherent argument supported by evidence.", cn:"他提出了一个有证据支撑、条理清晰的论点。"},
+    {w:"empirical", ipa:"/ɪmˈpɪrɪkl/", pos:"adj.", zh:"实证的，基于经验的", en:"The theory is based on empirical research rather than speculation.", cn:"这一理论基于实证研究而非推测。"},
+    {w:"postulate", ipa:"/ˈpɒstjuleɪt/", pos:"v.", zh:"假定，假设", en:"Scientists postulate that the universe is expanding.", cn:"科学家假定宇宙正在膨胀。"},
+    {w:"refute", ipa:"/rɪˈfjuːt/", pos:"v.", zh:"驳斥，反驳", en:"The new data refuted the earlier hypothesis.", cn:"新数据驳斥了早先的假设。"},
+    {w:"corroborate", ipa:"/kəˈrɒbəreɪt/", pos:"v.", zh:"证实，支持", en:"Witnesses corroborated his account of the event.", cn:"目击者证实了他对该事件的描述。"}
+  ]},
+  { group:"社会与政治", items:[
+    {w:"affluent", ipa:"/ˈæfluənt/", pos:"adj.", zh:"富裕的，富足的", en:"The affluent neighbourhood has excellent schools.", cn:"这个富裕的社区拥有优质的学校。"},
+    {w:"precarious", ipa:"/prɪˈkeəriəs/", pos:"adj.", zh:"不稳定的，危险的", en:"Many workers remain in precarious employment.", cn:"许多工人仍处于不稳定的就业状态。"},
+    {w:"ostensibly", ipa:"/ɒˈstensəbli/", pos:"adv.", zh:"表面上，似乎", en:"He ostensibly resigned for personal reasons.", cn:"他表面上是因为个人原因辞职的。"},
+    {w:"marginalize", ipa:"/ˈmɑːdʒɪnəlaɪz/", pos:"v.", zh:"使边缘化", en:"The policy tends to marginalize minority groups.", cn:"这项政策往往使少数群体边缘化。"},
+    {w:"cohesive", ipa:"/kəʊˈhiːsɪv/", pos:"adj.", zh:"有凝聚力的", en:"A cohesive society depends on shared values.", cn:"一个有凝聚力的社会依赖于共同的价值观。"},
+    {w:"disparity", ipa:"/dɪˈspærəti/", pos:"n.", zh:"差异，不平等", en:"There is a growing disparity between rich and poor.", cn:"贫富差距正在不断扩大。"},
+    {w:"consensus", ipa:"/kənˈsensəs/", pos:"n.", zh:"共识", en:"The panel reached a consensus after hours of debate.", cn:"经过数小时辩论，小组达成了共识。"},
+    {w:"authoritarian", ipa:"/ɔːˌθɒrɪˈteəriən/", pos:"adj.", zh:"专制的，独裁的", en:"The authoritarian regime suppressed free speech.", cn:"这个专制政权压制了言论自由。"},
+    {w:"disenfranchise", ipa:"/ˌdɪsɪnˈfræntʃaɪz/", pos:"v.", zh:"剥夺权利，使失去选举权", en:"The law effectively disenfranchised thousands of voters.", cn:"这项法律实际上剥夺了数千名选民的权利。"},
+    {w:"escalate", ipa:"/ˈeskəleɪt/", pos:"v.", zh:"升级，加剧", en:"Tensions between the two countries began to escalate.", cn:"两国之间的紧张局势开始升级。"}
+  ]},
+  { group:"经济与商业", items:[
+    {w:"commensurate", ipa:"/kəˈmenʃərət/", pos:"adj.", zh:"相称的，相当的", en:"Her salary is commensurate with her experience.", cn:"她的薪水与她的经验相称。"},
+    {w:"fluctuate", ipa:"/ˈflʌktʃueɪt/", pos:"v.", zh:"波动，起伏", en:"Oil prices fluctuate with global demand.", cn:"油价随全球需求波动。"},
+    {w:"lucrative", ipa:"/ˈluːkrətɪv/", pos:"adj.", zh:"盈利的，有利可图的", en:"He found a lucrative job in the tech industry.", cn:"他在科技行业找到了一份高薪工作。"},
+    {w:"solvent", ipa:"/ˈsɒlvənt/", pos:"adj.", zh:"有偿付能力的", en:"The company remained solvent despite the recession.", cn:"尽管经济衰退，公司仍保持偿付能力。"},
+    {w:"equilibrium", ipa:"/ˌiːkwɪˈlɪbriəm/", pos:"n.", zh:"平衡，均衡", en:"The market eventually returned to a state of equilibrium.", cn:"市场最终恢复了均衡状态。"},
+    {w:"commodity", ipa:"/kəˈmɒdəti/", pos:"n.", zh:"商品", en:"Coffee is one of the most traded commodities.", cn:"咖啡是交易最广泛的商品之一。"},
+    {w:"monopoly", ipa:"/məˈnɒpəli/", pos:"n.", zh:"垄断", en:"The firm was accused of operating a monopoly.", cn:"该公司被指控实行垄断。"},
+    {w:"incur", ipa:"/ɪnˈkɜː/", pos:"v.", zh:"招致，承受", en:"The project will incur significant costs.", cn:"这个项目将产生巨大的成本。"},
+    {w:"divest", ipa:"/daɪˈvest/", pos:"v.", zh:"剥离，撤资", en:"The fund decided to divest from fossil fuels.", cn:"该基金决定从化石燃料领域撤资。"},
+    {w:"viable", ipa:"/ˈvaɪəbl/", pos:"adj.", zh:"可行的", en:"Is the business plan financially viable?", cn:"这个商业计划在财务上可行吗？"}
+  ]},
+  { group:"心理与认知", items:[
+    {w:"cognitive", ipa:"/ˈkɒɡnətɪv/", pos:"adj.", zh:"认知的", en:"Sleep is essential for cognitive development.", cn:"睡眠对认知发展至关重要。"},
+    {w:"innate", ipa:"/ɪˈneɪt/", pos:"adj.", zh:"天生的，固有的", en:"Some beliefs seem to be innate rather than learned.", cn:"有些信念似乎是天生的，而非习得的。"},
+    {w:"subconscious", ipa:"/ˌsʌbˈkɒnʃəs/", pos:"adj.", zh:"潜意识的", en:"The subconscious mind influences our decisions.", cn:"潜意识影响着我们的决策。"},
+    {w:"resilient", ipa:"/rɪˈzɪliənt/", pos:"adj.", zh:"有韧性的，能复原的", en:"Children are often remarkably resilient.", cn:"孩子们往往具有惊人的韧性。"},
+    {w:"perception", ipa:"/pəˈsepʃn/", pos:"n.", zh:"感知，看法", en:"Our perception of risk is not always accurate.", cn:"我们对风险的感知并不总是准确。"},
+    {w:"ambivalent", ipa:"/æmˈbɪvələnt/", pos:"adj.", zh:"矛盾的，爱憎交加的", en:"She felt ambivalent about moving abroad.", cn:"她对移居国外感到矛盾。"},
+    {w:"intrinsic", ipa:"/ɪnˈtrɪnzɪk/", pos:"adj.", zh:"内在的，本质的", en:"Music has intrinsic value beyond its uses.", cn:"音乐除了用途之外还具有内在价值。"},
+    {w:"cognizant", ipa:"/ˈkɒɡnɪzənt/", pos:"adj.", zh:"认识到的，知晓的", en:"We must be cognizant of the risks involved.", cn:"我们必须意识到其中的风险。"},
+    {w:"aversion", ipa:"/əˈvɜːʃn/", pos:"n.", zh:"厌恶，反感", en:"He has a strong aversion to public speaking.", cn:"他对公开演讲有强烈的厌恶。"},
+    {w:"rationalize", ipa:"/ˈræʃnəlaɪz/", pos:"v.", zh:"使合理化，文过饰非", en:"People often rationalize decisions they later regret.", cn:"人们常常为自己后来后悔的决定找理由。"}
+  ]},
+  { group:"描述与修辞", items:[
+    {w:"meticulous", ipa:"/məˈtɪkjələs/", pos:"adj.", zh:"一丝不苟的，细致的", en:"She kept meticulous records of every transaction.", cn:"她对每一笔交易都做了细致的记录。"},
+    {w:"eloquent", ipa:"/ˈeləkwənt/", pos:"adj.", zh:"雄辩的，有说服力的", en:"The senator made an eloquent speech on justice.", cn:"那位参议员就正义发表了雄辩的演讲。"},
+    {w:"succinct", ipa:"/səkˈsɪŋkt/", pos:"adj.", zh:"简洁的，简明的", en:"His answer was succinct but informative.", cn:"他的回答简洁却信息丰富。"},
+    {w:"vivid", ipa:"/ˈvɪvɪd/", pos:"adj.", zh:"生动的，鲜明的", en:"She gave a vivid description of the accident.", cn:"她对事故作了生动的描述。"},
+    {w:"nuanced", ipa:"/ˈnjuːɑːnst/", pos:"adj.", zh:"细致入微的，有微妙差别的", en:"The debate requires a more nuanced understanding.", cn:"这场辩论需要更细致入微的理解。"},
+    {w:"tangible", ipa:"/ˈtændʒəbl/", pos:"adj.", zh:"有形的，切实的", en:"The benefits of the reform are now tangible.", cn:"改革的好处现在已切实可见。"},
+    {w:"intangible", ipa:"/ɪnˈtændʒəbl/", pos:"adj.", zh:"无形的", en:"Goodwill is an intangible asset of a company.", cn:"商誉是企业的无形资产。"},
+    {w:"stark", ipa:"/stɑːk/", pos:"adj.", zh:"鲜明的，严酷的", en:"The report reveals a stark contrast in outcomes.", cn:"报告揭示了结果上的鲜明反差。"},
+    {w:"subtle", ipa:"/ˈsʌtl/", pos:"adj.", zh:"微妙的，细致的", en:"There is a subtle difference between the two terms.", cn:"这两个术语之间有微妙的区别。"},
+    {w:"convey", ipa:"/kənˈveɪ/", pos:"v.", zh:"传达，表达", en:"Colour can convey emotion in a painting.", cn:"色彩能在画作中传达情感。"}
+  ]},
+  { group:"科技与数据", items:[
+    {w:"algorithm", ipa:"/ˈælɡərɪðəm/", pos:"n.", zh:"算法", en:"The recommendation algorithm learns from user behaviour.", cn:"推荐算法从用户行为中学习。"},
+    {w:"parameter", ipa:"/pəˈræmɪtə/", pos:"n.", zh:"参数", en:"We adjusted the parameter to improve accuracy.", cn:"我们调整了参数以提高准确性。"},
+    {w:"simulate", ipa:"/ˈsɪmjuleɪt/", pos:"v.", zh:"模拟", en:"Researchers simulate climate scenarios on supercomputers.", cn:"研究人员在超级计算机上模拟气候情景。"},
+    {w:"robust", ipa:"/rəʊˈbʌst/", pos:"adj.", zh:"稳健的，强大的", en:"The system is robust enough to handle failures.", cn:"这个系统足够稳健，能够应对故障。"},
+    {w:"interface", ipa:"/ˈɪntəfeɪs/", pos:"n.", zh:"界面，接口", en:"The app has a clean and intuitive interface.", cn:"这款应用拥有简洁直观的界面。"},
+    {w:"quantifiable", ipa:"/ˈkwɒntɪfaɪəbl/", pos:"adj.", zh:"可量化的", en:"Not all benefits are easily quantifiable.", cn:"并非所有好处都容易量化。"},
+    {w:"scalable", ipa:"/ˈskeɪləbl/", pos:"adj.", zh:"可扩展的", en:"Cloud services are scalable to meet demand.", cn:"云服务可扩展以满足需求。"},
+    {w:"latency", ipa:"/ˈleɪtnsi/", pos:"n.", zh:"延迟", en:"High latency makes online gaming frustrating.", cn:"高延迟让在线游戏令人沮丧。"},
+    {w:"encrypt", ipa:"/ɪnˈkrɪpt/", pos:"v.", zh:"加密", en:"The app encrypts messages to protect privacy.", cn:"这款应用对消息加密以保护隐私。"},
+    {w:"protocol", ipa:"/ˈprəʊtəkɒl/", pos:"n.", zh:"协议，规程", en:"The protocol ensures secure data transfer.", cn:"该协议确保数据传输安全。"}
+  ]},
+  { group:"文化与艺术", items:[
+    {w:"aesthetic", ipa:"/iːsˈθetɪk/", pos:"adj.", zh:"美学的，审美的", en:"The building has a minimalist aesthetic.", cn:"这座建筑具有极简主义的美学风格。"},
+    {w:"heritage", ipa:"/ˈherɪtɪdʒ/", pos:"n.", zh:"遗产", en:"The town is proud of its cultural heritage.", cn:"这个小镇为其文化遗产感到自豪。"},
+    {w:"contemporary", ipa:"/kənˈtemprəri/", pos:"adj.", zh:"当代的，同时代的", en:"The gallery shows contemporary art from Asia.", cn:"美术馆展出亚洲的当代艺术。"},
+    {w:"evoke", ipa:"/ɪˈvəʊk/", pos:"v.", zh:"唤起，引发", en:"The music evokes memories of childhood.", cn:"这段音乐唤起了童年的回忆。"},
+    {w:"genre", ipa:"/ˈʒɒnrə/", pos:"n.", zh:"类型，体裁", en:"Science fiction is her favourite genre.", cn:"科幻是她最喜欢的体裁。"},
+    {w:"patronize", ipa:"/ˈpætrənaɪz/", pos:"v.", zh:"赞助；以恩赐态度对待", en:"Wealthy merchants used to patronize the arts.", cn:"富商们过去常常赞助艺术。"},
+    {w:"rudimentary", ipa:"/ˌruːdɪˈmentri/", pos:"adj.", zh:"基本的，初步的", en:"He has only a rudimentary knowledge of French.", cn:"他只会一点基础的法语。"},
+    {w:"depict", ipa:"/dɪˈpɪkt/", pos:"v.", zh:"描绘，描写", en:"The mural depicts life in the village.", cn:"这幅壁画描绘了村庄的生活。"},
+    {w:"repertoire", ipa:"/ˈrepətwɑː/", pos:"n.", zh:"全部曲目，全部技能", en:"The pianist expanded her repertoire this year.", cn:"这位钢琴家今年扩充了她的演奏曲目。"},
+    {w:"encompass", ipa:"/ɪnˈkʌmpəs/", pos:"v.", zh:"包含，包围", en:"The festival encompasses music, film and theatre.", cn:"这个节庆涵盖音乐、电影和戏剧。"}
+  ]},
+  { group:"环境与自然", items:[
+    {w:"sustainable", ipa:"/səˈsteɪnəbl/", pos:"adj.", zh:"可持续的", en:"We need sustainable methods of farming.", cn:"我们需要可持续的耕作方式。"},
+    {w:"biodiversity", ipa:"/ˌbaɪəʊdaɪˈvɜːsəti/", pos:"n.", zh:"生物多样性", en:"The lake supports a rich biodiversity.", cn:"这个湖泊孕育着丰富的生物多样性。"},
+    {w:"ecosystem", ipa:"/ˈiːkəʊsɪstəm/", pos:"n.", zh:"生态系统", en:"Pollution damages the delicate ecosystem.", cn:"污染破坏了脆弱的生态系统。"},
+    {w:"depletion", ipa:"/dɪˈpliːʃn/", pos:"n.", zh:"消耗，枯竭", en:"Overfishing leads to the depletion of stocks.", cn:"过度捕捞导致鱼类资源的枯竭。"},
+    {w:"emissions", ipa:"/ɪˈmɪʃnz/", pos:"n.", zh:"排放（物）", en:"The city aims to cut carbon emissions by half.", cn:"该市的目标是减排一半的碳排放。"},
+    {w:"arable", ipa:"/ˈærəbl/", pos:"adj.", zh:"可耕种的", en:"The region has large areas of arable land.", cn:"该地区有大片可耕种的土地。"},
+    {w:"deforestation", ipa:"/diːˌfɒrɪˈsteɪʃn/", pos:"n.", zh:"森林砍伐", en:"Deforestation threatens many species.", cn:"森林砍伐威胁着许多物种。"},
+    {w:"renewable", ipa:"/rɪˈnjuːəbl/", pos:"adj.", zh:"可再生的", en:"Solar and wind are renewable sources of energy.", cn:"太阳能和风能是可再生的能源。"},
+    {w:"conservation", ipa:"/ˌkɒnsəˈveɪʃn/", pos:"n.", zh:"保护，保存", en:"Conservation of wetlands is a priority.", cn:"湿地保护是当务之急。"},
+    {w:"anthropogenic", ipa:"/ˌænθrəpəˈdʒenɪk/", pos:"adj.", zh:"人为的，人类活动引起的", en:"Much of the warming is anthropogenic.", cn:"大部分变暖是人类活动引起的。"}
+  ]},
+  { group:"人际与沟通", items:[
+    {w:"rapport", ipa:"/ræˈpɔː/", pos:"n.", zh:"融洽，和谐关系", en:"The teacher built a good rapport with students.", cn:"这位老师与学生建立了良好的融洽关系。"},
+    {w:"candid", ipa:"/ˈkændɪd/", pos:"adj.", zh:"坦率的，直言的", en:"I appreciate your candid feedback.", cn:"我很感激你坦率的反馈。"},
+    {w:"assertive", ipa:"/əˈsɜːtɪv/", pos:"adj.", zh:"果断的，自信的", en:"Being assertive helps in negotiations.", cn:"表现得果断有助于谈判。"},
+    {w:"concede", ipa:"/kənˈsiːd/", pos:"v.", zh:"承认；让步", en:"He conceded that he had been wrong.", cn:"他承认自己错了。"},
+    {w:"articulate", ipa:"/ɑːˈtɪkjuleɪt/", pos:"v.", zh:"清晰表达", en:"She articulated her views with great clarity.", cn:"她非常清晰地表达了自己的观点。"},
+    {w:"reconcile", ipa:"/ˈrekənsaɪl/", pos:"v.", zh:"调和，和解", en:"They struggled to reconcile their differences.", cn:"他们努力调和彼此的分歧。"},
+    {w:"emulate", ipa:"/ˈemjuleɪt/", pos:"v.", zh:"效仿，模仿", en:"Young athletes emulate their role models.", cn:"年轻运动员效仿他们的榜样。"},
+    {w:"discern", ipa:"/dɪˈsɜːn/", pos:"v.", zh:"辨别，察觉", en:"It is hard to discern the truth from rumours.", cn:"很难从谣言中辨别真相。"},
+    {w:"reciprocal", ipa:"/rɪˈsɪprəkl/", pos:"adj.", zh:"互惠的，相互的", en:"Friendship is based on reciprocal trust.", cn:"友谊建立在相互信任之上。"},
+    {w:"unequivocal", ipa:"/ˌʌnɪˈkwɪvəkl/", pos:"adj.", zh:"明确的，不含糊的", en:"The study offers unequivocal evidence.", cn:"这项研究提供了明确的证据。"}
+  ]},
+  { group:"抽象与哲学", items:[
+    {w:"inherent", ipa:"/ɪnˈhɪərənt/", pos:"adj.", zh:"内在的，固有的", en:"Every choice carries inherent risks.", cn:"每个选择都带有内在的风险。"},
+    {w:"arbitrary", ipa:"/ˈɑːbɪtrəri/", pos:"adj.", zh:"任意的，武断的", en:"The decision seemed arbitrary and unfair.", cn:"这个决定似乎武断而不公。"},
+    {w:"paradigm", ipa:"/ˈpærədaɪm/", pos:"n.", zh:"范式，模式", en:"The discovery caused a paradigm shift in physics.", cn:"这一发现引发了物理学的范式转变。"},
+    {w:"dichotomy", ipa:"/daɪˈkɒtəmi/", pos:"n.", zh:"二分法，对立", en:"There is a false dichotomy between work and life.", cn:"工作与生活之间存在一种虚假的二分法。"},
+    {w:"premise", ipa:"/ˈpremɪs/", pos:"n.", zh:"前提", en:"The argument rests on a questionable premise.", cn:"这个论点建立在一个可疑的前提之上。"},
+    {w:"ubiquitous", ipa:"/juːˈbɪkwɪtəs/", pos:"adj.", zh:"无处不在的", en:"Smartphones have become ubiquitous.", cn:"智能手机已变得无处不在。"},
+    {w:"transcend", ipa:"/trænˈsend/", pos:"v.", zh:"超越，胜过", en:"Great art can transcend cultural boundaries.", cn:"伟大的艺术能超越文化边界。"},
+    {w:"impetus", ipa:"/ˈɪmpɪtəs/", pos:"n.", zh:"动力，推动", en:"The crisis gave impetus to reform.", cn:"这场危机为改革提供了动力。"},
+    {w:"cumulative", ipa:"/ˈkjuːmjələtɪv/", pos:"adj.", zh:"累积的", en:"The cumulative effect of stress is harmful.", cn:"压力的累积效应是有害的。"},
+    {w:"myriad", ipa:"/ˈmɪriəd/", pos:"adj.", zh:"无数的，大量的", en:"The project faces a myriad of challenges.", cn:"这个项目面临无数的挑战。"}
+  ]},
+  { group:"批评与评价", items:[
+    {w:"spurious", ipa:"/ˈspjʊəriəs/", pos:"adj.", zh:"虚假的，伪造的", en:"The claim was based on spurious reasoning.", cn:"这一说法基于虚假的推理。"},
+    {w:"valid", ipa:"/ˈvælɪd/", pos:"adj.", zh:"有效的，合理的", en:"Her criticism of the plan is valid.", cn:"她对计划的批评是合理的。"},
+    {w:"flawed", ipa:"/flɔːd/", pos:"adj.", zh:"有缺陷的", en:"The study was flawed by a small sample.", cn:"这项研究因样本量小而存在缺陷。"},
+    {w:"rigorous", ipa:"/ˈrɪɡərəs/", pos:"adj.", zh:"严谨的，严格的", en:"The method underwent rigorous testing.", cn:"该方法经过了严谨的测试。"},
+    {w:"superficial", ipa:"/ˌsuːpəˈfɪʃl/", pos:"adj.", zh:"表面的，肤浅的", en:"His analysis was superficial and incomplete.", cn:"他的分析肤浅且不完整。"},
+    {w:"compelling", ipa:"/kəmˈpelɪŋ/", pos:"adj.", zh:"令人信服的", en:"She made a compelling case for change.", cn:"她提出了令人信服的改革理由。"},
+    {w:"contentious", ipa:"/kənˈtenʃəs/", pos:"adj.", zh:"有争议的", en:"The topic remains highly contentious.", cn:"这个话题仍然极具争议。"},
+    {w:"substantiate", ipa:"/səbˈstænʃieɪt/", pos:"v.", zh:"证实，证明", en:"Can you substantiate these allegations?", cn:"你能证实这些指控吗？"},
+    {w:"discernible", ipa:"/dɪˈsɜːnəbl/", pos:"adj.", zh:"可辨别的", en:"No discernible improvement was observed.", cn:"没有观察到可辨别的改善。"},
+    {w:"preclude", ipa:"/prɪˈkluːd/", pos:"v.", zh:"排除，阻止", en:"The agreement does not preclude further talks.", cn:"该协议并不排除进一步的谈判。"}
+  ]}
+],
+  c2words: [
+  { group:"高阶修辞", items:[
+    {w:"quintessential", ipa:"/ˌkwɪntɪˈsenʃl/", pos:"adj.", zh:"最典型的，精髓的", en:"He is the quintessential English gentleman.", cn:"他是最典型的英国绅士。"},
+    {w:"obfuscate", ipa:"/əbˈfʌskeɪt/", pos:"v.", zh:"使模糊，使困惑", en:"The report seemed designed to obfuscate the facts.", cn:"这份报告似乎是为了混淆事实而写的。"},
+    {w:"redolent", ipa:"/ˈredələnt/", pos:"adj.", zh:"令人想起的；芬芳的", en:"The poem is redolent of lost youth.", cn:"这首诗令人想起逝去的青春。"},
+    {w:"evince", ipa:"/ɪˈvɪns/", pos:"v.", zh:"表明，显示", en:"His behaviour evinced a lack of concern.", cn:"他的行为显示出缺乏关切。"},
+    {w:"perspicacious", ipa:"/ˌpɜːspɪˈkeɪʃəs/", pos:"adj.", zh:"有洞察力的", en:"She offered a perspicacious analysis of the trend.", cn:"她对这一趋势做出了有洞察力的分析。"},
+    {w:"eschew", ipa:"/ɪsˈtʃuː/", pos:"v.", zh:"避开，回避", en:"He eschews publicity and prefers privacy.", cn:"他避开公众关注，更喜欢隐私。"},
+    {w:"ineffable", ipa:"/ɪnˈefəbl/", pos:"adj.", zh:"难以言喻的", en:"The beauty of the music was ineffable.", cn:"这首音乐的美难以言喻。"},
+    {w:"sedulous", ipa:"/ˈsedjələs/", pos:"adj.", zh:"勤勉的，坚持不懈的", en:"Her sedulous research earned her recognition.", cn:"她勤勉的研究为她赢得了认可。"},
+    {w:"recondite", ipa:"/ˈrekəndaɪt/", pos:"adj.", zh:"深奥的，晦涩的", en:"The essay deals with recondite subjects.", cn:"这篇文章探讨深奥的题材。"},
+    {w:"sanguine", ipa:"/ˈsæŋɡwɪn/", pos:"adj.", zh:"乐观的；面色红润的", en:"He remains sanguine about the economy.", cn:"他对经济前景仍然乐观。"}
+  ]},
+  { group:"文学与美学", items:[
+    {w:"sycophant", ipa:"/ˈsɪkəfænt/", pos:"n.", zh:"阿谀奉承者", en:"The king was surrounded by sycophants.", cn:"国王身边围绕着阿谀奉承之徒。"},
+    {w:"pernicious", ipa:"/pəˈnɪʃəs/", pos:"adj.", zh:"有害的，恶性的", en:"Social media can have a pernicious influence.", cn:"社交媒体可能产生有害的影响。"},
+    {w:"deleterious", ipa:"/ˌdeləˈtɪəriəs/", pos:"adj.", zh:"有害的，有毒的", en:"Lack of sleep has deleterious effects.", cn:"睡眠不足会产生有害的影响。"},
+    {w:"assiduous", ipa:"/əˈsɪdjuəs/", pos:"adj.", zh:"勤勉的，专注的", en:"He was assiduous in his preparation.", cn:"他专心致志地做准备。"},
+    {w:"germane", ipa:"/dʒɜːˈmeɪn/", pos:"adj.", zh:"密切相关的，贴切的", en:"The comment is not germane to the issue.", cn:"这条评论与该问题无关。"},
+    {w:"mellifluous", ipa:"/məˈlɪfluəs/", pos:"adj.", zh:"悦耳的，流畅的", en:"She has a mellifluous voice.", cn:"她拥有一副悦耳的嗓音。"},
+    {w:"ebullient", ipa:"/ɪˈbʌliənt/", pos:"adj.", zh:"热情洋溢的", en:"The crowd was ebullient after the victory.", cn:"胜利后人群热情洋溢。"},
+    {w:"laconic", ipa:"/ləˈkɒnɪk/", pos:"adj.", zh:"简洁的，惜字如金的", en:"His laconic reply revealed little.", cn:"他惜字如金的回答几乎没透露什么。"},
+    {w:"pellucid", ipa:"/pəˈluːsɪd/", pos:"adj.", zh:"清晰的，透明的", en:"The lake was pellucid in the morning light.", cn:"在晨光中湖水清澈透明。"},
+    {w:"quixotic", ipa:"/kwɪkˈsɒtɪk/", pos:"adj.", zh:"理想化的，不切实际的", en:"His quixotic plan was doomed to fail.", cn:"他那种不切实际的计划注定失败。"}
+  ]},
+  { group:"政治与权力", items:[
+    {w:"hegemony", ipa:"/hɪˈɡeməni/", pos:"n.", zh:"霸权，主导地位", en:"The country sought regional hegemony.", cn:"该国谋求地区霸权。"},
+    {w:"demagogue", ipa:"/ˈdeməɡɒɡ/", pos:"n.", zh:"煽动者，蛊惑人心的政客", en:"The demagogue exploited public fears.", cn:"那个煽动者利用了公众的恐惧。"},
+    {w:"oligarchy", ipa:"/ˈɒlɪɡɑːki/", pos:"n.", zh:"寡头政治", en:"Critics say the nation is ruled by an oligarchy.", cn:"批评者称该国由寡头统治。"},
+    {w:"autocrat", ipa:"/ˈɔːtəkræt/", pos:"n.", zh:"独裁者", en:"The autocrat ruled with an iron hand.", cn:"那位独裁者以铁腕统治。"},
+    {w:"dissemble", ipa:"/dɪˈsembəl/", pos:"v.", zh:"掩饰，伪装", en:"He tried to dissemble his true motives.", cn:"他试图掩饰自己真实的动机。"},
+    {w:"perfidious", ipa:"/pəˈfɪdiəs/", pos:"adj.", zh:"背信弃义的", en:"The perfidious ally betrayed the coalition.", cn:"那个背信弃义的盟友背叛了联盟。"},
+    {w:"plenary", ipa:"/ˈpliːnəri/", pos:"adj.", zh:"全体参加的；完全的", en:"The plenary session opened at noon.", cn:"全体会议在中午召开。"},
+    {w:"statutory", ipa:"/ˈstætʃətri/", pos:"adj.", zh:"法定的，依法的", en:"The body has statutory powers.", cn:"该机构拥有法定权力。"},
+    {w:"promulgation", ipa:"/ˌprɒməlˈɡeɪʃn/", pos:"n.", zh:"颁布，公布", en:"The promulgation of the law took effect.", cn:"该法律的颁布已生效。"},
+    {w:"suffrage", ipa:"/ˈsʌfrɪdʒ/", pos:"n.", zh:"选举权，投票权", en:"Women won the right of suffrage in 1920.", cn:"女性在1920年赢得了选举权。"}
+  ]},
+  { group:"哲学与存在", items:[
+    {w:"ineluctable", ipa:"/ˌɪnɪˈlʌktəbl/", pos:"adj.", zh:"不可避免的，必然的", en:"Death is the ineluctable fate of all.", cn:"死亡是所有人不可避免的命运。"},
+    {w:"ontological", ipa:"/ˌɒntəˈlɒdʒɪkl/", pos:"adj.", zh:"本体论的", en:"The debate raises an ontological question.", cn:"这场辩论提出了一个本体论的问题。"},
+    {w:"epistemological", ipa:"/ɪˌpɪstiːməˈlɒdʒɪkl/", pos:"adj.", zh:"认识论的", en:"The claim faces epistemological challenges.", cn:"这一主张面临认识论的挑战。"},
+    {w:"teleological", ipa:"/ˌtelɪəˈlɒdʒɪkl/", pos:"adj.", zh:"目的论的", en:"The argument has a teleological flavour.", cn:"这个论点带有目的论的色彩。"},
+    {w:"antinomy", ipa:"/ænˈtɪnəmi/", pos:"n.", zh:"二律背反，矛盾", en:"The antinomy puzzled the philosophers.", cn:"这个二律背反令哲学家们困惑。"},
+    {w:"phenomenology", ipa:"/fəˌnɒmɪˈnɒlədʒi/", pos:"n.", zh:"现象学", en:"He studied phenomenology at university.", cn:"他在大学研究现象学。"},
+    {w:"dialectic", ipa:"/ˌdaɪəˈlektɪk/", pos:"n.", zh:"辩证（法）", en:"History unfolds through a dialectic of forces.", cn:"历史通过力量之间的辩证而展开。"},
+    {w:"aporia", ipa:"/əˈpɔːriə/", pos:"n.", zh:"疑难，困惑（哲学）", en:"The text ends in a troubling aporia.", cn:"这篇文章以一个令人不安的疑难收尾。"},
+    {w:"noumenon", ipa:"/ˈnuːmɪnɒn/", pos:"n.", zh:"本体（康德哲学）", en:"Kant distinguished noumenon from phenomenon.", cn:"康德区分了本体与现象。"},
+    {w:"immanent", ipa:"/ˈɪmənənt/", pos:"adj.", zh:"内在的，固有的", en:"The divine is immanent in all things.", cn:"神性内在于万物之中。"}
+  ]},
+  { group:"科学与严谨", items:[
+    {w:"stochastic", ipa:"/stəˈkæstɪk/", pos:"adj.", zh:"随机的", en:"The model uses a stochastic process.", cn:"该模型使用随机过程。"},
+    {w:"heuristic", ipa:"/hjʊˈrɪstɪk/", pos:"adj.", zh:"启发式的", en:"We applied a heuristic to solve it.", cn:"我们运用了一种启发式方法来解决它。"},
+    {w:"deterministic", ipa:"/dɪˌtɜːmɪˈnɪstɪk/", pos:"adj.", zh:"决定论的", en:"The system is not fully deterministic.", cn:"这个系统并非完全决定论的。"},
+    {w:"cogent", ipa:"/ˈkəʊdʒənt/", pos:"adj.", zh:"有说服力的，令人信服的", en:"He presented a cogent rebuttal.", cn:"他提出了令人信服的反驳。"},
+    {w:"axiomatic", ipa:"/ˌæksiəˈmætɪk/", pos:"adj.", zh:"公理的，自明的", en:"It is axiomatic that health matters.", cn:"健康至关重要，这是自明的。"},
+    {w:"pervasive", ipa:"/pəˈveɪsɪv/", pos:"adj.", zh:"普遍存在的", en:"Bias is pervasive in the data.", cn:"偏差在数据中是普遍存在的。"},
+    {w:"salient", ipa:"/ˈseɪliənt/", pos:"adj.", zh:"显著的，突出的", en:"The most salient feature is the colour.", cn:"最显著的特征是颜色。"},
+    {w:"stringent", ipa:"/ˈstrɪndʒənt/", pos:"adj.", zh:"严格的，严厉的", en:"The rules impose stringent limits.", cn:"这些规则施加了严格的限制。"},
+    {w:"incontrovertible", ipa:"/ˌɪnkɒntrəˈvɜːtəbl/", pos:"adj.", zh:"无可争议的", en:"The evidence is incontrovertible.", cn:"证据无可争议。"},
+    {w:"concomitant", ipa:"/kənˈkɒmɪtənt/", pos:"adj.", zh:"伴随的，同时发生的", en:"Inflation is a concomitant of growth.", cn:"通货膨胀是增长的伴随现象。"}
+  ]},
+  { group:"经济与金融", items:[
+    {w:"fiduciary", ipa:"/fɪˈdjuːʃəri/", pos:"adj.", zh:"信托的，受托的", en:"He has a fiduciary duty to the clients.", cn:"他对客户负有受托责任。"},
+    {w:"liquidity", ipa:"/lɪˈkwɪdəti/", pos:"n.", zh:"流动性", en:"The bank faced a liquidity crisis.", cn:"该银行面临流动性危机。"},
+    {w:"amortize", ipa:"/əˈmɔːtaɪz/", pos:"v.", zh:"分期偿还", en:"The loan is amortized over twenty years.", cn:"这笔贷款在二十年内分期偿还。"},
+    {w:"securitize", ipa:"/sɪˈkjʊərətaɪz/", pos:"v.", zh:"证券化", en:"Banks securitize their mortgage loans.", cn:"银行将抵押贷款证券化。"},
+    {w:"arbitrage", ipa:"/ˈɑːbɪtrɑːʒ/", pos:"n.", zh:"套利", en:"He profited from currency arbitrage.", cn:"他从货币套利中获利。"},
+    {w:"deflation", ipa:"/diːˈfleɪʃn/", pos:"n.", zh:"通货紧缩", en:"Deflation can stall economic activity.", cn:"通货紧缩会令经济活动停滞。"},
+    {w:"insolvency", ipa:"/ɪnˈsɒlvənsi/", pos:"n.", zh:"破产，无力偿债", en:"The firm slid into insolvency.", cn:"该公司陷入了破产。"},
+    {w:"bullion", ipa:"/ˈbʊliən/", pos:"n.", zh:"金条，银条", en:"The vault holds gold bullion.", cn:"金库里存放着金条。"},
+    {w:"pecuniary", ipa:"/pɪˈkjuːniəri/", pos:"adj.", zh:"金钱的，财政的", en:"The dispute was of a pecuniary nature.", cn:"这场争端属于金钱性质。"},
+    {w:"endogenous", ipa:"/enˈdɒdʒənəs/", pos:"adj.", zh:"内生的", en:"Growth was driven by endogenous factors.", cn:"增长是由内生因素推动的。"}
+  ]},
+  { group:"法律与权利", items:[
+    {w:"jurisprudence", ipa:"/ˌdʒʊərɪsˈpruːdns/", pos:"n.", zh:"法学，判例", en:"He studied jurisprudence in London.", cn:"他在伦敦研习法学。"},
+    {w:"tortious", ipa:"/ˈtɔːʃəs/", pos:"adj.", zh:"侵权行为的", en:"The act was held to be tortious.", cn:"该行为被判定构成侵权。"},
+    {w:"usurp", ipa:"/juːˈzɜːp/", pos:"v.", zh:"篡夺，侵占", en:"The general tried to usurp power.", cn:"那位将军试图篡夺权力。"},
+    {w:"covenant", ipa:"/ˈkʌvənənt/", pos:"n.", zh:"契约，盟约", en:"The lease contains a restrictive covenant.", cn:"这份租约包含一项限制性契约。"},
+    {w:"redress", ipa:"/rɪˈdres/", pos:"n.", zh:"补救，纠正", en:"The law provides redress for victims.", cn:"法律为受害者提供补救。"},
+    {w:"injunction", ipa:"/ɪnˈdʒʌŋkʃn/", pos:"n.", zh:"禁令", en:"The court issued an injunction.", cn:"法院发布了一项禁令。"},
+    {w:"malfeasance", ipa:"/mælˈfiːzns/", pos:"n.", zh:"渎职，不法行为", en:"The official was charged with malfeasance.", cn:"该官员被控渎职。"},
+    {w:"litigious", ipa:"/lɪˈtɪdʒəs/", pos:"adj.", zh:"好诉讼的；可诉讼的", en:"The firm is known to be litigious.", cn:"这家公司以好诉讼著称。"},
+    {w:"acquiesce", ipa:"/ˌækwiˈes/", pos:"v.", zh:"默许，顺从", en:"They acquiesced in the decision.", cn:"他们默许了这个决定。"},
+    {w:"estoppel", ipa:"/ɪˈstɒpl/", pos:"n.", zh:"禁止反言（法律）", en:"The doctrine of estoppel applied.", cn:"禁止反言原则适用。"}
+  ]},
+  { group:"社会批判", items:[
+    {w:"anodyne", ipa:"/ˈænədaɪn/", pos:"adj.", zh:"温和的；平淡的", en:"The speech was anodyne and forgettable.", cn:"这场演讲温和平淡，令人忘却。"},
+    {w:"jejune", ipa:"/dʒɪˈdʒuːn/", pos:"adj.", zh:"幼稚的；枯燥的", en:"His remarks were jejune and naive.", cn:"他的言论幼稚而天真。"},
+    {w:"philistine", ipa:"/ˈfɪlɪstaɪn/", pos:"n.", zh:"庸俗之人，缺乏文化素养者", en:"Critics dismissed him as a philistine.", cn:"评论家把他贬为一个庸俗之徒。"},
+    {w:"cacophony", ipa:"/kəˈkɒfəni/", pos:"n.", zh:"刺耳的声音，不和谐", en:"The street filled with a cacophony of noise.", cn:"街道上充满了刺耳的嘈杂声。"},
+    {w:"bourgeois", ipa:"/ˈbʊəʒwɑː/", pos:"adj.", zh:"中产阶级的；平庸的", en:"He mocked their bourgeois tastes.", cn:"他嘲弄他们平庸的品味。"},
+    {w:"vacuous", ipa:"/ˈvækjuəs/", pos:"adj.", zh:"空洞的，愚蠢的", en:"The interview was vacuous and shallow.", cn:"这场采访空洞而肤浅。"},
+    {w:"puerile", ipa:"/ˈpjʊəraɪl/", pos:"adj.", zh:"幼稚的，孩子气的", en:"The joke was rather puerile.", cn:"这个笑话颇为幼稚。"},
+    {w:"banal", ipa:"/bəˈnɑːl/", pos:"adj.", zh:"平庸的，陈腐的", en:"The film relies on banal clichés.", cn:"这部电影依赖于陈腐的俗套。"},
+    {w:"meretricious", ipa:"/ˌmerəˈtrɪʃəs/", pos:"adj.", zh:"华而不实的", en:"The decor was meretricious and cheap.", cn:"这装潢华而不实，显得廉价。"},
+    {w:"fatuous", ipa:"/ˈfætʃuəs/", pos:"adj.", zh:"愚蠢的，愚昧的", en:"He smiled with fatuous confidence.", cn:"他带着愚昧的自信微笑。"}
+  ]},
+  { group:"情感与心理深度", items:[
+    {w:"equanimity", ipa:"/ˌekwəˈnɪməti/", pos:"n.", zh:"平静，沉着", en:"She faced the news with equanimity.", cn:"她以平静的心态面对这一消息。"},
+    {w:"melancholy", ipa:"/ˈmelənkəli/", pos:"n.", zh:"忧郁", en:"A sense of melancholy settled over him.", cn:"一种忧郁感笼罩了他。"},
+    {w:"despondent", ipa:"/dɪˈspɒndənt/", pos:"adj.", zh:"沮丧的，失望的", en:"He grew despondent after the failure.", cn:"失败后他变得沮丧。"},
+    {w:"poignant", ipa:"/ˈpɔɪnjənt/", pos:"adj.", zh:"尖锐的，令人心酸的", en:"The letter was a poignant reminder.", cn:"这封信是一个令人心酸的提醒。"},
+    {w:"ennui", ipa:"/ɒnˈwiː/", pos:"n.", zh:"厌倦，无聊", en:"She suffered from a deep ennui.", cn:"她深受厌倦之苦。"},
+    {w:"vicarious", ipa:"/vɪˈkeəriəs/", pos:"adj.", zh:"间接体验的，替代性的", en:"We felt vicarious joy at their win.", cn:"我们因他们的胜利而感到间接的喜悦。"},
+    {w:"disconsolate", ipa:"/dɪsˈkɒnsələt/", pos:"adj.", zh:"忧郁的，无法安慰的", en:"The child was disconsolate after loss.", cn:"那个孩子在失去后郁郁寡欢。"},
+    {w:"solipsistic", ipa:"/ˌsɒlɪpˈsɪstɪk/", pos:"adj.", zh:"唯我论的", en:"His view was solipsistic and isolated.", cn:"他的观点是唯我论的，孤立的。"},
+    {w:"lugubrious", ipa:"/ləˈɡuːbriəs/", pos:"adj.", zh:"悲哀的，忧郁的", en:"He spoke in a lugubrious tone.", cn:"他以悲哀的语调说话。"},
+    {w:"wistful", ipa:"/ˈwɪstfl/", pos:"adj.", zh:"怅惘的，渴望的", en:"She gave a wistful smile at the memory.", cn:"回忆时她露出怅惘的微笑。"}
+  ]},
+  { group:"抽象与隐喻", items:[
+    {w:"nebulous", ipa:"/ˈnebjələs/", pos:"adj.", zh:"模糊的，朦胧的", en:"The plan is still nebulous and vague.", cn:"这个计划仍然模糊不清。"},
+    {w:"apotheosis", ipa:"/əˌpɒθiˈəʊsɪs/", pos:"n.", zh:"巅峰，神化", en:"The film is the apotheosis of the genre.", cn:"这部电影是该类型的巅峰之作。"},
+    {w:"synecdoche", ipa:"/sɪˈnekdəki/", pos:"n.", zh:"提喻（修辞）", en:"All hands on deck is a synecdoche.", cn:"“全员到甲板”是一种提喻。"},
+    {w:"metonymy", ipa:"/mɪˈtɒnəmi/", pos:"n.", zh:"转喻", en:"The crown is metonymy for monarchy.", cn:"“王冠”是君主制的转喻。"},
+    {w:"effulgent", ipa:"/ɪˈfʌldʒənt/", pos:"adj.", zh:"光辉灿烂的", en:"The sunrise was effulgent and golden.", cn:"日出光辉灿烂，金光四射。"},
+    {w:"liminal", ipa:"/ˈlɪmɪnl/", pos:"adj.", zh:"阈限的，过渡的", en:"The ritual marks a liminal moment.", cn:"这个仪式标志着一个过渡时刻。"},
+    {w:"palimpsest", ipa:"/ˈpælɪmpsest/", pos:"n.", zh:"重写本；层层叠加的记忆", en:"The city is a palimpsest of eras.", cn:"这座城市是各个时代的层层叠加。"},
+    {w:"numinous", ipa:"/ˈnjuːmɪnəs/", pos:"adj.", zh:"神圣的，超自然的", en:"The place had a numinous quality.", cn:"这个地方有一种神圣的特质。"},
+    {w:"inscrutable", ipa:"/ɪnˈskruːtəbl/", pos:"adj.", zh:"神秘的，难以理解的", en:"His expression was inscrutable.", cn:"他的表情难以捉摸。"},
+    {w:"exiguous", ipa:"/ɪɡˈzɪɡjuəs/", pos:"adj.", zh:"稀少的，微小的", en:"The exiguous supply ran out fast.", cn:"微少的供给很快就用尽了。"}
+  ]}
+],
   phrases: [
     {p:"break the ice", zh:"打破僵局", en:"A joke can break the ice at a meeting.", cn:"玩笑能在会议上打破僵局。"},
     {p:"keep in touch", zh:"保持联系", en:"Let's keep in touch after graduation.", cn:"毕业后我们保持联系吧。"},
@@ -939,27 +1204,30 @@ const DATA = {
     {name:"被动语态", text:"被动 be 加过分，动作承受主语身。by 引出做动作，时态跟着 be 来分。", note:"be + done，主语是动作承受者，by 引出执行者，时态由 be 体现。"}
   ],
   infinitive: {
-    intro: "不定式由「to + 动词原形」构成（如 to learn、to go），没有人称和数的变化，在句中可充当主语、宾语、定语、状语或补语。",
-    points: [
-      { title:"1. 作主语", text:"不定式可直接作主语，但英语中更常用 it 作形式主语，把真正的主语（不定式）放到句末，使句子更平衡。",
-        examples:[ {en:"To learn English well takes time.", cn:"学好英语需要时间。"}, {en:"It is important to exercise every day.", cn:"每天锻炼很重要。"} ] },
-      { title:"2. 作宾语", text:"许多动词（如 want、hope、decide、plan、learn、agree、refuse）后面接不定式作宾语。",
-        examples:[ {en:"I want to learn English.", cn:"我想学英语。"}, {en:"She decided to stay home.", cn:"她决定待在家里。"} ] },
-      { title:"3. 作目的状语", text:"不定式常用来表示目的，回答「为什么」的问题，意思上相当于 in order to（为了……）。",
-        examples:[ {en:"He went to the shop to buy milk.", cn:"他去商店买牛奶。"}, {en:"She saved money to travel abroad.", cn:"她存钱去国外旅行。"} ] },
-      { title:"4. 固定句式：It is + 形容词 + to do", text:"这是英语中最常见的不定式结构之一，it 为形式主语，真正主语是后面的不定式。",
-        examples:[ {en:"It is important to sleep well.", cn:"睡好觉很重要。"}, {en:"It is difficult to finish this today.", cn:"今天完成这个很难。"} ] },
-      { title:"5. 疑问词 + 不定式", text:"疑问词（what、how、where、when 等）加上不定式，相当于一个名词性从句，常放在动词后作宾语。",
-        examples:[ {en:"I don't know what to do.", cn:"我不知道做什么。"}, {en:"Can you tell me how to get there?", cn:"你能告诉我怎么去那里吗？"} ] },
-      { title:"6. 省略 to 的情况（裸不定式）", text:"在使役动词（make、let、have）和感官动词（see、hear、watch、feel）后面，不定式要省略 to，直接用动词原形。",
-        examples:[ {en:"My mom made me clean my room.", cn:"妈妈让我打扫房间。"}, {en:"I heard him sing a song.", cn:"我听到他唱了一首歌。"} ] }
-    ],
-    tips: [
-      "help 后 to 可省可留：She helped me (to) carry the box.（她帮我搬箱子。）两种写法都正确。",
-      "介词后接 doing，不接 to do：❌ I'm interested to read books. → ✓ I'm interested in reading books.（我对读书感兴趣。）",
-      "被动语态中 to 要还原：使役/感官动词变被动时，省略的 to 必须补回：He was made to apologize.（他被迫道歉。）"
-    ]
-  },
+  intro: "不定式由 “to + 动词原形” 构成（有时省略 to），没有人称和数的变化，在句中可充当主语、宾语、表语、定语、状语和补语等多种成分。掌握它的形式与位置，是写出地道英语句子的关键。",
+  points: [
+    { title:"1. 作主语", text:"不定式可直接放在句首作主语，表示具体的某次动作或一般性行为。为避免头重脚轻，常用 it 作形式主语，把真正的主语（不定式）移到句末。", examples:[ {en:"To learn a language takes time.", cn:"学习一门语言需要时间。"}, {en:"It is important to stay calm.", cn:"保持冷静很重要。"} ] },
+    { title:"2. 作宾语", text:"许多动词后直接跟不定式作宾语，表达“想要/决定/计划去做某事”。常见的这类动词有 hope, want, decide, plan, agree, refuse, learn, promise 等。", examples:[ {en:"She decided to study abroad.", cn:"她决定出国留学。"}, {en:"They agreed to help us.", cn:"他们同意帮助我们。"} ] },
+    { title:"3. 作目的状语", text:"不定式常用来表示目的，相当于“为了……”，可放在句首或句末；句首时常加 in order to 或 so as to 以强调目的。", examples:[ {en:"He went to London to improve his English.", cn:"他去伦敦是为了提高英语水平。"}, {en:"In order to catch the bus, she left early.", cn:"为了赶公交，她早早出发了。"} ] },
+    { title:"4. It is + 形容词 + to do", text:"这是极常见的句型，it 是形式主语，真正的主语是后面的不定式。常用形容词包括 easy, difficult, important, necessary, possible 等。", examples:[ {en:"It is difficult to pronounce this word.", cn:"这个单词很难发音。"}, {en:"It is necessary to wear a seat belt.", cn:"系安全带是必要的。"} ] },
+    { title:"5. 疑问词 + 不定式", text:"疑问词 what, where, how, when, whether 等加上不定式，构成 “疑问词 + to do” 结构，在句中作宾语或表语，相当于一个名词性从句。", examples:[ {en:"I don't know what to say.", cn:"我不知道该说什么。"}, {en:"Please tell me where to go.", cn:"请告诉我该去哪儿。"} ] },
+    { title:"6. 省略 to 的使役·感官动词", text:"在使役动词（make, let, have）和感官动词（see, hear, watch, feel）后面，作宾语补足语的不定式要省略 to。但这类句子变被动语态时，to 必须还原。", examples:[ {en:"My mother made me clean my room.", cn:"妈妈让我打扫房间。"}, {en:"I heard him sing a song.", cn:"我听见他唱了一首歌。"} ] },
+    { title:"7. 作表语", text:"不定式放在 be 动词之后作表语，用来说明主语的内容、身份或目的，常与 dream, goal, plan, aim, job 等名词主语搭配。", examples:[ {en:"My dream is to become a teacher.", cn:"我的梦想是成为一名老师。"}, {en:"The goal is to finish on time.", cn:"目标是按时完成。"} ] },
+    { title:"8. 作定语", text:"不定式放在名词后面作后置定语，表示“将要做的动作”或“用来……的事物”。常见结构如 the first/last to do, something to drink, a place to visit。", examples:[ {en:"He was the first to arrive at the party.", cn:"他是第一个到达派对的人。"}, {en:"Is there anything to drink?", cn:"有什么喝的东西吗？"} ] },
+    { title:"9. 作补语", text:"在 want, ask, tell, expect, would like 等动词后，不定式可作宾语补足语，说明宾语要发出的动作，结构为 “动词 + 宾语 + to do”。", examples:[ {en:"I want you to go with me.", cn:"我想让你和我一起去。"}, {en:"We expect him to win the race.", cn:"我们期望他赢得比赛。"} ] },
+    { title:"10. 常用目的与程度短语", text:"in order to 与 so as to 都表示目的（so as to 不能置于句首）；too...to 表示“太……而不能……”，本身含否定意味；enough...to 表示“足够……去……”。", examples:[ {en:"She whispered so as not to wake the baby.", cn:"她小声说话，以免吵醒宝宝。"}, {en:"The book is interesting enough to read twice.", cn:"这本书很有趣，值得读两遍。"} ] },
+    { title:"11. 易混：to do 还是 doing？", text:"有些动词后接 to do 与 doing 意义不同：remember/forget（doing 指做过的事，to do 指要去做的事）、stop（to do 表目的，doing 表停止该动作）、try（to do 努力做，doing 试着做）、regret（to do 遗憾要告知，doing 后悔做过）。只接 to do 的动词有 hope/want/decide/plan/agree/refuse/learn/promise；只接 doing 的有 enjoy/mind/avoid/finish/practice/suggest/consider。", examples:[ {en:"She stopped to smoke. (停下以便抽烟)", cn:"她停下来去抽烟。"}, {en:"She stopped smoking. (停止抽烟这一动作)", cn:"她停止了抽烟。"} ] },
+    { title:"12. 不定式的五种形式", text:"不定式有不同体态：一般式 to do（同时或之后发生）、进行式 to be doing（正在进行）、完成式 to have done（先于谓语发生）、被动式 to be done（被动）、完成被动式 to have been done（先于谓语的被动）。", examples:[ {en:"He is said to be doing research in Paris.", cn:"据说他正在巴黎做研究。"}, {en:"The contract is reported to have been signed.", cn:"据报道这份合同已经签署。"} ] }
+  ],
+  tips: [
+    "help 后接宾语补足语时，to 可省也可保留（help sb (to) do），美式英语中省略更常见。",
+    "介词后面只能接 doing，不能接 to do。❌ I'm interested to read books. → ✓ I'm interested in reading books.",
+    "使役动词（make/let/have）和感官动词（see/hear）后省略 to；但变被动语态时，to 必须还原：He was made to apologize.",
+    "too...to 结构本身含否定意义，表示“太……而不能……”，不要再额外加 not。",
+    "形式主语 it 不可省略，真正的主语（不定式）须放在句末：It is nice to meet you.（❌ Is nice meet you.）",
+    "like/love/hate/prefer 后接 to do 多指具体某次动作，接 doing 多指一般性习惯；两者有时可互换，但语气略有不同。"
+  ]
+},
   roots: [
   { type:"前缀", items:[
     { root:"pre-", meaning:"在前；预先", origin:"Latin", words:[
@@ -10025,9 +10293,11 @@ let flashRevealed = false;
 function getWordSet(){
   if(currentLevel === 'a2') return DATA.words;
   if(currentLevel === 'b1') return DATA.b1words;
-  return DATA.b2words;
+  if(currentLevel === 'b2') return DATA.b2words;
+  if(currentLevel === 'c1') return DATA.c1words;
+  return DATA.c2words;
 }
-function levelLabel(){ return currentLevel === 'b2' ? 'B2' : currentLevel === 'b1' ? 'B1' : 'A2'; }
+function levelLabel(){ return currentLevel === 'c2' ? 'C2' : currentLevel === 'c1' ? 'C1' : currentLevel === 'b2' ? 'B2' : currentLevel === 'b1' ? 'B1' : 'A2'; }
 
 /* ---------- WORDS (list view) ---------- */
 function masteryBtn(level, w){
@@ -10568,6 +10838,18 @@ document.querySelectorAll('.rtype-toggle button').forEach(b=>{
     b.classList.add('active');
     rootPage = 0;
     renderRoots();
+  });
+});
+
+/* ---------- ROOTS SUB-PAGE (词根词缀 / 记忆方法) ---------- */
+document.querySelectorAll('.subnav-toggle button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    if(b.classList.contains('active')) return;
+    document.querySelectorAll('.subnav-toggle button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const sub = b.dataset.sub;
+    document.getElementById('rootsBrowse').style.display = (sub === 'browse') ? '' : 'none';
+    document.getElementById('rootsMethods').style.display = (sub === 'methods') ? '' : 'none';
   });
 });
 </script>
