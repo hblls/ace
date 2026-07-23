@@ -108,7 +108,7 @@
   .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
   .mn .name{font-weight:800;color:var(--brand);margin-bottom:6px;font-size:16px}
   .mn .text{font-size:15px;background:linear-gradient(0deg,#fff,var(--brand-soft));border-left:3px solid var(--brand);
-       padding:8px 12px;border-radius:0 10px 10px 0;color:#2a3340}
+       padding:8px 12px;border-radius:0 10px 10px 0;color:#2a3340;white-space:pre-line;line-height:1.6}
   .mn .note{font-size:13px;color:var(--muted);margin-top:8px}
   /* TENSE TABLES */
   .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:18px}
@@ -122,6 +122,16 @@
   .ex-cell .en{font-style:italic}
   .ex-cell .cn{color:var(--muted);display:block;font-size:13px;margin-top:2px}
   .aspect-title{font-size:17px;font-weight:800;color:var(--teal);margin:22px 0 8px}
+  /* TENSE CARDS (compact grid) */
+  .tenses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:6px}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 1px 3px rgba(20,30,60,.05);display:flex;flex-direction:column;gap:7px}
+  .tcard .tname{font-weight:800;font-size:15px;color:#1f2937}
+  .tcard .formula{font-family:"Cambria Math",Georgia,serif;color:var(--amber);font-weight:700;font-size:14px;background:#fff8ef;border-radius:6px;padding:3px 8px;align-self:flex-start}
+  .tcard .usage{font-size:13px;color:#374151;line-height:1.45}
+  .tcard .ex{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+  .tcard .ex .en{font-style:italic;font-size:13px}
+  .tcard .ex .cn{color:var(--muted);font-size:12px}
+  .tcard .ex .spk{margin-left:2px;flex:0 0 auto}
   footer{max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted);font-size:13px;text-align:center}
   .empty{padding:30px;text-align:center;color:var(--muted)}
   /* TOOLBAR */
@@ -1190,17 +1200,97 @@ const DATA = {
     {p:"keep pace with", zh:"跟上", en:"It is hard to keep pace with change.", cn:"很难跟上变化的步伐。"}
   ],
   mnemonics: [
-    {name:"一般现在时", text:"经常反复用现在，主语三单别忘 s。时间标志 often、every，状态习惯它最爱。", note:"表习惯性动作或客观真理，第三人称单数动词加 -s/-es。"},
-    {name:"一般过去时", text:"过去的事儿用过去，规则动词加 ed。不规则的要记牢，yesterday、last 常提示。", note:"表过去发生的动作，规则动词加 -ed，须记不规则变化。"},
-    {name:"冠词 a / an", text:"泛指一个用 a/an，辅音前 a 元音 an。第一次提别忘记，特指 the 来登场。", note:"a 用于辅音音素开头的词前，an 用于元音音素开头的词前。"},
-    {name:"there be 句型", text:"there be 表存在，近主原则要记怀。桌上有书也有笔，is 近 are 远排。", note:"表“某处有某物”，be 动词与最近的主语保持一致。"},
-    {name:"宾语从句陈述语序", text:"宾从不用疑问序，陈述语序才规矩。what、who 虽疑问，主谓摆放莫颠倒。", note:"宾语从句必须用陈述句语序（主语在前、谓语在后）。"},
-    {name:"虚拟语气", text:"虚拟非真表愿望，if 从句过去忙。were、did 上场去，主句 would 来帮忙。", note:"表与事实相反或假设，if 从句用过去式，主句用 would/could/should + do。"},
-    {name:"非谓语动词", text:"句中已有主谓全，再加动词变 -ing、to 前。分词作状定补位，不定式目的常相连。", note:"句中已有谓语时，其余动词用 to do / doing / done 形式。"},
-    {name:"现在完成时", text:"完成看 have/has，加过分词莫迟疑。过去影响到现在，since、for 常相陪。", note:"have/has + done，强调过去动作对现在的影响，常与 since、for 连用。"},
-    {name:"比较级与最高级", text:"两者比较用比较，er 结尾要记牢。三者以上最高级，the 加 est 错不了。", note:"比较级用于两者，最高级用于三者及以上，多音节词用 more/most。"},
-    {name:"被动语态", text:"被动 be 加过分，动作承受主语身。by 引出做动作，时态跟着 be 来分。", note:"be + done，主语是动作承受者，by 引出执行者，时态由 be 体现。"}
-  ],
+  {
+    "name": "一般现在时",
+    "text": "经常反复用现在，主语三单别忘 s。时间标志 often、every，状态习惯它最爱。",
+    "note": "表习惯性动作或客观真理，第三人称单数动词加 -s/-es。"
+  },
+  {
+    "name": "一般过去时",
+    "text": "过去的事儿用过去，规则动词加 ed。不规则的要记牢，yesterday、last 常提示。",
+    "note": "表过去发生的动作，规则动词加 -ed，须记不规则变化。"
+  },
+  {
+    "name": "冠词 a / an",
+    "text": "泛指一个用 a/an，辅音前 a 元音 an。第一次提别忘记，特指 the 来登场。",
+    "note": "a 用于辅音音素开头的词前，an 用于元音音素开头的词前。"
+  },
+  {
+    "name": "there be 句型",
+    "text": "there be 表存在，近主原则要记怀。桌上有书也有笔，is 近 are 远排。",
+    "note": "表“某处有某物”，be 动词与最近的主语保持一致。"
+  },
+  {
+    "name": "宾语从句陈述语序",
+    "text": "宾从不用疑问序，陈述语序才规矩。what、who 虽疑问，主谓摆放莫颠倒。",
+    "note": "宾语从句必须用陈述句语序（主语在前、谓语在后）。"
+  },
+  {
+    "name": "虚拟语气",
+    "text": "虚拟非真表愿望，if 从句过去忙。were、did 上场去，主句 would 来帮忙。",
+    "note": "表与事实相反或假设，if 从句用过去式，主句用 would/could/should + do。"
+  },
+  {
+    "name": "非谓语动词",
+    "text": "句中已有主谓全，再加动词变 -ing、to 前。分词作状定补位，不定式目的常相连。",
+    "note": "句中已有谓语时，其余动词用 to do / doing / done 形式。"
+  },
+  {
+    "name": "现在完成时",
+    "text": "完成看 have/has，加过分词莫迟疑。过去影响到现在，since、for 常相陪。",
+    "note": "have/has + done，强调过去动作对现在的影响，常与 since、for 连用。"
+  },
+  {
+    "name": "比较级与最高级",
+    "text": "两者比较用比较，er 结尾要记牢。三者以上最高级，the 加 est 错不了。",
+    "note": "比较级用于两者，最高级用于三者及以上，多音节词用 more/most。"
+  },
+  {
+    "name": "被动语态",
+    "text": "被动 be 加过分，动作承受主语身。by 引出做动作，时态跟着 be 来分。",
+    "note": "be + done，主语是动作承受者，by 引出执行者，时态由 be 体现。"
+  },
+  {
+    "name": "情态动词",
+    "text": "情态动词接原形，can能may可must硬。\nshould劝告would愿，推测might看情形。",
+    "note": "can表能力、may表许可、must表必须，后均接动词原形。"
+  },
+  {
+    "name": "定语从句",
+    "text": "定语从句紧跟名，who指人儿which物清。\nthat人事物都管，逗号后which不行。",
+    "note": "who/that指人、which/that指物，修饰前面的先行词。"
+  },
+  {
+    "name": "状语从句",
+    "text": "状语从句添枝叶，when时间if条件接。\nbecause说原因，unless除非莫忽略。",
+    "note": "when表时间、if表条件、because表原因，不作句子主干。"
+  },
+  {
+    "name": "主谓一致",
+    "text": "主谓一致随主语，单数单三复数复。\n不可名词当单数，就近原则别糊涂。",
+    "note": "谓语单复数由主语决定，不可数名词按单数处理。"
+  },
+  {
+    "name": "反义疑问句",
+    "text": "反义疑问前定调，前肯后否莫忘掉。\n前否后肯是常理，时态人称要对好。",
+    "note": "前肯后否、前否后肯，疑问部分时态人称须一致。"
+  },
+  {
+    "name": "倒装句",
+    "text": "否定置首须倒装，never、seldom先上场。\nSo加助动表赞同，Neither否定也一样。",
+    "note": "否定副词置首或“So/Neither+助动词”时，主谓语部分倒装。"
+  },
+  {
+    "name": "强调句",
+    "text": "强调句型It is，被强调处that连。\n主宾状语都能强调，去框句子仍周全。",
+    "note": "It is/was + 强调部分 + that/who，删框架句意仍完整。"
+  },
+  {
+    "name": "现在分词与过去分词",
+    "text": "现在分词-ing，主动进行它表明。\n过去分词-ed，被动完成要记清。",
+    "note": "现在分词表主动/进行，过去分词表被动/完成。"
+  }
+],
   infinitive: {
   intro: "不定式由 “to + 动词原形” 构成（有时省略 to），没有人称和数的变化，在句中可充当主语、宾语、表语、定语、状语和补语等多种成分。掌握它的形式与位置，是写出地道英语句子的关键。",
   points: [
@@ -10191,25 +10281,25 @@ const DATA = {
       {name:"Simple Present 一般现在时", formula:"do / does", usage:"表示习惯性动作、客观真理或当前状态。", en:"I drink coffee every morning.", cn:"我每天早上喝咖啡。"},
       {name:"Simple Past 一般过去时", formula:"did", usage:"表示过去某个时间发生的动作或状态。", en:"She visited Beijing last year.", cn:"她去年去了北京。"},
       {name:"Simple Future 一般将来时", formula:"will + do", usage:"表示将来要发生的动作或状态。", en:"I will call you tomorrow.", cn:"我明天给你打电话。"},
-      {name:"Simple Past Future 过去将来时", formula:"would + do", usage:"表示从过去看将来要发生的动作（多见于从句）。", en:"He said he would come.", cn:"他说他会来。"}
+      {name:"Simple Past Future 过去将来时", formula:"would + do", usage:"过去视角看将来，多用于从句。", en:"He said he would come.", cn:"他说他会来。"}
     ]},
     { aspect:"进行时态", rows:[
       {name:"Present Continuous 现在进行时", formula:"am / is / are + doing", usage:"表示此刻或现阶段正在进行的动作。", en:"They are watching TV now.", cn:"他们正在看电视。"},
       {name:"Past Continuous 过去进行时", formula:"was / were + doing", usage:"表示过去某一时刻正在进行的动作。", en:"I was reading at 8 p.m.", cn:"晚上八点我在读书。"},
       {name:"Future Continuous 将来进行时", formula:"will be + doing", usage:"表示将来某一时刻正在进行的动作。", en:"This time tomorrow I will be flying.", cn:"明天此时我将在飞行途中。"},
-      {name:"Past Future Continuous 过去将来进行时", formula:"would be + doing", usage:"表示从过去看将来某时正在进行的动作。", en:"He said he would be sleeping then.", cn:"他说那时他将在睡觉。"}
+      {name:"Past Future Continuous 过去将来进行时", formula:"would be + doing", usage:"过去视角、将来某刻正在进行。", en:"He said he would be sleeping then.", cn:"他说那时他将在睡觉。"}
     ]},
     { aspect:"完成时态", rows:[
       {name:"Present Perfect 现在完成时", formula:"have / has + done", usage:"表示过去动作对现在的影响，或持续到现在。", en:"I have finished my homework.", cn:"我已完成作业。"},
       {name:"Past Perfect 过去完成时", formula:"had + done", usage:"表示在过去某动作之前已完成的动作（“过去的过去”）。", en:"She had left before I arrived.", cn:"我到之前她已离开。"},
       {name:"Future Perfect 将来完成时", formula:"will have + done", usage:"表示将来某时之前已完成的动作。", en:"I will have graduated by 2026.", cn:"到 2026 年我将已毕业。"},
-      {name:"Past Future Perfect 过去将来完成时", formula:"would have + done", usage:"表示从过去看将来某时前已完成的动作。", en:"He said he would have finished by then.", cn:"他说到那时他将已完成。"}
+      {name:"Past Future Perfect 过去将来完成时", formula:"would have + done", usage:"过去视角、将来某时前已完成。", en:"He said he would have finished by then.", cn:"他说到那时他将已完成。"}
     ]},
     { aspect:"完成进行时态", rows:[
       {name:"Present Perfect Continuous 现在完成进行时", formula:"have / has been + doing", usage:"表示动作从过去持续到现在且仍在进行。", en:"I have been waiting for an hour.", cn:"我已等了一个小时。"},
       {name:"Past Perfect Continuous 过去完成进行时", formula:"had been + doing", usage:"表示在过去某时前一直在进行中的动作。", en:"She had been working there for years.", cn:"她在那里工作了好几年。"},
       {name:"Future Perfect Continuous 将来完成进行时", formula:"will have been + doing", usage:"表示到将来某时前一直在进行中的动作。", en:"I will have been teaching for 10 years.", cn:"到时我将已教书 10 年。"},
-      {name:"Past Future Perfect Continuous 过去将来完成进行时", formula:"would have been + doing", usage:"表示从过去看将来某时前一直在进行的动作。", en:"He said he would have been waiting for two hours.", cn:"他说到那时他将已等了两小时。"}
+      {name:"Past Future Perfect Continuous 过去将来完成进行时", formula:"would have been + doing", usage:"过去视角、将来某时前一直进行。", en:"He said he would have been waiting for two hours.", cn:"他说到那时他将已等了两小时。"}
     ]}
   ],
   pos: [
@@ -10468,25 +10558,21 @@ function renderTenses(){
   const root = document.getElementById('tensesRoot');
   root.innerHTML = '';
   DATA.tenses.forEach(block=>{
-    const t = document.createElement('div'); t.className='aspect-title';
-    t.textContent = block.aspect;
-    const wrap = document.createElement('div'); wrap.className='table-wrap';
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    thead.innerHTML = '<tr><th>时态</th><th>构成公式</th><th>用法说明</th><th>例句</th></tr>';
-    const tbody = document.createElement('tbody');
+    const head = document.createElement('div'); head.className='aspect-title'; head.textContent = block.aspect;
+    const grid = document.createElement('div'); grid.className='tenses-grid';
     block.rows.forEach(r=>{
-      const tr = document.createElement('tr');
-      const exCell = `<div class="ex-cell"><span class="en">${r.en}</span><span class="cn">${r.cn}</span></div>`;
-      tr.innerHTML = `<td class="tname">${r.name}</td><td class="formula">${r.formula}</td><td class="usage">${r.usage}</td><td>${exCell}</td>`;
-      // attach speaker to example cell
-      const cell = tr.lastChild;
-      cell.appendChild(spkBtn(r.en, true));
-      tbody.appendChild(tr);
+      const c = document.createElement('div'); c.className='tcard';
+      const nm = document.createElement('div'); nm.className='tname'; nm.textContent = r.name;
+      const fm = document.createElement('div'); fm.className='formula'; fm.textContent = r.formula;
+      const us = document.createElement('div'); us.className='usage'; us.textContent = r.usage;
+      const ex = document.createElement('div'); ex.className='ex';
+      const en = document.createElement('span'); en.className='en'; en.textContent = r.en;
+      const cn = document.createElement('span'); cn.className='cn'; cn.textContent = r.cn;
+      ex.append(en, cn, spkBtn(r.en, true));
+      c.append(nm, fm, us, ex);
+      grid.appendChild(c);
     });
-    table.append(thead, tbody);
-    wrap.appendChild(table);
-    root.append(t, wrap);
+    root.append(head, grid);
   });
 }
 
