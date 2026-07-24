@@ -234,6 +234,12 @@
 .long-cn{font-size:14px;color:var(--muted);line-height:1.65}
 .long-card .pat-detail{margin-top:12px}
 .long-card .tip{margin-top:12px}
+.clause-group{margin-top:8px}
+.clause-gtitle{font-size:18px;font-weight:800;color:var(--brand);display:flex;align-items:center;gap:10px;margin:24px 0 4px}
+.clause-gno{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;font-size:14px;font-weight:800;flex:none}
+.clause-gdesc{margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.7}
+.clause-marker{margin:8px 0 0;font-size:13px;color:var(--teal);background:#eefdfb;border:1px solid #cdeee9;border-radius:8px;padding:5px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.6}
+.clause-sub .pat-detail{margin-top:8px}
 </style>
 </head>
 <body>
@@ -252,6 +258,7 @@
       <button class="menu-btn" data-view="pos">🧩 八大词性</button>
       <button class="menu-btn" data-view="patterns">🧱 五大句型</button>
       <button class="menu-btn" data-view="sentences">📐 长难句+写作</button>
+      <button class="menu-btn" data-view="clauses">🔗 从句</button>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
     <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
@@ -503,6 +510,12 @@
     <div class="sec-head"><h2>📐 长难句 + 写作句型（Sentence Analysis &amp; Writing Patterns）</h2><span class="count" id="sentCount"></span></div>
     <p class="sec-sub">长难句拆解帮你读懂「一句话里塞了什么」；写作句型给你能直接套用的高分表达。点击喇叭即可听例句发音。</p>
     <div id="sentRoot"></div>
+  </section>
+
+  <section class="view" id="clauses" data-view="clauses">
+    <div class="sec-head"><h2>🔗 从句（Clauses）</h2><span class="count" id="clauseCount"></span></div>
+    <p class="sec-sub">从句是长难句的「积木」。掌握名词性从句、定语从句、状语从句三类，你就能拆开 90% 的复杂英文句子，也能写出地道的复合句。点击喇叭听例句发音。</p>
+    <div id="clauseRoot"></div>
   </section>
 
   </main>
@@ -10658,7 +10671,187 @@ sentences: {
         tip: "however 后须接<span class='em'>形容词/副词</span>，whatever 后接名词或独立使用。"
       }
     ]
-  }};
+  },
+  clauses: {
+  intro: "从句是长难句的「积木」，掌握名词性、定语、状语三类，既能拆开复杂的英文句子，也能写出地道的复合句。点击页面上的喇叭即可听例句发音，对照中文翻译反复跟读，把语法规则变成可听懂、可运用的语言习惯。",
+  groups: [
+    {
+      no: "一",
+      name: "名词性从句",
+      desc: "在句中充当主语、宾语、表语或同位语，由 that / whether / if / wh- 词引导，相当于一个名词。",
+      subs: [
+        {
+          name: "主语从句",
+          marker: "that / whether / wh- (what, who, where, how...)",
+          note: "为避免头重脚轻，常用 it 作形式主语，把真正的主语从句后置到句尾，如 It is important that we learn English well.",
+          examples: [
+            { en: "What he said at the meeting surprised everyone.", cn: "他在会上说的话让所有人都感到惊讶。" },
+            { en: "Whether we will go camping depends on the weather.", cn: "我们是否去露营取决于天气。" }
+          ]
+        },
+        {
+          name: "宾语从句",
+          marker: "that / whether / if / wh-",
+          note: "常跟在及物动词或介词之后；注意否定转移，think、believe、suppose 等后的否定要前移到主句，即 I don't think he is right。",
+          examples: [
+            { en: "I believe that hard work always pays off.", cn: "我相信努力总会有回报。" },
+            { en: "Could you tell me where the nearest hospital is?", cn: "你能告诉我最近的医院在哪儿吗？" }
+          ]
+        },
+        {
+          name: "表语从句",
+          marker: "that / wh- / because / as if",
+          note: "位于系动词（be、seem、become 等）之后，用来说明主语是什么或怎么样，常用 that、wh- 词或 because、as if 引导。",
+          examples: [
+            { en: "The truth is that we were too late to catch the train.", cn: "事实是我们来得太晚，没赶上火车。" },
+            { en: "It seems as if it is going to rain soon.", cn: "看起来好像马上就要下雨了。" }
+          ]
+        },
+        {
+          name: "同位语从句",
+          marker: "that / whether（常跟 fact/news/idea/truth 等名词）",
+          note: "that 只起连接作用、不在从句中充当成分，用来解释 fact、news、idea、truth 等抽象名词的内容；注意与定语从句区分。",
+          examples: [
+            { en: "The news that our team won the game excited us all.", cn: "我们队赢了比赛的消息让大家兴奋不已。" },
+            { en: "I have no idea whether he will come to the party.", cn: "我不知道他会不会来参加聚会。" }
+          ]
+        }
+      ]
+    },
+    {
+      no: "二",
+      name: "定语从句",
+      desc: "修饰名词或代词（先行词），由关系词引导，紧跟在先行词之后。",
+      subs: [
+        {
+          name: "关系代词 that / which / who / whom / whose",
+          marker: "that / which / who / whom / whose",
+          note: "指代人或物，在从句中可作主语、宾语或定语；that 不能用于非限制性定语从句，也不可紧接在介词之后。",
+          examples: [
+            { en: "The book that you lent me is really interesting.", cn: "你借给我的那本书真的很有趣。" },
+            { en: "The girl whose hair is very long is my cousin.", cn: "那个头发很长的女孩是我的表妹。" }
+          ]
+        },
+        {
+          name: "关系副词 when / where / why",
+          marker: "when / where / why",
+          note: "when、where、why 分别等于介词加 which，在从句中作时间、地点或原因状语，修饰前面的先行词。",
+          examples: [
+            { en: "I still remember the day when we first met.", cn: "我仍然记得我们第一次见面的那一天。" },
+            { en: "This is the place where I was born and grew up.", cn: "这就是我出生并长大的地方。" }
+          ]
+        },
+        {
+          name: "限制性与非限制性定语从句",
+          marker: "逗号分隔（非限制性）",
+          note: "非限制性定语从句只是补充说明，删去不影响句意，用逗号隔开且不能用 that；限制性从句则限定先行词、不可省略。",
+          examples: [
+            { en: "My brother, who lives in Beijing, is a doctor.", cn: "我的哥哥住在北京，他是一名医生。" },
+            { en: "The house which we bought last year needs painting.", cn: "我们去年买的那栋房子需要粉刷了。" }
+          ]
+        },
+        {
+          name: "介词 + which / whom",
+          marker: "介词 + which / whom",
+          note: "用于正式语体，介词由固定搭配或从句动词决定；whom 指人、which 指物，置于从句开头作状语。",
+          examples: [
+            { en: "The man with whom she traveled is her old friend.", cn: "和她一起旅行的那个男人是她的老朋友。" },
+            { en: "This is the library in which I spent my childhood.", cn: "这就是我度过童年的那座图书馆。" }
+          ]
+        }
+      ]
+    },
+    {
+      no: "三",
+      name: "状语从句",
+      desc: "在句中作状语，修饰主句动作，表示时间、原因、条件、让步等逻辑关系。",
+      subs: [
+        {
+          name: "时间状语从句",
+          marker: "when / while / as / before / after / until / since",
+          note: "由 when、while、as 等引导，表示主句动作发生的时间；when 强调点、while 强调段、as 强调同步进行。",
+          examples: [
+            { en: "I was reading a book when the phone rang.", cn: "电话响的时候我正在读书。" },
+            { en: "We should strike while the iron is hot.", cn: "我们应该趁热打铁。" }
+          ]
+        },
+        {
+          name: "原因状语从句",
+          marker: "because / since / as / now that",
+          note: "由 because、since、as 等引导；because 语气最强、回答 why，since 和 as 多用于已知原因、常置于句首。",
+          examples: [
+            { en: "He failed the exam because he didn't study hard.", cn: "他考试没及格，因为他没有努力学习。" },
+            { en: "Since it was raining, we stayed at home.", cn: "既然在下雨，我们就待在家里了。" }
+          ]
+        },
+        {
+          name: "条件状语从句",
+          marker: "if / unless / as long as / provided that",
+          note: "由 if、unless 等引导，表示主句成立的前提；遵循主将从现，即主句将来时、从句用一般现在时。",
+          examples: [
+            { en: "If it rains tomorrow, we will cancel the trip.", cn: "如果明天下雨，我们就取消这次出行。" },
+            { en: "You won't pass the test unless you practice every day.", cn: "除非你每天练习，否则你通不过考试。" }
+          ]
+        },
+        {
+          name: "让步状语从句",
+          marker: "although / though / even if / whatever",
+          note: "由 although、though、even if 等引导，表示「虽然……但是」的转折；注意英语中 although 不与 but 连用。",
+          examples: [
+            { en: "Although he is young, he knows a lot about history.", cn: "虽然他年纪小，但他懂很多历史知识。" },
+            { en: "We will go hiking even if it is windy.", cn: "即使刮风我们也要去徒步。" }
+          ]
+        },
+        {
+          name: "目的状语从句",
+          marker: "so that / in order that / in case",
+          note: "由 so that、in order that 等引导，表示做某事的目的；从句中常带 can、may、will 等情态动词。",
+          examples: [
+            { en: "She saved money so that she could buy a new laptop.", cn: "她攒钱是为了能买一台新笔记本电脑。" },
+            { en: "Speak loudly in order that everyone can hear you.", cn: "大声点儿说，以便每个人都能听见你。" }
+          ]
+        },
+        {
+          name: "结果状语从句",
+          marker: "so...that / such...that",
+          note: "由 so...that 或 such...that 引导，表示主句动作导致的结果；so 接形容词或副词，such 接名词。",
+          examples: [
+            { en: "The box is so heavy that I cannot lift it.", cn: "这个箱子太重了，我搬不动。" },
+            { en: "He is such a kind person that everyone likes him.", cn: "他是如此善良的一个人，以至于大家都喜欢他。" }
+          ]
+        },
+        {
+          name: "比较状语从句",
+          marker: "than / as...as",
+          note: "由 than 或 as...as 引导，表示两者比较；as...as 用于同级比较，否定可用 not as/so...as。",
+          examples: [
+            { en: "This problem is more difficult than I expected.", cn: "这个问题比我预想的要难。" },
+            { en: "She sings as beautifully as a professional singer.", cn: "她唱得和专业歌手一样好听。" }
+          ]
+        },
+        {
+          name: "方式状语从句",
+          marker: "as / as if / as though",
+          note: "由 as、as if、as though 引导，表示动作的方式或样子；as if 后有时需用虚拟语气。",
+          examples: [
+            { en: "You should do as your teacher tells you.", cn: "你应该按照老师说的去做。" },
+            { en: "He talks as if he knew everything.", cn: "他说话的样子好像他什么都知道。" }
+          ]
+        },
+        {
+          name: "地点状语从句",
+          marker: "where / wherever",
+          note: "由 where、wherever 引导，表示主句动作发生的地点；wherever 相当于 no matter where，强调任意地点。",
+          examples: [
+            { en: "Put the book where it was.", cn: "把书放回它原来的地方。" },
+            { en: "Wherever you go, I will follow you.", cn: "无论你去哪里，我都会跟着你。" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+};
 
 /* ---------- SPEECH ---------- */
 let voice = null;
@@ -11264,6 +11457,44 @@ function renderSentences(){
   document.getElementById('sentCount').textContent = DATA.sentences.long.length + ' 句长难句 + ' + DATA.sentences.writing.length + ' 个写作句型';
 }
 
+function renderClauses(){
+  const root = document.getElementById('clauseRoot');
+  if(!root) return;
+  root.innerHTML = '';
+  const intro = document.createElement('p'); intro.className = 'inf-intro'; intro.textContent = DATA.clauses.intro;
+  root.appendChild(intro);
+  const wrap = document.createElement('div');
+  DATA.clauses.groups.forEach(g=>{
+    const grp = document.createElement('div'); grp.className = 'clause-group';
+    const gt = document.createElement('h3'); gt.className = 'clause-gtitle';
+    gt.innerHTML = '<span class="clause-gno">' + g.no + '</span>' + g.name;
+    grp.appendChild(gt);
+    if(g.desc){ const gd = document.createElement('p'); gd.className = 'clause-gdesc'; gd.textContent = g.desc; grp.appendChild(gd); }
+    const grid = document.createElement('div'); grid.className = 'mgrid';
+    g.subs.forEach(s=>{
+      const c = document.createElement('div'); c.className = 'card pat-card clause-sub';
+      const head = document.createElement('div'); head.className = 'name'; head.textContent = s.name;
+      c.appendChild(head);
+      if(s.marker){ const mk = document.createElement('div'); mk.className = 'clause-marker'; mk.textContent = '引导词：' + s.marker; c.appendChild(mk); }
+      if(s.note){ const nd = document.createElement('div'); nd.className = 'pat-detail'; nd.textContent = s.note; c.appendChild(nd); }
+      const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
+      (s.examples||[]).forEach(ex=>{
+        const exdiv = document.createElement('div'); exdiv.className = 'ex';
+        const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
+        const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
+        exdiv.append(en, cn, spkBtn(ex.en, true));
+        exWrap.appendChild(exdiv);
+      });
+      c.appendChild(exWrap);
+      grid.appendChild(c);
+    });
+    grp.appendChild(grid);
+    wrap.appendChild(grp);
+  });
+  root.appendChild(wrap);
+  document.getElementById('clauseCount').textContent = DATA.clauses.groups.length + ' 大类 · ' + DATA.clauses.groups.reduce((a,g)=>a+g.subs.length,0) + ' 个从句';
+}
+
 function showView(v){
   if(v !== 'words' && flashMode) exitFlash();
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
@@ -11281,6 +11512,7 @@ renderIrregular();
 renderPos();
 renderPatterns();
 renderSentences();
+renderClauses();
 showView('words');
 
 document.getElementById('wordSearch').addEventListener('input', ()=>{
