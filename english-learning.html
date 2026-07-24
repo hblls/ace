@@ -229,6 +229,11 @@
 .tip .em{color:#a9791a;font-weight:700}
 .pat-detail{margin:10px 0 0;padding:10px 12px;background:#f5f9ff;border:1px solid #dde9fb;border-radius:10px;font-size:13.5px;line-height:1.85;color:#36486a;white-space:pre-line}
 .pat-detail .em{color:var(--brand);font-weight:700}
+.long-en{font-size:16px;font-weight:700;color:var(--ink);line-height:1.65;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.long-en .spk{margin-left:0}
+.long-cn{font-size:14px;color:var(--muted);line-height:1.65}
+.long-card .pat-detail{margin-top:12px}
+.long-card .tip{margin-top:12px}
 </style>
 </head>
 <body>
@@ -246,6 +251,7 @@
       <button class="menu-btn" data-view="irregular">📖 动词大全</button>
       <button class="menu-btn" data-view="pos">🧩 八大词性</button>
       <button class="menu-btn" data-view="patterns">🧱 五大句型</button>
+      <button class="menu-btn" data-view="sentences">📐 长难句+写作</button>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
     <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
@@ -491,6 +497,12 @@
     <div class="sec-head"><h2>🧱 五大基本句型（Sentence Patterns）</h2><span class="count" id="patCount"></span></div>
     <p class="sec-sub">无论多长多复杂的英语句子，基本骨架都逃不出这 5 种结构。先认结构，再把单词填进去。</p>
     <div class="mgrid" id="patRoot"></div>
+  </section>
+
+  <section class="view" id="sentences" data-view="sentences">
+    <div class="sec-head"><h2>📐 长难句 + 写作句型（Sentence Analysis &amp; Writing Patterns）</h2><span class="count" id="sentCount"></span></div>
+    <p class="sec-sub">长难句拆解帮你读懂「一句话里塞了什么」；写作句型给你能直接套用的高分表达。点击喇叭即可听例句发音。</p>
+    <div id="sentRoot"></div>
   </section>
 
   </main>
@@ -10423,7 +10435,230 @@ const DATA = {
   { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", detail:"这个句型一次传递「给谁什么东西」——两个宾语分别回答「给谁」（间接宾语，通常是人）和「给什么」（直接宾语，通常是物）。\n识别信号：动词后紧跟两个名词，且能把它们重排成「动词 + 物 + to/for + 人」（give a book to me）仍通顺，就是双宾。\n易错点：不是所有「动词 + 两名词」都是双宾；像 put the book on the desk 中 on the desk 是地点状语并非宾语，整句仍是 ② 的扩展，别误判。\n练习窍门：记住能带双宾的核心动词（give / send / show / tell / buy / make），造句时先想「人」再想「物」，顺序固定为「人前物后」。", tip:"判断：动词后接两个宾语，间接宾语（人）在前、直接宾语（物）在后。常见动词：give / send / buy / show / tell。验证法：可加 to / for → give a book to me。", examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"}, {en:"Mom cooked us a meal.", cn:"妈妈给我们做了一顿饭。"}, {en:"Please send me an email.", cn:"请给我发一封邮件。"}, {en:"They awarded the winner a medal.", cn:"他们给获胜者颁发了一枚奖牌。"} ] },
   { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", detail:"这个句型表达「让宾语成为或变成某种状态」——宾语补足语补充说明宾语「是什么、怎么样」，缺了它句子意思就不完整。\n识别信号：动词后的名词或形容词是「说明宾语」的，可理解为「宾语 + 是 + 补语」；试着在宾语和补语间加 to be（make him to be captain）能讲通，多半就是宾补。\n易错点：最易和 ④ 双宾混淆——双宾的两个都是「东西」（人、物都是名词，彼此独立），而宾补和宾语是「一体两面」（补语描述宾语本身）。\n练习窍门：常带宾补的动词有 make / let / keep / call / find，造句时想「我让某物或某人变成、处于什么状态」，再补上名词或形容词作补语。", tip:"易混提醒：④ 与 ⑤ 的区别——④ 双宾两个都是“东西”（人、物都是名词），⑤ 的宾补说明宾语“是什么 / 怎么样”（名词或形容词）。口诀：<span class='em'>双宾能加 to / for，宾补要加 to be 才通</span>。", examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"}, {en:"We call him Uncle Wang.", cn:"我们叫他王叔叔。"}, {en:"She kept the room tidy.", cn:"她把房间保持得很整洁。"}, {en:"The news left me speechless.", cn:"这个消息让我说不出话来。"} ] }
 ]
-};
+,
+sentences: {
+    intro: "本板块攻克两大难关：长难句拆解，带你看清一句话里塞了主语、从句、非谓语还是插入语，读懂不再靠蒙；写作句型则提供可直接套用的高分表达，让作文从写对走向写好。",
+    long: [
+      {
+        en: "The research that was published in the journal, which focuses on climate change, revealed a pattern that had not been noticed by earlier scientists.",
+        cn: "发表在专注于气候变化的期刊上的研究，揭示了一种早期科学家未曾注意到的规律。",
+        parse: "主干：主句 S+V+O（The research revealed a pattern）。\n定语从句一：that 引导，修饰 research，交代研究来源。\n定语从句二：which 引导非限制性从句，修饰 journal。\n定语从句三：that 引导，修饰 pattern，三层嵌套。",
+        key: "难点在于 that、which、that 三层定语从句逐层包裹，找准每个关系词所修饰的先行词是拆解关键。"
+      },
+      {
+        en: "Having finished their dinner, the family gathered around the fireplace, laughing and sharing stories about the days that had long passed.",
+        cn: "吃完晚饭后，一家人围坐在壁炉旁，笑着分享那些早已逝去岁月的往事。",
+        parse: "主干：主句 S+V（the family gathered）。\n分词作状语：Having finished 现在分词完成式表时间，先于主句发生。\n伴随状语：laughing and sharing 现在分词表伴随。\n定语从句：that 引导，修饰 days。",
+        key: "亮点在 Having finished 用完成式分词，清晰表达先吃完再围坐的时间先后。"
+      },
+      {
+        en: "Never before had the small town witnessed such a spectacle as when the sky was lit up by fireworks that exploded in brilliant colors.",
+        cn: "这座小镇从未见过如此壮观的景象，就像天空被五彩缤纷绽放的烟火照亮的那一刻。",
+        parse: "主干：部分倒装句（Never before had the town witnessed...）。\n否定副词前置触发 had 提到主语前。\nas 引导比较状语从句。\n定语从句：that 引导，修饰 fireworks。",
+        key: "Never before 位于句首触发部分倒装，had 必须前移至主语 the town 之前。"
+      },
+      {
+        en: "It was not until she left the country that she realized how much the quiet streets of her hometown had meant to her all along.",
+        cn: "直到她离开祖国，才意识到故乡那安静的街道一直以来对她意义多么重大。",
+        parse: "主干：强调句 It was... that...，强调时间状语 not until she left。\n强调句型不改变原句语序与时态。\n宾语从句：how much... 作 realized 的宾语。\n定语从句：that 引导，修饰 streets。",
+        key: "It was... that 强调 not until 时间状语，注意强调句去掉框架后原句依然完整。"
+      },
+      {
+        en: "It is universally acknowledged that a person who masters a foreign language opens doors to cultures and opportunities that would otherwise remain closed.",
+        cn: "人们普遍认为，掌握一门外语的人，便打开了通往那些原本封闭的文化与机遇的大门。",
+        parse: "主干：It is acknowledged that...，It 为形式主语。\n真正主语：that 引导的主语从句（a person opens doors）。\n定语从句一：who 引导，修饰 person。\n定语从句二：that 引导，修饰 cultures and opportunities。",
+        key: "It 作形式主语承载 that 引导的长主语从句，避免头重脚轻，是学术写作常见开局。"
+      },
+      {
+        en: "Had the engineer paid attention to the warning signals, the disaster that claimed hundreds of lives might have been avoided entirely.",
+        cn: "倘若那位工程师留意过那些警示信号，这场夺去数百人生命的灾难或许就能被完全避免。",
+        parse: "主干：虚拟条件句加主句（the disaster might have been avoided）。\n省略 if 的倒装虚拟：Had the engineer paid... 相当于 If he had paid。\n定语从句：that 引导，修饰 disaster。\n含蓄虚拟：otherwise 暗示与事实相反。",
+        key: "Had 加过去分词置于句首，是 if 虚拟条件句的省略倒装，表与过去事实相反。"
+      },
+      {
+        en: "The river carved the canyon over millions of years, the wind polished its walls, and the rain slowly filled the basin with minerals that glittered in the sun.",
+        cn: "河流用数百万年雕琢出峡谷，风打磨着它的崖壁，雨水则缓缓将盆地填满，矿物流光溢彩于阳光下。",
+        parse: "主干：三个并列分句由 and 连接（river carved；wind polished；rain filled）。\n并列结构：主语各异而谓语平行，节奏感强。\n定语从句：that 引导，修饰 minerals，收束全句。",
+        key: "三组分句主语不同却谓语平行，并列长句靠 and 推进，适合描写类写作。"
+      },
+      {
+        en: "The new policy, according to the minister, will, if it is approved by parliament, significantly reduce the number of students who drop out of school.",
+        cn: "据部长称，这项新政策若获议会批准，将显著减少辍学学生的人数。",
+        parse: "主干：主句 S+V+O（The policy will reduce the number）。\n插入语一：according to the minister 补充信息来源。\n插入语二：if it is approved by parliament 条件插入，打断主谓。\n定语从句：who 引导，修饰 students。",
+        key: "两个插入语把主谓 policy will reduce 拆开，读时要先抓主干再回填补充信息。"
+      }
+    ],
+    writing: [
+      {
+        no: "①",
+        formula: "Not only ... , but ... also ...",
+        name: "不仅……而且……（倒装强调）",
+        usage: "用于并列递进两件事，not only 置句首时前半句需部分倒装，后半句正常语序，增强语气。",
+        examples: [
+          { en: "Not only did he finish the work, but he also helped his colleagues with theirs.", cn: "他不仅完成了自己的工作，还帮同事做了他们的。" },
+          { en: "Not only is reading widely important, but writing regularly is also essential.", cn: "广泛阅读很重要，坚持写作同样必不可少。" },
+          { en: "Not only did the storm destroy the crops, but it also washed away the bridge.", cn: "风暴不仅毁了庄稼，还冲垮了桥梁。" }
+        ],
+        tip: "Not only 在句首时，其后的助动词须<span class='em'>前移倒装</span>，but 之后不倒装。"
+      },
+      {
+        no: "②",
+        formula: "It is/was ... that ...",
+        name: "强调句型",
+        usage: "用来突出句子中的某一成分（主语、宾语、状语），去掉 It is...that 框架，原句结构依然完整。",
+        examples: [
+          { en: "It was the teacher who encouraged me to keep writing every day.", cn: "正是那位老师鼓励我坚持每天写作。" },
+          { en: "It was in Paris that she first saw the painting that changed her life.", cn: "正是在巴黎，她第一次看到那幅改变她一生的画作。" },
+          { en: "It is hard work that turns a dream into reality.", cn: "正是努力把梦想变成现实。" }
+        ],
+        tip: "强调人时可用 who，强调物或状语用 <span class='em'>that</span>，且不可换用 which。"
+      },
+      {
+        no: "③",
+        formula: "There is no doubt that ...",
+        name: "毫无疑问……",
+        usage: "用于引出公认事实或强烈观点，that 引导同位语从句，是议论文强有力的开头。",
+        examples: [
+          { en: "There is no doubt that technology has changed the way we learn languages.", cn: "毫无疑问，科技已经改变了我们学习语言的方式。" },
+          { en: "There is no doubt that regular exercise improves both body and mind.", cn: "毫无疑问，规律运动有益于身心。" },
+          { en: "There is no doubt that climate change poses a threat to us all.", cn: "毫无疑问，气候变化对我们所有人都构成威胁。" }
+        ],
+        tip: "that 后接完整句子作<span class='em'>同位语从句</span>，不可用 whether 替换。"
+      },
+      {
+        no: "④",
+        formula: "Only by ... + 助动词 + 主语 + 动词 ...",
+        name: "Only 状语前置倒装",
+        usage: "Only 修饰方式或时间状语置于句首，主句须部分倒装，强调达成结果的唯一途径。",
+        examples: [
+          { en: "Only by practicing speaking every day can you become fluent in English.", cn: "只有每天练习口语，你才能说一口流利英语。" },
+          { en: "Only by working together were they able to finish the project on time.", cn: "只有通力合作，他们才按时完成项目。" },
+          { en: "Only by reading the original text can we truly understand the author.", cn: "只有阅读原著，我们才能真正理解作者。" }
+        ],
+        tip: "Only 后须接<span class='em'>状语</span>才倒装；若接主语则不倒装。"
+      },
+      {
+        no: "⑤",
+        formula: "So + 形容词/副词 + that ...",
+        name: "如此……以至于……",
+        usage: "表示程度导致的结果，so 后接形容词或副词，that 引导结果状语从句。",
+        examples: [
+          { en: "The lecture was so fascinating that none of the students wanted to leave.", cn: "那场讲座如此精彩，没有一个学生想离开。" },
+          { en: "He spoke so quickly that I could hardly follow what he said.", cn: "他说得如此之快，我几乎跟不上。" },
+          { en: "The mountain was so steep that the climbers had to turn back.", cn: "山势如此陡峭，登山者不得不折返。" }
+        ],
+        tip: "so 后接<span class='em'>形/副</span>；若接名词则用 such，二者不可混用。"
+      },
+      {
+        no: "⑥",
+        formula: "The reason why ... is that ...",
+        name: "……的原因是……",
+        usage: "用于解释现象成因，why 引导定语从句修饰 reason，that 引导表语从句说明原因。",
+        examples: [
+          { en: "The reason why he failed is that he never prepared for the exam.", cn: "他失败的原因是他从未备考。" },
+          { en: "The reason why the river dried up is that there had been no rain for months.", cn: "河流干涸的原因是数月无雨。" },
+          { en: "The reason why she left early is that she had to catch the last train.", cn: "她提前离开的原因是她要赶末班火车。" }
+        ],
+        tip: "表语从句用 <span class='em'>that</span> 引导，避免误写成 the reason is because。"
+      },
+      {
+        no: "⑦",
+        formula: "What ... is ... / What matters is ...",
+        name: "What 名词性从句作主/表语",
+        usage: "what 相当于 the thing(s) that，引导从句充当主语或表语，是高级写作的高频结构。",
+        examples: [
+          { en: "What impressed me most was his calm attitude under pressure.", cn: "最让我印象深刻的是他在压力下冷静的态度。" },
+          { en: "What we need now is a practical plan, not empty promises.", cn: "我们现在需要的是切实可行的计划，而非空话。" },
+          { en: "What surprised everyone was how quickly the team recovered.", cn: "令所有人惊讶的是，团队恢复得如此之快。" }
+        ],
+        tip: "what 本身含先行词与关系词，等于<span class='em'>the thing that</span>，勿再加 which。"
+      },
+      {
+        no: "⑧",
+        formula: "As is known to all, ...",
+        name: "众所周知……",
+        usage: "as 引导非限制性定语从句指代主句内容，置于句首引出共识，提升作文正式度。",
+        examples: [
+          { en: "As is known to all, practice is the only way to master a skill.", cn: "众所周知，练习是掌握技能的唯一途径。" },
+          { en: "As is known to all, a balanced diet is vital to good health.", cn: "众所周知，均衡膳食对健康至关重要。" },
+          { en: "As is known to all, reading broadens our horizons and enriches our minds.", cn: "众所周知，阅读拓宽视野、丰富心灵。" }
+        ],
+        tip: "as 指代<span class='em'>整个主句</span>，可置于句首、句中或句末。"
+      },
+      {
+        no: "⑨",
+        formula: "It is universally acknowledged that ...",
+        name: "人们普遍认为……",
+        usage: "It 作形式主语，that 引导真正的主语从句，用于引出公认观点，是议论文经典开头。",
+        examples: [
+          { en: "It is universally acknowledged that education is the foundation of a nation's future.", cn: "人们普遍认为，教育是国家未来的基石。" },
+          { en: "It is universally acknowledged that honesty is the best policy.", cn: "人们普遍认为，诚实为上策。" },
+          { en: "It is universally acknowledged that early childhood shapes a person's character.", cn: "人们普遍认为，童年早期塑造人的性格。" }
+        ],
+        tip: "It 是<span class='em'>形式主语</span>，是后面 that 引导从句的占位。"
+      },
+      {
+        no: "⑩",
+        formula: "With + 宾语 + 宾语补足语（形/副/doing/done/介词短语）",
+        name: "With 复合结构作状语",
+        usage: "with 带宾语及其补语，紧凑表达伴随、原因或条件，让句子更简洁高级。",
+        examples: [
+          { en: "With the exam approaching, students are busy reviewing their notes.", cn: "随着考试临近，学生们正忙着复习笔记。" },
+          { en: "With all the lights on, the house looked warm and inviting.", cn: "所有的灯都亮着，房子显得温暖而诱人。" },
+          { en: "With the problem solved, the team finally relaxed.", cn: "问题解决了，团队终于放松下来。" }
+        ],
+        tip: "宾语与补语间是<span class='em'>主谓/动宾</span>逻辑，主动用 doing，被动用 done。"
+      },
+      {
+        no: "⑪",
+        formula: "... rather than ...",
+        name: "而不是……（对比选择）",
+        usage: "连接两个平行成分，表示选择前者而非后者，常用于表达立场或建议。",
+        examples: [
+          { en: "We should face the problem rather than avoid it.", cn: "我们应当面对问题，而不是回避它。" },
+          { en: "He chose to apologize rather than argue with his friend.", cn: "他选择道歉，而不是和朋友争吵。" },
+          { en: "The government invested in education rather than in weapons.", cn: "政府把钱投在教育而非武器上。" }
+        ],
+        tip: "rather than 前后成分须<span class='em'>平行对称</span>，词性时态保持一致。"
+      },
+      {
+        no: "⑫",
+        formula: "Not until ... + 助动词 + 主语 + 动词 ...",
+        name: "直到……才（倒装）",
+        usage: "not until 置于句首引出时间，主句须部分倒装，强调某事发生之晚。",
+        examples: [
+          { en: "Not until midnight did the noise finally stop.", cn: "直到午夜，喧闹声才终于停歇。" },
+          { en: "Not until he apologized did she forgive him.", cn: "直到他道歉，她才原谅他。" },
+          { en: "Not until the rain stopped could we go outside.", cn: "直到雨停，我们才出门。" }
+        ],
+        tip: "not until 在句首，主句<span class='em'>助动词前移</span>构成部分倒装。"
+      },
+      {
+        no: "⑬",
+        formula: "A is to B what C is to D",
+        name: "A 之于 B 犹如 C 之于 D",
+        usage: "用类比阐明关系，what 引导表语从句，是极显文采的修辞句型。",
+        examples: [
+          { en: "Reading is to the mind what exercise is to the body.", cn: "阅读之于心灵，犹如运动之于身体。" },
+          { en: "A key is to a lock what a password is to an account.", cn: "钥匙之于锁，犹如密码之于账户。" },
+          { en: "The heart is to the body what the sun is to the earth.", cn: "心脏之于身体，犹如太阳之于地球。" }
+        ],
+        tip: "what 在此意为<span class='em'>正如</span>，连接前后两组对等关系。"
+      },
+      {
+        no: "⑭",
+        formula: "Whatever/However/Wherever ... , 主句",
+        name: "无论……（wh-ever 让步）",
+        usage: "wh-ever 词引导让步状语从句，表示无论……，语气坚定，适合结尾升华。",
+        examples: [
+          { en: "Whatever difficulties we meet, we should never give up our dreams.", cn: "无论遇到什么困难，我们都不该放弃梦想。" },
+          { en: "However busy you are, you should spare time to read.", cn: "无论多忙，你都应抽时间阅读。" },
+          { en: "Wherever you go, keep an open mind and a kind heart.", cn: "无论去哪里，都请保持开放的心与善良。" }
+        ],
+        tip: "however 后须接<span class='em'>形容词/副词</span>，whatever 后接名词或独立使用。"
+      }
+    ]
+  }};
 
 /* ---------- SPEECH ---------- */
 let voice = null;
@@ -10970,6 +11205,65 @@ function renderPatterns(){
   });
 }
 
+function renderSentences(){
+  const root = document.getElementById('sentRoot');
+  if(!root) return;
+  root.innerHTML = '';
+  const intro = document.createElement('p'); intro.className = 'inf-intro'; intro.textContent = DATA.sentences.intro;
+  root.appendChild(intro);
+
+  const lt = document.createElement('div'); lt.className = 'aspect-title'; lt.textContent = '① 长难句拆解（看高手如何把信息塞进一句话）';
+  root.appendChild(lt);
+  const lg = document.createElement('div'); lg.className = 'mgrid';
+  DATA.sentences.long.forEach(s=>{
+    const c = document.createElement('div'); c.className = 'card long-card';
+    const en = document.createElement('div'); en.className = 'long-en';
+    const ent = document.createElement('span'); ent.textContent = s.en + ' ';
+    en.append(ent, spkBtn(s.en, true));
+    const cn = document.createElement('div'); cn.className = 'long-cn'; cn.textContent = s.cn;
+    const parse = document.createElement('div'); parse.className = 'pat-detail';
+    const ph = document.createElement('span'); ph.className = 'tip-h'; ph.textContent = '结构拆解';
+    const pb = document.createElement('div'); pb.textContent = s.parse;
+    parse.append(ph, pb);
+    const key = document.createElement('div'); key.className = 'tip';
+    const kh = document.createElement('span'); kh.className = 'tip-h'; kh.textContent = '难点 / 亮点';
+    const kb = document.createElement('div'); kb.textContent = s.key;
+    key.append(kh, kb);
+    c.append(en, cn, parse, key);
+    lg.appendChild(c);
+  });
+  root.appendChild(lg);
+
+  const wt = document.createElement('div'); wt.className = 'aspect-title'; wt.textContent = '② 写作高分句型（背下直接套用）';
+  root.appendChild(wt);
+  const wg = document.createElement('div'); wg.className = 'mgrid';
+  DATA.sentences.writing.forEach(p=>{
+    const c = document.createElement('div'); c.className = 'card pat-card';
+    const head = document.createElement('div'); head.className = 'name';
+    head.innerHTML = p.no + ' <span class="formula">' + p.formula + '</span><span class="en-name">' + p.name + '</span>';
+    const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.usage;
+    c.append(head, txt);
+    if(p.tip){
+      const tip = document.createElement('div'); tip.className = 'tip';
+      const th = document.createElement('span'); th.className = 'tip-h'; th.textContent = '用法提示';
+      const tb = document.createElement('div'); tb.innerHTML = p.tip;
+      tip.append(th, tb); c.appendChild(tip);
+    }
+    const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
+    p.examples.forEach(ex=>{
+      const exdiv = document.createElement('div'); exdiv.className = 'ex';
+      const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
+      const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
+      exdiv.append(en, cn, spkBtn(ex.en, true));
+      exWrap.appendChild(exdiv);
+    });
+    c.appendChild(exWrap);
+    wg.appendChild(c);
+  });
+  root.appendChild(wg);
+  document.getElementById('sentCount').textContent = DATA.sentences.long.length + ' 句长难句 + ' + DATA.sentences.writing.length + ' 个写作句型';
+}
+
 function showView(v){
   if(v !== 'words' && flashMode) exitFlash();
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
@@ -10986,6 +11280,7 @@ renderRoots();
 renderIrregular();
 renderPos();
 renderPatterns();
+renderSentences();
 showView('words');
 
 document.getElementById('wordSearch').addEventListener('input', ()=>{
