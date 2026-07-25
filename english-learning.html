@@ -224,6 +224,29 @@
   .irr-base{font-weight:800;color:var(--brand)}
   .irr-zh{color:var(--muted)}
   .irr-group-row td{background:#f1ece1;font-weight:800;color:var(--ink);padding:7px 12px;font-size:13px}
+  /* 动词大全 · 手机端改为卡片列表（响应式表格） */
+  .app.is-mobile .irr-table,
+  .app.is-mobile .irr-table tbody,
+  .app.is-mobile .irr-table tr,
+  .app.is-mobile .irr-table td{display:block;width:100%}
+  .app.is-mobile .irr-table{overflow:visible}
+  .app.is-mobile .irr-table thead{display:none}
+  .app.is-mobile .irr-table tr:not(.irr-group-row){
+    border:1px solid var(--line);border-radius:10px;margin:0 0 10px;padding:4px 12px;
+    background:var(--card);box-shadow:var(--shadow)}
+  .app.is-mobile .irr-table tr:not(.irr-group-row) td{
+    border-top:none;padding:7px 0;display:flex;justify-content:space-between;
+    align-items:center;gap:12px;text-align:right}
+  .app.is-mobile .irr-table tr:not(.irr-group-row) td::before{
+    content:attr(data-label);color:var(--muted);font-size:12px;font-weight:600;
+    text-align:left;flex:0 0 auto;margin-right:auto}
+  .app.is-mobile .irr-table td.irr-base{font-size:17px;font-weight:800;color:var(--brand)}
+  .app.is-mobile .irr-table td.irr-zh{color:var(--muted)}
+  .app.is-mobile .irr-table td:last-child{padding-top:2px;justify-content:flex-end}
+  .app.is-mobile .irr-table td:last-child::before{display:none}
+  .app.is-mobile .irr-table .irr-group-row{margin:16px 0 8px;border-radius:8px}
+  .app.is-mobile .irr-select{max-width:none;width:100%}
+  .app.is-mobile .search input{flex:1 1 100%}
   /* MOBILE MODE TOGGLE BUTTON */
   .mode-toggle{margin:10px 4px 2px;width:100%;border:1px solid var(--line);background:var(--bg);color:var(--brand);
     border-radius:999px;padding:8px 12px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s}
@@ -11461,10 +11484,10 @@ function renderIrregular(){
       const hd = document.createElement('td'); hd.colSpan = 5; hd.textContent = g.group; hr.appendChild(hd); tb.appendChild(hr); prevGroup = g.group;
     }
     const tr = document.createElement('tr');
-    const c1 = document.createElement('td'); c1.className = 'irr-base'; c1.textContent = it.base;
-    const c2 = document.createElement('td'); c2.textContent = it.past;
-    const c3 = document.createElement('td'); c3.textContent = it.pp;
-    const c4 = document.createElement('td'); c4.className = 'irr-zh'; c4.textContent = it.zh;
+    const c1 = document.createElement('td'); c1.className = 'irr-base'; c1.textContent = it.base; c1.dataset.label = '原形';
+    const c2 = document.createElement('td'); c2.textContent = it.past; c2.dataset.label = '过去式';
+    const c3 = document.createElement('td'); c3.textContent = it.pp; c3.dataset.label = '过去分词';
+    const c4 = document.createElement('td'); c4.className = 'irr-zh'; c4.textContent = it.zh; c4.dataset.label = '释义';
     const c5 = document.createElement('td'); c5.appendChild(spkBtn(it.base));
     tr.append(c1, c2, c3, c4, c5); tb.appendChild(tr);
   });
