@@ -66,7 +66,7 @@
     .content{padding:14px 14px 50px}
   }
   /* MOBILE MODE TOGGLE */
-  .app.is-mobile{flex-direction:column;max-width:430px;margin:0 auto;min-height:100vh;
+  .app.is-mobile{flex-direction:column;max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden;
     box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(33,30,25,.10)}
   .app.is-mobile .sidebar{position:static;height:auto;width:100%;flex-direction:row;flex-wrap:wrap;align-items:center;
     border-right:none;border-bottom:1px solid var(--line);padding:10px}
@@ -228,7 +228,7 @@
   .app.is-mobile .irr-table,
   .app.is-mobile .irr-table tbody,
   .app.is-mobile .irr-table tr,
-  .app.is-mobile .irr-table td{display:block;width:100%}
+  .app.is-mobile .irr-table td{display:block;width:100%;min-width:0}
   .app.is-mobile .irr-table{overflow:visible}
   .app.is-mobile .irr-table thead{display:none}
   .app.is-mobile .irr-table tr:not(.irr-group-row){
