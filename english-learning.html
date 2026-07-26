@@ -30,7 +30,7 @@
   }
   a{color:inherit;text-decoration:none}
   /* 标题统一衬线（报刊书卷感） */
-  h1,h2,.logo-name,.group-title,.aspect-title,.clause-gtitle,.prep-gtitle,.flash-word,.tname,.root-form,.mn .name,.pos-card .abbr,.tip-h,.clue-h,.mn-ex-label,.guide-h{font-family:var(--font-serif)}
+  h1,h2,.logo-name,.group-title,.aspect-title,.clause-gtitle,.flash-word,.tname,.root-form,.mn .name,.pos-card .abbr,.tip-h,.clue-h,.mn-ex-label,.guide-h{font-family:var(--font-serif)}
   /* LAYOUT */
   .app{display:flex;min-height:100vh;align-items:flex-start}
   .sidebar{
@@ -277,16 +277,6 @@
   .clause-gdesc{margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.7}
   .clause-marker{margin:8px 0 0;font-size:13px;color:var(--teal);background:var(--brand-soft);border:1px solid #cfe3df;border-radius:8px;padding:5px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.6}
   .clause-sub .pat-detail{margin-top:8px}
-  /* PREP PHRASES (介词短语) */
-  .prep-group{margin-top:24px}
-  .prep-gtitle{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
-  .prep-gtitle .badge{background:var(--brand);color:#fff;border-radius:5px;padding:3px 12px;font-size:14px;font-weight:700;letter-spacing:.3px}
-  .prep-gdesc{color:var(--muted);font-size:13px;margin:0 0 12px}
-  .prep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
-  .prep-item{display:flex;flex-direction:column;gap:6px}
-  .prep-p{font-size:16px;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:6px}
-  .prep-zh{font-size:13.5px;color:var(--ink)}
-  .prep-item .inf-ex{margin-top:2px}
 
 
 /* ---------- 新概念英语 NCE2 ---------- */
@@ -345,7 +335,6 @@
     <div class="menu">
       <button class="menu-btn active" data-view="words">📘 基础词</button>
       <button class="menu-btn" data-view="phrases">📗 重点短语</button>
-      <button class="menu-btn" data-view="prepphrases">🧷 介词短语</button>
       <button class="menu-btn" data-view="nce2">📚 新概念英语</button>
       <button class="menu-btn" data-view="egiu">📘 English Grammar in Use</button>
       <button class="menu-btn" data-view="phrbank">🗂 英语词组大全</button>
@@ -621,11 +610,6 @@
     <div id="clauseRoot"></div>
   </section>
 
-  <section class="view" id="prepphrases" data-view="prepphrases">
-    <div class="sec-head"><h2>🧷 介词短语（Prepositional Phrases）</h2><span class="count" id="prepCount"></span></div>
-    <p class="sec-sub" id="prepIntro"></p>
-    <div id="prepRoot"></div>
-  </section>
 
   <section class="view" id="phrbank" data-view="phrbank">
     <div class="sec-head"><h2>🗂 英语词组大全</h2><span class="count" id="phrCount"></span></div>
@@ -11106,115 +11090,6 @@ sentences: {
     }
   ]
 }
-,
-  prepphrases: {
-  intro: "介词短语由介词加名词或代词构成，是英语里最高频的固定搭配单位。从 in time 到 out of control，掌握它们能让口语和写作更地道。点击喇叭即可听标准发音，边听边记，事半功倍。",
-  groups: [
-    {
-      prep: "in",
-      name: "in 短语",
-      desc: "表示在……之内、处于某种状态或时间范围。",
-      items: [
-        { p:"in one sitting", zh:"一口气；一次坐定（不间断地做完）", en:"He finished the whole novel in one sitting.", cn:"他一口气读完了整本小说。" },
-        { p:"in advance", zh:"提前；预先", en:"Please let me know in advance if you cannot come.", cn:"如果你不能来，请提前告诉我。" },
-        { p:"in public", zh:"公开地；在众人面前", en:"She does not like to speak in public.", cn:"她不喜欢在公开场合讲话。" },
-        { p:"in vain", zh:"徒劳；白白地", en:"All our efforts to save him were in vain.", cn:"我们为救他所做的一切努力都白费了。" },
-        { p:"in person", zh:"亲自；本人", en:"You must apply for the visa in person.", cn:"你必须亲自申请签证。" },
-        { p:"in time", zh:"及时；迟早", en:"We arrived at the station just in time.", cn:"我们刚好及时赶到车站。" }
-      ]
-    },
-    {
-      prep: "on",
-      name: "on 短语",
-      desc: "表示在……之上、关于或某种特定的方式。",
-      items: [
-        { p:"on purpose", zh:"故意；有意地", en:"I think he broke the cup on purpose.", cn:"我觉得他是故意打碎那个杯子的。" },
-        { p:"on average", zh:"平均而言", en:"On average, people check their phones eighty times a day.", cn:"平均而言，人们每天查看手机八十次。" },
-        { p:"on behalf of", zh:"代表……", en:"I would like to thank you on behalf of the whole team.", cn:"我代表整个团队向你表示感谢。" },
-        { p:"on the whole", zh:"总的来说；大体上", en:"On the whole, the project was a great success.", cn:"总的来说，这个项目是非常成功的。" },
-        { p:"on display", zh:"展出；陈列", en:"Her paintings are on display in the local museum.", cn:"她的画作正在当地博物馆展出。" },
-        { p:"on sale", zh:"打折出售；廉价卖", en:"These shoes are on sale this week only.", cn:"这双鞋仅在本周打折出售。" }
-      ]
-    },
-    {
-      prep: "at",
-      name: "at 短语",
-      desc: "表示在某点、某种状态或程度。",
-      items: [
-        { p:"at once", zh:"立刻；马上", en:"Please call the doctor at once.", cn:"请立刻叫医生来。" },
-        { p:"at a loss", zh:"不知所措；困惑", en:"I was at a loss for words when he asked me that.", cn:"他那样问我时，我一时语塞、不知所措。" },
-        { p:"at first sight", zh:"乍一看；一见（就）", en:"They fell in love with each other at first sight.", cn:"他们俩一见钟情。" },
-        { p:"at stake", zh:"处于危险中；得失攸关", en:"Thousands of jobs are at stake.", cn:"成千上万的工作岗位岌岌可危。" },
-        { p:"at length", zh:"详细地；终于", en:"He explained his plan to us at length.", cn:"他向我们详细地解释了那个计划。" },
-        { p:"at times", zh:"有时；偶尔", en:"The work is difficult at times, but very rewarding.", cn:"这工作有时很难，但很有回报。" }
-      ]
-    },
-    {
-      prep: "by",
-      name: "by 短语",
-      desc: "表示方式、手段或程度上的强调。",
-      items: [
-        { p:"by chance", zh:"偶然；碰巧", en:"We met by chance at the airport yesterday.", cn:"我们昨天在机场偶然相遇。" },
-        { p:"by no means", zh:"决不；绝不", en:"This is by no means an easy task to finish.", cn:"这绝不是一件容易完成的任务。" },
-        { p:"by all means", zh:"务必；当然可以", en:"By all means, take your time and think it over.", cn:"务必慢慢来，好好考虑清楚。" },
-        { p:"by far", zh:"……得多；显然", en:"This is by far the best movie of the year.", cn:"这是今年迄今为止最好看的电影。" },
-        { p:"by oneself", zh:"独自；靠自己", en:"The child learned to swim all by himself.", cn:"那个孩子自己学会了游泳。" },
-        { p:"by the way", zh:"顺便说一句；顺便问", en:"By the way, have you met our new neighbor yet?", cn:"顺便问一句，你见过我们的新邻居了吗？" }
-      ]
-    },
-    {
-      prep: "for",
-      name: "for 短语",
-      desc: "表示目的、原因、期限或举例。",
-      items: [
-        { p:"for good", zh:"永久地；一劳永逸地", en:"He left the country for good last year.", cn:"他去年永远地离开了那个国家。" },
-        { p:"for the sake of", zh:"为了……起见；看在……份上", en:"We should save energy for the sake of our planet.", cn:"为了我们的地球，我们应该节约能源。" },
-        { p:"for instance", zh:"例如；比如", en:"Many fruits are rich in vitamin C, for instance, oranges.", cn:"许多水果富含维生素 C，例如橙子。" },
-        { p:"for the time being", zh:"暂时；眼下", en:"We will stay here for the time being.", cn:"我们暂时会留在这里。" },
-        { p:"for free", zh:"免费地", en:"The museum offers guided tours for free.", cn:"这家博物馆提供免费的讲解服务。" },
-        { p:"for the most part", zh:"大体上；多半", en:"The students, for the most part, did well on the test.", cn:"学生们大体上都考得不错。" }
-      ]
-    },
-    {
-      prep: "with",
-      name: "with 短语",
-      desc: "表示伴随、关于或方式态度。",
-      items: [
-        { p:"with regard to", zh:"关于；至于", en:"With regard to your question, I have no comment.", cn:"关于你的问题，我无可奉告。" },
-        { p:"with the exception of", zh:"除……之外", en:"All the students passed, with the exception of Tom.", cn:"除了汤姆，所有学生都及格了。" },
-        { p:"with ease", zh:"轻松地；毫不费力地", en:"She solved the difficult problem with ease.", cn:"她轻而易举地解决了那个难题。" },
-        { p:"with a view to", zh:"意在；为了", en:"He is studying abroad with a view to mastering English.", cn:"他出国留学是为了掌握英语。" },
-        { p:"with open arms", zh:"热情地；张开双臂", en:"They welcomed the guests with open arms.", cn:"他们热情地欢迎了客人们。" },
-        { p:"with pleasure", zh:"乐意地；很高兴", en:"I will help you with pleasure anytime.", cn:"我很乐意随时帮助你。" }
-      ]
-    },
-    {
-      prep: "out of",
-      name: "out of 短语",
-      desc: "表示在……之外、失去或脱离某种状态。",
-      items: [
-        { p:"out of date", zh:"过时的；陈旧的", en:"This map is out of date and no longer useful.", cn:"这张地图已经过时，不再有用了。" },
-        { p:"out of order", zh:"出故障；不按顺序", en:"The elevator is out of order again today.", cn:"电梯今天又出故障了。" },
-        { p:"out of breath", zh:"上气不接下气；气喘吁吁", en:"He was out of breath after running upstairs.", cn:"他跑上楼后上气不接下气。" },
-        { p:"out of control", zh:"失控的", en:"The fire quickly got out of control.", cn:"火势迅速失控了。" },
-        { p:"out of the question", zh:"不可能的；绝不可行", en:"Going out in this storm is out of the question.", cn:"这种暴风雨天出门根本不可能。" },
-        { p:"out of work", zh:"失业的；没有工作", en:"He has been out of work for six long months.", cn:"他已经失业六个月了。" }
-      ]
-    },
-    {
-      prep: "from / about / of",
-      name: "from / about / of 短语",
-      desc: "覆盖来源、临近与属性类的常见介词短语。",
-      items: [
-        { p:"from time to time", zh:"时而；不时", en:"I still think of her from time to time.", cn:"我仍不时想起她。" },
-        { p:"from scratch", zh:"从零开始；白手起家", en:"They built the whole business from scratch.", cn:"他们从零开始创立了这个企业。" },
-        { p:"about to", zh:"正要；即将", en:"I was about to call you when you arrived.", cn:"你到的时候我正要给你打电话。" },
-        { p:"of course", zh:"当然；自然", en:"Of course you can borrow my favorite book.", cn:"你当然可以借我最喜欢的书。" },
-        { p:"of great importance", zh:"很重要的；至关重要的", en:"Punctuality is of great importance in this job.", cn:"在这份工作中，守时非常重要。" }
-      ]
-    }
-  ]
-}
 };
 
 /* ---------- SPEECH ---------- */
@@ -11859,44 +11734,6 @@ function renderClauses(){
   document.getElementById('clauseCount').textContent = DATA.clauses.groups.length + ' 大类 · ' + DATA.clauses.groups.reduce((a,g)=>a+g.subs.length,0) + ' 个从句';
 }
 
-function renderPrep(){
-  const d = DATA.prepphrases;
-  const root = document.getElementById('prepRoot');
-  if(!root) return;
-  root.innerHTML = '';
-  const intro = document.getElementById('prepIntro');
-  if(intro) intro.textContent = d.intro;
-  const wrap = document.createElement('div');
-  (d.groups||[]).forEach(g=>{
-    const grp = document.createElement('div'); grp.className = 'prep-group';
-    const gt = document.createElement('div'); gt.className = 'prep-gtitle';
-    gt.innerHTML = '<span class="badge">' + g.prep + '</span><span>' + (g.name||'') + '</span>';
-    grp.appendChild(gt);
-    if(g.desc){ const gd = document.createElement('p'); gd.className = 'prep-gdesc'; gd.textContent = g.desc; grp.appendChild(gd); }
-    const grid = document.createElement('div'); grid.className = 'prep-grid';
-    (g.items||[]).forEach(it=>{
-      const c = document.createElement('div'); c.className = 'card prep-item';
-      const pp = document.createElement('div'); pp.className = 'prep-p';
-      const pspan = document.createElement('span'); pspan.textContent = it.p;
-      pp.append(pspan, spkBtn(it.p, true));
-      const zh = document.createElement('div'); zh.className = 'prep-zh'; zh.textContent = it.zh;
-      const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
-      const exdiv = document.createElement('div'); exdiv.className = 'ex';
-      const en = document.createElement('span'); en.className = 'en'; en.textContent = it.en + ' ';
-      const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = it.cn;
-      exdiv.append(en, cn, spkBtn(it.en, true));
-      exWrap.appendChild(exdiv);
-      c.append(pp, zh, exWrap);
-      grid.appendChild(c);
-    });
-    grp.appendChild(grid);
-    wrap.appendChild(grp);
-  });
-  root.appendChild(wrap);
-  const total = (d.groups||[]).reduce((a,g)=>a + (g.items?g.items.length:0), 0);
-  const pc = document.getElementById('prepCount');
-  if(pc) pc.textContent = total + ' 个介词短语';
-}
 
 function renderNce2(){
   var d = DATA.nce2;
@@ -12093,7 +11930,6 @@ renderPos();
 renderPatterns();
 renderSentences();
 renderClauses();
-renderPrep();
 renderNce2();
 renderEgiu();
 renderPhrBank();
