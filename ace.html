@@ -659,7 +659,6 @@
 
   <section class="view" id="phrbank" data-view="phrbank">
     <div class="sec-head"><h2>⑤ 英语词组大全</h2><span class="count" id="phrCount"></span></div>
-    <p class="sec-intro" id="phrIntro"></p>
     <div id="phrRoot"></div>
   </section>
 
@@ -11970,7 +11969,6 @@ function drawPhrGrid(){
 }
 function renderPhrBank(){
   var root = document.getElementById("phrRoot"); if(!root) return;
-  var intro = document.getElementById("phrIntro"); if(intro) intro.textContent = PHRBANK.intro;
   var cnt = document.getElementById("phrCount");
   if(cnt) cnt.textContent = PHRBANK.groups.reduce(function(a, g){ return a + (g.items ? g.items.length : 0); }, 0) + " 条 · " + PHRBANK.groups.length + " 大类";
   if(!root.dataset.built){
