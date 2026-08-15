@@ -172,7 +172,7 @@
   .ex-cell .cn{color:var(--muted);display:block;font-size:13px;margin-top:2px}
   .aspect-title{font-size:17px;font-weight:800;color:var(--teal);margin:22px 0 8px}
   /* TENSE CARDS */
-  .tenses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:6px}
+  .tenses-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:6px}
   .tcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px}
   .tcard .tname{font-weight:800;font-size:15px;color:var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:8px}
   .tcard .aspect-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:1px 8px;flex:0 0 auto}
@@ -352,6 +352,7 @@
 .phr-card .inf-ex{margin-top:10px}
 .phr-cat{margin-top:8px;font-size:11px;color:var(--muted);background:var(--brand-soft);display:inline-block;padding:2px 8px;border-radius:6px}
 @media(max-width:640px){.phr-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.tenses-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
