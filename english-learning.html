@@ -46,11 +46,18 @@
   .side-seal .st{color:var(--vermilion)}
   .menu{display:flex;flex-direction:column;gap:4px}
   .menu-btn{
-    text-align:left;border:none;background:transparent;padding:11px 14px;border-radius:10px;
+    display:flex;align-items:center;gap:10px;text-align:left;border:none;background:transparent;padding:9px 12px;border-radius:10px;
     font-size:15px;font-weight:700;color:var(--muted);cursor:pointer;transition:.15s;width:100%;border-left:3px solid transparent;
   }
   .menu-btn:hover{background:var(--brand-soft);color:var(--brand)}
   .menu-btn.active{background:var(--brand-soft);color:var(--brand);border-left:3px solid var(--brand)}
+  .menu-group{display:flex;flex-direction:column;gap:4px;margin-top:10px}
+  .menu-group:first-child{margin-top:0}
+  .menu-label{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--teal);padding:2px 14px 3px}
+  .mi-no{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 4px;border-radius:6px;background:var(--card);border:1px solid var(--line);color:var(--brand);font-size:11px;font-weight:800;font-family:var(--font-serif);letter-spacing:.5px}
+  .mi-tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .menu-btn:hover .mi-no{border-color:var(--brand)}
+  .menu-btn.active .mi-no{background:var(--brand);color:#fff;border-color:var(--brand)}
   .side-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:10px 6px;line-height:1.6}
   .content{flex:1;min-width:0;max-width:1000px;padding:20px 26px 60px;margin:0 auto}
   @media (max-width:760px){
@@ -333,21 +340,29 @@
     </div>
     <div class="side-seal"><span class="st">印</span><span>IHSAN STUDIO</span></div>
     <div class="menu">
-      <button class="menu-btn active" data-view="words">📘 基础词</button>
-      <button class="menu-btn" data-view="phrases">📗 重点短语</button>
-      <button class="menu-btn" data-view="nce2">📚 新概念英语</button>
-      <button class="menu-btn" data-view="egiu">📘 English Grammar in Use</button>
-      <button class="menu-btn" data-view="phrbank">🗂 英语词组大全</button>
-
-      <button class="menu-btn" data-view="mnemonics">📙 语法口诀</button>
-      <button class="menu-btn" data-view="tenses">📊 16 时态</button>
-      <button class="menu-btn" data-view="infinitive">∞ 不定式</button>
-      <button class="menu-btn" data-view="roots">🌱 英语词根</button>
-      <button class="menu-btn" data-view="irregular">📖 动词大全</button>
-      <button class="menu-btn" data-view="pos">🧩 八大词性</button>
-      <button class="menu-btn" data-view="patterns">🧱 五大句型</button>
-      <button class="menu-btn" data-view="sentences">📐 长难句+写作</button>
-      <button class="menu-btn" data-view="clauses">🔗 从句</button>
+      <div class="menu-group">
+        <div class="menu-label">词汇与短语</div>
+        <button class="menu-btn active" data-view="words"><span class="mi-no">01</span><span class="mi-tx">📘 基础词</span></button>
+        <button class="menu-btn" data-view="phrases"><span class="mi-no">02</span><span class="mi-tx">📗 重点短语</span></button>
+        <button class="menu-btn" data-view="phrbank"><span class="mi-no">03</span><span class="mi-tx">🗂 英语词组大全</span></button>
+      </div>
+      <div class="menu-group">
+        <div class="menu-label">教材</div>
+        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">📚 新概念英语</span></button>
+        <button class="menu-btn" data-view="egiu"><span class="mi-no">05</span><span class="mi-tx">📘 English Grammar in Use</span></button>
+      </div>
+      <div class="menu-group">
+        <div class="menu-label">语法体系</div>
+        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">06</span><span class="mi-tx">📙 语法口诀</span></button>
+        <button class="menu-btn" data-view="tenses"><span class="mi-no">07</span><span class="mi-tx">📊 16 时态</span></button>
+        <button class="menu-btn" data-view="infinitive"><span class="mi-no">08</span><span class="mi-tx">∞ 不定式</span></button>
+        <button class="menu-btn" data-view="irregular"><span class="mi-no">09</span><span class="mi-tx">📖 动词大全</span></button>
+        <button class="menu-btn" data-view="pos"><span class="mi-no">10</span><span class="mi-tx">🧩 八大词性</span></button>
+        <button class="menu-btn" data-view="patterns"><span class="mi-no">11</span><span class="mi-tx">🧱 五大句型</span></button>
+        <button class="menu-btn" data-view="sentences"><span class="mi-no">12</span><span class="mi-tx">📐 长难句+写作</span></button>
+        <button class="menu-btn" data-view="clauses"><span class="mi-no">13</span><span class="mi-tx">🔗 从句</span></button>
+        <button class="menu-btn" data-view="roots"><span class="mi-no">14</span><span class="mi-tx">🌱 英语词根</span></button>
+      </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
     <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
@@ -398,22 +413,22 @@
   </section>
 
   <section class="view" id="mnemonics" data-view="mnemonics">
-    <div class="sec-head"><h2>③ 语法口诀</h2><span class="count" id="mnCount"></span></div>
+    <div class="sec-head"><h2>⑥ 语法口诀</h2><span class="count" id="mnCount"></span></div>
     <div class="mgrid" id="mnRoot"></div>
   </section>
 
   <section class="view" id="tenses" data-view="tenses">
-    <div class="sec-head"><h2>④ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
+    <div class="sec-head"><h2>⑦ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
     <div id="tensesRoot"></div>
   </section>
 
   <section class="view" id="infinitive" data-view="infinitive">
-    <div class="sec-head"><h2>⑤ 不定式（Infinitive · to do）</h2><span class="count" id="infCount"></span></div>
+    <div class="sec-head"><h2>⑧ 不定式（Infinitive · to do）</h2><span class="count" id="infCount"></span></div>
     <div id="infRoot"></div>
   </section>
 
     <section class="view" id="roots" data-view="roots">
-    <div class="sec-head"><h2>🌱 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
+    <div class="sec-head"><h2>⑭ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
     <div class="toolbar">
       <div class="level-toggle subnav-toggle">
         <button data-sub="browse" class="active">🔍 词根词缀</button>
@@ -577,7 +592,7 @@
   </section>
 
   <section class="view" id="irregular" data-view="irregular">
-    <div class="sec-head"><h2>📖 动词大全（Verbs）</h2><span class="count" id="irrCount"></span></div>
+    <div class="sec-head"><h2>⑨ 动词大全（Verbs）</h2><span class="count" id="irrCount"></span></div>
     <p class="sec-sub">含「不规则动词」（按变化规律分组）+「常用规则动词」（高频规则动词，过去式/过去分词 = 原形 + ed）。</p>
     <div class="toolbar">
       <select id="irrGroup" class="irr-select"></select>
@@ -587,43 +602,43 @@
   </section>
 
   <section class="view" id="pos" data-view="pos">
-    <div class="sec-head"><h2>🧩 八大词性（Parts of Speech）</h2><span class="count" id="posCount"></span></div>
+    <div class="sec-head"><h2>⑩ 八大词性（Parts of Speech）</h2><span class="count" id="posCount"></span></div>
     <p class="sec-sub">英语单词按语法功能分为八大词性。先搞清楚每个词性"做什么用、长什么样"，是看懂句子结构、学好语法的第一步。</p>
     <div class="mgrid" id="posRoot"></div>
   </section>
 
   <section class="view" id="patterns" data-view="patterns">
-    <div class="sec-head"><h2>🧱 五大基本句型（Sentence Patterns）</h2><span class="count" id="patCount"></span></div>
+    <div class="sec-head"><h2>⑪ 五大基本句型（Sentence Patterns）</h2><span class="count" id="patCount"></span></div>
     <p class="sec-sub">无论多长多复杂的英语句子，基本骨架都逃不出这 5 种结构。先认结构，再把单词填进去。</p>
     <div class="mgrid" id="patRoot"></div>
   </section>
 
   <section class="view" id="sentences" data-view="sentences">
-    <div class="sec-head"><h2>📐 长难句 + 写作句型（Sentence Analysis &amp; Writing Patterns）</h2><span class="count" id="sentCount"></span></div>
+    <div class="sec-head"><h2>⑫ 长难句 + 写作句型（Sentence Analysis &amp; Writing Patterns）</h2><span class="count" id="sentCount"></span></div>
     <p class="sec-sub">长难句拆解帮你读懂「一句话里塞了什么」；写作句型给你能直接套用的高分表达。点击喇叭即可听例句发音。</p>
     <div id="sentRoot"></div>
   </section>
 
   <section class="view" id="clauses" data-view="clauses">
-    <div class="sec-head"><h2>🔗 从句（Clauses）</h2><span class="count" id="clauseCount"></span></div>
+    <div class="sec-head"><h2>⑬ 从句（Clauses）</h2><span class="count" id="clauseCount"></span></div>
     <p class="sec-sub">从句是长难句的「积木」。掌握名词性从句、定语从句、状语从句三类，你就能拆开 90% 的复杂英文句子，也能写出地道的复合句。点击喇叭听例句发音。</p>
     <div id="clauseRoot"></div>
   </section>
 
 
   <section class="view" id="phrbank" data-view="phrbank">
-    <div class="sec-head"><h2>🗂 英语词组大全</h2><span class="count" id="phrCount"></span></div>
+    <div class="sec-head"><h2>⑤ 英语词组大全</h2><span class="count" id="phrCount"></span></div>
     <p class="sec-intro" id="phrIntro"></p>
     <div id="phrRoot"></div>
   </section>
 
   <section class="view" id="nce2" data-view="nce2">
-    <div class="sec-head"><h2>📚 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
+    <div class="sec-head"><h2>③ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
     <p class="sec-sub" id="nce2Intro"></p>
     <div id="nce2Root"></div>
   </section>
   <section class="view" id="egiu" data-view="egiu">
-    <div class="sec-head"><h2>📘 English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
+    <div class="sec-head"><h2>④ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
     <p class="sec-sub" id="egiuIntro"></p>
     <div id="egiuRoot"></div>
   </section>
