@@ -67,7 +67,7 @@
   .app.is-mobile{flex-direction:column;max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden;
     box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(33,30,25,.10)}
   /* ===== MOBILE NAV：全屏菜单 + 右上角收起按钮（真实手机 & 手机版共用） ===== */
-  .menu-fab,.menu-close{display:none}
+  .menu-close{display:none}
   .app.mobile-nav{position:relative}
   .app.mobile-nav .sidebar{
     position:fixed;inset:0;z-index:50;width:100%;height:100%;
@@ -87,13 +87,6 @@
   .app.mobile-nav .mode-toggle{width:100%;margin:18px 0 0;font-size:15px;padding:12px}
   .app.mobile-nav .content{display:none}
   .app.mobile-nav:not(.menu-open) .content{display:block;padding:64px 16px 56px}
-  .app.mobile-nav .menu-fab{
-    position:fixed;top:12px;right:12px;z-index:60;
-    width:46px;height:46px;border-radius:14px;border:none;
-    background:var(--brand);color:#fff;font-size:22px;line-height:1;
-    display:none;align-items:center;justify-content:center;
-    box-shadow:0 4px 14px rgba(21,112,106,.38);cursor:pointer}
-  .app.mobile-nav:not(.menu-open) .menu-fab{display:flex}
   .app.mobile-nav .menu-close{
     position:fixed;top:16px;right:16px;z-index:55;
     width:40px;height:40px;border-radius:11px;border:none;
@@ -101,6 +94,22 @@
     font-size:22px;line-height:1;display:none;
     align-items:center;justify-content:center;cursor:pointer}
   .app.mobile-nav.menu-open .menu-close{display:inline-flex}
+  /* 移动端常驻顶栏：☰菜单 + 桌面版切换，始终可点（解决“切不回桌面版/卡在一屏”） */
+  .mtop{display:none}
+  .app.mobile-nav .mtop{
+    position:fixed;top:0;left:0;right:0;z-index:45;
+    display:flex;align-items:center;gap:10px;
+    padding:9px 12px;background:var(--bg);
+    border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(33,30,25,.06);
+  }
+  .app.mobile-nav .mtop .mtop-btn{
+    border:1px solid var(--line);background:var(--brand-soft);color:var(--brand);
+    border-radius:10px;padding:8px 12px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;flex:none;
+  }
+  .app.mobile-nav .mtop .mtop-title{
+    flex:1;min-width:0;text-align:center;font-weight:800;font-size:15px;color:var(--brand);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
   /* HERO / MASTHEAD */
   .hero{margin:18px 0 8px}
   .masthead{display:flex;flex-direction:column;gap:8px;padding-bottom:14px;border-bottom:3px double var(--line)}
@@ -348,6 +357,11 @@
 <body>
 
 <div class="app">
+  <header class="mtop">
+    <button class="mtop-btn" id="mtopMenu" aria-label="打开菜单">☰ 菜单</button>
+    <span class="mtop-title" id="mtopTitle">ihsan 英语</span>
+    <button class="mtop-btn" id="mtopMode" aria-label="切换手机版 / 桌面版">🖥 桌面版</button>
+  </header>
   <aside class="sidebar">
     <button class="menu-close" id="menuClose" aria-label="关闭菜单">✕</button>
     <div class="logo">
@@ -384,8 +398,6 @@
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
     <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
   </aside>
-
-  <button class="menu-fab" id="menuFab" aria-label="打开菜单">☰</button>
 
   <main class="content">
     <header class="hero">
@@ -11987,6 +11999,8 @@ function showView(v){
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
   document.querySelectorAll('.menu-btn').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
   if(appEl.classList.contains('mobile-nav')) appEl.classList.remove('menu-open');
+  const at = document.querySelector('.menu-btn.active');
+  if(mtopTitle && at) mtopTitle.textContent = (at.querySelector('.mi-tx') ? at.querySelector('.mi-tx').textContent : at.textContent).trim();
 }
 
 /* ---------- INIT ---------- */
@@ -12022,8 +12036,10 @@ document.querySelectorAll('.menu-btn').forEach(b=>{
 /* ---------- VIEW MODE TOGGLE (desktop <-> mobile) ---------- */
 const appEl = document.querySelector('.app');
 const modeToggle = document.getElementById('modeToggle');
-const menuFab = document.getElementById('menuFab');
 const menuClose = document.getElementById('menuClose');
+const mtopMenu = document.getElementById('mtopMenu');
+const mtopMode = document.getElementById('mtopMode');
+const mtopTitle = document.getElementById('mtopTitle');
 function applyViewMode(mobile){
   appEl.classList.toggle('is-mobile', mobile);
   appEl.classList.toggle('mobile-nav', mobile);
@@ -12038,8 +12054,10 @@ const isSmallScreen = window.innerWidth <= 760;
 const initialMobile = savedMode ? (savedMode === 'mobile') : isSmallScreen;  // 未手动切换过时，手机直接进手机端
 applyViewMode(initialMobile);
 modeToggle.addEventListener('click', ()=> applyViewMode(!appEl.classList.contains('is-mobile')));
-if(menuFab) menuFab.addEventListener('click', ()=> appEl.classList.add('menu-open'));
 if(menuClose) menuClose.addEventListener('click', ()=> appEl.classList.remove('menu-open'));
+if(mtopMenu) mtopMenu.addEventListener('click', ()=> appEl.classList.add('menu-open'));
+if(mtopMode) mtopMode.addEventListener('click', ()=> applyViewMode(!appEl.classList.contains('is-mobile')));
+
 document.querySelectorAll('.wlevel button').forEach(b=>{
   b.addEventListener('click', ()=>{
     if(b.classList.contains('active')) return;
