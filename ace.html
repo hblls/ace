@@ -174,7 +174,8 @@
   /* TENSE CARDS */
   .tenses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:6px}
   .tcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px}
-  .tcard .tname{font-weight:800;font-size:15px;color:var(--ink)}
+  .tcard .tname{font-weight:800;font-size:15px;color:var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .tcard .aspect-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:1px 8px;flex:0 0 auto}
   .tcard .formula{font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700;font-size:14px;background:#f6efe2;border-radius:6px;padding:3px 8px;align-self:flex-start}
   .tcard .usage{font-size:13px;color:#3a352c;line-height:1.45}
   .tcard .ex{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
@@ -450,6 +451,12 @@
 
   <section class="view" id="tenses" data-view="tenses">
     <div class="sec-head"><h2>⑦ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
+    <div class="toolbar">
+      <div class="level-toggle tense-toggle">
+        <button data-tense="aspect" class="active">按体态</button>
+        <button data-tense="time">按时间</button>
+      </div>
+    </div>
     <div id="tensesRoot"></div>
   </section>
 
@@ -11419,15 +11426,31 @@ function renderMnemonics(){
 }
 
 /* ---------- TENSES ---------- */
+let tenseMode = 'aspect';
+const TENSE_TIMES = ["现在", "过去", "将来", "过去将来"];
+function tenseBlocks(){
+  if(tenseMode === 'time'){
+    // 按时间分组：每一“时间”块包含 4 种体态的卡片
+    return TENSE_TIMES.map((t, i)=>({
+      title: t + "时",
+      rows: DATA.tenses.map(b=>( Object.assign({}, b.rows[i], { aspect: b.aspect }) ))
+    }));
+  }
+  return DATA.tenses;
+}
 function renderTenses(){
   const root = document.getElementById('tensesRoot');
   root.innerHTML = '';
-  DATA.tenses.forEach(block=>{
-    const head = document.createElement('div'); head.className='aspect-title'; head.textContent = block.aspect;
+  tenseBlocks().forEach(block=>{
+    const head = document.createElement('div'); head.className='aspect-title'; head.textContent = block.title || block.aspect;
     const grid = document.createElement('div'); grid.className='tenses-grid';
     block.rows.forEach(r=>{
       const c = document.createElement('div'); c.className='tcard';
       const nm = document.createElement('div'); nm.className='tname'; nm.textContent = r.name;
+      if(r.aspect){
+        const ab = document.createElement('span'); ab.className='aspect-badge'; ab.textContent = r.aspect;
+        nm.appendChild(ab);
+      }
       const fm = document.createElement('div'); fm.className='formula'; fm.textContent = r.formula;
       const us = document.createElement('div'); us.className='usage'; us.textContent = r.usage;
       const ex = document.createElement('div'); ex.className='ex';
@@ -12089,6 +12112,15 @@ document.querySelectorAll('.rtype-toggle button').forEach(b=>{
     b.classList.add('active');
     rootPage = 0;
     renderRoots();
+  });
+});
+document.querySelectorAll('.tense-toggle button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    if(b.classList.contains('active')) return;
+    document.querySelectorAll('.tense-toggle button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    tenseMode = b.dataset.tense;
+    renderTenses();
   });
 });
 
