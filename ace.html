@@ -12003,6 +12003,14 @@ function showView(v){
   if(mtopTitle && at) mtopTitle.textContent = (at.querySelector('.mi-tx') ? at.querySelector('.mi-tx').textContent : at.textContent).trim();
 }
 
+/* ---------- cached DOM refs (declared before INIT so showView can use them) ---------- */
+const appEl = document.querySelector('.app');
+const modeToggle = document.getElementById('modeToggle');
+const menuClose = document.getElementById('menuClose');
+const mtopMenu = document.getElementById('mtopMenu');
+const mtopMode = document.getElementById('mtopMode');
+const mtopTitle = document.getElementById('mtopTitle');
+
 /* ---------- INIT ---------- */
 renderWords();
 renderPhrases();
@@ -12034,12 +12042,6 @@ document.querySelectorAll('.menu-btn').forEach(b=>{
 });
 
 /* ---------- VIEW MODE TOGGLE (desktop <-> mobile) ---------- */
-const appEl = document.querySelector('.app');
-const modeToggle = document.getElementById('modeToggle');
-const menuClose = document.getElementById('menuClose');
-const mtopMenu = document.getElementById('mtopMenu');
-const mtopMode = document.getElementById('mtopMode');
-const mtopTitle = document.getElementById('mtopTitle');
 function applyViewMode(mobile){
   appEl.classList.toggle('is-mobile', mobile);
   appEl.classList.toggle('mobile-nav', mobile);
