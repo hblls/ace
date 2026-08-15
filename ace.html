@@ -178,9 +178,10 @@
   .tcard .aspect-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:1px 8px;flex:0 0 auto}
   .tcard .formula{font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700;font-size:14px;background:#f6efe2;border-radius:6px;padding:3px 8px;align-self:flex-start}
   .tcard .usage{font-size:13px;color:#3a352c;line-height:1.45}
-  .tcard .ex{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
-  .tcard .ex .en{font-style:italic;font-size:13px}
-  .tcard .ex .cn{color:var(--muted);font-size:12px}
+  .tcard .ex{display:flex;flex-direction:column;gap:3px;margin-top:2px;padding-top:8px;border-top:1px dashed var(--line)}
+  .tcard .ex-en{display:flex;align-items:center;gap:6px}
+  .tcard .ex-en .en{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.4}
+  .tcard .ex .cn{color:var(--muted);font-size:12.5px;line-height:1.45}
   .tcard .ex .spk{margin-left:2px;flex:0 0 auto}
   footer{max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted);font-size:13px;text-align:center;border-top:3px double var(--line)}
   .empty{padding:30px;text-align:center;color:var(--muted)}
@@ -11455,9 +11456,11 @@ function renderTenses(){
       const fm = document.createElement('div'); fm.className='formula'; fm.textContent = r.formula;
       const us = document.createElement('div'); us.className='usage'; us.textContent = r.usage;
       const ex = document.createElement('div'); ex.className='ex';
+      const enRow = document.createElement('div'); enRow.className='ex-en';
       const en = document.createElement('span'); en.className='en'; en.textContent = r.en;
-      const cn = document.createElement('span'); cn.className='cn'; cn.textContent = r.cn;
-      ex.append(en, cn, spkBtn(r.en, true));
+      enRow.append(en, spkBtn(r.en, true));
+      const cn = document.createElement('div'); cn.className='cn'; cn.textContent = r.cn;
+      ex.append(enRow, cn);
       c.append(nm, fm, us, ex);
       grid.appendChild(c);
     });
