@@ -1,9 +1,9 @@
-// Inject expanded roots corpus (roots-corpus.md) into DATA.roots of english-learning.html.
+// Inject expanded roots corpus (roots-corpus.md) into DATA.roots of ace-eng.html.
 // Uses bracket-matching to locate the existing roots array bounds, so it works whether
 // roots is empty or already populated.
 const fs = require('fs');
 const dir = '/Users/donlicm/WorkBuddy/2026-07-20-00-52-15';
-const htmlPath = dir + '/english-learning.html';
+const htmlPath = dir + '/ace-eng.html';
 const mdPath = dir + '/roots-corpus.md';
 
 const html = fs.readFileSync(htmlPath, 'utf8');
