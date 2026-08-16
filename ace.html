@@ -171,6 +171,8 @@
   .ex-cell .en{font-style:italic}
   .ex-cell .cn{color:var(--muted);display:block;font-size:13px;margin-top:2px}
   .aspect-title{font-size:17px;font-weight:800;color:var(--teal);margin:22px 0 8px}
+  .sub-sec{margin:18px 0;padding:14px 16px;background:var(--brand-soft);border:1px solid var(--line);border-radius:12px}
+  .sub-sec .aspect-title{margin-top:4px}
   /* TENSE CARDS */
   .tenses-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:6px}
   .tcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px}
@@ -417,17 +419,14 @@
         <div class="menu-label">语法体系</div>
         <button class="menu-btn" data-view="mnemonics"><span class="mi-no">06</span><span class="mi-tx">📙 语法口诀</span></button>
         <button class="menu-btn" data-view="tenses"><span class="mi-no">07</span><span class="mi-tx">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="infinitive"><span class="mi-no">08</span><span class="mi-tx">∞ 不定式</span></button>
-        <button class="menu-btn" data-view="irregular"><span class="mi-no">09</span><span class="mi-tx">📖 动词大全</span></button>
-        <button class="menu-btn" data-view="pos"><span class="mi-no">10</span><span class="mi-tx">🧩 八大词性</span></button>
-        <button class="menu-btn" data-view="patterns"><span class="mi-no">11</span><span class="mi-tx">🧱 五大句型</span></button>
-        <button class="menu-btn" data-view="sentences"><span class="mi-no">12</span><span class="mi-tx">📐 长难句+写作</span></button>
-        <button class="menu-btn" data-view="clauses"><span class="mi-no">13</span><span class="mi-tx">🔗 从句</span></button>
-        <button class="menu-btn" data-view="roots"><span class="mi-no">14</span><span class="mi-tx">🌱 英语词根</span></button>
+        <button class="menu-btn" data-view="verb"><span class="mi-no">08</span><span class="mi-tx">📖 动词（不定式 + 动词大全）</span></button>
+        <button class="menu-btn" data-view="syntax"><span class="mi-no">09</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
+        <button class="menu-btn" data-view="clauses"><span class="mi-no">10</span><span class="mi-tx">🔗 从句与长难句</span></button>
+        <button class="menu-btn" data-view="roots"><span class="mi-no">11</span><span class="mi-tx">🌱 英语词根</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">阅读教材</div>
-        <button class="menu-btn" data-view="zmus"><span class="mi-no">15</span><span class="mi-tx">🇺🇸 走进美国</span></button>
+        <button class="menu-btn" data-view="zmus"><span class="mi-no">12</span><span class="mi-tx">🇺🇸 走进美国</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
@@ -494,13 +493,24 @@
     <div id="tensesRoot"></div>
   </section>
 
-  <section class="view" id="infinitive" data-view="infinitive">
-    <div class="sec-head"><h2>⑧ 不定式（Infinitive · to do）</h2><span class="count" id="infCount"></span></div>
-    <div id="infRoot"></div>
+  <section class="view" id="verb" data-view="verb">
+    <div class="sec-head"><h2>⑧ 动词（不定式 + 动词大全）</h2><span class="count" id="infCount"></span></div>
+    <div class="sub-sec">
+      <div class="aspect-title">不定式（Infinitive · to do）</div>
+      <div id="infRoot"></div>
+    </div>
+    <div class="sub-sec">
+      <div class="aspect-title">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount"></span></div>
+      <div class="toolbar">
+        <select id="irrGroup" class="irr-select"></select>
+      </div>
+      <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
+      <div id="irrRoot"></div>
+    </div>
   </section>
 
     <section class="view" id="roots" data-view="roots">
-    <div class="sec-head"><h2>⑭ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
+    <div class="sec-head"><h2>⑪ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
     <div class="toolbar">
       <div class="level-toggle subnav-toggle">
         <button data-sub="browse" class="active">🔍 词根词缀</button>
@@ -663,37 +673,30 @@
     </div>
   </section>
 
-  <section class="view" id="irregular" data-view="irregular">
-    <div class="sec-head"><h2>⑨ 动词大全（Verbs）</h2><span class="count" id="irrCount"></span></div>
-    <p class="sec-sub">含「不规则动词」（按变化规律分组）+「常用规则动词」（高频规则动词，过去式/过去分词 = 原形 + ed）。</p>
-    <div class="toolbar">
-      <select id="irrGroup" class="irr-select"></select>
+  <section class="view" id="syntax" data-view="syntax">
+    <div class="sec-head"><h2>⑨ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
+    <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
+    <div class="sub-sec">
+      <div class="aspect-title">八大词性（Parts of Speech）</div>
+      <div class="mgrid" id="posRoot"></div>
     </div>
-    <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
-    <div id="irrRoot"></div>
-  </section>
-
-  <section class="view" id="pos" data-view="pos">
-    <div class="sec-head"><h2>⑩ 八大词性（Parts of Speech）</h2><span class="count" id="posCount"></span></div>
-    <p class="sec-sub">英语单词按语法功能分为八大词性。先搞清楚每个词性"做什么用、长什么样"，是看懂句子结构、学好语法的第一步。</p>
-    <div class="mgrid" id="posRoot"></div>
-  </section>
-
-  <section class="view" id="patterns" data-view="patterns">
-    <div class="sec-head"><h2>⑪ 五大基本句型（Sentence Patterns）</h2><span class="count" id="patCount"></span></div>
-    <p class="sec-sub">无论多长多复杂的英语句子，基本骨架都逃不出这 5 种结构。先认结构，再把单词填进去。</p>
-    <div class="mgrid" id="patRoot"></div>
-  </section>
-
-  <section class="view" id="sentences" data-view="sentences">
-    <div class="sec-head"><h2>⑫ 长难句 + 写作句型（Sentence Analysis &amp; Writing Patterns）</h2><span class="count" id="sentCount"></span></div>
-    <p class="sec-sub">长难句拆解帮你读懂「一句话里塞了什么」；写作句型给你能直接套用的高分表达。点击喇叭即可听例句发音。</p>
-    <div id="sentRoot"></div>
+    <div class="sub-sec">
+      <div class="aspect-title">五大基本句型（Sentence Patterns）</div>
+      <div class="mgrid" id="patRoot"></div>
+    </div>
   </section>
 
   <section class="view" id="clauses" data-view="clauses">
-    <div class="sec-head"><h2>⑬ 从句（Clauses）</h2><span class="count" id="clauseCount"></span></div>
-    <div id="clauseRoot"></div>
+    <div class="sec-head"><h2>⑩ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
+    <p class="sec-sub">从句帮你把简单句"接长"，长难句拆解 + 写作句型帮你"读懂并写出"复杂句子。点击喇叭即可听例句发音。</p>
+    <div class="sub-sec">
+      <div class="aspect-title">从句（Clauses）</div>
+      <div id="clauseRoot"></div>
+    </div>
+    <div class="sub-sec">
+      <div class="aspect-title">长难句拆解 + 写作句型（Sentence Analysis &amp; Writing）<span class="count" id="sentCount"></span></div>
+      <div id="sentRoot"></div>
+    </div>
   </section>
 
 
@@ -714,7 +717,7 @@
   </section>
 
   <section class="view" id="zmus" data-view="zmus">
-    <div class="sec-head"><h2>⑮ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
+    <div class="sec-head"><h2>⑫ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
     <p class="sec-sub" id="zmusIntro"></p>
     <div id="zmusRoot"></div>
   </section>
