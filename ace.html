@@ -311,6 +311,9 @@
   .clause-gdesc{margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.7}
   .clause-marker{margin:8px 0 0;font-size:13px;color:var(--teal);background:var(--brand-soft);border:1px solid #cfe3df;border-radius:8px;padding:5px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.6}
   .clause-sub .pat-detail{margin-top:8px}
+  .clause-legend{display:flex;align-items:center;gap:8px;margin:0 0 14px;padding:9px 12px;background:#fff8e8;border:1px solid #f0dca8;border-radius:10px;font-size:13px;color:#8a6d1f;line-height:1.5}
+  .clause-legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;background:#fff3d6;box-shadow:inset 0 -2px 0 var(--ochre);flex:none}
+  .clause-core{font-style:normal;background:#fff3d6;border-radius:4px;padding:1px 3px;box-shadow:inset 0 -2px 0 var(--ochre);font-weight:700;color:#7a5a12}
 
 
 /* ---------- 新概念英语 NCE2 ---------- */
@@ -11804,12 +11807,52 @@ function renderSentences(){
   document.getElementById('sentCount').textContent = DATA.sentences.long.length + ' 句长难句 + ' + DATA.sentences.writing.length + ' 个写作句型';
 }
 
+/* 从句核心区域标注：英文例句 -> 从句子串 */
+const CLAUSE_CORE = {
+  "What he said at the meeting surprised everyone.": "What he said at the meeting",
+  "Whether we will go camping depends on the weather.": "Whether we will go camping",
+  "I believe that hard work always pays off.": "that hard work always pays off",
+  "Could you tell me where the nearest hospital is?": "where the nearest hospital is",
+  "The truth is that we were too late to catch the train.": "that we were too late to catch the train",
+  "It seems as if it is going to rain soon.": "as if it is going to rain soon",
+  "The news that our team won the game excited us all.": "that our team won the game",
+  "I have no idea whether he will come to the party.": "whether he will come to the party",
+  "The book that you lent me is really interesting.": "that you lent me",
+  "The girl whose hair is very long is my cousin.": "whose hair is very long",
+  "The house which we bought last year needs painting.": "which we bought last year",
+  "I still remember the day when we first met.": "when we first met",
+  "This is the place where I was born and grew up.": "where I was born and grew up",
+  "My brother, who lives in Beijing, is a doctor.": "who lives in Beijing",
+  "The man with whom she traveled is her old friend.": "with whom she traveled",
+  "This is the library in which I spent my childhood.": "in which I spent my childhood",
+  "I was reading a book when the phone rang.": "when the phone rang",
+  "We should strike while the iron is hot.": "while the iron is hot",
+  "He failed the exam because he didn't study hard.": "because he didn't study hard",
+  "Since it was raining, we stayed at home.": "Since it was raining",
+  "If it rains tomorrow, we will cancel the trip.": "If it rains tomorrow",
+  "You won't pass the test unless you practice every day.": "unless you practice every day",
+  "Although he is young, he knows a lot about history.": "Although he is young",
+  "We will go hiking even if it is windy.": "even if it is windy",
+  "She saved money so that she could buy a new laptop.": "so that she could buy a new laptop",
+  "Speak loudly in order that everyone can hear you.": "in order that everyone can hear you",
+  "The box is so heavy that I cannot lift it.": "that I cannot lift it",
+  "He is such a kind person that everyone likes him.": "that everyone likes him",
+  "This problem is more difficult than I expected.": "than I expected",
+  "She sings as beautifully as a professional singer.": "as a professional singer",
+  "You should do as your teacher tells you.": "as your teacher tells you",
+  "He talks as if he knew everything.": "as if he knew everything",
+  "Put the book where it was.": "where it was",
+  "Wherever you go, I will follow you.": "Wherever you go"
+};
 function renderClauses(){
   const root = document.getElementById('clauseRoot');
   if(!root) return;
   root.innerHTML = '';
   const intro = document.createElement('p'); intro.className = 'inf-intro'; intro.textContent = DATA.clauses.intro;
   root.appendChild(intro);
+  const legend = document.createElement('div'); legend.className = 'clause-legend';
+  legend.innerHTML = '<span class="sw"></span><span>黄色高亮部分即该句的<b>从句（核心区域）</b>，便于快速看清主句与从句的边界。</span>';
+  root.appendChild(legend);
   const wrap = document.createElement('div');
   DATA.clauses.groups.forEach(g=>{
     const grp = document.createElement('div'); grp.className = 'clause-group';
@@ -11827,7 +11870,17 @@ function renderClauses(){
       const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
       (s.examples||[]).forEach(ex=>{
         const exdiv = document.createElement('div'); exdiv.className = 'ex';
-        const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
+        const en = document.createElement('span'); en.className = 'en';
+        const core = CLAUSE_CORE[ex.en];
+        if(core && ex.en.indexOf(core) !== -1){
+          const idx = ex.en.indexOf(core);
+          en.appendChild(document.createTextNode(ex.en.slice(0, idx)));
+          const mk = document.createElement('mark'); mk.className = 'clause-core'; mk.textContent = core;
+          en.appendChild(mk);
+          en.appendChild(document.createTextNode(ex.en.slice(idx + core.length) + ' '));
+        } else {
+          en.textContent = ex.en + ' ';
+        }
         const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
         exdiv.append(en, cn, spkBtn(ex.en, true));
         exWrap.appendChild(exdiv);
