@@ -664,7 +664,6 @@
 
   <section class="view" id="clauses" data-view="clauses">
     <div class="sec-head"><h2>⑬ 从句（Clauses）</h2><span class="count" id="clauseCount"></span></div>
-    <p class="sec-sub">从句是长难句的「积木」。掌握名词性从句、定语从句、状语从句三类，你就能拆开 90% 的复杂英文句子，也能写出地道的复合句。点击喇叭听例句发音。</p>
     <div id="clauseRoot"></div>
   </section>
 
@@ -11005,7 +11004,6 @@ sentences: {
     ]
   },
   clauses: {
-  intro: "从句是长难句的「积木」，掌握名词性、定语、状语三类，既能拆开复杂的英文句子，也能写出地道的复合句。点击页面上的喇叭即可听例句发音，对照中文翻译反复跟读，把语法规则变成可听懂、可运用的语言习惯。",
   groups: [
     {
       no: "一",
@@ -11848,8 +11846,6 @@ function renderClauses(){
   const root = document.getElementById('clauseRoot');
   if(!root) return;
   root.innerHTML = '';
-  const intro = document.createElement('p'); intro.className = 'inf-intro'; intro.textContent = DATA.clauses.intro;
-  root.appendChild(intro);
   const legend = document.createElement('div'); legend.className = 'clause-legend';
   legend.innerHTML = '<span class="sw"></span><span>黄色高亮部分即该句的<b>从句（核心区域）</b>，便于快速看清主句与从句的边界。</span>';
   root.appendChild(legend);
