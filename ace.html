@@ -147,10 +147,6 @@
   .spk:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
   .spk.sm{width:24px;height:24px;font-size:11px;background:#ece6d8;border-color:var(--line)}
   .spk.sm:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
-  /* PHRASES */
-  .plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
-  .phrase .p{font-size:17px;font-weight:800;cursor:pointer;color:var(--ink)}
-  .phrase .p:hover{color:var(--brand)}
   /* MNEMONICS */
   .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
   .mn .name{font-weight:800;color:var(--brand);margin-bottom:6px;font-size:16px}
@@ -410,26 +406,25 @@
       <div class="menu-group">
         <div class="menu-label">词汇与短语</div>
         <button class="menu-btn active" data-view="words"><span class="mi-no">01</span><span class="mi-tx">📘 基础词</span></button>
-        <button class="menu-btn" data-view="phrases"><span class="mi-no">02</span><span class="mi-tx">📗 重点短语</span></button>
-        <button class="menu-btn" data-view="phrbank"><span class="mi-no">03</span><span class="mi-tx">🗂 英语词组大全</span></button>
+        <button class="menu-btn" data-view="phrbank"><span class="mi-no">02</span><span class="mi-tx">🗂 英语词组大全</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">教材</div>
-        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">📚 新概念英语</span></button>
-        <button class="menu-btn" data-view="egiu"><span class="mi-no">05</span><span class="mi-tx">📘 English Grammar in Use</span></button>
+        <button class="menu-btn" data-view="nce2"><span class="mi-no">03</span><span class="mi-tx">📚 新概念英语</span></button>
+        <button class="menu-btn" data-view="egiu"><span class="mi-no">04</span><span class="mi-tx">📘 English Grammar in Use</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">语法体系</div>
-        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">06</span><span class="mi-tx">📙 语法口诀</span></button>
-        <button class="menu-btn" data-view="tenses"><span class="mi-no">07</span><span class="mi-tx">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="verb"><span class="mi-no">08</span><span class="mi-tx">📖 动词（不定式 + 动词大全）</span></button>
-        <button class="menu-btn" data-view="syntax"><span class="mi-no">09</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
-        <button class="menu-btn" data-view="clauses"><span class="mi-no">10</span><span class="mi-tx">🔗 从句与长难句</span></button>
-        <button class="menu-btn" data-view="roots"><span class="mi-no">11</span><span class="mi-tx">🌱 英语词根</span></button>
+        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">05</span><span class="mi-tx">📙 语法口诀</span></button>
+        <button class="menu-btn" data-view="tenses"><span class="mi-no">06</span><span class="mi-tx">📊 16 时态</span></button>
+        <button class="menu-btn" data-view="verb"><span class="mi-no">07</span><span class="mi-tx">📖 动词（不定式 + 动词大全）</span></button>
+        <button class="menu-btn" data-view="syntax"><span class="mi-no">08</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
+        <button class="menu-btn" data-view="clauses"><span class="mi-no">09</span><span class="mi-tx">🔗 从句与长难句</span></button>
+        <button class="menu-btn" data-view="roots"><span class="mi-no">10</span><span class="mi-tx">🌱 英语词根</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">阅读教材</div>
-        <button class="menu-btn" data-view="zmus"><span class="mi-no">12</span><span class="mi-tx">🇺🇸 走进美国</span></button>
+        <button class="menu-btn" data-view="zmus"><span class="mi-no">11</span><span class="mi-tx">🇺🇸 走进美国</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
@@ -469,24 +464,14 @@
     <div id="flashRoot" style="display:none"></div>
   </section>
 
-  <section class="view" id="phrases" data-view="phrases">
-    <div class="sec-head"><h2>② 重点短语</h2><span class="count" id="phraseCount"></span></div>
-    <div class="toolbar">
-      <div class="level-toggle plevel-toggle">
-        <button data-plevel="all" class="active">通用重点</button>
-        <button data-plevel="b2">B2 进阶</button>
-      </div>
-    </div>
-    <div class="plist" id="phrasesRoot"></div>
-  </section>
 
   <section class="view" id="mnemonics" data-view="mnemonics">
-    <div class="sec-head"><h2>⑥ 语法口诀</h2><span class="count" id="mnCount"></span></div>
+    <div class="sec-head"><h2>⑤ 语法口诀</h2><span class="count" id="mnCount"></span></div>
     <div class="mgrid" id="mnRoot"></div>
   </section>
 
   <section class="view" id="tenses" data-view="tenses">
-    <div class="sec-head"><h2>⑦ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
+    <div class="sec-head"><h2>⑥ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
     <div class="toolbar">
       <div class="level-toggle tense-toggle">
         <button data-tense="aspect" class="active">按体态</button>
@@ -497,7 +482,7 @@
   </section>
 
   <section class="view" id="verb" data-view="verb">
-    <div class="sec-head"><h2>⑧ 动词（不定式 + 动词大全）</h2></div>
+    <div class="sec-head"><h2>⑦ 动词（不定式 + 动词大全）</h2></div>
     <div class="toolbar">
       <div class="level-toggle verb-toggle">
         <button data-vtab="inf" class="active">➗ 不定式 Infinitive</button>
@@ -523,7 +508,7 @@
   </section>
 
     <section class="view" id="roots" data-view="roots">
-    <div class="sec-head"><h2>⑪ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
+    <div class="sec-head"><h2>⑩ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
     <div class="toolbar">
       <div class="level-toggle subnav-toggle">
         <button data-sub="browse" class="active">🔍 词根词缀</button>
@@ -687,7 +672,7 @@
   </section>
 
   <section class="view" id="syntax" data-view="syntax">
-    <div class="sec-head"><h2>⑨ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
+    <div class="sec-head"><h2>⑧ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
     <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
     <div class="sub-sec">
       <div class="aspect-title">八大词性（Parts of Speech）</div>
@@ -700,7 +685,7 @@
   </section>
 
   <section class="view" id="clauses" data-view="clauses">
-    <div class="sec-head"><h2>⑩ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
+    <div class="sec-head"><h2>⑨ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
     <p class="sec-sub">从句帮你把简单句"接长"，长难句拆解 + 写作句型帮你"读懂并写出"复杂句子。点击喇叭即可听例句发音。</p>
     <div class="sub-sec">
       <div class="aspect-title">从句（Clauses）</div>
@@ -714,23 +699,23 @@
 
 
   <section class="view" id="phrbank" data-view="phrbank">
-    <div class="sec-head"><h2>③ 英语词组大全</h2><span class="count" id="phrCount"></span></div>
+    <div class="sec-head"><h2>② 英语词组大全</h2><span class="count" id="phrCount"></span></div>
     <div id="phrRoot"></div>
   </section>
 
   <section class="view" id="nce2" data-view="nce2">
-    <div class="sec-head"><h2>④ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
+    <div class="sec-head"><h2>③ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
     <p class="sec-sub" id="nce2Intro"></p>
     <div id="nce2Root"></div>
   </section>
   <section class="view" id="egiu" data-view="egiu">
-    <div class="sec-head"><h2>⑤ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
+    <div class="sec-head"><h2>④ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
     <p class="sec-sub" id="egiuIntro"></p>
     <div id="egiuRoot"></div>
   </section>
 
   <section class="view" id="zmus" data-view="zmus">
-    <div class="sec-head"><h2>⑫ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
+    <div class="sec-head"><h2>⑪ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
     <p class="sec-sub" id="zmusIntro"></p>
     <div id="zmusRoot"></div>
   </section>
@@ -1664,56 +1649,8 @@ const DATA = {
     {w:"exiguous", ipa:"/ɪɡˈzɪɡjuəs/", pos:"adj.", zh:"稀少的，微小的", en:"The exiguous supply ran out fast.", cn:"微少的供给很快就用尽了。"}
   ]}
 ],
-  phrases: [
-    {p:"break the ice", zh:"打破僵局", en:"A joke can break the ice at a meeting.", cn:"玩笑能在会议上打破僵局。"},
-    {p:"keep in touch", zh:"保持联系", en:"Let's keep in touch after graduation.", cn:"毕业后我们保持联系吧。"},
-    {p:"make sense", zh:"有道理；讲得通", en:"His explanation makes sense.", cn:"他的解释说得通。"},
-    {p:"run out of", zh:"用完；耗尽", en:"We ran out of milk this morning.", cn:"今天早上我们把牛奶喝完了。"},
-    {p:"look forward to", zh:"期待", en:"I look forward to your reply.", cn:"我期待你的回复。"},
-    {p:"by no means", zh:"决不；绝不", en:"This is by no means easy.", cn:"这绝不简单。"},
-    {p:"pay attention to", zh:"注意", en:"Please pay attention to the teacher.", cn:"请注意听老师讲。"},
-    {p:"take care of", zh:"照顾；照料", en:"She takes care of her little brother.", cn:"她照顾弟弟。"},
-    {p:"get along with", zh:"与……相处", en:"He gets along well with others.", cn:"他与人相处融洽。"},
-    {p:"put off", zh:"推迟", en:"Don't put off your work till tomorrow.", cn:"别把工作推到明天。"},
-    {p:"find out", zh:"查明；弄清", en:"I want to find out the truth.", cn:"我想查明真相。"},
-    {p:"give up", zh:"放弃", en:"Never give up your dream.", cn:"永远不要放弃梦想。"},
-    {p:"turn off", zh:"关掉；turn on 打开", en:"Turn off the light before sleep.", cn:"睡前关灯。"},
-    {p:"in charge of", zh:"负责", en:"He is in charge of the project.", cn:"他负责这个项目。"},
-    {p:"on purpose", zh:"故意地", en:"He did it on purpose.", cn:"他是故意这么做的。"},
-    {p:"at least", zh:"至少", en:"You should sleep at least seven hours.", cn:"你至少该睡七小时。"},
-    {p:"as soon as", zh:"一……就", en:"Call me as soon as you arrive.", cn:"你一到就给我打电话。"},
-    {p:"in order to", zh:"为了", en:"He studied hard in order to pass.", cn:"他努力学习为了通过考试。"},
-    {p:"be used to", zh:"习惯于", en:"I am used to getting up early.", cn:"我习惯早起。"},
-    {p:"catch up with", zh:"赶上", en:"I need to catch up with my classmates.", cn:"我得赶上同学们。"},
-    {p:"deal with", zh:"处理；应对", en:"We must deal with this problem.", cn:"我们必须处理这个问题。"},
-    {p:"make progress", zh:"取得进步", en:"She makes great progress in English.", cn:"她英语进步很大。"},
-    {p:"take part in", zh:"参加", en:"I took part in the sports meeting.", cn:"我参加了运动会。"},
-    {p:"no matter", zh:"无论", en:"No matter what happens, stay calm.", cn:"无论发生什么，保持冷静。"}
-  ],
-  b2phrases: [
-    {p:"take something for granted", zh:"视…为理所当然", en:"We take clean water for granted.", cn:"我们把干净的水视为理所当然。"},
-    {p:"bear in mind", zh:"牢记，记住", en:"Bear in mind that prices may rise.", cn:"请记住价格可能会上涨。"},
-    {p:"cope with", zh:"应付，应对", en:"She coped with the pressure well.", cn:"她很好地应对了压力。"},
-    {p:"come up with", zh:"想出，提出", en:"He came up with a clever solution.", cn:"他想出了一个聪明的办法。"},
-    {p:"put up with", zh:"容忍，忍受", en:"I won't put up with such rudeness.", cn:"我不会容忍这种无礼行为。"},
-    {p:"look into", zh:"调查，研究", en:"We will look into the complaint.", cn:"我们会调查这个投诉。"},
-    {p:"run into", zh:"偶遇；遭遇", en:"I ran into an old friend downtown.", cn:"我在市中心偶遇了一位老朋友。"},
-    {p:"set aside", zh:"留出，搁置", en:"Set aside some time for reading.", cn:"留出一些时间阅读。"},
-    {p:"bring about", zh:"引起，导致", en:"The reform brought about real change.", cn:"改革带来了真正的变革。"},
-    {p:"account for", zh:"解释；占", en:"How do you account for the delay?", cn:"你如何解释这次延误？"},
-    {p:"in terms of", zh:"就…而言", en:"In terms of cost, it is efficient.", cn:"就成本而言，它很高效。"},
-    {p:"on the grounds that", zh:"基于…的理由", en:"He declined on the grounds that he was busy.", cn:"他拒绝的理由是他很忙。"},
-    {p:"as a matter of fact", zh:"事实上", en:"As a matter of fact, I agree with you.", cn:"事实上，我同意你的看法。"},
-    {p:"by and large", zh:"大体上，总的来说", en:"By and large, the project succeeded.", cn:"大体上，这个项目成功了。"},
-    {p:"at stake", zh:"处于危险中", en:"Our reputation is at stake.", cn:"我们的声誉正面临危险。"},
-    {p:"to some extent", zh:"在某种程度上", en:"To some extent, he is right.", cn:"在某种程度上，他是对的。"},
-    {p:"in spite of", zh:"尽管", en:"In spite of the rain, we went out.", cn:"尽管下雨，我们还是出门了。"},
-    {p:"let alone", zh:"更不用说", en:"He can't walk, let alone run.", cn:"他连走都走不了，更别说跑了。"},
-    {p:"not to mention", zh:"更不用说，且不说", en:"It is expensive, not to mention risky.", cn:"这很贵，更别提还很冒险了。"},
-    {p:"get the hang of", zh:"掌握…的窍门", en:"I am getting the hang of it.", cn:"我正在掌握它的窍门。"},
-    {p:"lose track of", zh:"失去…的线索，忘记", en:"I lost track of time.", cn:"我忘了时间。"},
-    {p:"keep pace with", zh:"跟上", en:"It is hard to keep pace with change.", cn:"很难跟上变化的步伐。"}
-  ],
+
+
   mnemonics: [
   {
     "name": "一般现在时",
@@ -11426,7 +11363,6 @@ function cycleMastery(level, w){
 
 /* ---------- STATE ---------- */
 let currentLevel = 'a2';
-let currentPhraseLevel = 'all';
 let flashMode = false;
 let flashList = [];
 let flashIndex = 0;
@@ -11569,27 +11505,7 @@ function renderFlash(){
   root.appendChild(ctrl);
 }
 
-/* ---------- PHRASES ---------- */
-function renderPhrases(){
-  const root = document.getElementById('phrasesRoot');
-  root.innerHTML = '';
-  const list = currentPhraseLevel === 'b2' ? DATA.b2phrases : DATA.phrases;
-  list.forEach(it=>{
-    const c = document.createElement('div'); c.className='card phrase';
-    const row = document.createElement('div'); row.className='word-row';
-    const p = document.createElement('span'); p.className='phrase'; p.textContent = it.p;
-    p.addEventListener('click', ()=>speak(it.p));
-    const zh = document.createElement('span'); zh.className='zh'; zh.textContent = it.zh;
-    row.append(p, zh, spkBtn(it.p));
-    const ex = document.createElement('div'); ex.className='ex';
-    const en = document.createElement('span'); en.className='en'; en.textContent = it.en + ' ';
-    const cn = document.createElement('span'); cn.className='cn'; cn.textContent = it.cn;
-    ex.append(en, cn, spkBtn(it.en, true));
-    c.append(row, ex);
-    root.appendChild(c);
-  });
-  document.getElementById('phraseCount').textContent = (currentPhraseLevel === 'b2' ? 'B2 · ' : '') + `共 ${list.length} 条`;
-}
+
 
 /* ---------- MNEMONICS ---------- */
 function renderMnemonics(){
@@ -12442,7 +12358,6 @@ const mtopTitle = document.getElementById('mtopTitle');
 
 /* ---------- INIT ---------- */
 renderWords();
-renderPhrases();
 renderMnemonics();
 renderTenses();
 renderInfinitive();
@@ -12497,15 +12412,6 @@ document.querySelectorAll('.wlevel button').forEach(b=>{
     b.classList.add('active');
     currentLevel = b.dataset.level;
     if(flashMode) exitFlash(); else renderWords();
-  });
-});
-document.querySelectorAll('.plevel-toggle button').forEach(b=>{
-  b.addEventListener('click', ()=>{
-    if(b.classList.contains('active')) return;
-    document.querySelectorAll('.plevel-toggle button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    currentPhraseLevel = b.dataset.plevel;
-    renderPhrases();
   });
 });
 let rootSearchTimer = null;
