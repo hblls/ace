@@ -754,7 +754,6 @@
 
   <section class="view" id="zmus" data-view="zmus">
     <div class="sec-head"><h2>⑪ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
-    <p class="sec-sub" id="zmusIntro"></p>
     <div id="zmusRoot"></div>
   </section>
 
@@ -993,7 +992,7 @@ const EGIU_CONTENT = {"1":{"explain":"现在进行时表示说话时正在发生
 
 const DATA = {
   nce2: { intro: "新概念英语第二册（New Concept English 2 · Practice and Progress）共 96 课，由 L.G. Alexander 编写，是英语自学经典教材。每课包含课文、参考译文与知识点。点击喇叭可听课文发音。", lessons: NCE2_LESSONS },
-  zmus: { intro: "走进美国（Into America）即经典情景美语教材《走遍美国》（Family Album, U.S.A.）。本模块完整收录 78 课（Episode 1–26，每课 3 幕）的剧本对话，并附重点词汇与学习笔记（前期课程）。可在「课文 / 词汇 / 笔记」间切换，点「显示中文」对照译文，点喇叭听发音。内容整理自公开学习站点 ncego.com，仅供个人学习参考。", lessons: ZMUS_LESSONS },
+  zmus: { lessons: ZMUS_LESSONS },
   egiu: { intro: "English Grammar in Use（Raymond Murphy 著，剑桥语法自学经典）按单元组织英语核心语法。本模块按原书单元顺序原创整理：每单元含讲解、例句（点喇叭可听发音）与易错点，覆盖时态、语态、从句、情态、介词、冠词等全部板块。", units: EGIU_UNITS },
   words: [
     { group:"人与家庭", items:[
@@ -12112,8 +12111,6 @@ function renderZmus(){
   var root = document.getElementById('zmusRoot');
   if(!root) return;
   root.innerHTML = '';
-  var intro = document.getElementById('zmusIntro');
-  if(intro) intro.textContent = d.intro;
   var nav = document.createElement('div'); nav.className = 'nce2-nav';
   var sel = document.createElement('select'); sel.id = 'zmusSel'; sel.className = 'nce2-sel';
   d.lessons.forEach(function(l, i){
