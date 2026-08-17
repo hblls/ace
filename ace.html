@@ -422,6 +422,18 @@
 .zmus-note h4{margin:0 0 6px;color:var(--brand)}
 .zmus-note-body{white-space:pre-wrap;line-height:1.7;font-size:14px}
 .zmus-empty{color:var(--muted);padding:14px;text-align:center}
+/* 五大句型：结构条 + 分块解析 */
+.pat-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 2px}
+.pat-chip{display:inline-flex;align-items:baseline;gap:4px;padding:3px 9px;border-radius:8px;border:1px solid var(--line);font-size:13px;line-height:1.3}
+.pat-chip b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;font-style:normal}
+.pat-chip i{font-style:normal;font-size:11px;color:#6b6b6b}
+.pat-intro{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:#444}
+.pat-signal{border-left-color:#3b82f6}
+.pat-signal-h{background:#e8f0fe;color:#1d4ed8}
+.pat-pitfall{border-left-color:#ef4444}
+.pat-pitfall-h{background:#fde8e8;color:#b91c1c}
+.pat-practice{border-left-color:#22a06b}
+.pat-practice-h{background:#e6f4ea;color:#15803d}
 </style>
 </head>
 <body>
@@ -10898,11 +10910,11 @@ const DATA = {
     { name:"感叹词", abbr:"int.", en:"Interjection", def:"表示喜、怒、哀、乐等强烈情感，常独立使用，后面多跟感叹号。", clues:["多为独立短词，无后缀规律，常置句首","惊喜：Wow! / Oh! / Amazing!","疼痛：Ouch! / Ow!","呼唤：Hey! / Hello!"], examples:[ {en:"Wow! That is amazing.", cn:"哇！那太神奇了。"}, {en:"Ouch! That hurts.", cn:"哎哟！好疼。"} ] }
   ],
   patterns: [
-  { no:"①", formula:"S + V", name:"主谓结构", usage:"主语 + 不及物动词（vi.）。动词意思完整，后面不需要宾语。", detail:"这个句型表达一个「自发发生」的动作或状态——主语自己完成了某事，不需要把动作作用在别的东西上。\n识别信号：找到谓语动词后，看它后面是否还「缺一个东西」；如果动词本身意思已经完整（不加宾语句子也通顺），就是主谓。\n易错点：很多动词既可作不及物也可作及物，比如 eat（I eat. / I eat an apple.），要按它在句中的实际用法判断，别想当然。\n练习窍门：想造主谓句，先想一个「自己就能完成」的动作（run / laugh / rain），再补上时间、地点等修饰语即可。", tip:"判断：动词后没有宾语，句子意思已完整 → 主谓。常见不及物动词：rise / sing / exist / arrive / die。", examples:[ {en:"The sun rises in the east.", cn:"太阳从东方升起。"}, {en:"Birds sing.", cn:"鸟儿歌唱。"}, {en:"She smiled happily.", cn:"她开心地笑了。"}, {en:"The rain stopped.", cn:"雨停了。"}, {en:"A good idea occurred to me.", cn:"我突然想到了一个好主意。"} ] },
-  { no:"②", formula:"S + V + O", name:"主谓宾结构", usage:"主语 + 及物动词（vt.）+ 宾语。动作作用于宾语。", detail:"这个句型表达「主语对宾语施加动作」的及物关系——动作的承受者（宾语）必须出现，否则句子意思残缺。\n识别信号：及物动词（vt.）后面一定跟着一个名词或代词作宾语；试着把动词后的词去掉，若句子明显「说了一半」就是主谓宾。\n易错点：注意一词多性，像 sing 可作不及物（Birds sing.）也可作及物（She sang a song.），判断时要看句中到底有没有宾语；另外代词宾语要用宾格（me / him / her）。\n练习窍门：套用「谁 + 做了什么 + 对什么」三格填空法，先定主语和及物动词，再补上宾语，就能快速组句。", tip:"判断：及物动词后必须接宾语（动作承受者）。常见及物动词：love / read / buy / make / eat。若去掉宾语句子就不完整 → 主谓宾。", examples:[ {en:"I love music.", cn:"我爱音乐。"}, {en:"She reads a book.", cn:"她读一本书。"}, {en:"We eat breakfast at 7 a.m.", cn:"我们早上7点吃早餐。"}, {en:"He fixed the car.", cn:"他修好了那辆车。"}, {en:"The news shocked the whole town.", cn:"这则消息震惊了全镇。"} ] },
-  { no:"③", formula:"S + V + P", name:"主系表结构", usage:"主语 + 系动词（be / look / become 等）+ 表语。用来说明主语的身份或状态。", detail:"这个句型不描述「动作」，而是描述主语「是什么、怎么样」——系动词像一座桥，把主语和说明它的表语（名词或形容词）连起来。\n识别信号：把句中的谓语动词换成 be（am/is/are）后句子依然通顺，那它就是系动词，整句即主系表；表语通常是形容词或名词。\n易错点：最易和 ② 主谓宾混淆——关键看动词后是不是「动作承受者」：look / sound / smell 后面接的是状态或特征（形容词），不是被作用的物体，所以是表语而非宾语。\n练习窍门：先积累一批系动词（be / look / feel / become / seem），再造句时直接接形容词或名词，不必去找「动作的对象」。", tip:"易混提醒：③ 与 ② 的区别在动词——系动词（be / look / sound / smell / feel / become / seem）不表动作、只连表语（名词或形容词）。口诀：<span class='em'>动词能换成 be 还通顺 → 主系表</span>。", examples:[ {en:"She is a teacher.", cn:"她是一名老师。"}, {en:"He looks tired.", cn:"他看起来很累。"}, {en:"The soup smells delicious.", cn:"这汤闻起来很香。"}, {en:"She feels lonely at night.", cn:"她夜里感到孤独。"}, {en:"His words proved false.", cn:"他的话被证明是假的。"} ] },
-  { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", detail:"这个句型一次传递「给谁什么东西」——两个宾语分别回答「给谁」（间接宾语，通常是人）和「给什么」（直接宾语，通常是物）。\n识别信号：动词后紧跟两个名词，且能把它们重排成「动词 + 物 + to/for + 人」（give a book to me）仍通顺，就是双宾。\n易错点：不是所有「动词 + 两名词」都是双宾；像 put the book on the desk 中 on the desk 是地点状语并非宾语，整句仍是 ② 的扩展，别误判。\n练习窍门：记住能带双宾的核心动词（give / send / show / tell / buy / make），造句时先想「人」再想「物」，顺序固定为「人前物后」。", tip:"判断：动词后接两个宾语，间接宾语（人）在前、直接宾语（物）在后。常见动词：give / send / buy / show / tell。验证法：可加 to / for → give a book to me。", examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"}, {en:"Mom cooked us a meal.", cn:"妈妈给我们做了一顿饭。"}, {en:"Please send me an email.", cn:"请给我发一封邮件。"}, {en:"They awarded the winner a medal.", cn:"他们给获胜者颁发了一枚奖牌。"} ] },
-  { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", detail:"这个句型表达「让宾语成为或变成某种状态」——宾语补足语补充说明宾语「是什么、怎么样」，缺了它句子意思就不完整。\n识别信号：动词后的名词或形容词是「说明宾语」的，可理解为「宾语 + 是 + 补语」；试着在宾语和补语间加 to be（make him to be captain）能讲通，多半就是宾补。\n易错点：最易和 ④ 双宾混淆——双宾的两个都是「东西」（人、物都是名词，彼此独立），而宾补和宾语是「一体两面」（补语描述宾语本身）。\n练习窍门：常带宾补的动词有 make / let / keep / call / find，造句时想「我让某物或某人变成、处于什么状态」，再补上名词或形容词作补语。", tip:"易混提醒：④ 与 ⑤ 的区别——④ 双宾两个都是“东西”（人、物都是名词），⑤ 的宾补说明宾语“是什么 / 怎么样”（名词或形容词）。口诀：<span class='em'>双宾能加 to / for，宾补要加 to be 才通</span>。", examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"}, {en:"We call him Uncle Wang.", cn:"我们叫他王叔叔。"}, {en:"She kept the room tidy.", cn:"她把房间保持得很整洁。"}, {en:"The news left me speechless.", cn:"这个消息让我说不出话来。"} ] }
+  { no:"①", formula:"S + V", name:"主谓结构", usage:"主语 + 不及物动词（vi.）。动词意思完整，后面不需要宾语。", intro:"这个句型表达一个「自发发生」的动作或状态——主语自己完成了某事，不需要把动作作用在别的东西上。",signal:"找到谓语动词后，看它后面是否还「缺一个东西」；如果动词本身意思已经完整（不加宾语句子也通顺），就是主谓。",pitfall:"很多动词既可作不及物也可作及物，比如 eat（I eat. / I eat an apple.），要按它在句中的实际用法判断，别想当然。",practice:"想造主谓句，先想一个「自己就能完成」的动作（run / laugh / rain），再补上时间、地点等修饰语即可。",tip:"判断：动词后没有宾语，句子意思已完整 → 主谓。常见不及物动词：rise / sing / exist / arrive / die。",examples:[ {en:"The sun rises in the east.", cn:"太阳从东方升起。"}, {en:"Birds sing.", cn:"鸟儿歌唱。"}, {en:"She smiled happily.", cn:"她开心地笑了。"}, {en:"The rain stopped.", cn:"雨停了。"}, {en:"A good idea occurred to me.", cn:"我突然想到了一个好主意。"} ] },
+  { no:"②", formula:"S + V + O", name:"主谓宾结构", usage:"主语 + 及物动词（vt.）+ 宾语。动作作用于宾语。", intro:"这个句型表达「主语对宾语施加动作」的及物关系——动作的承受者（宾语）必须出现，否则句子意思残缺。",signal:"及物动词（vt.）后面一定跟着一个名词或代词作宾语；试着把动词后的词去掉，若句子明显「说了一半」就是主谓宾。",pitfall:"注意一词多性，像 sing 可作不及物（Birds sing.）也可作及物（She sang a song.），判断时要看句中到底有没有宾语；另外代词宾语要用宾格（me / him / her）。",practice:"套用「谁 + 做了什么 + 对什么」三格填空法，先定主语和及物动词，再补上宾语，就能快速组句。",tip:"判断：及物动词后必须接宾语（动作承受者）。常见及物动词：love / read / buy / make / eat。若去掉宾语句子就不完整 → 主谓宾。",examples:[ {en:"I love music.", cn:"我爱音乐。"}, {en:"She reads a book.", cn:"她读一本书。"}, {en:"We eat breakfast at 7 a.m.", cn:"我们早上7点吃早餐。"}, {en:"He fixed the car.", cn:"他修好了那辆车。"}, {en:"The news shocked the whole town.", cn:"这则消息震惊了全镇。"} ] },
+  { no:"③", formula:"S + V + P", name:"主系表结构", usage:"主语 + 系动词（be / look / become 等）+ 表语。用来说明主语的身份或状态。", intro:"这个句型不描述「动作」，而是描述主语「是什么、怎么样」——系动词像一座桥，把主语和说明它的表语（名词或形容词）连起来。",signal:"把句中的谓语动词换成 be（am/is/are）后句子依然通顺，那它就是系动词，整句即主系表；表语通常是形容词或名词。",pitfall:"最易和 ② 主谓宾混淆——关键看动词后是不是「动作承受者」：look / sound / smell 后面接的是状态或特征（形容词），不是被作用的物体，所以是表语而非宾语。",practice:"先积累一批系动词（be / look / feel / become / seem），再造句时直接接形容词或名词，不必去找「动作的对象」。",tip:"易混提醒：③ 与 ② 的区别在动词——系动词（be / look / sound / smell / feel / become / seem）不表动作、只连表语（名词或形容词）。口诀：<span class='em'>动词能换成 be 还通顺 → 主系表</span>。",examples:[ {en:"She is a teacher.", cn:"她是一名老师。"}, {en:"He looks tired.", cn:"他看起来很累。"}, {en:"The soup smells delicious.", cn:"这汤闻起来很香。"}, {en:"She feels lonely at night.", cn:"她夜里感到孤独。"}, {en:"His words proved false.", cn:"他的话被证明是假的。"} ] },
+  { no:"④", formula:"S + V + IO + DO", name:"主谓双宾结构", usage:"主语 + 动词 + 间接宾语（人）+ 直接宾语（物）。", intro:"这个句型一次传递「给谁什么东西」——两个宾语分别回答「给谁」（间接宾语，通常是人）和「给什么」（直接宾语，通常是物）。",signal:"动词后紧跟两个名词，且能把它们重排成「动词 + 物 + to/for + 人」（give a book to me）仍通顺，就是双宾。",pitfall:"不是所有「动词 + 两名词」都是双宾；像 put the book on the desk 中 on the desk 是地点状语并非宾语，整句仍是 ② 的扩展，别误判。",practice:"记住能带双宾的核心动词（give / send / show / tell / buy / make），造句时先想「人」再想「物」，顺序固定为「人前物后」。",tip:"判断：动词后接两个宾语，间接宾语（人）在前、直接宾语（物）在后。常见动词：give / send / buy / show / tell。验证法：可加 to / for → give a book to me。",examples:[ {en:"He gave me a book.", cn:"他给了我一本书。"}, {en:"She bought him a gift.", cn:"她给他买了一份礼物。"}, {en:"Mom cooked us a meal.", cn:"妈妈给我们做了一顿饭。"}, {en:"Please send me an email.", cn:"请给我发一封邮件。"}, {en:"They awarded the winner a medal.", cn:"他们给获胜者颁发了一枚奖牌。"} ] },
+  { no:"⑤", formula:"S + V + O + C", name:"主谓宾补结构", usage:"主语 + 动词 + 宾语 + 宾语补足语。补语用来说明宾语的身份或状态。", intro:"这个句型表达「让宾语成为或变成某种状态」——宾语补足语补充说明宾语「是什么、怎么样」，缺了它句子意思就不完整。",signal:"动词后的名词或形容词是「说明宾语」的，可理解为「宾语 + 是 + 补语」；试着在宾语和补语间加 to be（make him to be captain）能讲通，多半就是宾补。",pitfall:"最易和 ④ 双宾混淆——双宾的两个都是「东西」（人、物都是名词，彼此独立），而宾补和宾语是「一体两面」（补语描述宾语本身）。",practice:"常带宾补的动词有 make / let / keep / call / find，造句时想「我让某物或某人变成、处于什么状态」，再补上名词或形容词作补语。",tip:"易混提醒：④ 与 ⑤ 的区别——④ 双宾两个都是“东西”（人、物都是名词），⑤ 的宾补说明宾语“是什么 / 怎么样”（名词或形容词）。口诀：<span class='em'>双宾能加 to / for，宾补要加 to be 才通</span>。",examples:[ {en:"We made him captain.", cn:"我们选他当队长。"}, {en:"They painted the wall white.", cn:"他们把墙漆成了白色。"}, {en:"We call him Uncle Wang.", cn:"我们叫他王叔叔。"}, {en:"She kept the room tidy.", cn:"她把房间保持得很整洁。"}, {en:"The news left me speechless.", cn:"这个消息让我说不出话来。"} ] }
 ]
 ,
 sentences: {
@@ -11819,26 +11831,52 @@ function renderPatterns(){
   const root = document.getElementById('patRoot');
   if(!root) return;
   root.innerHTML = '';
+  const compLabel = { S:'主语', V:'谓语', O:'宾语', P:'表语', IO:'间接宾语', DO:'直接宾语', C:'宾补' };
+  const compColor = { S:'#e8f0fe', V:'#e6f4ea', O:'#fef7e0', P:'#fde7f3', IO:'#e0f7fa', DO:'#fff0e0', C:'#efe7fd' };
   DATA.patterns.forEach(p=>{
     const c = document.createElement('div'); c.className = 'card pat-card';
     const head = document.createElement('div'); head.className = 'name';
     head.innerHTML = p.no + ' <span class="formula">' + p.formula + '</span><span class="en-name">' + p.name + '</span>';
+    c.appendChild(head);
+    // 句子成分结构条
+    const bar = document.createElement('div'); bar.className = 'pat-bar';
+    p.formula.split('+').forEach(function(tok){
+      const key = tok.trim();
+      const chip = document.createElement('span'); chip.className = 'pat-chip';
+      chip.style.background = compColor[key] || '#f0f0f0';
+      const ab = document.createElement('b'); ab.textContent = key;
+      const lb = document.createElement('i'); lb.textContent = compLabel[key] || key;
+      chip.append(ab, document.createTextNode(' '), lb);
+      bar.appendChild(chip);
+    });
+    c.appendChild(bar);
+    // 简短定义
     const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.usage;
-    c.append(head, txt);
-    if(p.detail){
-      const d = document.createElement('div'); d.className = 'pat-detail';
-      const dh = document.createElement('span'); dh.className = 'tip-h'; dh.textContent = '深入解析';
-      const db = document.createElement('div'); db.textContent = p.detail;
-      d.append(dh, db); c.appendChild(d);
+    c.appendChild(txt);
+    // 白话释义
+    if(p.intro){
+      const intro = document.createElement('div'); intro.className = 'pat-intro'; intro.textContent = p.intro;
+      c.appendChild(intro);
     }
+    // 三个分块：识别信号 / 易错点 / 练习窍门
+    [['signal','识别信号'],['pitfall','易错点'],['practice','练习窍门']].forEach(function(pair){
+      const k = pair[0];
+      if(!p[k]) return;
+      const d = document.createElement('div'); d.className = 'pat-detail pat-' + k;
+      const dh = document.createElement('span'); dh.className = 'tip-h pat-' + k + '-h'; dh.textContent = pair[1];
+      const db = document.createElement('div'); db.textContent = p[k];
+      d.append(dh, db); c.appendChild(d);
+    });
+    // 判断口诀 / 易混提醒
     if(p.tip){
       const tip = document.createElement('div'); tip.className = 'tip';
       const th = document.createElement('span'); th.className = 'tip-h'; th.textContent = '判断口诀 / 易混提醒';
       const tb = document.createElement('div'); tb.innerHTML = p.tip;
       tip.append(th, tb); c.appendChild(tip);
     }
+    // 例句
     const exWrap = document.createElement('div'); exWrap.className = 'inf-ex';
-    p.examples.forEach(ex=>{
+    p.examples.forEach(function(ex){
       const exdiv = document.createElement('div'); exdiv.className = 'ex';
       const en = document.createElement('span'); en.className = 'en'; en.textContent = ex.en + ' ';
       const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = ex.cn;
