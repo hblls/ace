@@ -497,18 +497,28 @@
   </section>
 
   <section class="view" id="verb" data-view="verb">
-    <div class="sec-head"><h2>⑧ 动词（不定式 + 动词大全）</h2><span class="count" id="infCount"></span></div>
-    <div class="sub-sec">
-      <div class="aspect-title">不定式（Infinitive · to do）</div>
-      <div id="infRoot"></div>
-    </div>
-    <div class="sub-sec">
-      <div class="aspect-title">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount"></span></div>
-      <div class="toolbar">
-        <select id="irrGroup" class="irr-select"></select>
+    <div class="sec-head"><h2>⑧ 动词（不定式 + 动词大全）</h2></div>
+    <div class="toolbar">
+      <div class="level-toggle verb-toggle">
+        <button data-vtab="inf" class="active">➗ 不定式 Infinitive</button>
+        <button data-vtab="verbs">📖 动词大全</button>
       </div>
-      <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
-      <div id="irrRoot"></div>
+    </div>
+    <div id="verbInf">
+      <div class="sub-sec">
+        <div class="aspect-title">不定式（Infinitive · to do）<span class="count" id="infCount"></span></div>
+        <div id="infRoot"></div>
+      </div>
+    </div>
+    <div id="verbVerbs" style="display:none">
+      <div class="sub-sec">
+        <div class="aspect-title">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount"></span></div>
+        <div class="toolbar">
+          <select id="irrGroup" class="irr-select"></select>
+        </div>
+        <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
+        <div id="irrRoot"></div>
+      </div>
     </div>
   </section>
 
@@ -12532,6 +12542,18 @@ document.querySelectorAll('.subnav-toggle button').forEach(b=>{
     const sub = b.dataset.sub;
     document.getElementById('rootsBrowse').style.display = (sub === 'browse') ? '' : 'none';
     document.getElementById('rootsMethods').style.display = (sub === 'methods') ? '' : 'none';
+  });
+});
+
+/* ---------- VERB SUB-TAB (不定式 / 动词大全) ---------- */
+document.querySelectorAll('.verb-toggle button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    if(b.classList.contains('active')) return;
+    document.querySelectorAll('.verb-toggle button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const t = b.dataset.vtab;
+    document.getElementById('verbInf').style.display = (t === 'inf') ? '' : 'none';
+    document.getElementById('verbVerbs').style.display = (t === 'verbs') ? '' : 'none';
   });
 });
 </script>
