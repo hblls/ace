@@ -189,6 +189,8 @@
   .level-toggle{display:inline-flex;background:#ece6d8;border-radius:999px;padding:3px}
   .level-toggle button{border:none;background:transparent;padding:7px 16px;border-radius:999px;font-size:14px;font-weight:700;color:var(--muted);cursor:pointer}
   .level-toggle button.active{background:var(--card);color:var(--brand);box-shadow:0 1px 4px rgba(33,30,25,.12)}
+  .app.mobile-nav .level-toggle{max-width:100%;flex-wrap:wrap}
+  .app.mobile-nav .level-toggle button{padding:7px 12px;font-size:13.5px}
   .tool-actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
   .tool-actions button, .tool-actions select{padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
   .tool-actions button:hover{border-color:var(--brand);color:var(--brand)}
@@ -413,10 +415,12 @@
 .zmus-en{line-height:1.7}
 .zmus-zh{margin-top:4px;color:var(--muted);line-height:1.6}
 .zmus-stage{color:var(--muted);font-style:italic;padding:4px 10px;font-size:13px;border-left:3px solid var(--line);background:var(--brand-soft)}
-.zmus-voc{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
-.zmus-voc th,.zmus-voc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.zmus-voc{width:100%;min-width:0;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+.zmus-voc th,.zmus-voc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
 .zmus-voc th{background:var(--brand-soft);font-size:13px}
 .zmus-voc .zmus-w{font-weight:700}
+.app.mobile-nav .zmus-voc{font-size:13px}
+.app.mobile-nav .zmus-voc th,.app.mobile-nav .zmus-voc td{padding:6px 8px}
 .zmus-notes{display:flex;flex-direction:column;gap:14px}
 .zmus-note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .zmus-note h4{margin:0 0 6px;color:var(--brand)}
@@ -726,8 +730,8 @@
     <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
     <div class="toolbar">
       <div class="level-toggle syntax-toggle">
-        <button data-vtab="pos" class="active">🧩 八大词性 Parts of Speech</button>
-        <button data-vtab="pat">📐 五大基本句型 Sentence Patterns</button>
+        <button data-vtab="pos" class="active">🧩 八大词性</button>
+        <button data-vtab="pat">📐 五大句型</button>
       </div>
     </div>
     <div id="posPanel">
