@@ -724,13 +724,23 @@
   <section class="view" id="syntax" data-view="syntax">
     <div class="sec-head"><h2>⑧ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
     <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
-    <div class="sub-sec">
-      <div class="aspect-title">八大词性（Parts of Speech）</div>
-      <div class="mgrid" id="posRoot"></div>
+    <div class="toolbar">
+      <div class="level-toggle syntax-toggle">
+        <button data-vtab="pos" class="active">🧩 八大词性 Parts of Speech</button>
+        <button data-vtab="pat">📐 五大基本句型 Sentence Patterns</button>
+      </div>
     </div>
-    <div class="sub-sec">
-      <div class="aspect-title">五大基本句型（Sentence Patterns）</div>
-      <div class="mgrid" id="patRoot"></div>
+    <div id="posPanel">
+      <div class="sub-sec">
+        <div class="aspect-title">八大词性（Parts of Speech）</div>
+        <div class="mgrid" id="posRoot"></div>
+      </div>
+    </div>
+    <div id="patPanel" style="display:none">
+      <div class="sub-sec">
+        <div class="aspect-title">五大基本句型（Sentence Patterns）</div>
+        <div class="mgrid" id="patRoot"></div>
+      </div>
     </div>
   </section>
 
@@ -12542,6 +12552,18 @@ document.querySelectorAll('.verb-toggle button').forEach(b=>{
     const t = b.dataset.vtab;
     document.getElementById('verbInf').style.display = (t === 'inf') ? '' : 'none';
     document.getElementById('verbVerbs').style.display = (t === 'verbs') ? '' : 'none';
+  });
+});
+
+/* ---------- SYNTAX SUB-TAB (八大词性 / 五大句型) ---------- */
+document.querySelectorAll('.syntax-toggle button').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    if(b.classList.contains('active')) return;
+    document.querySelectorAll('.syntax-toggle button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const t = b.dataset.vtab;
+    document.getElementById('posPanel').style.display = (t === 'pos') ? '' : 'none';
+    document.getElementById('patPanel').style.display = (t === 'pat') ? '' : 'none';
   });
 });
 </script>
