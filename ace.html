@@ -472,14 +472,14 @@
       </div>
       <div class="menu-group">
         <div class="menu-label">教材</div>
-        <button class="menu-btn" data-view="nce2"><span class="mi-no">03</span><span class="mi-tx">📚 新概念英语</span></button>
-        <button class="menu-btn" data-view="egiu"><span class="mi-no">04</span><span class="mi-tx">📘 English Grammar in Use</span></button>
+        <button class="menu-btn" data-view="verb"><span class="mi-no">03</span><span class="mi-tx">📖 动词（动词大全 + 不定式）</span></button>
+        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">📚 新概念英语</span></button>
+        <button class="menu-btn" data-view="egiu"><span class="mi-no">05</span><span class="mi-tx">📘 English Grammar in Use</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">语法体系</div>
-        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">05</span><span class="mi-tx">📙 语法口诀</span></button>
-        <button class="menu-btn" data-view="tenses"><span class="mi-no">06</span><span class="mi-tx">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="verb"><span class="mi-no">07</span><span class="mi-tx">📖 动词（不定式 + 动词大全）</span></button>
+        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">06</span><span class="mi-tx">📙 语法口诀</span></button>
+        <button class="menu-btn" data-view="tenses"><span class="mi-no">07</span><span class="mi-tx">📊 16 时态</span></button>
         <button class="menu-btn" data-view="syntax"><span class="mi-no">08</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
         <button class="menu-btn" data-view="clauses"><span class="mi-no">09</span><span class="mi-tx">🔗 从句与长难句</span></button>
         <button class="menu-btn" data-view="roots"><span class="mi-no">10</span><span class="mi-tx">🌱 英语词根</span></button>
@@ -528,12 +528,12 @@
 
 
   <section class="view" id="mnemonics" data-view="mnemonics">
-    <div class="sec-head"><h2>⑤ 语法口诀</h2><span class="count" id="mnCount"></span></div>
+    <div class="sec-head"><h2>⑥ 语法口诀</h2><span class="count" id="mnCount"></span></div>
     <div class="mgrid" id="mnRoot"></div>
   </section>
 
   <section class="view" id="tenses" data-view="tenses">
-    <div class="sec-head"><h2>⑥ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
+    <div class="sec-head"><h2>⑦ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
     <div class="toolbar">
       <div class="level-toggle tense-toggle">
         <button data-tense="aspect" class="active">按体态</button>
@@ -544,20 +544,20 @@
   </section>
 
   <section class="view" id="verb" data-view="verb">
-    <div class="sec-head"><h2>⑦ 动词（不定式 + 动词大全）</h2></div>
+    <div class="sec-head"><h2>③ 动词（动词大全 + 不定式）</h2></div>
     <div class="toolbar">
       <div class="level-toggle verb-toggle">
-        <button data-vtab="inf" class="active">➗ 不定式 Infinitive</button>
-        <button data-vtab="verbs">📖 动词大全</button>
+        <button data-vtab="verbs" class="active">📖 动词大全</button>
+        <button data-vtab="inf">➗ 不定式 Infinitive</button>
       </div>
     </div>
-    <div id="verbInf">
+    <div id="verbInf" style="display:none">
       <div class="sub-sec">
         <div class="aspect-title">不定式（Infinitive · to do）<span class="count" id="infCount"></span></div>
         <div id="infRoot"></div>
       </div>
     </div>
-    <div id="verbVerbs" style="display:none">
+    <div id="verbVerbs">
       <div class="sub-sec">
         <div class="aspect-title">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount"></span></div>
         <div class="toolbar">
@@ -776,12 +776,12 @@
   </section>
 
   <section class="view" id="nce2" data-view="nce2">
-    <div class="sec-head"><h2>③ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
+    <div class="sec-head"><h2>④ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
     <p class="sec-sub" id="nce2Intro"></p>
     <div id="nce2Root"></div>
   </section>
   <section class="view" id="egiu" data-view="egiu">
-    <div class="sec-head"><h2>④ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
+    <div class="sec-head"><h2>⑤ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
     <p class="sec-sub" id="egiuIntro"></p>
     <div id="egiuRoot"></div>
   </section>
