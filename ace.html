@@ -485,27 +485,26 @@
     <div class="menu">
       <div class="menu-group">
         <div class="menu-label">词汇与短语</div>
-        <button class="menu-btn active" data-view="words"><span class="mi-no">01</span><span class="mi-tx">📘 基础词</span></button>
-        <button class="menu-btn" data-view="phrbank"><span class="mi-no">02</span><span class="mi-tx">🗂 英语词组大全</span></button>
-        <button class="menu-btn" data-view="verb"><span class="mi-no">03</span><span class="mi-tx">📖 动词（动词大全 + 不定式）</span></button>
-        <button class="menu-btn" data-view="sent"><span class="mi-no">04</span><span class="mi-tx">💬 高频句型</span></button>
+        <button class="menu-btn" data-view="phrbank"><span class="mi-no">01</span><span class="mi-tx">🗂 英语词组大全</span></button>
+        <button class="menu-btn" data-view="verb"><span class="mi-no">02</span><span class="mi-tx">📖 动词（动词大全 + 不定式）</span></button>
+        <button class="menu-btn" data-view="sent"><span class="mi-no">03</span><span class="mi-tx">💬 高频句型</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">教材</div>
-        <button class="menu-btn" data-view="nce2"><span class="mi-no">05</span><span class="mi-tx">📚 新概念英语</span></button>
-        <button class="menu-btn" data-view="egiu"><span class="mi-no">06</span><span class="mi-tx">📘 English Grammar in Use</span></button>
+        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">📚 新概念英语</span></button>
+        <button class="menu-btn" data-view="egiu"><span class="mi-no">05</span><span class="mi-tx">📘 English Grammar in Use</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">语法体系</div>
-        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">07</span><span class="mi-tx">📙 语法口诀</span></button>
-        <button class="menu-btn" data-view="tenses"><span class="mi-no">08</span><span class="mi-tx">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="syntax"><span class="mi-no">09</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
-        <button class="menu-btn" data-view="clauses"><span class="mi-no">10</span><span class="mi-tx">🔗 从句与长难句</span></button>
-        <button class="menu-btn" data-view="roots"><span class="mi-no">11</span><span class="mi-tx">🌱 英语词根</span></button>
+        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">06</span><span class="mi-tx">📙 语法口诀</span></button>
+        <button class="menu-btn" data-view="tenses"><span class="mi-no">07</span><span class="mi-tx">📊 16 时态</span></button>
+        <button class="menu-btn" data-view="syntax"><span class="mi-no">08</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
+        <button class="menu-btn" data-view="clauses"><span class="mi-no">09</span><span class="mi-tx">🔗 从句与长难句</span></button>
+        <button class="menu-btn" data-view="roots"><span class="mi-no">10</span><span class="mi-tx">🌱 英语词根</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">阅读教材</div>
-        <button class="menu-btn" data-view="zmus"><span class="mi-no">12</span><span class="mi-tx">🇺🇸 走进美国</span></button>
+        <button class="menu-btn" data-view="zmus"><span class="mi-no">11</span><span class="mi-tx">🇺🇸 走进美国</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
@@ -520,39 +519,13 @@
       </div>
     </header>
 
-    <section class="view active" id="words" data-view="words">
-    <div class="sec-head"><h2>① 基础词（A2 / B1 / B2 / C1 / C2 · 含发音）</h2><span class="count" id="wordCount"></span></div>
-    <div class="toolbar">
-      <div class="level-toggle wlevel">
-        <button data-level="a2" class="active">A2 基础</button>
-        <button data-level="b1">B1 进阶</button>
-        <button data-level="b2">B2 进阶</button>
-        <button data-level="c1">C1 高阶</button>
-        <button data-level="c2">C2 精通</button>
-      </div>
-      <div class="tool-actions">
-        <select id="masteryFilter" title="按掌握度筛选">
-          <option value="all">全部掌握度</option>
-          <option value="new">未学</option>
-          <option value="learning">学习中</option>
-          <option value="known">已掌握</option>
-        </select>
-        <button id="flashBtn">🃏 自测模式</button>
-      </div>
-    </div>
-    <div class="search"><input id="wordSearch" type="text" placeholder="🔍 搜索单词或中文释义，如 be / 老师" /></div>
-    <div id="wordsRoot"></div>
-    <div id="flashRoot" style="display:none"></div>
-  </section>
-
-
   <section class="view" id="mnemonics" data-view="mnemonics">
-    <div class="sec-head"><h2>⑦ 语法口诀</h2><span class="count" id="mnCount"></span></div>
+    <div class="sec-head"><h2>⑥ 语法口诀</h2><span class="count" id="mnCount"></span></div>
     <div class="mgrid" id="mnRoot"></div>
   </section>
 
   <section class="view" id="tenses" data-view="tenses">
-    <div class="sec-head"><h2>⑧ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
+    <div class="sec-head"><h2>⑦ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
     <div class="toolbar">
       <div class="level-toggle tense-toggle">
         <button data-tense="aspect" class="active">按体态</button>
@@ -563,7 +536,7 @@
   </section>
 
   <section class="view" id="verb" data-view="verb">
-    <div class="sec-head"><h2>③ 动词（动词大全 + 不定式）</h2></div>
+    <div class="sec-head"><h2>② 动词（动词大全 + 不定式）</h2></div>
     <div class="toolbar">
       <div class="level-toggle verb-toggle">
         <button data-vtab="verbs" class="active">📖 动词大全</button>
@@ -589,12 +562,12 @@
   </section>
 
       <section class="view" id="sent" data-view="sent">
-    <div class="sec-head"><h2>④ 高频句型（常用核心句式 · 分页浏览）</h2><span class="count" id="sentCount"></span></div>
+    <div class="sec-head"><h2>③ 高频句型（常用核心句式 · 分页浏览）</h2><span class="count" id="sentCount"></span></div>
     <div id="sentRoot"></div>
   </section>
 
 <section class="view" id="roots" data-view="roots">
-    <div class="sec-head"><h2>⑪ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
+    <div class="sec-head"><h2>⑩ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
     <div class="toolbar">
       <div class="level-toggle subnav-toggle">
         <button data-sub="browse" class="active">🔍 词根词缀</button>
@@ -758,7 +731,7 @@
   </section>
 
   <section class="view" id="syntax" data-view="syntax">
-    <div class="sec-head"><h2>⑨ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
+    <div class="sec-head"><h2>⑧ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
     <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
     <div class="toolbar">
       <div class="level-toggle syntax-toggle">
@@ -781,7 +754,7 @@
   </section>
 
   <section class="view" id="clauses" data-view="clauses">
-    <div class="sec-head"><h2>⑩ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
+    <div class="sec-head"><h2>⑨ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
     <p class="sec-sub">从句帮你把简单句"接长"，长难句拆解 + 写作句型帮你"读懂并写出"复杂句子。点击喇叭即可听例句发音。</p>
     <div class="sub-sec">
       <div class="aspect-title">从句（Clauses）</div>
@@ -795,23 +768,23 @@
 
 
   <section class="view" id="phrbank" data-view="phrbank">
-    <div class="sec-head"><h2>② 英语词组大全</h2><span class="count" id="phrCount"></span></div>
+    <div class="sec-head"><h2>① 英语词组大全</h2><span class="count" id="phrCount"></span></div>
     <div id="phrRoot"></div>
   </section>
 
   <section class="view" id="nce2" data-view="nce2">
-    <div class="sec-head"><h2>⑤ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
+    <div class="sec-head"><h2>④ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
     <p class="sec-sub" id="nce2Intro"></p>
     <div id="nce2Root"></div>
   </section>
   <section class="view" id="egiu" data-view="egiu">
-    <div class="sec-head"><h2>⑥ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
+    <div class="sec-head"><h2>⑤ English Grammar in Use（英语语法在用）</h2><span class="count" id="egiuCount"></span></div>
     <p class="sec-sub" id="egiuIntro"></p>
     <div id="egiuRoot"></div>
   </section>
 
   <section class="view" id="zmus" data-view="zmus">
-    <div class="sec-head"><h2>⑫ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
+    <div class="sec-head"><h2>⑪ 走进美国（Into America）</h2><span class="count" id="zmusCount"></span></div>
     <div id="zmusRoot"></div>
   </section>
 
@@ -1052,660 +1025,6 @@ const DATA = {
   nce2: { intro: "新概念英语第二册（New Concept English 2 · Practice and Progress）共 96 课，由 L.G. Alexander 编写，是英语自学经典教材。每课包含课文、参考译文与知识点。点击喇叭可听课文发音。", lessons: NCE2_LESSONS },
   zmus: { lessons: ZMUS_LESSONS },
   egiu: { intro: "English Grammar in Use（Raymond Murphy 著，剑桥语法自学经典）按单元组织英语核心语法。本模块按原书单元顺序原创整理：每单元含讲解、例句（点喇叭可听发音）与易错点，覆盖时态、语态、从句、情态、介词、冠词等全部板块。", units: EGIU_UNITS },
-  words: [
-    { group:"人与家庭", items:[
-      {w:"mother", ipa:"/ˈmʌðər/", pos:"n.", zh:"母亲", en:"My mother cooks dinner every day.", cn:"我妈妈每天做晚饭。"},
-      {w:"father", ipa:"/ˈfɑːðər/", pos:"n.", zh:"父亲", en:"His father works in a hospital.", cn:"他父亲在一家医院工作。"},
-      {w:"parent", ipa:"/ˈperənt/", pos:"n.", zh:"父母（之一）", en:"My parents are very kind.", cn:"我的父母很和蔼。"},
-      {w:"sister", ipa:"/ˈsɪstər/", pos:"n.", zh:"姐妹", en:"She is my younger sister.", cn:"她是我的妹妹。"},
-      {w:"brother", ipa:"/ˈbrʌðər/", pos:"n.", zh:"兄弟", en:"My brother plays football.", cn:"我哥哥踢足球。"},
-      {w:"grandparent", ipa:"/ˈɡrændperənt/", pos:"n.", zh:"祖父母（之一）", en:"My grandparents live in the country.", cn:"我的祖父母住在乡下。"},
-      {w:"aunt", ipa:"/ænt/", pos:"n.", zh:"姑妈；姨妈；阿姨", en:"My aunt visits us on Sunday.", cn:"我阿姨星期天来看我们。"},
-      {w:"uncle", ipa:"/ˈʌŋkəl/", pos:"n.", zh:"叔叔；舅舅；伯父", en:"My uncle has a big dog.", cn:"我叔叔有一只大狗。"},
-      {w:"cousin", ipa:"/ˈkʌzən/", pos:"n.", zh:"堂（表）兄弟姐妹", en:"My cousin is a student.", cn:"我的堂兄是一名学生。"},
-      {w:"baby", ipa:"/ˈbeɪbi/", pos:"n.", zh:"婴儿", en:"The baby is sleeping.", cn:"宝宝在睡觉。"},
-      {w:"child", ipa:"/tʃaɪld/", pos:"n.", zh:"孩子", en:"The child is at school.", cn:"孩子在学校。"},
-      {w:"children", ipa:"/ˈtʃɪldrən/", pos:"n.", zh:"孩子们", en:"The children are at school.", cn:"孩子们在学校。"},
-      {w:"people", ipa:"/ˈpiːpəl/", pos:"n.", zh:"人；人们", en:"There are many people in the park.", cn:"公园里有很多人。"}
-    ]},
-    { group:"食物与饮料", items:[
-      {w:"bread", ipa:"/bred/", pos:"n.", zh:"面包", en:"I eat bread for breakfast.", cn:"我早饭吃面包。"},
-      {w:"rice", ipa:"/raɪs/", pos:"n.", zh:"米饭", en:"We cook rice with vegetables.", cn:"我们做米饭配蔬菜。"},
-      {w:"meat", ipa:"/miːt/", pos:"n.", zh:"肉", en:"He does not eat meat.", cn:"他不吃肉。"},
-      {w:"chicken", ipa:"/ˈtʃɪkɪn/", pos:"n.", zh:"鸡肉；小鸡", en:"We had chicken for dinner.", cn:"我们晚饭吃了鸡肉。"},
-      {w:"fish", ipa:"/fɪʃ/", pos:"n.", zh:"鱼；鱼肉", en:"She likes fish and rice.", cn:"她喜欢鱼和米饭。"},
-      {w:"egg", ipa:"/eɡ/", pos:"n.", zh:"鸡蛋", en:"I have two eggs every morning.", cn:"我每天早上吃两个鸡蛋。"},
-      {w:"fruit", ipa:"/fruːt/", pos:"n.", zh:"水果", en:"Eat more fruit every day.", cn:"每天多吃水果。"},
-      {w:"vegetable", ipa:"/ˈvedʒtəbəl/", pos:"n.", zh:"蔬菜", en:"Carrots are my favorite vegetable.", cn:"胡萝卜是我最喜欢的蔬菜。"},
-      {w:"apple", ipa:"/ˈæpəl/", pos:"n.", zh:"苹果", en:"He ate a red apple.", cn:"他吃了一个红苹果。"},
-      {w:"banana", ipa:"/bəˈnænə/", pos:"n.", zh:"香蕉", en:"The banana is yellow.", cn:"香蕉是黄色的。"},
-      {w:"milk", ipa:"/mɪlk/", pos:"n.", zh:"牛奶", en:"Would you like some milk?", cn:"你想喝点牛奶吗？"},
-      {w:"tea", ipa:"/tiː/", pos:"n.", zh:"茶", en:"She drinks tea in the afternoon.", cn:"她下午喝茶。"},
-      {w:"water", ipa:"/ˈwɔːtər/", pos:"n.", zh:"水", en:"Please give me a glass of water.", cn:"请给我一杯水。"}
-    ]},
-    { group:"家居与日常用品", items:[
-      {w:"house", ipa:"/haʊs/", pos:"n.", zh:"房子", en:"They live in a small house.", cn:"他们住在一座小房子里。"},
-      {w:"room", ipa:"/ruːm/", pos:"n.", zh:"房间", en:"My room is clean and tidy.", cn:"我的房间干净整洁。"},
-      {w:"kitchen", ipa:"/ˈkɪtʃɪn/", pos:"n.", zh:"厨房", en:"Mom is in the kitchen.", cn:"妈妈在厨房里。"},
-      {w:"bedroom", ipa:"/ˈbedruːm/", pos:"n.", zh:"卧室", en:"The bedroom has a big window.", cn:"卧室有一扇大窗户。"},
-      {w:"bathroom", ipa:"/ˈbæθruːm/", pos:"n.", zh:"浴室", en:"Is there a bathroom here?", cn:"这里有浴室吗？"},
-      {w:"table", ipa:"/ˈteɪbəl/", pos:"n.", zh:"桌子", en:"The book is on the table.", cn:"书在桌子上。"},
-      {w:"chair", ipa:"/tʃer/", pos:"n.", zh:"椅子", en:"Please sit on the chair.", cn:"请坐在椅子上。"},
-      {w:"bed", ipa:"/bed/", pos:"n.", zh:"床", en:"I go to bed at ten.", cn:"我十点上床睡觉。"},
-      {w:"door", ipa:"/dɔːr/", pos:"n.", zh:"门", en:"Please open the door.", cn:"请打开门。"},
-      {w:"window", ipa:"/ˈwɪndoʊ/", pos:"n.", zh:"窗户", en:"Close the window, please.", cn:"请把窗户关上。"},
-      {w:"garden", ipa:"/ˈɡɑːrdn/", pos:"n.", zh:"花园", en:"We have flowers in our garden.", cn:"我们的花园里有花。"}
-    ]},
-    { group:"服装", items:[
-      {w:"shirt", ipa:"/ʃɜːrt/", pos:"n.", zh:"衬衫", en:"He wears a blue shirt.", cn:"他穿着一件蓝衬衫。"},
-      {w:"trousers", ipa:"/ˈtraʊzərz/", pos:"n.", zh:"裤子", en:"My trousers are too old.", cn:"我的裤子太旧了。"},
-      {w:"dress", ipa:"/dres/", pos:"n.", zh:"连衣裙", en:"She bought a new dress.", cn:"她买了一条新连衣裙。"},
-      {w:"shoes", ipa:"/ʃuːz/", pos:"n.", zh:"鞋", en:"Put on your shoes.", cn:"穿上你的鞋。"},
-      {w:"coat", ipa:"/koʊt/", pos:"n.", zh:"外套", en:"It is cold, so I wear my coat.", cn:"天冷了，所以我穿上外套。"},
-      {w:"hat", ipa:"/hæt/", pos:"n.", zh:"帽子", en:"He has a black hat.", cn:"他有一顶黑帽子。"},
-      {w:"bag", ipa:"/bæɡ/", pos:"n.", zh:"包", en:"My bag is on the chair.", cn:"我的包在椅子上。"},
-      {w:"clothes", ipa:"/kloʊðz/", pos:"n.", zh:"衣服", en:"These clothes are clean.", cn:"这些衣服是干净的。"}
-    ]},
-    { group:"天气与自然", items:[
-      {w:"weather", ipa:"/ˈweðər/", pos:"n.", zh:"天气", en:"The weather is nice today.", cn:"今天天气很好。"},
-      {w:"sun", ipa:"/sʌn/", pos:"n.", zh:"太阳", en:"The sun is very bright.", cn:"太阳很明亮。"},
-      {w:"rain", ipa:"/reɪn/", pos:"n./v.", zh:"雨；下雨", en:"It rains in the afternoon.", cn:"下午下雨了。"},
-      {w:"snow", ipa:"/snoʊ/", pos:"n./v.", zh:"雪；下雪", en:"We see snow in winter.", cn:"冬天我们看到雪。"},
-      {w:"wind", ipa:"/wɪnd/", pos:"n.", zh:"风", en:"The wind is strong today.", cn:"今天风很大。"},
-      {w:"hot", ipa:"/hɑːt/", pos:"adj.", zh:"热的", en:"It is hot in summer.", cn:"夏天很热。"},
-      {w:"cold", ipa:"/koʊld/", pos:"adj.", zh:"冷的", en:"I am cold, please close the window.", cn:"我冷，请把窗户关上。"},
-      {w:"warm", ipa:"/wɔːrm/", pos:"adj.", zh:"温暖的", en:"The soup is warm.", cn:"汤是温的。"},
-      {w:"sky", ipa:"/skaɪ/", pos:"n.", zh:"天空", en:"The sky is blue.", cn:"天空是蓝色的。"},
-      {w:"tree", ipa:"/triː/", pos:"n.", zh:"树", en:"There is a big tree in the garden.", cn:"花园里有一棵大树。"}
-    ]},
-    { group:"交通与旅行", items:[
-      {w:"bus", ipa:"/bʌs/", pos:"n.", zh:"公共汽车", en:"I go to school by bus.", cn:"我乘公共汽车上学。"},
-      {w:"train", ipa:"/treɪn/", pos:"n.", zh:"火车", en:"The train is fast.", cn:"火车很快。"},
-      {w:"car", ipa:"/kɑːr/", pos:"n.", zh:"汽车", en:"My father drives a car.", cn:"我父亲开一辆汽车。"},
-      {w:"plane", ipa:"/pleɪn/", pos:"n.", zh:"飞机", en:"We take a plane to Japan.", cn:"我们乘飞机去日本。"},
-      {w:"bike", ipa:"/baɪk/", pos:"n.", zh:"自行车", en:"She rides her bike to work.", cn:"她骑自行车上班。"},
-      {w:"station", ipa:"/ˈsteɪʃən/", pos:"n.", zh:"车站", en:"The bus station is near.", cn:"公共汽车站很近。"},
-      {w:"airport", ipa:"/ˈerpɔːrt/", pos:"n.", zh:"机场", en:"We arrive at the airport early.", cn:"我们早早到达机场。"},
-      {w:"ticket", ipa:"/ˈtɪkɪt/", pos:"n.", zh:"票", en:"I bought two tickets.", cn:"我买了两张票。"},
-      {w:"holiday", ipa:"/ˈhɑːlədeɪ/", pos:"n.", zh:"假日；假期", en:"We go to the beach on holiday.", cn:"我们假期去海滩。"},
-      {w:"trip", ipa:"/trɪp/", pos:"n.", zh:"旅行", en:"We take a trip to the mountains.", cn:"我们去山里旅行。"}
-    ]},
-    { group:"健康", items:[
-      {w:"ill", ipa:"/ɪl/", pos:"adj.", zh:"生病的", en:"She is ill and stays in bed.", cn:"她病了，躺在床上。"},
-      {w:"doctor", ipa:"/ˈdɑːktər/", pos:"n.", zh:"医生", en:"You should see a doctor.", cn:"你应该去看医生。"},
-      {w:"hospital", ipa:"/ˈhɑːspɪtl/", pos:"n.", zh:"医院", en:"The hospital is not far.", cn:"医院不远。"},
-      {w:"medicine", ipa:"/ˈmedɪsn/", pos:"n.", zh:"药", en:"Take the medicine after meals.", cn:"饭后服药。"},
-      {w:"tooth", ipa:"/tuːθ/", pos:"n.", zh:"牙齿", en:"Brush your teeth every day.", cn:"每天刷牙。"},
-      {w:"headache", ipa:"/ˈhedeɪk/", pos:"n.", zh:"头痛", en:"I have a bad headache.", cn:"我头痛得厉害。"},
-      {w:"rest", ipa:"/rest/", pos:"n./v.", zh:"休息", en:"You need to rest now.", cn:"你现在需要休息。"},
-      {w:"exercise", ipa:"/ˈeksərsaɪz/", pos:"n./v.", zh:"锻炼", en:"I exercise every morning.", cn:"我每天早上锻炼。"}
-    ]},
-    { group:"工作与学习", items:[
-      {w:"job", ipa:"/dʒɑːb/", pos:"n.", zh:"工作", en:"He has a new job.", cn:"他有一份新工作。"},
-      {w:"work", ipa:"/wɜːrk/", pos:"n./v.", zh:"工作", en:"My mother works in an office.", cn:"我母亲在办公室工作。"},
-      {w:"office", ipa:"/ˈɔːfɪs/", pos:"n.", zh:"办公室", en:"The office is on the third floor.", cn:"办公室在三楼。"},
-      {w:"company", ipa:"/ˈkʌmpəni/", pos:"n.", zh:"公司", en:"He works for a big company.", cn:"他在一家大公司工作。"},
-      {w:"student", ipa:"/ˈstuːdənt/", pos:"n.", zh:"学生", en:"She is a university student.", cn:"她是一名大学生。"},
-      {w:"teacher", ipa:"/ˈtiːtʃər/", pos:"n.", zh:"老师", en:"Our teacher is very nice.", cn:"我们的老师很好。"},
-      {w:"lesson", ipa:"/ˈlesən/", pos:"n.", zh:"课", en:"We have an English lesson today.", cn:"我们今天有一节英语课。"},
-      {w:"exam", ipa:"/ɪɡˈzæm/", pos:"n.", zh:"考试", en:"The exam is on Friday.", cn:"考试在星期五。"},
-      {w:"language", ipa:"/ˈlæŋɡwɪdʒ/", pos:"n.", zh:"语言", en:"English is a useful language.", cn:"英语是一门有用的语言。"},
-      {w:"book", ipa:"/bʊk/", pos:"n.", zh:"书", en:"I read a book every week.", cn:"我每周读一本书。"}
-    ]},
-    { group:"常用动词", items:[
-      {w:"eat", ipa:"/iːt/", pos:"v.", zh:"吃", en:"We eat lunch at twelve.", cn:"我们十二点吃午饭。"},
-      {w:"drink", ipa:"/drɪŋk/", pos:"v.", zh:"喝", en:"I drink water after running.", cn:"跑步后我喝水。"},
-      {w:"sleep", ipa:"/sliːp/", pos:"v.", zh:"睡觉", en:"The baby sleeps well.", cn:"宝宝睡得很好。"},
-      {w:"walk", ipa:"/wɔːk/", pos:"v.", zh:"步行", en:"I walk to school.", cn:"我步行上学。"},
-      {w:"run", ipa:"/rʌn/", pos:"v.", zh:"跑", en:"He runs in the park.", cn:"他在公园里跑步。"},
-      {w:"buy", ipa:"/baɪ/", pos:"v.", zh:"买", en:"She buys fruit at the market.", cn:"她在市场买水果。"},
-      {w:"open", ipa:"/ˈoʊpən/", pos:"v.", zh:"打开", en:"Please open the door.", cn:"请打开门。"},
-      {w:"close", ipa:"/kloʊz/", pos:"v.", zh:"关上", en:"Close the window, please.", cn:"请把窗户关上。"},
-      {w:"help", ipa:"/help/", pos:"v.", zh:"帮助", en:"Can you help me?", cn:"你能帮我吗？"},
-      {w:"learn", ipa:"/lɜːrn/", pos:"v.", zh:"学习", en:"I learn English every day.", cn:"我每天学英语。"},
-      {w:"teach", ipa:"/tiːtʃ/", pos:"v.", zh:"教", en:"She teaches math.", cn:"她教数学。"},
-      {w:"read", ipa:"/riːd/", pos:"v.", zh:"读", en:"He reads a book at night.", cn:"他晚上读书。"},
-      {w:"write", ipa:"/raɪt/", pos:"v.", zh:"写", en:"I write an email to my friend.", cn:"我给朋友写一封邮件。"},
-      {w:"speak", ipa:"/spiːk/", pos:"v.", zh:"说（语言）", en:"She speaks English well.", cn:"她英语说得很好。"},
-      {w:"listen", ipa:"/ˈlɪsən/", pos:"v.", zh:"听", en:"We listen to music.", cn:"我们听音乐。"},
-      {w:"watch", ipa:"/wɑːtʃ/", pos:"v.", zh:"观看", en:"They watch TV in the evening.", cn:"他们晚上看电视。"}
-    ]},
-    { group:"常用形容词", items:[
-      {w:"small", ipa:"/smɔːl/", pos:"adj.", zh:"小的", en:"This is a small house.", cn:"这是一座小房子。"},
-      {w:"large", ipa:"/lɑːrdʒ/", pos:"adj.", zh:"大的", en:"We have a large garden.", cn:"我们有一个大花园。"},
-      {w:"old", ipa:"/oʊld/", pos:"adj.", zh:"老的；旧的", en:"My grandfather is very old.", cn:"我爷爷很老了。"},
-      {w:"new", ipa:"/nuː/", pos:"adj.", zh:"新的", en:"She has a new phone.", cn:"她有一部新手机。"},
-      {w:"clean", ipa:"/kliːn/", pos:"adj.", zh:"干净的", en:"The room is clean.", cn:"房间很干净。"},
-      {w:"dirty", ipa:"/ˈdɜːrti/", pos:"adj.", zh:"脏的", en:"Your hands are dirty.", cn:"你的手很脏。"},
-      {w:"easy", ipa:"/ˈiːzi/", pos:"adj.", zh:"容易的", en:"This lesson is easy.", cn:"这节课很容易。"},
-      {w:"difficult", ipa:"/ˈdɪfɪkəlt/", pos:"adj.", zh:"困难的", en:"The exam is difficult.", cn:"考试很难。"},
-      {w:"cheap", ipa:"/tʃiːp/", pos:"adj.", zh:"便宜的", en:"The food is cheap here.", cn:"这里的食物很便宜。"},
-      {w:"expensive", ipa:"/ɪkˈspensɪv/", pos:"adj.", zh:"昂贵的", en:"The coat is too expensive.", cn:"这件外套太贵了。"},
-      {w:"happy", ipa:"/ˈhæpi/", pos:"adj.", zh:"高兴的", en:"I am happy today.", cn:"我今天很高兴。"}
-    ]},
-    { group:"副词与连接词", items:[
-      {w:"here", ipa:"/hɪr/", pos:"adv.", zh:"这里", en:"Come here, please.", cn:"请到这里来。"},
-      {w:"there", ipa:"/ðer/", pos:"adv.", zh:"那里", en:"The book is over there.", cn:"书在那边。"},
-      {w:"always", ipa:"/ˈɔːlweɪz/", pos:"adv.", zh:"总是", en:"She always drinks tea.", cn:"她总是喝茶。"},
-      {w:"never", ipa:"/ˈnevər/", pos:"adv.", zh:"从不", en:"He never eats meat.", cn:"他从不吃肉。"},
-      {w:"sometimes", ipa:"/ˈsʌmtaɪmz/", pos:"adv.", zh:"有时", en:"We sometimes go by train.", cn:"我们有时乘火车去。"},
-      {w:"today", ipa:"/təˈdeɪ/", pos:"adv./n.", zh:"今天", en:"I am busy today.", cn:"我今天很忙。"},
-      {w:"tomorrow", ipa:"/təˈmɑːroʊ/", pos:"adv./n.", zh:"明天", en:"We leave tomorrow.", cn:"我们明天出发。"},
-      {w:"because", ipa:"/bɪˈkɔːz/", pos:"conj.", zh:"因为", en:"I stay home because it rains.", cn:"我待在家因为下雨了。"},
-      {w:"so", ipa:"/soʊ/", pos:"conj.", zh:"所以", en:"It is late, so we go home.", cn:"天晚了，所以我们回家。"},
-      {w:"with", ipa:"/wɪð/", pos:"prep.", zh:"和；用", en:"I go to school with my brother.", cn:"我和哥哥一起上学。"}
-    ]}
-  ],
-  b1words: [
-    { group:"观点与表达", items:[
-      {w:"opinion", ipa:"/əˈpɪnjən/", pos:"n.", zh:"观点，看法", en:"In my opinion, this film is great.", cn:"在我看来，这部电影很棒。"},
-      {w:"belief", ipa:"/bɪˈliːf/", pos:"n.", zh:"信念，看法", en:"It is my belief that hard work pays off.", cn:"我相信努力会有回报。"},
-      {w:"idea", ipa:"/aɪˈdɪə/", pos:"n.", zh:"想法，主意", en:"She came up with a good idea.", cn:"她想出了一个好主意。"},
-      {w:"advice", ipa:"/ədˈvaɪs/", pos:"n.", zh:"建议（不可数）", en:"He gave me some useful advice.", cn:"他给了我一些有用的建议。"},
-      {w:"suggestion", ipa:"/səɡˈdʒestʃən/", pos:"n.", zh:"建议", en:"Do you have any suggestion for me?", cn:"你对我有什么建议吗？"},
-      {w:"agree", ipa:"/əˈɡriː/", pos:"v.", zh:"同意", en:"I agree with your plan.", cn:"我同意你的计划。"},
-      {w:"disagree", ipa:"/ˌdɪsəˈɡriː/", pos:"v.", zh:"不同意", en:"They disagreed about the price.", cn:"他们对价格有分歧。"},
-      {w:"discuss", ipa:"/dɪˈskʌs/", pos:"v.", zh:"讨论", en:"We discussed the trip yesterday.", cn:"我们昨天讨论了这次旅行。"},
-      {w:"explain", ipa:"/ɪkˈspleɪn/", pos:"v.", zh:"解释", en:"Can you explain this word to me?", cn:"你能给我解释这个词吗？"},
-      {w:"describe", ipa:"/dɪˈskraɪb/", pos:"v.", zh:"描述", en:"Please describe your hometown.", cn:"请描述一下你的家乡。"},
-      {w:"mention", ipa:"/ˈmenʃən/", pos:"v.", zh:"提及，说起", en:"He didn't mention the meeting.", cn:"他没有提起那场会议。"},
-      {w:"complain", ipa:"/kəmˈpleɪn/", pos:"v.", zh:"抱怨", en:"She complained about the noise.", cn:"她抱怨噪音太大。"}
-    ]},
-    { group:"情感与态度", items:[
-      {w:"angry", ipa:"/ˈæŋɡri/", pos:"adj.", zh:"生气的", en:"My father was angry with me.", cn:"我父亲对我很生气。"},
-      {w:"annoyed", ipa:"/əˈnɔɪd/", pos:"adj.", zh:"恼怒的，烦恼的", en:"I was annoyed by his late reply.", cn:"他迟迟不回信让我很恼火。"},
-      {w:"anxious", ipa:"/ˈæŋkʃəs/", pos:"adj.", zh:"焦虑的，担忧的", en:"She felt anxious before the exam.", cn:"考试前她感到焦虑。"},
-      {w:"confused", ipa:"/kənˈfjuːzd/", pos:"adj.", zh:"困惑的", en:"I'm confused about this rule.", cn:"我对这条规则感到困惑。"},
-      {w:"delighted", ipa:"/dɪˈlaɪtɪd/", pos:"adj.", zh:"高兴的，欣喜的", en:"We were delighted to hear the news.", cn:"听到这个消息我们很高兴。"},
-      {w:"disappointed", ipa:"/ˌdɪsəˈpɔɪntɪd/", pos:"adj.", zh:"失望的", en:"He was disappointed with the result.", cn:"他对结果感到失望。"},
-      {w:"embarrassed", ipa:"/ɪmˈbærəst/", pos:"adj.", zh:"尴尬的", en:"She felt embarrassed when she fell.", cn:"她摔倒时觉得很尴尬。"},
-      {w:"excited", ipa:"/ɪkˈsaɪtɪd/", pos:"adj.", zh:"兴奋的", en:"The kids are excited about the trip.", cn:"孩子们对这次旅行很兴奋。"},
-      {w:"frightened", ipa:"/ˈfraɪtnd/", pos:"adj.", zh:"害怕的，受惊的", en:"The dog was frightened by the thunder.", cn:"狗被雷声吓到了。"},
-      {w:"grateful", ipa:"/ˈɡreɪtfəl/", pos:"adj.", zh:"感激的", en:"I'm grateful for your help.", cn:"我很感激你的帮助。"},
-      {w:"proud", ipa:"/praʊd/", pos:"adj.", zh:"自豪的", en:"She is proud of her son.", cn:"她为儿子感到自豪。"},
-      {w:"relieved", ipa:"/rɪˈliːvd/", pos:"adj.", zh:"宽慰的，放心的", en:"I felt relieved when the test ended.", cn:"考试结束时我松了一口气。"}
-    ]},
-    { group:"社会与人物", items:[
-      {w:"society", ipa:"/səˈsaɪəti/", pos:"n.", zh:"社会", en:"Education is important to society.", cn:"教育对社会很重要。"},
-      {w:"neighbor", ipa:"/ˈneɪbər/", pos:"n.", zh:"邻居", en:"Our new neighbor is very kind.", cn:"我们的新邻居很友善。"},
-      {w:"stranger", ipa:"/ˈstreɪndʒər/", pos:"n.", zh:"陌生人", en:"Don't talk to strangers.", cn:"不要和陌生人说话。"},
-      {w:"relationship", ipa:"/rɪˈleɪʃənʃɪp/", pos:"n.", zh:"关系", en:"They have a good relationship.", cn:"他们关系很好。"},
-      {w:"guest", ipa:"/ɡest/", pos:"n.", zh:"客人", en:"We invited ten guests to the party.", cn:"我们邀请了十位客人参加聚会。"},
-      {w:"customer", ipa:"/ˈkʌstəmər/", pos:"n.", zh:"顾客", en:"The shop has many customers.", cn:"这家店有很多顾客。"},
-      {w:"colleague", ipa:"/ˈkɑːliːɡ/", pos:"n.", zh:"同事", en:"She is a colleague of mine.", cn:"她是我的同事。"},
-      {w:"personality", ipa:"/ˌpɜːrsəˈnæləti/", pos:"n.", zh:"个性，性格", en:"He has a friendly personality.", cn:"他性格友善。"},
-      {w:"behavior", ipa:"/bɪˈheɪvjər/", pos:"n.", zh:"行为", en:"His behavior was unacceptable.", cn:"他的行为令人无法接受。"},
-      {w:"culture", ipa:"/ˈkʌltʃər/", pos:"n.", zh:"文化", en:"I love learning about different cultures.", cn:"我喜欢了解不同的文化。"}
-    ]},
-    { group:"工作与商业", items:[
-      {w:"business", ipa:"/ˈbɪznəs/", pos:"n.", zh:"生意，商业", en:"He runs his own business.", cn:"他经营自己的生意。"},
-      {w:"career", ipa:"/kəˈrɪr/", pos:"n.", zh:"职业，事业", en:"She plans to build a career in medicine.", cn:"她打算在医学领域发展事业。"},
-      {w:"company", ipa:"/ˈkʌmpəni/", pos:"n.", zh:"公司", en:"He works for a big company.", cn:"他在一家大公司工作。"},
-      {w:"staff", ipa:"/stæf/", pos:"n.", zh:"员工，全体职员", en:"The staff are very friendly.", cn:"员工都很友好。"},
-      {w:"interview", ipa:"/ˈɪntərvjuː/", pos:"n./v.", zh:"面试，访谈", en:"I have a job interview tomorrow.", cn:"我明天有一场工作面试。"},
-      {w:"salary", ipa:"/ˈsæləri/", pos:"n.", zh:"薪水", en:"Her salary is enough to live on.", cn:"她的薪水够生活。"},
-      {w:"boss", ipa:"/bɔːs/", pos:"n.", zh:"老板", en:"My boss is easy to talk to.", cn:"我的老板很好沟通。"},
-      {w:"experience", ipa:"/ɪkˈspɪriəns/", pos:"n.", zh:"经验，经历", en:"She has a lot of work experience.", cn:"她有丰富的工作经验。"},
-      {w:"skill", ipa:"/skɪl/", pos:"n.", zh:"技能", en:"Speaking is a useful skill.", cn:"口语是一项有用的技能。"},
-      {w:"responsibility", ipa:"/rɪˌspɑːnsəˈbɪləti/", pos:"n.", zh:"责任", en:"It is our responsibility to help.", cn:"帮助他人是我们的责任。"}
-    ]},
-    { group:"科技与媒体", items:[
-      {w:"technology", ipa:"/tekˈnɑːlədʒi/", pos:"n.", zh:"科技，技术", en:"Technology changes our lives.", cn:"科技改变我们的生活。"},
-      {w:"internet", ipa:"/ˈɪntərnet/", pos:"n.", zh:"互联网", en:"I found the answer on the internet.", cn:"我在网上找到了答案。"},
-      {w:"website", ipa:"/ˈwebsaɪt/", pos:"n.", zh:"网站", en:"This website is easy to use.", cn:"这个网站很好用。"},
-      {w:"online", ipa:"/ˌɑːnˈlaɪn/", pos:"adj./adv.", zh:"在线的", en:"We had an online class today.", cn:"我们今天上了一节网课。"},
-      {w:"digital", ipa:"/ˈdɪdʒɪtl/", pos:"adj.", zh:"数字的", en:"I prefer digital books.", cn:"我更喜欢电子书。"},
-      {w:"message", ipa:"/ˈmesɪdʒ/", pos:"n./v.", zh:"信息，消息", en:"I sent her a message.", cn:"我给她发了一条信息。"},
-      {w:"social media", ipa:"/ˈsoʊʃl ˈmiːdiə/", pos:"n.", zh:"社交媒体", en:"Many people use social media daily.", cn:"许多人每天使用社交媒体。"},
-      {w:"device", ipa:"/dɪˈvaɪs/", pos:"n.", zh:"设备，装置", en:"This device is very helpful.", cn:"这个设备很有用。"},
-      {w:"data", ipa:"/ˈdeɪtə/", pos:"n.", zh:"数据", en:"We need more data to decide.", cn:"我们需要更多数据来做决定。"},
-      {w:"password", ipa:"/ˈpæswɜːrd/", pos:"n.", zh:"密码", en:"Please keep your password safe.", cn:"请保管好你的密码。"}
-    ]},
-    { group:"环境与自然", items:[
-      {w:"environment", ipa:"/ɪnˈvaɪrənmənt/", pos:"n.", zh:"环境", en:"We must protect the environment.", cn:"我们必须保护环境。"},
-      {w:"nature", ipa:"/ˈneɪtʃər/", pos:"n.", zh:"自然", en:"I love spending time in nature.", cn:"我喜欢待在大自然中。"},
-      {w:"pollution", ipa:"/pəˈluːʃən/", pos:"n.", zh:"污染", en:"Air pollution is a big problem.", cn:"空气污染是个大问题。"},
-      {w:"recycle", ipa:"/ˌriːˈsaɪkl/", pos:"v.", zh:"回收利用", en:"We should recycle paper and plastic.", cn:"我们应该回收纸张和塑料。"},
-      {w:"climate", ipa:"/ˈklaɪmət/", pos:"n.", zh:"气候", en:"The climate is getting warmer.", cn:"气候正在变暖。"},
-      {w:"planet", ipa:"/ˈplænɪt/", pos:"n.", zh:"行星（地球）", en:"We share one planet.", cn:"我们共享同一个地球。"},
-      {w:"energy", ipa:"/ˈenərdʒi/", pos:"n.", zh:"能源，能量", en:"Solar energy is clean.", cn:"太阳能是清洁能源。"},
-      {w:"protect", ipa:"/prəˈtekt/", pos:"v.", zh:"保护", en:"Wear a mask to protect yourself.", cn:"戴口罩保护自己。"},
-      {w:"waste", ipa:"/weɪst/", pos:"n./v.", zh:"浪费，废物", en:"Don't waste your time.", cn:"不要浪费你的时间。"}
-    ]},
-    { group:"教育与学习", items:[
-      {w:"education", ipa:"/ˌedʒuˈkeɪʃn/", pos:"n.", zh:"教育", en:"Education opens new doors.", cn:"教育打开新的大门。"},
-      {w:"knowledge", ipa:"/ˈnɑːlɪdʒ/", pos:"n.", zh:"知识", en:"Books give us knowledge.", cn:"书籍给我们知识。"},
-      {w:"subject", ipa:"/ˈsʌbdʒɪkt/", pos:"n.", zh:"科目，主题", en:"Math is my favorite subject.", cn:"数学是我最喜欢的科目。"},
-      {w:"research", ipa:"/ˈriːsɜːrtʃ/", pos:"n./v.", zh:"研究", en:"She is doing research on sleep.", cn:"她正在做关于睡眠的研究。"},
-      {w:"improve", ipa:"/ɪmˈpruːv/", pos:"v.", zh:"改善，提高", en:"I want to improve my English.", cn:"我想提高我的英语。"},
-      {w:"practice", ipa:"/ˈpræktɪs/", pos:"n./v.", zh:"练习", en:"Practice makes perfect.", cn:"熟能生巧。"},
-      {w:"understand", ipa:"/ˌʌndərˈstænd/", pos:"v.", zh:"理解", en:"Do you understand this rule?", cn:"你理解这条规则吗？"},
-      {w:"memorize", ipa:"/ˈmeməraɪz/", pos:"v.", zh:"记住，背诵", en:"Try to memorize ten words a day.", cn:"试着每天背十个单词。"},
-      {w:"concentrate", ipa:"/ˈkɑːnsntreɪt/", pos:"v.", zh:"集中（注意力）", en:"It is hard to concentrate in noise.", cn:"在噪音中很难集中注意力。"},
-      {w:"graduate", ipa:"/ˈɡrædʒueɪt/", pos:"v.", zh:"毕业", en:"He will graduate next year.", cn:"他明年将毕业。"}
-    ]},
-    { group:"常用进阶动词", items:[
-      {w:"achieve", ipa:"/əˈtʃiːv/", pos:"v.", zh:"实现，达成", en:"You can achieve your dream.", cn:"你能实现你的梦想。"},
-      {w:"allow", ipa:"/əˈlaʊ/", pos:"v.", zh:"允许", en:"Pets are not allowed here.", cn:"这里不允许养宠物。"},
-      {w:"arrange", ipa:"/əˈreɪndʒ/", pos:"v.", zh:"安排", en:"Let's arrange a meeting.", cn:"我们安排一场会议吧。"},
-      {w:"avoid", ipa:"/əˈvɔɪd/", pos:"v.", zh:"避免", en:"Avoid eating too much sugar.", cn:"避免吃太多糖。"},
-      {w:"cancel", ipa:"/ˈkænsl/", pos:"v.", zh:"取消", en:"They canceled the flight.", cn:"他们取消了航班。"},
-      {w:"encourage", ipa:"/ɪnˈkɜːrɪdʒ/", pos:"v.", zh:"鼓励", en:"My teacher encouraged me a lot.", cn:"老师给了我很多鼓励。"},
-      {w:"invite", ipa:"/ɪnˈvaɪt/", pos:"v.", zh:"邀请", en:"He invited me to dinner.", cn:"他邀请我去吃晚饭。"},
-      {w:"offer", ipa:"/ˈɔːfər/", pos:"v.", zh:"提供，主动提出", en:"She offered to help me.", cn:"她主动提出帮我。"},
-      {w:"promise", ipa:"/ˈprɑːmɪs/", pos:"v.", zh:"承诺，许诺", en:"I promise to call you.", cn:"我保证会给你打电话。"},
-      {w:"refuse", ipa:"/rɪˈfjuːz/", pos:"v.", zh:"拒绝", en:"He refused to go.", cn:"他拒绝去。"},
-      {w:"suggest", ipa:"/səɡˈdʒest/", pos:"v.", zh:"建议", en:"I suggest taking a taxi.", cn:"我建议打车。"},
-      {w:"realize", ipa:"/ˈriːəlaɪz/", pos:"v.", zh:"意识到，实现", en:"I realized my mistake.", cn:"我意识到了自己的错误。"},
-      {w:"celebrate", ipa:"/ˈselɪbreɪt/", pos:"v.", zh:"庆祝", en:"We celebrated her birthday.", cn:"我们庆祝了她的生日。"},
-      {w:"expect", ipa:"/ɪkˈspekt/", pos:"v.", zh:"期待，预期", en:"I expect good news.", cn:"我期待好消息。"}
-    ]},
-    { group:"常用进阶形容词", items:[
-      {w:"ancient", ipa:"/ˈeɪnʃənt/", pos:"adj.", zh:"古老的", en:"We visited an ancient temple.", cn:"我们参观了一座古老的寺庙。"},
-      {w:"beautiful", ipa:"/ˈbjuːtɪfl/", pos:"adj.", zh:"美丽的", en:"What a beautiful sunset!", cn:"多美的日落啊！"},
-      {w:"comfortable", ipa:"/ˈkʌmfərtəbl/", pos:"adj.", zh:"舒适的", en:"This chair is very comfortable.", cn:"这把椅子很舒服。"},
-      {w:"dangerous", ipa:"/ˈdeɪndʒərəs/", pos:"adj.", zh:"危险的", en:"It is dangerous to swim alone.", cn:"独自游泳很危险。"},
-      {w:"enormous", ipa:"/ɪˈnɔːrməs/", pos:"adj.", zh:"巨大的", en:"They live in an enormous house.", cn:"他们住在一栋巨大的房子里。"},
-      {w:"familiar", ipa:"/fəˈmɪliər/", pos:"adj.", zh:"熟悉的", en:"This song sounds familiar.", cn:"这首歌听起来很熟悉。"},
-      {w:"interested", ipa:"/ˈɪntrəstɪd/", pos:"adj.", zh:"感兴趣的", en:"I'm interested in art.", cn:"我对艺术感兴趣。"},
-      {w:"lonely", ipa:"/ˈloʊnli/", pos:"adj.", zh:"孤独的", en:"He felt lonely in the new city.", cn:"他在新城市感到孤独。"},
-      {w:"ordinary", ipa:"/ˈɔːrdneri/", pos:"adj.", zh:"普通的", en:"It was just an ordinary day.", cn:"那只是平常的一天。"},
-      {w:"private", ipa:"/ˈpraɪvət/", pos:"adj.", zh:"私人的", en:"This is a private matter.", cn:"这是一件私事。"},
-      {w:"similar", ipa:"/ˈsɪmələr/", pos:"adj.", zh:"相似的", en:"Your idea is similar to mine.", cn:"你的想法和我的相似。"},
-      {w:"strange", ipa:"/streɪndʒ/", pos:"adj.", zh:"陌生的，奇怪的", en:"A strange man called me.", cn:"一个陌生男人给我打电话。"}
-    ]},
-    { group:"副词与连接词", items:[
-      {w:"however", ipa:"/haʊˈevər/", pos:"adv./conj.", zh:"然而", en:"It rained; however, we went out.", cn:"下雨了；然而我们还是出门了。"},
-      {w:"therefore", ipa:"/ˈðerfɔːr/", pos:"adv.", zh:"因此", en:"He was tired; therefore he slept early.", cn:"他累了；因此他很早就睡了。"},
-      {w:"although", ipa:"/ɔːlˈðoʊ/", pos:"conj.", zh:"虽然", en:"Although it was cold, we walked.", cn:"虽然天气冷，我们还是走了。"},
-      {w:"instead", ipa:"/ɪnˈsted/", pos:"adv.", zh:"反而，代替", en:"I drank tea instead of coffee.", cn:"我喝了茶而不是咖啡。"},
-      {w:"meanwhile", ipa:"/ˈmiːnwaɪl/", pos:"adv.", zh:"与此同时", en:"She cooked; meanwhile, I cleaned.", cn:"她做饭；与此同时我打扫卫生。"},
-      {w:"eventually", ipa:"/ɪˈventʃuəli/", pos:"adv.", zh:"最终", en:"They eventually found the way.", cn:"他们最终找到了路。"},
-      {w:"immediately", ipa:"/ɪˈmiːdiətli/", pos:"adv.", zh:"立即，马上", en:"Call me immediately after class.", cn:"下课后马上给我打电话。"},
-      {w:"recently", ipa:"/ˈriːsntli/", pos:"adv.", zh:"最近", en:"I recently moved to Beijing.", cn:"我最近搬到了北京。"},
-      {w:"perhaps", ipa:"/pərˈhæps/", pos:"adv.", zh:"也许", en:"Perhaps we can meet later.", cn:"也许我们可以晚点见面。"}
-    ]}
-  ],
-  b2words: [
-    { group:"目标与抱负", items:[
-      {w:"ambition", ipa:"/æmˈbɪʃən/", pos:"n.", zh:"雄心，抱负", en:"She has the ambition to become a leading scientist.", cn:"她有成为顶尖科学家的抱负。"},
-      {w:"aspiration", ipa:"/ˌæspəˈreɪʃən/", pos:"n.", zh:"渴望，志向", en:"His aspiration for a better life drove him to study abroad.", cn:"他对更好生活的渴望促使他出国留学。"},
-      {w:"objective", ipa:"/əbˈdʒektɪv/", pos:"n.", zh:"目标，目的", en:"Our main objective is to reduce costs by twenty percent.", cn:"我们的主要目标是将成本降低百分之二十。"},
-      {w:"accomplish", ipa:"/əˈkʌmplɪʃ/", pos:"v.", zh:"完成，实现", en:"They accomplished the mission ahead of schedule.", cn:"他们提前完成了任务。"},
-      {w:"pursue", ipa:"/pərˈsuː/", pos:"v.", zh:"追求，从事", en:"He decided to pursue a career in medicine.", cn:"他决定从事医学事业。"},
-      {w:"overcome", ipa:"/ˌoʊvərˈkʌm/", pos:"v.", zh:"克服", en:"She overcame many difficulties to finish her degree.", cn:"她克服了许多困难才完成学位。"},
-      {w:"determined", ipa:"/dɪˈtɜːrmɪnd/", pos:"adj.", zh:"坚定的，下定决心的", en:"He was determined to prove them wrong.", cn:"他下定决心要证明他们错了。"},
-      {w:"thrive", ipa:"/θraɪv/", pos:"v.", zh:"繁荣，茁壮成长", en:"Small businesses thrive in this neighborhood.", cn:"小企业在这一带蓬勃发展。"},
-      {w:"endeavor", ipa:"/ɪnˈdevər/", pos:"v.", zh:"努力，尽力", en:"We will endeavor to meet the deadline.", cn:"我们将尽力赶上截止日期。"},
-      {w:"fulfill", ipa:"/fʊlˈfɪl/", pos:"v.", zh:"实现，履行", en:"The project fulfilled all our expectations.", cn:"这个项目实现了我们所有的期望。"}
-    ]},
-    { group:"沟通与说服", items:[
-      {w:"persuade", ipa:"/pərˈsweɪd/", pos:"v.", zh:"说服", en:"He persuaded her to join the team.", cn:"他说服她加入了团队。"},
-      {w:"convince", ipa:"/kənˈvɪns/", pos:"v.", zh:"使信服", en:"The data convinced the board to invest.", cn:"数据说服了董事会进行投资。"},
-      {w:"negotiate", ipa:"/nɪˈɡoʊʃieɪt/", pos:"v.", zh:"谈判，协商", en:"They negotiated a better contract.", cn:"他们谈成了一份更好的合同。"},
-      {w:"emphasize", ipa:"/ˈemfəsaɪz/", pos:"v.", zh:"强调", en:"She emphasized the need for caution.", cn:"她强调了谨慎的必要性。"},
-      {w:"convey", ipa:"/kənˈveɪ/", pos:"v.", zh:"传达", en:"Words cannot convey how grateful I am.", cn:"言语无法表达我有多么感激。"},
-      {w:"clarify", ipa:"/ˈklærəfaɪ/", pos:"v.", zh:"澄清，阐明", en:"Let me clarify my position on this issue.", cn:"让我阐明我在这个问题上的立场。"},
-      {w:"respond", ipa:"/rɪˈspɑːnd/", pos:"v.", zh:"回应", en:"He failed to respond to our request.", cn:"他没有回应我们的请求。"},
-      {w:"react", ipa:"/riˈækt/", pos:"v.", zh:"反应", en:"The market reacted sharply to the news.", cn:"市场对此消息反应强烈。"},
-      {w:"express", ipa:"/ɪkˈspres/", pos:"v.", zh:"表达", en:"He expressed his concerns at the meeting.", cn:"他在会上表达了自己的担忧。"},
-      {w:"demonstrate", ipa:"/ˈdemənstreɪt/", pos:"v.", zh:"证明，演示", en:"The study demonstrates a clear link between diet and health.", cn:"这项研究证明了饮食与健康之间的明显关联。"}
-    ]},
-    { group:"社会与全球议题", items:[
-      {w:"global", ipa:"/ˈɡloʊbəl/", pos:"adj.", zh:"全球的", en:"The crisis has a global impact.", cn:"这场危机有全球性的影响。"},
-      {w:"community", ipa:"/kəˈmjuːnəti/", pos:"n.", zh:"社区，社群", en:"The local community supported the project.", cn:"当地社区支持了这个项目。"},
-      {w:"equality", ipa:"/iˈkwɑːləti/", pos:"n.", zh:"平等", en:"They fought for equality in the workplace.", cn:"他们为职场平等而奋斗。"},
-      {w:"poverty", ipa:"/ˈpɑːvərti/", pos:"n.", zh:"贫困", en:"Poverty remains a pressing issue.", cn:"贫困仍然是一个紧迫的问题。"},
-      {w:"wealth", ipa:"/welθ/", pos:"n.", zh:"财富", en:"The nation's wealth is unevenly distributed.", cn:"该国的财富分配不均。"},
-      {w:"economy", ipa:"/ɪˈkɑːnəmi/", pos:"n.", zh:"经济", en:"The economy is showing signs of recovery.", cn:"经济正显现复苏迹象。"},
-      {w:"policy", ipa:"/ˈpɑːləsi/", pos:"n.", zh:"政策", en:"The new policy takes effect next month.", cn:"新政策下月生效。"},
-      {w:"government", ipa:"/ˈɡʌvərnmənt/", pos:"n.", zh:"政府", en:"The government announced tax reforms.", cn:"政府宣布了税收改革。"},
-      {w:"democracy", ipa:"/dɪˈmɑːkrəsi/", pos:"n.", zh:"民主", en:"Democracy depends on active citizens.", cn:"民主依赖于积极的公民。"},
-      {w:"citizen", ipa:"/ˈsɪtɪzən/", pos:"n.", zh:"公民", en:"Every citizen has the right to vote.", cn:"每位公民都有投票权。"}
-    ]},
-    { group:"职场进阶", items:[
-      {w:"profession", ipa:"/prəˈfeʃən/", pos:"n.", zh:"职业，专业", en:"Teaching is a demanding profession.", cn:"教学是一项要求很高的职业。"},
-      {w:"qualification", ipa:"/ˌkwɑːlɪfɪˈkeɪʃən/", pos:"n.", zh:"资格，资质", en:"You need a relevant qualification to apply.", cn:"你需要具备相关资格才能申请。"},
-      {w:"recruit", ipa:"/rɪˈkruːt/", pos:"v.", zh:"招聘，招募", en:"The firm recruits graduates each year.", cn:"该公司每年招聘毕业生。"},
-      {w:"employ", ipa:"/ɪmˈplɔɪ/", pos:"v.", zh:"雇佣", en:"The company employs over five hundred staff.", cn:"该公司雇佣了五百多名员工。"},
-      {w:"promote", ipa:"/prəˈmoʊt/", pos:"v.", zh:"晋升，提拔", en:"She was promoted to manager.", cn:"她被提拔为经理。"},
-      {w:"retire", ipa:"/rɪˈtaɪər/", pos:"v.", zh:"退休", en:"He plans to retire at sixty.", cn:"他计划在六十岁退休。"},
-      {w:"wage", ipa:"/weɪdʒ/", pos:"n.", zh:"工资", en:"Wages have risen modestly this year.", cn:"今年工资小幅上涨。"},
-      {w:"income", ipa:"/ˈɪnkʌm/", pos:"n.", zh:"收入", en:"Her income covers the rent comfortably.", cn:"她的收入足以轻松支付房租。"},
-      {w:"profit", ipa:"/ˈprɑːfɪt/", pos:"n.", zh:"利润", en:"The startup turned a profit last year.", cn:"这家初创公司去年开始盈利。"},
-      {w:"industry", ipa:"/ˈɪndəstri/", pos:"n.", zh:"工业，产业", en:"The tourism industry is booming.", cn:"旅游业正在蓬勃发展。"}
-    ]},
-    { group:"科技与信息", items:[
-      {w:"innovation", ipa:"/ˌɪnəˈveɪʃən/", pos:"n.", zh:"创新", en:"Innovation drives economic growth.", cn:"创新推动经济增长。"},
-      {w:"software", ipa:"/ˈsɔːftwer/", pos:"n.", zh:"软件", en:"The software simplifies the workflow.", cn:"该软件简化了工作流程。"},
-      {w:"hardware", ipa:"/ˈhɑːrdwer/", pos:"n.", zh:"硬件", en:"We need to upgrade the hardware.", cn:"我们需要升级硬件。"},
-      {w:"network", ipa:"/ˈnetwɜːrk/", pos:"n.", zh:"网络", en:"The network went down at noon.", cn:"网络在中午瘫痪了。"},
-      {w:"artificial", ipa:"/ˌɑːrtɪˈfɪʃəl/", pos:"adj.", zh:"人工的，人造的", en:"Artificial intelligence is transforming jobs.", cn:"人工智能正在改变工作。"},
-      {w:"virtual", ipa:"/ˈvɜːrtʃuəl/", pos:"adj.", zh:"虚拟的", en:"They held a virtual meeting.", cn:"他们举行了虚拟会议。"},
-      {w:"automate", ipa:"/ˈɔːtəmeɪt/", pos:"v.", zh:"使自动化", en:"Factories automate repetitive tasks.", cn:"工厂将重复性任务自动化。"},
-      {w:"update", ipa:"/ˌʌpˈdeɪt/", pos:"v.", zh:"更新", en:"Please update your contact details.", cn:"请更新你的联系信息。"},
-      {w:"download", ipa:"/ˌdaʊnˈloʊd/", pos:"v.", zh:"下载", en:"You can download the file for free.", cn:"你可以免费下载该文件。"},
-      {w:"encrypt", ipa:"/ɪnˈkrɪpt/", pos:"v.", zh:"加密", en:"The app encrypts all user data.", cn:"该应用对所有用户数据加密。"}
-    ]},
-    { group:"环境与可持续", items:[
-      {w:"sustainable", ipa:"/səˈsteɪnəbl/", pos:"adj.", zh:"可持续的", en:"We need sustainable energy sources.", cn:"我们需要可持续的能源。"},
-      {w:"conservation", ipa:"/ˌkɑːnsərˈveɪʃən/", pos:"n.", zh:"保护，保存", en:"Wildlife conservation is vital.", cn:"野生动物保护至关重要。"},
-      {w:"ecosystem", ipa:"/ˈiːkoʊsɪstəm/", pos:"n.", zh:"生态系统", en:"Pollution damages the local ecosystem.", cn:"污染破坏了当地的生态系统。"},
-      {w:"species", ipa:"/ˈspiːʃiːz/", pos:"n.", zh:"物种", en:"Several species are at risk of extinction.", cn:"若干物种面临灭绝风险。"},
-      {w:"habitat", ipa:"/ˈhæbɪtæt/", pos:"n.", zh:"栖息地", en:"The forest is the habitat of tigers.", cn:"森林是老虎的栖息地。"},
-      {w:"emission", ipa:"/ɪˈmɪʃən/", pos:"n.", zh:"排放", en:"Carbon emissions must be cut.", cn:"碳排放必须削减。"},
-      {w:"renewable", ipa:"/rɪˈnjuːəbl/", pos:"adj.", zh:"可再生的", en:"Solar power is a renewable resource.", cn:"太阳能是一种可再生资源。"},
-      {w:"consumption", ipa:"/kənˈsʌmpʃən/", pos:"n.", zh:"消耗，消费", en:"Energy consumption keeps rising.", cn:"能源消耗持续上升。"},
-      {w:"resource", ipa:"/rɪˈsɔːrs/", pos:"n.", zh:"资源", en:"Water is a precious resource.", cn:"水是一种宝贵的资源。"},
-      {w:"crisis", ipa:"/ˈkraɪsɪs/", pos:"n.", zh:"危机", en:"The climate crisis demands action.", cn:"气候危机需要采取行动。"}
-    ]},
-    { group:"思维与学术", items:[
-      {w:"analyze", ipa:"/ˈænəlaɪz/", pos:"v.", zh:"分析", en:"We analyzed the survey results.", cn:"我们分析了调查结果。"},
-      {w:"evaluate", ipa:"/ɪˈvæljueɪt/", pos:"v.", zh:"评估", en:"The committee will evaluate the proposal.", cn:"委员会将评估该提案。"},
-      {w:"interpret", ipa:"/ɪnˈtɜːrprɪt/", pos:"v.", zh:"解读，诠释", en:"How do you interpret this data?", cn:"你如何解读这些数据？"},
-      {w:"conclude", ipa:"/kənˈkluːd/", pos:"v.", zh:"得出结论", en:"The report concluded that change is needed.", cn:"报告得出结论：变革是必要的。"},
-      {w:"theory", ipa:"/ˈθɪri/", pos:"n.", zh:"理论", en:"His theory explains the phenomenon.", cn:"他的理论解释了这一现象。"},
-      {w:"concept", ipa:"/ˈkɑːnsept/", pos:"n.", zh:"概念", en:"She grasped the concept quickly.", cn:"她很快理解了这个概念。"},
-      {w:"evidence", ipa:"/ˈevɪdəns/", pos:"n.", zh:"证据", en:"There is strong evidence of a recovery.", cn:"有强有力的证据表明正在复苏。"},
-      {w:"hypothesis", ipa:"/haɪˈpɑːθəsɪs/", pos:"n.", zh:"假设", en:"The hypothesis was later confirmed.", cn:"该假设后来得到了证实。"},
-      {w:"critical", ipa:"/ˈkrɪtɪkl/", pos:"adj.", zh:"关键的，批判性的", en:"Critical thinking is essential.", cn:"批判性思维至关重要。"},
-      {w:"logical", ipa:"/ˈlɑːdʒɪkl/", pos:"adj.", zh:"逻辑的", en:"Her argument is logical and clear.", cn:"她的论证合乎逻辑且清晰。"}
-    ]},
-    { group:"情绪与心理", items:[
-      {w:"motivated", ipa:"/ˈmoʊtɪveɪtɪd/", pos:"adj.", zh:"有动力的", en:"A motivated team works harder.", cn:"有动力的团队工作更努力。"},
-      {w:"optimistic", ipa:"/ˌɑːptɪˈmɪstɪk/", pos:"adj.", zh:"乐观的", en:"She is optimistic about the future.", cn:"她对未来感到乐观。"},
-      {w:"pessimistic", ipa:"/ˌpesɪˈmɪstɪk/", pos:"adj.", zh:"悲观的", en:"Don't be pessimistic; things will improve.", cn:"别悲观，情况会好转的。"},
-      {w:"stressed", ipa:"/strest/", pos:"adj.", zh:"有压力的", en:"He felt stressed before the exam.", cn:"考试前他感到压力很大。"},
-      {w:"depressed", ipa:"/dɪˈprest/", pos:"adj.", zh:"沮丧的，抑郁的", en:"The news left her depressed.", cn:"这个消息让她很沮丧。"},
-      {w:"content", ipa:"/kənˈtent/", pos:"adj.", zh:"满足的", en:"He is content with his life.", cn:"他对自己的生活感到满足。"},
-      {w:"satisfied", ipa:"/ˈsætɪsfaɪd/", pos:"adj.", zh:"满意的", en:"Customers were satisfied with the service.", cn:"顾客对服务感到满意。"},
-      {w:"enthusiastic", ipa:"/ɪnˌθuːziˈæstɪk/", pos:"adj.", zh:"热情的", en:"They were enthusiastic about the plan.", cn:"他们对这个计划很热情。"},
-      {w:"sensitive", ipa:"/ˈsensətɪv/", pos:"adj.", zh:"敏感的", en:"Be sensitive to their feelings.", cn:"要对他们的感受敏感。"},
-      {w:"confident", ipa:"/ˈkɑːnfɪdənt/", pos:"adj.", zh:"自信的", en:"She felt confident in her answer.", cn:"她对自己的答案很有信心。"}
-    ]},
-    { group:"描述性进阶形容词", items:[
-      {w:"significant", ipa:"/sɪɡˈnɪfɪkənt/", pos:"adj.", zh:"重要的，显著的", en:"There was a significant change in public opinion.", cn:"舆论发生了显著的变化。"},
-      {w:"substantial", ipa:"/səbˈstænʃl/", pos:"adj.", zh:"大量的，实质的", en:"They made a substantial profit.", cn:"他们获得了可观的利润。"},
-      {w:"considerable", ipa:"/kənˈsɪdərəbl/", pos:"adj.", zh:"相当大的", en:"It took considerable effort.", cn:"这花了相当大的努力。"},
-      {w:"precise", ipa:"/prɪˈsaɪs/", pos:"adj.", zh:"精确的", en:"Give me a precise figure.", cn:"给我一个精确的数字。"},
-      {w:"relevant", ipa:"/ˈreləvənt/", pos:"adj.", zh:"相关的", en:"Please keep your comments relevant.", cn:"请让你的评论切题。"},
-      {w:"appropriate", ipa:"/əˈproʊpriət/", pos:"adj.", zh:"适当的", en:"Wear appropriate clothing for the weather.", cn:"根据天气穿合适的衣服。"},
-      {w:"complex", ipa:"/kəmˈpleks/", pos:"adj.", zh:"复杂的", en:"The issue is complex and urgent.", cn:"这个问题既复杂又紧迫。"},
-      {w:"vague", ipa:"/veɪɡ/", pos:"adj.", zh:"模糊的", en:"His answer was vague and unhelpful.", cn:"他的回答很模糊，没有帮助。"},
-      {w:"brilliant", ipa:"/ˈbrɪljənt/", pos:"adj.", zh:"杰出的，聪明的", en:"She has a brilliant mind.", cn:"她头脑聪明过人。"},
-      {w:"outstanding", ipa:"/aʊtˈstændɪŋ/", pos:"adj.", zh:"杰出的", en:"He did an outstanding job on the project.", cn:"他在项目上表现出色。"}
-    ]},
-    { group:"副词与连接词", items:[
-      {w:"furthermore", ipa:"/ˌfɜːrðərˈmɔːr/", pos:"adv.", zh:"此外", en:"The plan is costly; furthermore, it is risky.", cn:"这个计划耗资巨大，此外还很冒险。"},
-      {w:"moreover", ipa:"/mɔːrˈoʊvər/", pos:"adv.", zh:"而且", en:"The data is flawed; moreover, it is outdated.", cn:"数据有缺陷，而且已经过时。"},
-      {w:"nevertheless", ipa:"/ˌnevərðəˈles/", pos:"adv.", zh:"然而，尽管如此", en:"It was late; nevertheless, they continued.", cn:"天色已晚，尽管如此他们仍继续。"},
-      {w:"nonetheless", ipa:"/ˌnʌnðəˈles/", pos:"adv.", zh:"尽管如此", en:"The task was hard; nonetheless, she finished it.", cn:"任务很难，但她还是完成了。"},
-      {w:"whereas", ipa:"/werˈæz/", pos:"conj.", zh:"然而，而", en:"He loves cities, whereas she prefers the countryside.", cn:"他喜欢城市，而她更喜欢乡村。"},
-      {w:"consequently", ipa:"/ˈkɑːnsɪkwentli/", pos:"adv.", zh:"因此", en:"The bridge closed; consequently, traffic worsened.", cn:"桥关闭了，因此交通恶化。"},
-      {w:"specifically", ipa:"/spəˈsɪfɪkli/", pos:"adv.", zh:"具体地", en:"Specifically, we need more staff.", cn:"具体地说，我们需要更多员工。"},
-      {w:"generally", ipa:"/ˈdʒenrəli/", pos:"adv.", zh:"通常，一般地", en:"Generally, people support the idea.", cn:"通常人们支持这个想法。"},
-      {w:"notably", ipa:"/ˈnoʊtəbli/", pos:"adv.", zh:"尤其，显著地", en:"Several countries, notably Germany, led the effort.", cn:"几个国家，尤其是德国，引领了这项努力。"},
-      {w:"presumably", ipa:"/prɪˈzuːməbli/", pos:"adv.", zh:"大概，据推测", en:"He is presumably on his way.", cn:"他大概在路上了。"}
-    ]}
-  ],
-  c1words: [
-  { group:"学术与论证", items:[
-    {w:"elaborate", ipa:"/ɪˈlæbərət/", pos:"adj.", zh:"详尽的；精心制作的", en:"She gave an elaborate explanation of the theory.", cn:"她对这个理论做了详尽的解释。"},
-    {w:"ambiguous", ipa:"/æmˈbɪɡjuəs/", pos:"adj.", zh:"模棱两可的，含糊的", en:"The instructions were ambiguous and confusing.", cn:"这些说明含糊不清，令人困惑。"},
-    {w:"undermine", ipa:"/ˌʌndəˈmaɪn/", pos:"v.", zh:"削弱，破坏", en:"Constant criticism can undermine a child's confidence.", cn:"不断的批评会削弱孩子的自信心。"},
-    {w:"scrutinize", ipa:"/ˈskruːtənaɪz/", pos:"v.", zh:"仔细审查，详审", en:"The committee scrutinized every detail of the proposal.", cn:"委员会仔细审查了提案的每一个细节。"},
-    {w:"mitigate", ipa:"/ˈmɪtɪɡeɪt/", pos:"v.", zh:"减轻，缓解", en:"New policies aim to mitigate the effects of climate change.", cn:"新政策旨在减轻气候变化的影响。"},
-    {w:"coherent", ipa:"/kəʊˈhɪərənt/", pos:"adj.", zh:"连贯的，有条理的", en:"He presented a coherent argument supported by evidence.", cn:"他提出了一个有证据支撑、条理清晰的论点。"},
-    {w:"empirical", ipa:"/ɪmˈpɪrɪkl/", pos:"adj.", zh:"实证的，基于经验的", en:"The theory is based on empirical research rather than speculation.", cn:"这一理论基于实证研究而非推测。"},
-    {w:"postulate", ipa:"/ˈpɒstjuleɪt/", pos:"v.", zh:"假定，假设", en:"Scientists postulate that the universe is expanding.", cn:"科学家假定宇宙正在膨胀。"},
-    {w:"refute", ipa:"/rɪˈfjuːt/", pos:"v.", zh:"驳斥，反驳", en:"The new data refuted the earlier hypothesis.", cn:"新数据驳斥了早先的假设。"},
-    {w:"corroborate", ipa:"/kəˈrɒbəreɪt/", pos:"v.", zh:"证实，支持", en:"Witnesses corroborated his account of the event.", cn:"目击者证实了他对该事件的描述。"}
-  ]},
-  { group:"社会与政治", items:[
-    {w:"affluent", ipa:"/ˈæfluənt/", pos:"adj.", zh:"富裕的，富足的", en:"The affluent neighbourhood has excellent schools.", cn:"这个富裕的社区拥有优质的学校。"},
-    {w:"precarious", ipa:"/prɪˈkeəriəs/", pos:"adj.", zh:"不稳定的，危险的", en:"Many workers remain in precarious employment.", cn:"许多工人仍处于不稳定的就业状态。"},
-    {w:"ostensibly", ipa:"/ɒˈstensəbli/", pos:"adv.", zh:"表面上，似乎", en:"He ostensibly resigned for personal reasons.", cn:"他表面上是因为个人原因辞职的。"},
-    {w:"marginalize", ipa:"/ˈmɑːdʒɪnəlaɪz/", pos:"v.", zh:"使边缘化", en:"The policy tends to marginalize minority groups.", cn:"这项政策往往使少数群体边缘化。"},
-    {w:"cohesive", ipa:"/kəʊˈhiːsɪv/", pos:"adj.", zh:"有凝聚力的", en:"A cohesive society depends on shared values.", cn:"一个有凝聚力的社会依赖于共同的价值观。"},
-    {w:"disparity", ipa:"/dɪˈspærəti/", pos:"n.", zh:"差异，不平等", en:"There is a growing disparity between rich and poor.", cn:"贫富差距正在不断扩大。"},
-    {w:"consensus", ipa:"/kənˈsensəs/", pos:"n.", zh:"共识", en:"The panel reached a consensus after hours of debate.", cn:"经过数小时辩论，小组达成了共识。"},
-    {w:"authoritarian", ipa:"/ɔːˌθɒrɪˈteəriən/", pos:"adj.", zh:"专制的，独裁的", en:"The authoritarian regime suppressed free speech.", cn:"这个专制政权压制了言论自由。"},
-    {w:"disenfranchise", ipa:"/ˌdɪsɪnˈfræntʃaɪz/", pos:"v.", zh:"剥夺权利，使失去选举权", en:"The law effectively disenfranchised thousands of voters.", cn:"这项法律实际上剥夺了数千名选民的权利。"},
-    {w:"escalate", ipa:"/ˈeskəleɪt/", pos:"v.", zh:"升级，加剧", en:"Tensions between the two countries began to escalate.", cn:"两国之间的紧张局势开始升级。"}
-  ]},
-  { group:"经济与商业", items:[
-    {w:"commensurate", ipa:"/kəˈmenʃərət/", pos:"adj.", zh:"相称的，相当的", en:"Her salary is commensurate with her experience.", cn:"她的薪水与她的经验相称。"},
-    {w:"fluctuate", ipa:"/ˈflʌktʃueɪt/", pos:"v.", zh:"波动，起伏", en:"Oil prices fluctuate with global demand.", cn:"油价随全球需求波动。"},
-    {w:"lucrative", ipa:"/ˈluːkrətɪv/", pos:"adj.", zh:"盈利的，有利可图的", en:"He found a lucrative job in the tech industry.", cn:"他在科技行业找到了一份高薪工作。"},
-    {w:"solvent", ipa:"/ˈsɒlvənt/", pos:"adj.", zh:"有偿付能力的", en:"The company remained solvent despite the recession.", cn:"尽管经济衰退，公司仍保持偿付能力。"},
-    {w:"equilibrium", ipa:"/ˌiːkwɪˈlɪbriəm/", pos:"n.", zh:"平衡，均衡", en:"The market eventually returned to a state of equilibrium.", cn:"市场最终恢复了均衡状态。"},
-    {w:"commodity", ipa:"/kəˈmɒdəti/", pos:"n.", zh:"商品", en:"Coffee is one of the most traded commodities.", cn:"咖啡是交易最广泛的商品之一。"},
-    {w:"monopoly", ipa:"/məˈnɒpəli/", pos:"n.", zh:"垄断", en:"The firm was accused of operating a monopoly.", cn:"该公司被指控实行垄断。"},
-    {w:"incur", ipa:"/ɪnˈkɜː/", pos:"v.", zh:"招致，承受", en:"The project will incur significant costs.", cn:"这个项目将产生巨大的成本。"},
-    {w:"divest", ipa:"/daɪˈvest/", pos:"v.", zh:"剥离，撤资", en:"The fund decided to divest from fossil fuels.", cn:"该基金决定从化石燃料领域撤资。"},
-    {w:"viable", ipa:"/ˈvaɪəbl/", pos:"adj.", zh:"可行的", en:"Is the business plan financially viable?", cn:"这个商业计划在财务上可行吗？"}
-  ]},
-  { group:"心理与认知", items:[
-    {w:"cognitive", ipa:"/ˈkɒɡnətɪv/", pos:"adj.", zh:"认知的", en:"Sleep is essential for cognitive development.", cn:"睡眠对认知发展至关重要。"},
-    {w:"innate", ipa:"/ɪˈneɪt/", pos:"adj.", zh:"天生的，固有的", en:"Some beliefs seem to be innate rather than learned.", cn:"有些信念似乎是天生的，而非习得的。"},
-    {w:"subconscious", ipa:"/ˌsʌbˈkɒnʃəs/", pos:"adj.", zh:"潜意识的", en:"The subconscious mind influences our decisions.", cn:"潜意识影响着我们的决策。"},
-    {w:"resilient", ipa:"/rɪˈzɪliənt/", pos:"adj.", zh:"有韧性的，能复原的", en:"Children are often remarkably resilient.", cn:"孩子们往往具有惊人的韧性。"},
-    {w:"perception", ipa:"/pəˈsepʃn/", pos:"n.", zh:"感知，看法", en:"Our perception of risk is not always accurate.", cn:"我们对风险的感知并不总是准确。"},
-    {w:"ambivalent", ipa:"/æmˈbɪvələnt/", pos:"adj.", zh:"矛盾的，爱憎交加的", en:"She felt ambivalent about moving abroad.", cn:"她对移居国外感到矛盾。"},
-    {w:"intrinsic", ipa:"/ɪnˈtrɪnzɪk/", pos:"adj.", zh:"内在的，本质的", en:"Music has intrinsic value beyond its uses.", cn:"音乐除了用途之外还具有内在价值。"},
-    {w:"cognizant", ipa:"/ˈkɒɡnɪzənt/", pos:"adj.", zh:"认识到的，知晓的", en:"We must be cognizant of the risks involved.", cn:"我们必须意识到其中的风险。"},
-    {w:"aversion", ipa:"/əˈvɜːʃn/", pos:"n.", zh:"厌恶，反感", en:"He has a strong aversion to public speaking.", cn:"他对公开演讲有强烈的厌恶。"},
-    {w:"rationalize", ipa:"/ˈræʃnəlaɪz/", pos:"v.", zh:"使合理化，文过饰非", en:"People often rationalize decisions they later regret.", cn:"人们常常为自己后来后悔的决定找理由。"}
-  ]},
-  { group:"描述与修辞", items:[
-    {w:"meticulous", ipa:"/məˈtɪkjələs/", pos:"adj.", zh:"一丝不苟的，细致的", en:"She kept meticulous records of every transaction.", cn:"她对每一笔交易都做了细致的记录。"},
-    {w:"eloquent", ipa:"/ˈeləkwənt/", pos:"adj.", zh:"雄辩的，有说服力的", en:"The senator made an eloquent speech on justice.", cn:"那位参议员就正义发表了雄辩的演讲。"},
-    {w:"succinct", ipa:"/səkˈsɪŋkt/", pos:"adj.", zh:"简洁的，简明的", en:"His answer was succinct but informative.", cn:"他的回答简洁却信息丰富。"},
-    {w:"vivid", ipa:"/ˈvɪvɪd/", pos:"adj.", zh:"生动的，鲜明的", en:"She gave a vivid description of the accident.", cn:"她对事故作了生动的描述。"},
-    {w:"nuanced", ipa:"/ˈnjuːɑːnst/", pos:"adj.", zh:"细致入微的，有微妙差别的", en:"The debate requires a more nuanced understanding.", cn:"这场辩论需要更细致入微的理解。"},
-    {w:"tangible", ipa:"/ˈtændʒəbl/", pos:"adj.", zh:"有形的，切实的", en:"The benefits of the reform are now tangible.", cn:"改革的好处现在已切实可见。"},
-    {w:"intangible", ipa:"/ɪnˈtændʒəbl/", pos:"adj.", zh:"无形的", en:"Goodwill is an intangible asset of a company.", cn:"商誉是企业的无形资产。"},
-    {w:"stark", ipa:"/stɑːk/", pos:"adj.", zh:"鲜明的，严酷的", en:"The report reveals a stark contrast in outcomes.", cn:"报告揭示了结果上的鲜明反差。"},
-    {w:"subtle", ipa:"/ˈsʌtl/", pos:"adj.", zh:"微妙的，细致的", en:"There is a subtle difference between the two terms.", cn:"这两个术语之间有微妙的区别。"},
-    {w:"convey", ipa:"/kənˈveɪ/", pos:"v.", zh:"传达，表达", en:"Colour can convey emotion in a painting.", cn:"色彩能在画作中传达情感。"}
-  ]},
-  { group:"科技与数据", items:[
-    {w:"algorithm", ipa:"/ˈælɡərɪðəm/", pos:"n.", zh:"算法", en:"The recommendation algorithm learns from user behaviour.", cn:"推荐算法从用户行为中学习。"},
-    {w:"parameter", ipa:"/pəˈræmɪtə/", pos:"n.", zh:"参数", en:"We adjusted the parameter to improve accuracy.", cn:"我们调整了参数以提高准确性。"},
-    {w:"simulate", ipa:"/ˈsɪmjuleɪt/", pos:"v.", zh:"模拟", en:"Researchers simulate climate scenarios on supercomputers.", cn:"研究人员在超级计算机上模拟气候情景。"},
-    {w:"robust", ipa:"/rəʊˈbʌst/", pos:"adj.", zh:"稳健的，强大的", en:"The system is robust enough to handle failures.", cn:"这个系统足够稳健，能够应对故障。"},
-    {w:"interface", ipa:"/ˈɪntəfeɪs/", pos:"n.", zh:"界面，接口", en:"The app has a clean and intuitive interface.", cn:"这款应用拥有简洁直观的界面。"},
-    {w:"quantifiable", ipa:"/ˈkwɒntɪfaɪəbl/", pos:"adj.", zh:"可量化的", en:"Not all benefits are easily quantifiable.", cn:"并非所有好处都容易量化。"},
-    {w:"scalable", ipa:"/ˈskeɪləbl/", pos:"adj.", zh:"可扩展的", en:"Cloud services are scalable to meet demand.", cn:"云服务可扩展以满足需求。"},
-    {w:"latency", ipa:"/ˈleɪtnsi/", pos:"n.", zh:"延迟", en:"High latency makes online gaming frustrating.", cn:"高延迟让在线游戏令人沮丧。"},
-    {w:"encrypt", ipa:"/ɪnˈkrɪpt/", pos:"v.", zh:"加密", en:"The app encrypts messages to protect privacy.", cn:"这款应用对消息加密以保护隐私。"},
-    {w:"protocol", ipa:"/ˈprəʊtəkɒl/", pos:"n.", zh:"协议，规程", en:"The protocol ensures secure data transfer.", cn:"该协议确保数据传输安全。"}
-  ]},
-  { group:"文化与艺术", items:[
-    {w:"aesthetic", ipa:"/iːsˈθetɪk/", pos:"adj.", zh:"美学的，审美的", en:"The building has a minimalist aesthetic.", cn:"这座建筑具有极简主义的美学风格。"},
-    {w:"heritage", ipa:"/ˈherɪtɪdʒ/", pos:"n.", zh:"遗产", en:"The town is proud of its cultural heritage.", cn:"这个小镇为其文化遗产感到自豪。"},
-    {w:"contemporary", ipa:"/kənˈtemprəri/", pos:"adj.", zh:"当代的，同时代的", en:"The gallery shows contemporary art from Asia.", cn:"美术馆展出亚洲的当代艺术。"},
-    {w:"evoke", ipa:"/ɪˈvəʊk/", pos:"v.", zh:"唤起，引发", en:"The music evokes memories of childhood.", cn:"这段音乐唤起了童年的回忆。"},
-    {w:"genre", ipa:"/ˈʒɒnrə/", pos:"n.", zh:"类型，体裁", en:"Science fiction is her favourite genre.", cn:"科幻是她最喜欢的体裁。"},
-    {w:"patronize", ipa:"/ˈpætrənaɪz/", pos:"v.", zh:"赞助；以恩赐态度对待", en:"Wealthy merchants used to patronize the arts.", cn:"富商们过去常常赞助艺术。"},
-    {w:"rudimentary", ipa:"/ˌruːdɪˈmentri/", pos:"adj.", zh:"基本的，初步的", en:"He has only a rudimentary knowledge of French.", cn:"他只会一点基础的法语。"},
-    {w:"depict", ipa:"/dɪˈpɪkt/", pos:"v.", zh:"描绘，描写", en:"The mural depicts life in the village.", cn:"这幅壁画描绘了村庄的生活。"},
-    {w:"repertoire", ipa:"/ˈrepətwɑː/", pos:"n.", zh:"全部曲目，全部技能", en:"The pianist expanded her repertoire this year.", cn:"这位钢琴家今年扩充了她的演奏曲目。"},
-    {w:"encompass", ipa:"/ɪnˈkʌmpəs/", pos:"v.", zh:"包含，包围", en:"The festival encompasses music, film and theatre.", cn:"这个节庆涵盖音乐、电影和戏剧。"}
-  ]},
-  { group:"环境与自然", items:[
-    {w:"sustainable", ipa:"/səˈsteɪnəbl/", pos:"adj.", zh:"可持续的", en:"We need sustainable methods of farming.", cn:"我们需要可持续的耕作方式。"},
-    {w:"biodiversity", ipa:"/ˌbaɪəʊdaɪˈvɜːsəti/", pos:"n.", zh:"生物多样性", en:"The lake supports a rich biodiversity.", cn:"这个湖泊孕育着丰富的生物多样性。"},
-    {w:"ecosystem", ipa:"/ˈiːkəʊsɪstəm/", pos:"n.", zh:"生态系统", en:"Pollution damages the delicate ecosystem.", cn:"污染破坏了脆弱的生态系统。"},
-    {w:"depletion", ipa:"/dɪˈpliːʃn/", pos:"n.", zh:"消耗，枯竭", en:"Overfishing leads to the depletion of stocks.", cn:"过度捕捞导致鱼类资源的枯竭。"},
-    {w:"emissions", ipa:"/ɪˈmɪʃnz/", pos:"n.", zh:"排放（物）", en:"The city aims to cut carbon emissions by half.", cn:"该市的目标是减排一半的碳排放。"},
-    {w:"arable", ipa:"/ˈærəbl/", pos:"adj.", zh:"可耕种的", en:"The region has large areas of arable land.", cn:"该地区有大片可耕种的土地。"},
-    {w:"deforestation", ipa:"/diːˌfɒrɪˈsteɪʃn/", pos:"n.", zh:"森林砍伐", en:"Deforestation threatens many species.", cn:"森林砍伐威胁着许多物种。"},
-    {w:"renewable", ipa:"/rɪˈnjuːəbl/", pos:"adj.", zh:"可再生的", en:"Solar and wind are renewable sources of energy.", cn:"太阳能和风能是可再生的能源。"},
-    {w:"conservation", ipa:"/ˌkɒnsəˈveɪʃn/", pos:"n.", zh:"保护，保存", en:"Conservation of wetlands is a priority.", cn:"湿地保护是当务之急。"},
-    {w:"anthropogenic", ipa:"/ˌænθrəpəˈdʒenɪk/", pos:"adj.", zh:"人为的，人类活动引起的", en:"Much of the warming is anthropogenic.", cn:"大部分变暖是人类活动引起的。"}
-  ]},
-  { group:"人际与沟通", items:[
-    {w:"rapport", ipa:"/ræˈpɔː/", pos:"n.", zh:"融洽，和谐关系", en:"The teacher built a good rapport with students.", cn:"这位老师与学生建立了良好的融洽关系。"},
-    {w:"candid", ipa:"/ˈkændɪd/", pos:"adj.", zh:"坦率的，直言的", en:"I appreciate your candid feedback.", cn:"我很感激你坦率的反馈。"},
-    {w:"assertive", ipa:"/əˈsɜːtɪv/", pos:"adj.", zh:"果断的，自信的", en:"Being assertive helps in negotiations.", cn:"表现得果断有助于谈判。"},
-    {w:"concede", ipa:"/kənˈsiːd/", pos:"v.", zh:"承认；让步", en:"He conceded that he had been wrong.", cn:"他承认自己错了。"},
-    {w:"articulate", ipa:"/ɑːˈtɪkjuleɪt/", pos:"v.", zh:"清晰表达", en:"She articulated her views with great clarity.", cn:"她非常清晰地表达了自己的观点。"},
-    {w:"reconcile", ipa:"/ˈrekənsaɪl/", pos:"v.", zh:"调和，和解", en:"They struggled to reconcile their differences.", cn:"他们努力调和彼此的分歧。"},
-    {w:"emulate", ipa:"/ˈemjuleɪt/", pos:"v.", zh:"效仿，模仿", en:"Young athletes emulate their role models.", cn:"年轻运动员效仿他们的榜样。"},
-    {w:"discern", ipa:"/dɪˈsɜːn/", pos:"v.", zh:"辨别，察觉", en:"It is hard to discern the truth from rumours.", cn:"很难从谣言中辨别真相。"},
-    {w:"reciprocal", ipa:"/rɪˈsɪprəkl/", pos:"adj.", zh:"互惠的，相互的", en:"Friendship is based on reciprocal trust.", cn:"友谊建立在相互信任之上。"},
-    {w:"unequivocal", ipa:"/ˌʌnɪˈkwɪvəkl/", pos:"adj.", zh:"明确的，不含糊的", en:"The study offers unequivocal evidence.", cn:"这项研究提供了明确的证据。"}
-  ]},
-  { group:"抽象与哲学", items:[
-    {w:"inherent", ipa:"/ɪnˈhɪərənt/", pos:"adj.", zh:"内在的，固有的", en:"Every choice carries inherent risks.", cn:"每个选择都带有内在的风险。"},
-    {w:"arbitrary", ipa:"/ˈɑːbɪtrəri/", pos:"adj.", zh:"任意的，武断的", en:"The decision seemed arbitrary and unfair.", cn:"这个决定似乎武断而不公。"},
-    {w:"paradigm", ipa:"/ˈpærədaɪm/", pos:"n.", zh:"范式，模式", en:"The discovery caused a paradigm shift in physics.", cn:"这一发现引发了物理学的范式转变。"},
-    {w:"dichotomy", ipa:"/daɪˈkɒtəmi/", pos:"n.", zh:"二分法，对立", en:"There is a false dichotomy between work and life.", cn:"工作与生活之间存在一种虚假的二分法。"},
-    {w:"premise", ipa:"/ˈpremɪs/", pos:"n.", zh:"前提", en:"The argument rests on a questionable premise.", cn:"这个论点建立在一个可疑的前提之上。"},
-    {w:"ubiquitous", ipa:"/juːˈbɪkwɪtəs/", pos:"adj.", zh:"无处不在的", en:"Smartphones have become ubiquitous.", cn:"智能手机已变得无处不在。"},
-    {w:"transcend", ipa:"/trænˈsend/", pos:"v.", zh:"超越，胜过", en:"Great art can transcend cultural boundaries.", cn:"伟大的艺术能超越文化边界。"},
-    {w:"impetus", ipa:"/ˈɪmpɪtəs/", pos:"n.", zh:"动力，推动", en:"The crisis gave impetus to reform.", cn:"这场危机为改革提供了动力。"},
-    {w:"cumulative", ipa:"/ˈkjuːmjələtɪv/", pos:"adj.", zh:"累积的", en:"The cumulative effect of stress is harmful.", cn:"压力的累积效应是有害的。"},
-    {w:"myriad", ipa:"/ˈmɪriəd/", pos:"adj.", zh:"无数的，大量的", en:"The project faces a myriad of challenges.", cn:"这个项目面临无数的挑战。"}
-  ]},
-  { group:"批评与评价", items:[
-    {w:"spurious", ipa:"/ˈspjʊəriəs/", pos:"adj.", zh:"虚假的，伪造的", en:"The claim was based on spurious reasoning.", cn:"这一说法基于虚假的推理。"},
-    {w:"valid", ipa:"/ˈvælɪd/", pos:"adj.", zh:"有效的，合理的", en:"Her criticism of the plan is valid.", cn:"她对计划的批评是合理的。"},
-    {w:"flawed", ipa:"/flɔːd/", pos:"adj.", zh:"有缺陷的", en:"The study was flawed by a small sample.", cn:"这项研究因样本量小而存在缺陷。"},
-    {w:"rigorous", ipa:"/ˈrɪɡərəs/", pos:"adj.", zh:"严谨的，严格的", en:"The method underwent rigorous testing.", cn:"该方法经过了严谨的测试。"},
-    {w:"superficial", ipa:"/ˌsuːpəˈfɪʃl/", pos:"adj.", zh:"表面的，肤浅的", en:"His analysis was superficial and incomplete.", cn:"他的分析肤浅且不完整。"},
-    {w:"compelling", ipa:"/kəmˈpelɪŋ/", pos:"adj.", zh:"令人信服的", en:"She made a compelling case for change.", cn:"她提出了令人信服的改革理由。"},
-    {w:"contentious", ipa:"/kənˈtenʃəs/", pos:"adj.", zh:"有争议的", en:"The topic remains highly contentious.", cn:"这个话题仍然极具争议。"},
-    {w:"substantiate", ipa:"/səbˈstænʃieɪt/", pos:"v.", zh:"证实，证明", en:"Can you substantiate these allegations?", cn:"你能证实这些指控吗？"},
-    {w:"discernible", ipa:"/dɪˈsɜːnəbl/", pos:"adj.", zh:"可辨别的", en:"No discernible improvement was observed.", cn:"没有观察到可辨别的改善。"},
-    {w:"preclude", ipa:"/prɪˈkluːd/", pos:"v.", zh:"排除，阻止", en:"The agreement does not preclude further talks.", cn:"该协议并不排除进一步的谈判。"}
-  ]}
-],
-  c2words: [
-  { group:"高阶修辞", items:[
-    {w:"quintessential", ipa:"/ˌkwɪntɪˈsenʃl/", pos:"adj.", zh:"最典型的，精髓的", en:"He is the quintessential English gentleman.", cn:"他是最典型的英国绅士。"},
-    {w:"obfuscate", ipa:"/əbˈfʌskeɪt/", pos:"v.", zh:"使模糊，使困惑", en:"The report seemed designed to obfuscate the facts.", cn:"这份报告似乎是为了混淆事实而写的。"},
-    {w:"redolent", ipa:"/ˈredələnt/", pos:"adj.", zh:"令人想起的；芬芳的", en:"The poem is redolent of lost youth.", cn:"这首诗令人想起逝去的青春。"},
-    {w:"evince", ipa:"/ɪˈvɪns/", pos:"v.", zh:"表明，显示", en:"His behaviour evinced a lack of concern.", cn:"他的行为显示出缺乏关切。"},
-    {w:"perspicacious", ipa:"/ˌpɜːspɪˈkeɪʃəs/", pos:"adj.", zh:"有洞察力的", en:"She offered a perspicacious analysis of the trend.", cn:"她对这一趋势做出了有洞察力的分析。"},
-    {w:"eschew", ipa:"/ɪsˈtʃuː/", pos:"v.", zh:"避开，回避", en:"He eschews publicity and prefers privacy.", cn:"他避开公众关注，更喜欢隐私。"},
-    {w:"ineffable", ipa:"/ɪnˈefəbl/", pos:"adj.", zh:"难以言喻的", en:"The beauty of the music was ineffable.", cn:"这首音乐的美难以言喻。"},
-    {w:"sedulous", ipa:"/ˈsedjələs/", pos:"adj.", zh:"勤勉的，坚持不懈的", en:"Her sedulous research earned her recognition.", cn:"她勤勉的研究为她赢得了认可。"},
-    {w:"recondite", ipa:"/ˈrekəndaɪt/", pos:"adj.", zh:"深奥的，晦涩的", en:"The essay deals with recondite subjects.", cn:"这篇文章探讨深奥的题材。"},
-    {w:"sanguine", ipa:"/ˈsæŋɡwɪn/", pos:"adj.", zh:"乐观的；面色红润的", en:"He remains sanguine about the economy.", cn:"他对经济前景仍然乐观。"}
-  ]},
-  { group:"文学与美学", items:[
-    {w:"sycophant", ipa:"/ˈsɪkəfænt/", pos:"n.", zh:"阿谀奉承者", en:"The king was surrounded by sycophants.", cn:"国王身边围绕着阿谀奉承之徒。"},
-    {w:"pernicious", ipa:"/pəˈnɪʃəs/", pos:"adj.", zh:"有害的，恶性的", en:"Social media can have a pernicious influence.", cn:"社交媒体可能产生有害的影响。"},
-    {w:"deleterious", ipa:"/ˌdeləˈtɪəriəs/", pos:"adj.", zh:"有害的，有毒的", en:"Lack of sleep has deleterious effects.", cn:"睡眠不足会产生有害的影响。"},
-    {w:"assiduous", ipa:"/əˈsɪdjuəs/", pos:"adj.", zh:"勤勉的，专注的", en:"He was assiduous in his preparation.", cn:"他专心致志地做准备。"},
-    {w:"germane", ipa:"/dʒɜːˈmeɪn/", pos:"adj.", zh:"密切相关的，贴切的", en:"The comment is not germane to the issue.", cn:"这条评论与该问题无关。"},
-    {w:"mellifluous", ipa:"/məˈlɪfluəs/", pos:"adj.", zh:"悦耳的，流畅的", en:"She has a mellifluous voice.", cn:"她拥有一副悦耳的嗓音。"},
-    {w:"ebullient", ipa:"/ɪˈbʌliənt/", pos:"adj.", zh:"热情洋溢的", en:"The crowd was ebullient after the victory.", cn:"胜利后人群热情洋溢。"},
-    {w:"laconic", ipa:"/ləˈkɒnɪk/", pos:"adj.", zh:"简洁的，惜字如金的", en:"His laconic reply revealed little.", cn:"他惜字如金的回答几乎没透露什么。"},
-    {w:"pellucid", ipa:"/pəˈluːsɪd/", pos:"adj.", zh:"清晰的，透明的", en:"The lake was pellucid in the morning light.", cn:"在晨光中湖水清澈透明。"},
-    {w:"quixotic", ipa:"/kwɪkˈsɒtɪk/", pos:"adj.", zh:"理想化的，不切实际的", en:"His quixotic plan was doomed to fail.", cn:"他那种不切实际的计划注定失败。"}
-  ]},
-  { group:"政治与权力", items:[
-    {w:"hegemony", ipa:"/hɪˈɡeməni/", pos:"n.", zh:"霸权，主导地位", en:"The country sought regional hegemony.", cn:"该国谋求地区霸权。"},
-    {w:"demagogue", ipa:"/ˈdeməɡɒɡ/", pos:"n.", zh:"煽动者，蛊惑人心的政客", en:"The demagogue exploited public fears.", cn:"那个煽动者利用了公众的恐惧。"},
-    {w:"oligarchy", ipa:"/ˈɒlɪɡɑːki/", pos:"n.", zh:"寡头政治", en:"Critics say the nation is ruled by an oligarchy.", cn:"批评者称该国由寡头统治。"},
-    {w:"autocrat", ipa:"/ˈɔːtəkræt/", pos:"n.", zh:"独裁者", en:"The autocrat ruled with an iron hand.", cn:"那位独裁者以铁腕统治。"},
-    {w:"dissemble", ipa:"/dɪˈsembəl/", pos:"v.", zh:"掩饰，伪装", en:"He tried to dissemble his true motives.", cn:"他试图掩饰自己真实的动机。"},
-    {w:"perfidious", ipa:"/pəˈfɪdiəs/", pos:"adj.", zh:"背信弃义的", en:"The perfidious ally betrayed the coalition.", cn:"那个背信弃义的盟友背叛了联盟。"},
-    {w:"plenary", ipa:"/ˈpliːnəri/", pos:"adj.", zh:"全体参加的；完全的", en:"The plenary session opened at noon.", cn:"全体会议在中午召开。"},
-    {w:"statutory", ipa:"/ˈstætʃətri/", pos:"adj.", zh:"法定的，依法的", en:"The body has statutory powers.", cn:"该机构拥有法定权力。"},
-    {w:"promulgation", ipa:"/ˌprɒməlˈɡeɪʃn/", pos:"n.", zh:"颁布，公布", en:"The promulgation of the law took effect.", cn:"该法律的颁布已生效。"},
-    {w:"suffrage", ipa:"/ˈsʌfrɪdʒ/", pos:"n.", zh:"选举权，投票权", en:"Women won the right of suffrage in 1920.", cn:"女性在1920年赢得了选举权。"}
-  ]},
-  { group:"哲学与存在", items:[
-    {w:"ineluctable", ipa:"/ˌɪnɪˈlʌktəbl/", pos:"adj.", zh:"不可避免的，必然的", en:"Death is the ineluctable fate of all.", cn:"死亡是所有人不可避免的命运。"},
-    {w:"ontological", ipa:"/ˌɒntəˈlɒdʒɪkl/", pos:"adj.", zh:"本体论的", en:"The debate raises an ontological question.", cn:"这场辩论提出了一个本体论的问题。"},
-    {w:"epistemological", ipa:"/ɪˌpɪstiːməˈlɒdʒɪkl/", pos:"adj.", zh:"认识论的", en:"The claim faces epistemological challenges.", cn:"这一主张面临认识论的挑战。"},
-    {w:"teleological", ipa:"/ˌtelɪəˈlɒdʒɪkl/", pos:"adj.", zh:"目的论的", en:"The argument has a teleological flavour.", cn:"这个论点带有目的论的色彩。"},
-    {w:"antinomy", ipa:"/ænˈtɪnəmi/", pos:"n.", zh:"二律背反，矛盾", en:"The antinomy puzzled the philosophers.", cn:"这个二律背反令哲学家们困惑。"},
-    {w:"phenomenology", ipa:"/fəˌnɒmɪˈnɒlədʒi/", pos:"n.", zh:"现象学", en:"He studied phenomenology at university.", cn:"他在大学研究现象学。"},
-    {w:"dialectic", ipa:"/ˌdaɪəˈlektɪk/", pos:"n.", zh:"辩证（法）", en:"History unfolds through a dialectic of forces.", cn:"历史通过力量之间的辩证而展开。"},
-    {w:"aporia", ipa:"/əˈpɔːriə/", pos:"n.", zh:"疑难，困惑（哲学）", en:"The text ends in a troubling aporia.", cn:"这篇文章以一个令人不安的疑难收尾。"},
-    {w:"noumenon", ipa:"/ˈnuːmɪnɒn/", pos:"n.", zh:"本体（康德哲学）", en:"Kant distinguished noumenon from phenomenon.", cn:"康德区分了本体与现象。"},
-    {w:"immanent", ipa:"/ˈɪmənənt/", pos:"adj.", zh:"内在的，固有的", en:"The divine is immanent in all things.", cn:"神性内在于万物之中。"}
-  ]},
-  { group:"科学与严谨", items:[
-    {w:"stochastic", ipa:"/stəˈkæstɪk/", pos:"adj.", zh:"随机的", en:"The model uses a stochastic process.", cn:"该模型使用随机过程。"},
-    {w:"heuristic", ipa:"/hjʊˈrɪstɪk/", pos:"adj.", zh:"启发式的", en:"We applied a heuristic to solve it.", cn:"我们运用了一种启发式方法来解决它。"},
-    {w:"deterministic", ipa:"/dɪˌtɜːmɪˈnɪstɪk/", pos:"adj.", zh:"决定论的", en:"The system is not fully deterministic.", cn:"这个系统并非完全决定论的。"},
-    {w:"cogent", ipa:"/ˈkəʊdʒənt/", pos:"adj.", zh:"有说服力的，令人信服的", en:"He presented a cogent rebuttal.", cn:"他提出了令人信服的反驳。"},
-    {w:"axiomatic", ipa:"/ˌæksiəˈmætɪk/", pos:"adj.", zh:"公理的，自明的", en:"It is axiomatic that health matters.", cn:"健康至关重要，这是自明的。"},
-    {w:"pervasive", ipa:"/pəˈveɪsɪv/", pos:"adj.", zh:"普遍存在的", en:"Bias is pervasive in the data.", cn:"偏差在数据中是普遍存在的。"},
-    {w:"salient", ipa:"/ˈseɪliənt/", pos:"adj.", zh:"显著的，突出的", en:"The most salient feature is the colour.", cn:"最显著的特征是颜色。"},
-    {w:"stringent", ipa:"/ˈstrɪndʒənt/", pos:"adj.", zh:"严格的，严厉的", en:"The rules impose stringent limits.", cn:"这些规则施加了严格的限制。"},
-    {w:"incontrovertible", ipa:"/ˌɪnkɒntrəˈvɜːtəbl/", pos:"adj.", zh:"无可争议的", en:"The evidence is incontrovertible.", cn:"证据无可争议。"},
-    {w:"concomitant", ipa:"/kənˈkɒmɪtənt/", pos:"adj.", zh:"伴随的，同时发生的", en:"Inflation is a concomitant of growth.", cn:"通货膨胀是增长的伴随现象。"}
-  ]},
-  { group:"经济与金融", items:[
-    {w:"fiduciary", ipa:"/fɪˈdjuːʃəri/", pos:"adj.", zh:"信托的，受托的", en:"He has a fiduciary duty to the clients.", cn:"他对客户负有受托责任。"},
-    {w:"liquidity", ipa:"/lɪˈkwɪdəti/", pos:"n.", zh:"流动性", en:"The bank faced a liquidity crisis.", cn:"该银行面临流动性危机。"},
-    {w:"amortize", ipa:"/əˈmɔːtaɪz/", pos:"v.", zh:"分期偿还", en:"The loan is amortized over twenty years.", cn:"这笔贷款在二十年内分期偿还。"},
-    {w:"securitize", ipa:"/sɪˈkjʊərətaɪz/", pos:"v.", zh:"证券化", en:"Banks securitize their mortgage loans.", cn:"银行将抵押贷款证券化。"},
-    {w:"arbitrage", ipa:"/ˈɑːbɪtrɑːʒ/", pos:"n.", zh:"套利", en:"He profited from currency arbitrage.", cn:"他从货币套利中获利。"},
-    {w:"deflation", ipa:"/diːˈfleɪʃn/", pos:"n.", zh:"通货紧缩", en:"Deflation can stall economic activity.", cn:"通货紧缩会令经济活动停滞。"},
-    {w:"insolvency", ipa:"/ɪnˈsɒlvənsi/", pos:"n.", zh:"破产，无力偿债", en:"The firm slid into insolvency.", cn:"该公司陷入了破产。"},
-    {w:"bullion", ipa:"/ˈbʊliən/", pos:"n.", zh:"金条，银条", en:"The vault holds gold bullion.", cn:"金库里存放着金条。"},
-    {w:"pecuniary", ipa:"/pɪˈkjuːniəri/", pos:"adj.", zh:"金钱的，财政的", en:"The dispute was of a pecuniary nature.", cn:"这场争端属于金钱性质。"},
-    {w:"endogenous", ipa:"/enˈdɒdʒənəs/", pos:"adj.", zh:"内生的", en:"Growth was driven by endogenous factors.", cn:"增长是由内生因素推动的。"}
-  ]},
-  { group:"法律与权利", items:[
-    {w:"jurisprudence", ipa:"/ˌdʒʊərɪsˈpruːdns/", pos:"n.", zh:"法学，判例", en:"He studied jurisprudence in London.", cn:"他在伦敦研习法学。"},
-    {w:"tortious", ipa:"/ˈtɔːʃəs/", pos:"adj.", zh:"侵权行为的", en:"The act was held to be tortious.", cn:"该行为被判定构成侵权。"},
-    {w:"usurp", ipa:"/juːˈzɜːp/", pos:"v.", zh:"篡夺，侵占", en:"The general tried to usurp power.", cn:"那位将军试图篡夺权力。"},
-    {w:"covenant", ipa:"/ˈkʌvənənt/", pos:"n.", zh:"契约，盟约", en:"The lease contains a restrictive covenant.", cn:"这份租约包含一项限制性契约。"},
-    {w:"redress", ipa:"/rɪˈdres/", pos:"n.", zh:"补救，纠正", en:"The law provides redress for victims.", cn:"法律为受害者提供补救。"},
-    {w:"injunction", ipa:"/ɪnˈdʒʌŋkʃn/", pos:"n.", zh:"禁令", en:"The court issued an injunction.", cn:"法院发布了一项禁令。"},
-    {w:"malfeasance", ipa:"/mælˈfiːzns/", pos:"n.", zh:"渎职，不法行为", en:"The official was charged with malfeasance.", cn:"该官员被控渎职。"},
-    {w:"litigious", ipa:"/lɪˈtɪdʒəs/", pos:"adj.", zh:"好诉讼的；可诉讼的", en:"The firm is known to be litigious.", cn:"这家公司以好诉讼著称。"},
-    {w:"acquiesce", ipa:"/ˌækwiˈes/", pos:"v.", zh:"默许，顺从", en:"They acquiesced in the decision.", cn:"他们默许了这个决定。"},
-    {w:"estoppel", ipa:"/ɪˈstɒpl/", pos:"n.", zh:"禁止反言（法律）", en:"The doctrine of estoppel applied.", cn:"禁止反言原则适用。"}
-  ]},
-  { group:"社会批判", items:[
-    {w:"anodyne", ipa:"/ˈænədaɪn/", pos:"adj.", zh:"温和的；平淡的", en:"The speech was anodyne and forgettable.", cn:"这场演讲温和平淡，令人忘却。"},
-    {w:"jejune", ipa:"/dʒɪˈdʒuːn/", pos:"adj.", zh:"幼稚的；枯燥的", en:"His remarks were jejune and naive.", cn:"他的言论幼稚而天真。"},
-    {w:"philistine", ipa:"/ˈfɪlɪstaɪn/", pos:"n.", zh:"庸俗之人，缺乏文化素养者", en:"Critics dismissed him as a philistine.", cn:"评论家把他贬为一个庸俗之徒。"},
-    {w:"cacophony", ipa:"/kəˈkɒfəni/", pos:"n.", zh:"刺耳的声音，不和谐", en:"The street filled with a cacophony of noise.", cn:"街道上充满了刺耳的嘈杂声。"},
-    {w:"bourgeois", ipa:"/ˈbʊəʒwɑː/", pos:"adj.", zh:"中产阶级的；平庸的", en:"He mocked their bourgeois tastes.", cn:"他嘲弄他们平庸的品味。"},
-    {w:"vacuous", ipa:"/ˈvækjuəs/", pos:"adj.", zh:"空洞的，愚蠢的", en:"The interview was vacuous and shallow.", cn:"这场采访空洞而肤浅。"},
-    {w:"puerile", ipa:"/ˈpjʊəraɪl/", pos:"adj.", zh:"幼稚的，孩子气的", en:"The joke was rather puerile.", cn:"这个笑话颇为幼稚。"},
-    {w:"banal", ipa:"/bəˈnɑːl/", pos:"adj.", zh:"平庸的，陈腐的", en:"The film relies on banal clichés.", cn:"这部电影依赖于陈腐的俗套。"},
-    {w:"meretricious", ipa:"/ˌmerəˈtrɪʃəs/", pos:"adj.", zh:"华而不实的", en:"The decor was meretricious and cheap.", cn:"这装潢华而不实，显得廉价。"},
-    {w:"fatuous", ipa:"/ˈfætʃuəs/", pos:"adj.", zh:"愚蠢的，愚昧的", en:"He smiled with fatuous confidence.", cn:"他带着愚昧的自信微笑。"}
-  ]},
-  { group:"情感与心理深度", items:[
-    {w:"equanimity", ipa:"/ˌekwəˈnɪməti/", pos:"n.", zh:"平静，沉着", en:"She faced the news with equanimity.", cn:"她以平静的心态面对这一消息。"},
-    {w:"melancholy", ipa:"/ˈmelənkəli/", pos:"n.", zh:"忧郁", en:"A sense of melancholy settled over him.", cn:"一种忧郁感笼罩了他。"},
-    {w:"despondent", ipa:"/dɪˈspɒndənt/", pos:"adj.", zh:"沮丧的，失望的", en:"He grew despondent after the failure.", cn:"失败后他变得沮丧。"},
-    {w:"poignant", ipa:"/ˈpɔɪnjənt/", pos:"adj.", zh:"尖锐的，令人心酸的", en:"The letter was a poignant reminder.", cn:"这封信是一个令人心酸的提醒。"},
-    {w:"ennui", ipa:"/ɒnˈwiː/", pos:"n.", zh:"厌倦，无聊", en:"She suffered from a deep ennui.", cn:"她深受厌倦之苦。"},
-    {w:"vicarious", ipa:"/vɪˈkeəriəs/", pos:"adj.", zh:"间接体验的，替代性的", en:"We felt vicarious joy at their win.", cn:"我们因他们的胜利而感到间接的喜悦。"},
-    {w:"disconsolate", ipa:"/dɪsˈkɒnsələt/", pos:"adj.", zh:"忧郁的，无法安慰的", en:"The child was disconsolate after loss.", cn:"那个孩子在失去后郁郁寡欢。"},
-    {w:"solipsistic", ipa:"/ˌsɒlɪpˈsɪstɪk/", pos:"adj.", zh:"唯我论的", en:"His view was solipsistic and isolated.", cn:"他的观点是唯我论的，孤立的。"},
-    {w:"lugubrious", ipa:"/ləˈɡuːbriəs/", pos:"adj.", zh:"悲哀的，忧郁的", en:"He spoke in a lugubrious tone.", cn:"他以悲哀的语调说话。"},
-    {w:"wistful", ipa:"/ˈwɪstfl/", pos:"adj.", zh:"怅惘的，渴望的", en:"She gave a wistful smile at the memory.", cn:"回忆时她露出怅惘的微笑。"}
-  ]},
-  { group:"抽象与隐喻", items:[
-    {w:"nebulous", ipa:"/ˈnebjələs/", pos:"adj.", zh:"模糊的，朦胧的", en:"The plan is still nebulous and vague.", cn:"这个计划仍然模糊不清。"},
-    {w:"apotheosis", ipa:"/əˌpɒθiˈəʊsɪs/", pos:"n.", zh:"巅峰，神化", en:"The film is the apotheosis of the genre.", cn:"这部电影是该类型的巅峰之作。"},
-    {w:"synecdoche", ipa:"/sɪˈnekdəki/", pos:"n.", zh:"提喻（修辞）", en:"All hands on deck is a synecdoche.", cn:"“全员到甲板”是一种提喻。"},
-    {w:"metonymy", ipa:"/mɪˈtɒnəmi/", pos:"n.", zh:"转喻", en:"The crown is metonymy for monarchy.", cn:"“王冠”是君主制的转喻。"},
-    {w:"effulgent", ipa:"/ɪˈfʌldʒənt/", pos:"adj.", zh:"光辉灿烂的", en:"The sunrise was effulgent and golden.", cn:"日出光辉灿烂，金光四射。"},
-    {w:"liminal", ipa:"/ˈlɪmɪnl/", pos:"adj.", zh:"阈限的，过渡的", en:"The ritual marks a liminal moment.", cn:"这个仪式标志着一个过渡时刻。"},
-    {w:"palimpsest", ipa:"/ˈpælɪmpsest/", pos:"n.", zh:"重写本；层层叠加的记忆", en:"The city is a palimpsest of eras.", cn:"这座城市是各个时代的层层叠加。"},
-    {w:"numinous", ipa:"/ˈnjuːmɪnəs/", pos:"adj.", zh:"神圣的，超自然的", en:"The place had a numinous quality.", cn:"这个地方有一种神圣的特质。"},
-    {w:"inscrutable", ipa:"/ɪnˈskruːtəbl/", pos:"adj.", zh:"神秘的，难以理解的", en:"His expression was inscrutable.", cn:"他的表情难以捉摸。"},
-    {w:"exiguous", ipa:"/ɪɡˈzɪɡjuəs/", pos:"adj.", zh:"稀少的，微小的", en:"The exiguous supply ran out fast.", cn:"微少的供给很快就用尽了。"}
-  ]}
-],
-
-
   mnemonics: [
   {
     "name": "一般现在时",
@@ -11397,171 +10716,6 @@ function spkBtn(text, small){
   return b;
 }
 
-/* ---------- MASTERY (localStorage) ---------- */
-const MKEY = 'englishkit_mastery_v1';
-let masteryStore = {};
-try { masteryStore = JSON.parse(localStorage.getItem(MKEY) || '{}'); } catch(e){ masteryStore = {}; }
-const MASTERY_META = {
-  new:      { label:'未学',   cls:'m-new' },
-  learning: { label:'学习中', cls:'m-learning' },
-  known:    { label:'已掌握', cls:'m-known' }
-};
-function mKey(level, w){ return level + '|' + w; }
-function getMastery(level, w){ return masteryStore[mKey(level, w)] || 'new'; }
-function cycleMastery(level, w){
-  const order = ['new','learning','known'];
-  const nxt = order[(order.indexOf(getMastery(level, w)) + 1) % 3];
-  masteryStore[mKey(level, w)] = nxt;
-  try { localStorage.setItem(MKEY, JSON.stringify(masteryStore)); } catch(e){}
-  return nxt;
-}
-
-/* ---------- STATE ---------- */
-let currentLevel = 'a2';
-let flashMode = false;
-let flashList = [];
-let flashIndex = 0;
-let flashRevealed = false;
-function getWordSet(){
-  if(currentLevel === 'a2') return DATA.words;
-  if(currentLevel === 'b1') return DATA.b1words;
-  if(currentLevel === 'b2') return DATA.b2words;
-  if(currentLevel === 'c1') return DATA.c1words;
-  return DATA.c2words;
-}
-function levelLabel(){ return currentLevel === 'c2' ? 'C2' : currentLevel === 'c1' ? 'C1' : currentLevel === 'b2' ? 'B2' : currentLevel === 'b1' ? 'B1' : 'A2'; }
-
-/* ---------- WORDS (list view) ---------- */
-function masteryBtn(level, w){
-  const m = getMastery(level, w);
-  const b = document.createElement('button');
-  b.className = 'm-btn ' + MASTERY_META[m].cls;
-  b.textContent = MASTERY_META[m].label;
-  b.title = '点击切换掌握度（未学 → 学习中 → 已掌握）';
-  b.addEventListener('click', (e)=>{
-    e.stopPropagation();
-    const nxt = cycleMastery(level, w);
-    b.className = 'm-btn ' + MASTERY_META[nxt].cls;
-    b.textContent = MASTERY_META[nxt].label;
-  });
-  return b;
-}
-
-function renderWords(){
-  const root = document.getElementById('wordsRoot');
-  root.innerHTML = '';
-  const filter = document.getElementById('wordSearch').value.trim();
-  const mf = document.getElementById('masteryFilter').value;
-  let total = 0, shown = 0;
-  getWordSet().forEach(g=>{
-    const items = g.items.filter(it=>{
-      if(filter){
-        const f = filter.toLowerCase();
-        if(!(it.w.toLowerCase().includes(f) || it.zh.includes(filter) || it.en.toLowerCase().includes(f))) return false;
-      }
-      if(mf !== 'all' && getMastery(currentLevel, it.w) !== mf) return false;
-      return true;
-    });
-    total += g.items.length;
-    if(items.length === 0) return;
-    shown += items.length;
-    const gt = document.createElement('div');
-    gt.className = 'group-title';
-    gt.textContent = g.group;
-    root.appendChild(gt);
-    const grid = document.createElement('div');
-    grid.className = 'grid';
-    items.forEach(it=>{
-      const c = document.createElement('div'); c.className = 'card';
-      const row = document.createElement('div'); row.className = 'word-row';
-      const w = document.createElement('span'); w.className = 'word'; w.textContent = it.w;
-      w.addEventListener('click', ()=>speak(it.w));
-      const ipa = document.createElement('span'); ipa.className='ipa'; ipa.textContent = it.ipa;
-      const pos = document.createElement('span'); pos.className='pos'; pos.textContent = it.pos;
-      const zh = document.createElement('span'); zh.className='zh'; zh.textContent = it.zh;
-      row.append(w, ipa, pos, zh, spkBtn(it.w), masteryBtn(currentLevel, it.w));
-      const ex = document.createElement('div'); ex.className='ex';
-      const en = document.createElement('span'); en.className='en'; en.textContent = it.en + ' ';
-      const cn = document.createElement('span'); cn.className='cn'; cn.textContent = it.cn;
-      ex.append(en, cn, spkBtn(it.en, true));
-      c.append(row, ex);
-      grid.appendChild(c);
-    });
-    root.appendChild(grid);
-  });
-  if(shown === 0){
-    root.innerHTML = '<div class="empty">没有匹配的单词，换个关键词或筛选条件试试～</div>';
-  }
-  document.getElementById('wordCount').textContent =
-    (filter || mf !== 'all') ? `${levelLabel()} · 显示 ${shown} / ${total}` : `${levelLabel()} · 共 ${total} 词`;
-}
-
-/* ---------- WORDS (flashcard view) ---------- */
-function enterFlash(){
-  const mf = document.getElementById('masteryFilter').value;
-  flashList = [];
-  getWordSet().forEach(g=>g.items.forEach(it=>{
-    if(mf !== 'all' && getMastery(currentLevel, it.w) !== mf) return;
-    flashList.push(it);
-  }));
-  if(flashList.length === 0){ alert('当前筛选条件下没有可自测的单词'); return; }
-  flashMode = true;
-  flashIndex = 0;
-  flashRevealed = false;
-  document.getElementById('wordsRoot').style.display = 'none';
-  const sw = document.getElementById('wordSearch');
-  if(sw) sw.closest('.search').style.display = 'none';
-  document.getElementById('flashRoot').style.display = 'block';
-  document.getElementById('flashBtn').textContent = '📋 返回列表';
-  renderFlash();
-}
-function exitFlash(){
-  flashMode = false;
-  document.getElementById('wordsRoot').style.display = '';
-  const sw = document.getElementById('wordSearch');
-  if(sw) sw.closest('.search').style.display = '';
-  document.getElementById('flashRoot').style.display = 'none';
-  document.getElementById('flashBtn').textContent = '🃏 自测模式';
-  renderWords();
-}
-function renderFlash(){
-  const root = document.getElementById('flashRoot');
-  root.innerHTML = '';
-  const it = flashList[flashIndex];
-  const card = document.createElement('div'); card.className = 'flashcard';
-  const top = document.createElement('div'); top.className = 'flash-top';
-  const idx = document.createElement('span'); idx.className = 'flash-idx'; idx.textContent = (flashIndex + 1) + ' / ' + flashList.length;
-  top.append(idx, masteryBtn(currentLevel, it.w));
-  const word = document.createElement('div'); word.className = 'flash-word'; word.textContent = it.w;
-  word.addEventListener('click', ()=>speak(it.w));
-  const ipa = document.createElement('div'); ipa.className = 'flash-ipa'; ipa.textContent = it.ipa + '  ' + it.pos;
-  const spk = spkBtn(it.w); spk.classList.add('flash-spk');
-  const hidden = document.createElement('div'); hidden.className = 'flash-hidden' + (flashRevealed ? ' show' : '');
-  const zh = document.createElement('div'); zh.className = 'flash-zh'; zh.textContent = it.zh;
-  const ex = document.createElement('div'); ex.className = 'ex';
-  const en = document.createElement('span'); en.className = 'en'; en.textContent = it.en + ' ';
-  const cn = document.createElement('span'); cn.className = 'cn'; cn.textContent = it.cn;
-  ex.append(en, cn, spkBtn(it.en, true));
-  hidden.append(zh, ex);
-  card.append(top, word, ipa, spk, hidden);
-  root.appendChild(card);
-
-  const ctrl = document.createElement('div'); ctrl.className = 'flash-controls';
-  const prev = document.createElement('button'); prev.textContent = '◀ 上一张';
-  prev.onclick = ()=>{ flashIndex = (flashIndex - 1 + flashList.length) % flashList.length; flashRevealed = false; renderFlash(); };
-  const reveal = document.createElement('button'); reveal.className = 'primary';
-  reveal.textContent = flashRevealed ? '隐藏答案' : '揭示答案';
-  reveal.onclick = ()=>{ flashRevealed = !flashRevealed; renderFlash(); };
-  const next = document.createElement('button'); next.textContent = '下一张 ▶';
-  next.onclick = ()=>{ flashIndex = (flashIndex + 1) % flashList.length; flashRevealed = false; renderFlash(); };
-  const rnd = document.createElement('button'); rnd.textContent = '🎲 随机';
-  rnd.onclick = ()=>{ flashIndex = Math.floor(Math.random() * flashList.length); flashRevealed = false; renderFlash(); };
-  ctrl.append(prev, reveal, next, rnd);
-  root.appendChild(ctrl);
-}
-
-
-
 /* ---------- MNEMONICS ---------- */
 function renderMnemonics(){
   const root = document.getElementById('mnRoot');
@@ -12563,7 +11717,6 @@ function renderPhrBank(){
 }
 
 function showView(v){
-  if(v !== 'words' && flashMode) exitFlash();
   if(v !== 'phrbank'){ phrFlash = false; phrQuizSet = null; var _fb = document.getElementById('phrFlashBtn'); if(_fb) _fb.classList.remove('active'); var _qb = document.getElementById('phrQuizBtn'); if(_qb) _qb.classList.remove('active'); }
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('active', s.id === v));
   document.querySelectorAll('.menu-btn').forEach(b=>b.classList.toggle('active', b.dataset.view === v));
@@ -12581,7 +11734,6 @@ const mtopMode = document.getElementById('mtopMode');
 const mtopTitle = document.getElementById('mtopTitle');
 
 /* ---------- INIT ---------- */
-renderWords();
 renderMnemonics();
 renderTenses();
 renderInfinitive();
@@ -12596,17 +11748,8 @@ renderSentPatterns();
 renderEgiu();
 renderZmus();
 renderPhrBank();
-showView('words');
+showView('phrbank');
 
-document.getElementById('wordSearch').addEventListener('input', ()=>{
-  if(flashMode) exitFlash(); else renderWords();
-});
-document.getElementById('masteryFilter').addEventListener('change', ()=>{
-  if(flashMode) exitFlash(); else renderWords();
-});
-document.getElementById('flashBtn').addEventListener('click', ()=>{
-  if(flashMode) exitFlash(); else enterFlash();
-});
 document.querySelectorAll('.menu-btn').forEach(b=>{
   b.addEventListener('click', ()=>showView(b.dataset.view));
 });
@@ -12630,15 +11773,6 @@ if(menuClose) menuClose.addEventListener('click', ()=> appEl.classList.remove('m
 if(mtopMenu) mtopMenu.addEventListener('click', ()=> appEl.classList.add('menu-open'));
 if(mtopMode) mtopMode.addEventListener('click', ()=> applyViewMode(!appEl.classList.contains('is-mobile')));
 
-document.querySelectorAll('.wlevel button').forEach(b=>{
-  b.addEventListener('click', ()=>{
-    if(b.classList.contains('active')) return;
-    document.querySelectorAll('.wlevel button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    currentLevel = b.dataset.level;
-    if(flashMode) exitFlash(); else renderWords();
-  });
-});
 let rootSearchTimer = null;
 document.getElementById('rootSearch').addEventListener('input', ()=>{
   rootPage = 0;
