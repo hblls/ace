@@ -401,6 +401,18 @@
 .phr-ans-hint{display:none;margin-top:8px;font-size:12px;color:var(--muted)}
 .phr-card.flash:not(.revealed) .phr-ans-hint{display:block}
 .phr-empty{grid-column:1/-1;padding:30px;text-align:center;color:var(--muted);font-size:14px}
+.phr-ex2{margin-top:8px;border-left:3px solid #d8e8d4;padding-left:10px}
+.phr-ex2 .ex{font-size:13px;line-height:1.55}
+.phr-ex2 .en{color:#3a6b35}
+.phr-ex2 .cn{color:var(--muted)}
+.phr-tag2{display:inline-block;font-size:11px;color:#3a6b35;font-weight:600;margin-bottom:2px}
+.phr-note{color:#8a6d1f;font-size:12.5px;line-height:1.6;margin-top:8px;background:#fff8e8;border:1px solid #f0e3bf;border-radius:8px;padding:6px 9px}
+.phr-note b{color:#9a7b1f}
+.phr-pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:14px 0 4px}
+.phr-pg-btn{border:1px solid var(--line);background:var(--card);color:var(--muted);min-width:34px;height:34px;padding:0 10px;border-radius:8px;font-size:13px;cursor:pointer;transition:.15s}
+.phr-pg-btn:hover:not(:disabled){border-color:var(--brand);color:var(--brand)}
+.phr-pg-btn.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.phr-pg-btn:disabled{opacity:.4;cursor:default}
 @media(max-width:640px){.phr-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.tenses-grid{grid-template-columns:1fr}}
 
@@ -11607,6 +11619,9 @@ let phrQ = "";
 let phrSort = "default";
 let phrFlash = false;
 let phrQuizSet = null;
+let phrShowNote = false;
+let phrPage = 0;
+const PHR_PAGE_SIZE = 30;
 var PHR_FAV_KEY = "ace_phr_fav_v1";
 var phrFavSet = phrFavLoad();
 function phrFavLoad(){ try{ return new Set(JSON.parse(localStorage.getItem(PHR_FAV_KEY) || "[]")); }catch(e){ return new Set(); } }
@@ -11639,22 +11654,32 @@ function phrFiltered(){
 }
 function drawPhrGrid(){
   var grid = document.getElementById("phrGrid"); if(!grid) return;
+  var pager = document.getElementById("phrPager");
   var items = phrFiltered();
+  var total = items.length;
+  var pages = Math.max(1, Math.ceil(total / PHR_PAGE_SIZE));
+  if(phrPage >= pages) phrPage = pages - 1;
+  if(phrPage < 0) phrPage = 0;
   var gc = document.getElementById("phrGridCount");
   if(gc){
-    var label = "显示 " + items.length + " 条";
-    if(phrFlash) label = "🃏 闪卡模式 · " + items.length + " 条（点卡片看答案）";
-    if(phrQuizSet) label = "🎲 随机抽查 · " + items.length + " 条 / 共 " + phrQuizSet.length;
+    var label = "共 " + total + " 条";
+    var start = total ? phrPage * PHR_PAGE_SIZE + 1 : 0;
+    var end = Math.min(total, (phrPage + 1) * PHR_PAGE_SIZE);
+    if(total) label = "显示 " + start + "–" + end + " / 共 " + total + " 条";
+    if(phrFlash) label = "🃏 闪卡模式 · 共 " + total + " 条（点卡片看答案）";
+    if(phrQuizSet) label = "🎲 随机抽查 · " + total + " 条 / 共 " + phrQuizSet.length;
     gc.textContent = label;
   }
   grid.innerHTML = "";
-  if(items.length === 0){
+  if(total === 0){
     var empty = document.createElement("div"); empty.className = "phr-empty";
     empty.textContent = (phrCur === -2) ? "还没有收藏的词组，点卡片右上角 ☆ 即可加入。" : "没有匹配的词组。";
     grid.appendChild(empty);
+    if(pager) pager.innerHTML = "";
     return;
   }
-  items.forEach(function(it){
+  var slice = items.slice(phrPage * PHR_PAGE_SIZE, (phrPage + 1) * PHR_PAGE_SIZE);
+  slice.forEach(function(it){
     var c = document.createElement("div"); c.className = "card phr-card";
     if(phrFlash) c.classList.add("flash");
     var star = document.createElement("button"); star.className = "phr-star"; star.type = "button";
@@ -11674,6 +11699,22 @@ function drawPhrGrid(){
     var cn = document.createElement("span"); cn.className = "cn"; cn.textContent = it.cn || "";
     exd.append(en, cn, spkBtn(it.en || "", true));
     ex.appendChild(exd);
+    if(it.en2){
+      var ex2 = document.createElement("div"); ex2.className = "phr-ex2";
+      var tg2 = document.createElement("div"); tg2.className = "phr-tag2"; tg2.textContent = "例②";
+      var exd2 = document.createElement("div"); exd2.className = "ex";
+      var en2 = document.createElement("span"); en2.className = "en"; en2.textContent = it.en2 + " ";
+      var cn2 = document.createElement("span"); cn2.className = "cn"; cn2.textContent = it.cn2 || "";
+      exd2.append(en2, cn2, spkBtn(it.en2 || "", true));
+      ex2.append(tg2, exd2);
+      ex.appendChild(ex2);
+    }
+    if(phrShowNote && it.note){
+      var nt = document.createElement("div"); nt.className = "phr-note";
+      nt.innerHTML = "<b>解释 · </b>";
+      nt.appendChild(document.createTextNode(it.note));
+      ex.appendChild(nt);
+    }
     var cat = document.createElement("div"); cat.className = "phr-cat"; cat.textContent = it.cat || "";
     var hint = document.createElement("div"); hint.className = "phr-ans-hint"; hint.textContent = "👆 点此显示释义";
     c.append(star, p, zh, ex, cat, hint);
@@ -11682,6 +11723,30 @@ function drawPhrGrid(){
     }
     grid.appendChild(c);
   });
+  if(pager) renderPhrPager(pager, pages);
+}
+function renderPhrPager(pager, pages){
+  pager.innerHTML = "";
+  if(pages <= 1) return;
+  var mk = function(label, page, opts){
+    opts = opts || {};
+    var b = document.createElement("button"); b.className = "phr-pg-btn"; b.type = "button"; b.textContent = label;
+    if(opts.active) b.classList.add("active");
+    if(opts.disabled) b.disabled = true;
+    else b.addEventListener("click", function(){ phrPage = page; drawPhrGrid(); });
+    pager.appendChild(b);
+  };
+  mk("‹", phrPage - 1, {disabled: phrPage === 0});
+  var win = [];
+  for(var i = 0; i < pages; i++){
+    if(i === 0 || i === pages - 1 || Math.abs(i - phrPage) <= 2) win.push(i);
+    else if(win.length && win[win.length - 1] !== -1) win.push(-1);
+  }
+  win.forEach(function(i){
+    if(i === -1){ var dots = document.createElement("span"); dots.className = "phr-pg-btn"; dots.style.border = "none"; dots.style.background = "transparent"; dots.style.color = "var(--muted)"; dots.style.cursor = "default"; dots.textContent = "…"; pager.appendChild(dots); }
+    else mk(String(i + 1), i, {active: i === phrPage});
+  });
+  mk("›", phrPage + 1, {disabled: phrPage === pages - 1});
 }
 function renderPhrBank(){
   var root = document.getElementById("phrRoot"); if(!root) return;
@@ -11697,7 +11762,7 @@ function renderPhrBank(){
     var bfav = document.createElement("button"); bfav.className = "phr-tab phr-tab-fav"; bfav.textContent = "★ 我的收藏"; bfav.dataset.cat = "-2"; tabs.appendChild(bfav);
     root.appendChild(tabs);
     var tools = document.createElement("div"); tools.className = "phr-tools";
-    tools.innerHTML = '<label class="phr-sort">排序 <select id="phrSort"><option value="default">默认顺序</option><option value="az">字母 A–Z</option><option value="za">字母 Z–A</option></select></label><button id="phrFlashBtn" class="phr-tool-btn" type="button">🃏 闪卡模式</button><button id="phrQuizBtn" class="phr-tool-btn" type="button">🎲 随机抽查</button>';
+    tools.innerHTML = '<label class="phr-sort">排序 <select id="phrSort"><option value="default">默认顺序</option><option value="az">字母 A–Z</option><option value="za">字母 Z–A</option></select></label><button id="phrNoteBtn" class="phr-tool-btn" type="button">💡 显示解释</button><button id="phrFlashBtn" class="phr-tool-btn" type="button">🃏 闪卡模式</button><button id="phrQuizBtn" class="phr-tool-btn" type="button">🎲 随机抽查</button>';
     root.appendChild(tools);
     var search = document.createElement("div"); search.className = "search phr-search";
     search.innerHTML = '<input id="phrSearch" type="text" placeholder="🔍 搜索英文词组或中文释义" />';
@@ -11705,23 +11770,26 @@ function renderPhrBank(){
     var gridc = document.createElement("div"); gridc.style.margin = "6px 0 12px"; gridc.innerHTML = '<span class="count" id="phrGridCount"></span>';
     root.appendChild(gridc);
     var grid = document.createElement("div"); grid.className = "phr-grid"; grid.id = "phrGrid"; root.appendChild(grid);
-    tabs.addEventListener("click", function(e){ var b = e.target.closest(".phr-tab"); if(!b) return; phrCur = parseInt(b.dataset.cat, 10); tabs.querySelectorAll(".phr-tab").forEach(function(x){ x.classList.toggle("active", x === b); }); phrQuizSet = null; phrFlash = false; var _fb = document.getElementById("phrFlashBtn"); if(_fb) _fb.classList.remove("active"); var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
-    search.querySelector("#phrSearch").addEventListener("input", function(e){ phrQ = e.target.value.trim(); phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
-    tools.querySelector("#phrSort").addEventListener("change", function(e){ phrSort = e.target.value; drawPhrGrid(); });
+    var pager = document.createElement("div"); pager.className = "phr-pager"; pager.id = "phrPager"; root.appendChild(pager);
+    tabs.addEventListener("click", function(e){ var b = e.target.closest(".phr-tab"); if(!b) return; phrCur = parseInt(b.dataset.cat, 10); phrPage = 0; tabs.querySelectorAll(".phr-tab").forEach(function(x){ x.classList.toggle("active", x === b); }); phrQuizSet = null; phrFlash = false; var _fb = document.getElementById("phrFlashBtn"); if(_fb) _fb.classList.remove("active"); var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
+    search.querySelector("#phrSearch").addEventListener("input", function(e){ phrQ = e.target.value.trim(); phrPage = 0; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
+    tools.querySelector("#phrSort").addEventListener("change", function(e){ phrSort = e.target.value; phrPage = 0; drawPhrGrid(); });
     var flashBtn = tools.querySelector("#phrFlashBtn");
-    flashBtn.addEventListener("click", function(){ phrFlash = !phrFlash; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); flashBtn.classList.toggle("active", phrFlash); drawPhrGrid(); });
+    flashBtn.addEventListener("click", function(){ phrFlash = !phrFlash; phrPage = 0; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); flashBtn.classList.toggle("active", phrFlash); drawPhrGrid(); });
     var quizBtn = tools.querySelector("#phrQuizBtn");
     quizBtn.addEventListener("click", function(){
-      if(phrQuizSet){ phrQuizSet = null; phrFlash = false; flashBtn.classList.remove("active"); quizBtn.classList.remove("active"); drawPhrGrid(); return; }
+      if(phrQuizSet){ phrQuizSet = null; phrFlash = false; phrPage = 0; flashBtn.classList.remove("active"); quizBtn.classList.remove("active"); drawPhrGrid(); return; }
       var base = phrBase();
       if(!base.length) return;
       var pool = base.slice();
       for(var i = pool.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = pool[i]; pool[i] = pool[j]; pool[j] = t; }
       var n = Math.min(20, pool.length);
       phrQuizSet = pool.slice(0, n).map(function(it){ return it.p; });
-      phrFlash = true; flashBtn.classList.add("active"); quizBtn.classList.add("active");
+      phrFlash = true; phrPage = 0; flashBtn.classList.add("active"); quizBtn.classList.add("active");
       drawPhrGrid();
     });
+    var noteBtn = tools.querySelector("#phrNoteBtn");
+    noteBtn.addEventListener("click", function(){ phrShowNote = !phrShowNote; noteBtn.classList.toggle("active", phrShowNote); noteBtn.textContent = phrShowNote ? "💡 隐藏解释" : "💡 显示解释"; drawPhrGrid(); });
     root.dataset.built = "1";
   }
   drawPhrGrid();
