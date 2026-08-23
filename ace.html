@@ -11635,6 +11635,7 @@ function phrBase(){
     if(!favMode && phrCur !== -1 && gi !== phrCur) return;
     (g.items || []).forEach(function(it){
       if(favMode && !phrIsFav(it.p)) return;
+      if(!favMode && phrIsFav(it.p)) return;   // 已收藏的从原本列表消失，仅出现在「★ 我的收藏」
       if(phrQ){
         var q = phrQ.toLowerCase();
         var hay = (it.p + " " + it.zh + " " + (it.en || "")).toLowerCase();
@@ -11688,7 +11689,7 @@ function drawPhrGrid(){
       e.stopPropagation();
       phrToggleFav(it.p);
       star.textContent = phrIsFav(it.p) ? "★" : "☆";
-      if(phrCur === -2){ drawPhrGrid(); }
+      drawPhrGrid();   // 标星后立即从原列表消失；取消收藏后立即从收藏列表消失
     });
     var p = document.createElement("div"); p.className = "phr-p";
     var ps = document.createElement("span"); ps.textContent = it.p; p.append(ps, spkBtn(it.p, true));
