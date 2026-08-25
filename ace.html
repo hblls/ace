@@ -83,7 +83,7 @@
   .app.mobile-nav .menu-label{padding:0 4px 5px}
   .app.mobile-nav .menu-btn{width:100%;padding:14px 16px;font-size:16px;border-left:3px solid transparent;border-bottom:none}
   .app.mobile-nav .menu-btn.active{border-left:3px solid var(--brand);border-bottom:none}
-  .app.mobile-nav .side-foot{display:none}
+  .app.mobile-nav .side-foot{display:block;margin-top:18px}
   .app.mobile-nav .mode-toggle{width:100%;margin:18px 0 0;font-size:15px;padding:12px}
   .app.mobile-nav .content{display:none}
   .app.mobile-nav:not(.menu-open) .content{display:block;padding:64px 16px 56px}
@@ -481,9 +481,66 @@
 .pg-btn:disabled{opacity:.4;cursor:default}
 @media (max-width:760px){ .sent-no{flex-basis:26px;height:26px;line-height:26px} .sent-pat{font-size:14px} }
 
+  /* ===== LOGIN GATE（登陆门禁） ===== */
+  body.locked .app{display:none}
+  .login{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,#f4f0e8,#ece5d6);padding:24px}
+  body:not(.locked) .login{display:none}
+  .login-card{width:100%;max-width:380px;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);padding:36px 30px 30px;text-align:center}
+  .login-seal{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;
+    background:var(--vermilion);color:#fff;font-family:var(--font-serif);font-weight:800;font-size:26px;
+    border-radius:8px;margin-bottom:14px;box-shadow:0 2px 6px rgba(33,30,25,.22)}
+  .login-brand{font-family:var(--font-serif);font-weight:800;color:var(--brand);font-size:26px;letter-spacing:3px;line-height:1}
+  .login-en{font-size:10px;letter-spacing:.22em;color:var(--teal);text-transform:uppercase;font-weight:700;margin-top:5px}
+  .login-sub{font-size:12.5px;color:var(--muted);margin:12px 0 24px}
+  .login-field{text-align:left;margin-bottom:14px}
+  .login-field label{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--teal);
+    margin-bottom:6px;text-transform:uppercase}
+  .login-field label .zh{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);
+    margin-left:7px;font-size:11px}
+  .login-input{width:100%;padding:12px 14px;font-size:15px;border:1px solid var(--line);border-radius:10px;
+    background:#fff;color:var(--ink);outline:none;font-family:var(--font-sans);transition:.15s}
+  .login-input:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  .login-row{display:flex;align-items:center;justify-content:space-between;margin:2px 0 18px;font-size:13px;color:var(--muted)}
+  .login-remember{display:inline-flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
+  .login-remember input{width:15px;height:15px;accent-color:var(--brand);cursor:pointer}
+  .login-forgot{opacity:.6;cursor:default}
+  .login-btn{width:100%;padding:13px;border:none;border-radius:10px;cursor:pointer;background:var(--brand);
+    color:#fff;font-size:15px;font-weight:800;letter-spacing:2px;font-family:var(--font-sans);transition:.15s}
+  .login-btn:hover{background:var(--teal)}
+  .login-err{color:var(--vermilion);font-size:13px;font-weight:600;min-height:18px;margin-top:12px}
+  .logout-btn{display:block;width:100%;margin-top:10px;padding:9px;border:1px solid var(--line);
+    border-radius:999px;background:var(--card);color:var(--muted);font-size:12.5px;font-weight:700;cursor:pointer;transition:.15s}
+  .logout-btn:hover{background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
 </style>
 </head>
-<body>
+<body class="locked">
+
+<div class="login" id="loginGate">
+  <div class="login-card">
+    <span class="login-seal">i</span>
+    <div class="login-brand">ihsan</div>
+    <div class="login-en">IHSAN ENGLISH</div>
+    <p class="login-sub">英语学习核心手册 · 请先登录后使用</p>
+    <form id="loginForm" autocomplete="off" novalidate>
+      <div class="login-field">
+        <label>EMAIL<span class="zh">邮箱 / 用户名</span></label>
+        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="ihsan@ihsan.studio" autocomplete="username" />
+      </div>
+      <div class="login-field">
+        <label>PASSWORD<span class="zh">密码</span></label>
+        <input class="login-input" id="loginPass" type="password" placeholder="请输入密码" autocomplete="current-password" />
+      </div>
+      <div class="login-row">
+        <label class="login-remember"><input type="checkbox" id="loginRemember" checked /> 记住我</label>
+        <span class="login-forgot">忘记密码？</span>
+      </div>
+      <button class="login-btn" type="submit">登 录 · SIGN IN</button>
+      <div class="login-err" id="loginErr"></div>
+    </form>
+  </div>
+</div>
 
 <div class="app">
   <header class="mtop">
@@ -525,7 +582,9 @@
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
-    <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音</div>
+    <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音
+      <button id="logoutBtn" class="logout-btn" type="button">退出登录 · Sign out</button>
+    </div>
   </aside>
 
   <main class="content">
@@ -11913,6 +11972,66 @@ document.querySelectorAll('.syntax-toggle button').forEach(b=>{
     document.getElementById('patPanel').style.display = (t === 'pat') ? '' : 'none';
   });
 });
+</script>
+
+<script>
+(function(){
+  var ALLOWED = "ihsan";
+  var KEY = "ace_auth";
+  var body = document.body;
+  function getAuth(){
+    try{
+      var a = localStorage.getItem(KEY) || sessionStorage.getItem(KEY);
+      return a ? JSON.parse(a) : null;
+    }catch(e){ return null; }
+  }
+  function setAuth(remember){
+    var payload = JSON.stringify({user:ALLOWED, ts:Date.now()});
+    try{
+      if(remember){ localStorage.setItem(KEY, payload); sessionStorage.removeItem(KEY); }
+      else { sessionStorage.setItem(KEY, payload); localStorage.removeItem(KEY); }
+    }catch(e){}
+  }
+  function clearAuth(){ try{ localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); }catch(e){} }
+  function unlock(){ body.classList.remove("locked"); }
+  function lock(){ body.classList.add("locked"); }
+
+  var form = document.getElementById("loginForm");
+  var emailEl = document.getElementById("loginEmail");
+  var passEl = document.getElementById("loginPass");
+  var remEl = document.getElementById("loginRemember");
+  var errEl = document.getElementById("loginErr");
+
+  var auth = getAuth();
+  if(auth && auth.user === ALLOWED){ unlock(); }
+
+  if(form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      if(errEl) errEl.textContent = "";
+      var name = (emailEl.value || "").trim().toLowerCase();
+      var pass = passEl.value || "";
+      if(!pass){ if(errEl) errEl.textContent = "请输入密码 / Please enter your password"; return; }
+      if(name !== ALLOWED){
+        if(errEl) errEl.textContent = "用户名或密码错误 / Invalid username or password";
+        passEl.value = "";
+        return;
+      }
+      setAuth(remEl.checked);
+      unlock();
+    });
+  }
+  var logoutBtn = document.getElementById("logoutBtn");
+  if(logoutBtn){
+    logoutBtn.addEventListener("click", function(){
+      clearAuth();
+      if(emailEl) emailEl.value = "";
+      if(passEl) passEl.value = "";
+      if(errEl) errEl.textContent = "";
+      lock();
+    });
+  }
+})();
 </script>
 </body>
 </html>
