@@ -526,7 +526,7 @@
     <form id="loginForm" autocomplete="off" novalidate>
       <div class="login-field">
         <label>EMAIL<span class="zh">邮箱 / 用户名</span></label>
-        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="ihsan@ihsan.studio" autocomplete="username" />
+        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="ihsan.lee@outlook.com" autocomplete="username" />
       </div>
       <div class="login-field">
         <label>PASSWORD<span class="zh">密码</span></label>
@@ -11976,7 +11976,8 @@ document.querySelectorAll('.syntax-toggle button').forEach(b=>{
 
 <script>
 (function(){
-  var ALLOWED = "ihsan";
+  var ALLOWED_EMAIL = "ihsan.lee@outlook.com";
+  var ALLOWED_PASS = "123";
   var KEY = "ace_auth";
   var body = document.body;
   function getAuth(){
@@ -11986,7 +11987,7 @@ document.querySelectorAll('.syntax-toggle button').forEach(b=>{
     }catch(e){ return null; }
   }
   function setAuth(remember){
-    var payload = JSON.stringify({user:ALLOWED, ts:Date.now()});
+    var payload = JSON.stringify({ok:true, email:ALLOWED_EMAIL, ts:Date.now()});
     try{
       if(remember){ localStorage.setItem(KEY, payload); sessionStorage.removeItem(KEY); }
       else { sessionStorage.setItem(KEY, payload); localStorage.removeItem(KEY); }
@@ -12003,16 +12004,16 @@ document.querySelectorAll('.syntax-toggle button').forEach(b=>{
   var errEl = document.getElementById("loginErr");
 
   var auth = getAuth();
-  if(auth && auth.user === ALLOWED){ unlock(); }
+  if(auth && auth.ok){ unlock(); }
 
   if(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
       if(errEl) errEl.textContent = "";
-      var name = (emailEl.value || "").trim().toLowerCase();
+      var email = (emailEl.value || "").trim().toLowerCase();
       var pass = passEl.value || "";
       if(!pass){ if(errEl) errEl.textContent = "请输入密码 / Please enter your password"; return; }
-      if(name !== ALLOWED){
+      if(email !== ALLOWED_EMAIL.toLowerCase() || pass !== ALLOWED_PASS){
         if(errEl) errEl.textContent = "用户名或密码错误 / Invalid username or password";
         passEl.value = "";
         return;
