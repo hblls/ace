@@ -1,0 +1,502 @@
+{
+  "struggle against": {
+    "en2": "They struggled against the disease for years.",
+    "cn2": "他们与这种疾病斗争了多年。",
+    "note": "后接对抗的对象(困难/敌人)。"
+  },
+  "suffer from": {
+    "en2": "The region suffers from long droughts.",
+    "cn2": "该地区饱受长期干旱之苦。",
+    "note": "后接疾病/困境，表“受…折磨”。"
+  },
+  "supply sb with sth": {
+    "en2": "The school supplies students with textbooks.",
+    "cn2": "学校向学生提供课本。",
+    "note": "结构 supply sb with sth。"
+  },
+  "take along": {
+    "en2": "She took along a camera on the trip.",
+    "cn2": "她旅行时带上了相机。",
+    "note": "及物，宾语为随身带物。"
+  },
+  "take away": {
+    "en2": "The waiter took away the empty plates.",
+    "cn2": "服务员收走了空盘子。",
+    "note": "亦表“拿走/消除(感觉)”。"
+  },
+  "take care of": {
+    "en2": "Who will take care of the dog?",
+    "cn2": "谁来照顾这条狗？",
+    "note": "义1照顾人/物；义2处理事务。"
+  },
+  "take down/off": {
+    "en2": "The journalist took down every word.",
+    "cn2": "记者记下了每一个字。",
+    "note": "take down 记下；take off 脱下/起飞。"
+  },
+  "take in": {
+    "en2": "The cloth takes in water quickly.",
+    "cn2": "这块布很快吸收水分。",
+    "note": "本义“吸收”，亦表收留/听懂。"
+  },
+  "take off": {
+    "en2": "The bird took off from the branch.",
+    "cn2": "鸟从树枝上飞走了。",
+    "note": "三义：起飞/脱下/带走。"
+  },
+  "take out": {
+    "en2": "He took out his wallet to pay.",
+    "cn2": "他拿出钱包付款。",
+    "note": "及物，宾语为取出的物。"
+  },
+  "take part in": {
+    "en2": "She took part in the school debate.",
+    "cn2": "她参加了学校的那场辩论。",
+    "note": "后接活动/比赛。"
+  },
+  "take place": {
+    "en2": "The festival takes place every spring.",
+    "cn2": "这个节庆每年春天举行。",
+    "note": "不及物，无被动语态。"
+  },
+  "take up": {
+    "en2": "He took up photography as a hobby.",
+    "cn2": "他把摄影当作爱好学了起来。",
+    "note": "义1占据；义2开始从事(爱好)。"
+  },
+  "talk about": {
+    "en2": "They talked about the new movie.",
+    "cn2": "他们谈论了那部新电影。",
+    "note": "后接谈论的话题。"
+  },
+  "think about": {
+    "en2": "I'm thinking about moving abroad.",
+    "cn2": "我在考虑移居国外。",
+    "note": "后接考虑的事/人。"
+  },
+  "think of": {
+    "en2": "Can you think of a good name?",
+    "cn2": "你能想出一个好名字吗？",
+    "note": "亦表“想起/想到”，不限于认为。"
+  },
+  "think of oneself": {
+    "en2": "It is wise to think of oneself occasionally.",
+    "cn2": "偶尔为自己着想是明智的。",
+    "note": "oneself 为反身代词，表“为自己”。"
+  },
+  "think of/think about": {
+    "en2": "I often think of my grandmother.",
+    "cn2": "我常常想起我的祖母。",
+    "note": "think of 想起；think about 思考。"
+  },
+  "throw at": {
+    "en2": "He threw a ball at the wall.",
+    "cn2": "他把球朝墙扔去。",
+    "note": "at 后接被扔向的目标。"
+  },
+  "throw at...": {
+    "en2": "The boy threw snow at his friend.",
+    "cn2": "男孩把雪朝朋友扔去。",
+    "note": "同 throw at，at 后接目标。"
+  },
+  "throw away": {
+    "en2": "He threw away the broken remote.",
+    "cn2": "他把坏掉的遥控器扔了。",
+    "note": "亦表“白白浪费(机会)”。"
+  },
+  "tidy sth up": {
+    "en2": "She tidied up the kitchen after dinner.",
+    "cn2": "她饭后把厨房收拾干净了。",
+    "note": "结构 tidy sth up，宾语为物。"
+  },
+  "tidy up": {
+    "en2": "Let's tidy up before they arrive.",
+    "cn2": "他们来之前我们收拾一下吧。",
+    "note": "不及物或接宾语皆可。"
+  },
+  "tour around": {
+    "en2": "They toured around the old town.",
+    "cn2": "他们游览了那座古镇。",
+    "note": "around 后接游览的地点。"
+  },
+  "trade with": {
+    "en2": "We traded with that company for years.",
+    "cn2": "我们与那家公司做了多年贸易。",
+    "note": "with 后接贸易对象。"
+  },
+  "translate a into b": {
+    "en2": "He translated the poem into Chinese.",
+    "cn2": "他把这首诗译成了中文。",
+    "note": "结构 translate A into B。"
+  },
+  "travel around": {
+    "en2": "She traveled around the world alone.",
+    "cn2": "她独自环游了世界。",
+    "note": "around 后接游览范围。"
+  },
+  "trick sb into doing": {
+    "en2": "They tricked him into signing the contract.",
+    "cn2": "他们骗他在合同上签了字。",
+    "note": "结构 trick sb into doing。"
+  },
+  "try on": {
+    "en2": "She tried on several dresses.",
+    "cn2": "她试穿了好几件连衣裙。",
+    "note": "宾语多为衣物/鞋帽。"
+  },
+  "try to do": {
+    "en2": "I try to eat healthy food every day.",
+    "cn2": "我尽量每天吃得健康。",
+    "note": "后接不定式，表“努力做”。"
+  },
+  "turn around": {
+    "en2": "The car turned around at the corner.",
+    "cn2": "汽车在拐角处掉头了。",
+    "note": "亦表“(使)转身/掉头”。"
+  },
+  "turn down": {
+    "en2": "He turned down my invitation.",
+    "cn2": "他拒绝了我的邀请。",
+    "note": "亦表“关小(音量)”。"
+  },
+  "turn into": {
+    "en2": "The caterpillar turned into a butterfly.",
+    "cn2": "毛毛虫变成了蝴蝶。",
+    "note": "into 后接变化后的结果。"
+  },
+  "turn left": {
+    "en2": "Turn left at the second crossing.",
+    "cn2": "在第二个十字路口向左转。",
+    "note": "指路用语，表“左转”。"
+  },
+  "turn off": {
+    "en2": "Please turn off the TV before bed.",
+    "cn2": "睡前请关掉电视。",
+    "note": "宾语多为电器/水源。"
+  },
+  "turn on": {
+    "en2": "She turned on the radio for news.",
+    "cn2": "她打开收音机听新闻。",
+    "note": "宾语多为电器。"
+  },
+  "turn over": {
+    "en2": "He turned over the card to see.",
+    "cn2": "他翻过了那张牌看背面。",
+    "note": "及物，宾语为被翻物。"
+  },
+  "turn sth over": {
+    "en2": "She turned the photo over gently.",
+    "cn2": "她把照片轻轻翻了过来。",
+    "note": "结构 turn sth over。"
+  },
+  "turn to": {
+    "en2": "He turned to his teacher for help.",
+    "cn2": "他向老师求助。",
+    "note": "义1变成；义2求助于(人)。"
+  },
+  "wait for": {
+    "en2": "I'm waiting for the bus in the rain.",
+    "cn2": "我在雨中等公交车。",
+    "note": "for 后接等待的人/物。"
+  },
+  "wake up": {
+    "en2": "The loud noise woke up the baby.",
+    "cn2": "吵闹声吵醒了宝宝。",
+    "note": "及物/不及物，亦表“唤醒”。"
+  },
+  "walk along": {
+    "en2": "We walked along the sandy beach.",
+    "cn2": "我们沿着沙滩走。",
+    "note": "along 后接线性路径。"
+  },
+  "walk through": {
+    "en2": "They walked through the long tunnel.",
+    "cn2": "他们穿过了长长的隧道。",
+    "note": "through 后接穿过的空间。"
+  },
+  "walk up": {
+    "en2": "She walked up the wooden stairs.",
+    "cn2": "她走上木楼梯。",
+    "note": "up 后接升高的路径。"
+  },
+  "wash away": {
+    "en2": "The waves washed away the footprints.",
+    "cn2": "浪花冲走了脚印。",
+    "note": "亦表“(被)冲走/消除”。"
+  },
+  "wash up": {
+    "en2": "Who is going to wash up tonight?",
+    "cn2": "今晚谁洗碗？",
+    "note": "英式多指“洗碗”；美式指洗漱。"
+  },
+  "wear out": {
+    "en2": "The constant noise wore her out.",
+    "cn2": "持续不断的噪音把她折磨累了。",
+    "note": "义1使疲惫；义2磨损/穿破。"
+  },
+  "work as": {
+    "en2": "She works as a primary teacher.",
+    "cn2": "她是一名小学老师。",
+    "note": "as 后接职业。"
+  },
+  "work on sth": {
+    "en2": "He is working on his first novel.",
+    "cn2": "他正在写他的第一部小说。",
+    "note": "on 后接从事的项目。"
+  },
+  "work out": {
+    "en2": "The plan worked out better than expected.",
+    "cn2": "计划的结果比预期更好。",
+    "note": "亦表“解决/结果是”。"
+  },
+  "work with": {
+    "en2": "She works with young children daily.",
+    "cn2": "她每天和小朋友一起工作。",
+    "note": "with 后接共事的人/物。"
+  },
+  "worry about...": {
+    "en2": "She worries about her little son.",
+    "cn2": "她担心她的小儿子。",
+    "note": "about 后接担心的人/事。"
+  },
+  "write down": {
+    "en2": "He wrote down the new password.",
+    "cn2": "他写下了新密码。",
+    "note": "及物，宾语为写下内容。"
+  },
+  "write to / about / write for": {
+    "en2": "I wrote to the hotel manager.",
+    "cn2": "我给酒店经理写了信。",
+    "note": "write to 致信；write about 写题材；write for 撰稿。"
+  },
+  "write to sb": {
+    "en2": "He wrote to his old college friend.",
+    "cn2": "他给大学老友写了信。",
+    "note": "to 后接收信人。"
+  },
+  "according to": {
+    "en2": "According to Mary, the party is off.",
+    "cn2": "据玛丽说，聚会取消了。",
+    "note": "后接信息来源(人/报告)。"
+  },
+  "as a result of": {
+    "en2": "He was late as a result of the traffic.",
+    "cn2": "由于交通拥堵他迟到了。",
+    "note": "后接原因，表“因为”。"
+  },
+  "as far as the coast": {
+    "en2": "The flood spread as far as the coast.",
+    "cn2": "洪水一直蔓延到沿海地区。",
+    "note": "表“远至(某地)”。"
+  },
+  "at a discount": {
+    "en2": "You can buy it at a discount now.",
+    "cn2": "你现在可以打折买到它。",
+    "note": "表“以折扣价”。"
+  },
+  "at a high price": {
+    "en2": "They bought the house at a high price.",
+    "cn2": "他们高价买下了这栋房子。",
+    "note": "表“以高价”。"
+  },
+  "at a loss": {
+    "en2": "I was at a loss what to do next.",
+    "cn2": "我不知所措，不知下一步做什么。",
+    "note": "常接 for/what to do。"
+  },
+  "at a stretch": {
+    "en2": "He worked ten hours at a stretch.",
+    "cn2": "他连续工作了十个小时。",
+    "note": "表“不间断地连续”。"
+  },
+  "at a time": {
+    "en2": "Do one thing at a time, please.",
+    "cn2": "请一次做一件事。",
+    "note": "表“每次/同时”。"
+  },
+  "at a...speed": {
+    "en2": "The car moved at a low speed.",
+    "cn2": "汽车低速行驶。",
+    "note": "speed 前可换 fast/slow 等。"
+  },
+  "at all costs": {
+    "en2": "We must finish this at all costs.",
+    "cn2": "我们不惜一切代价也要完成。",
+    "note": "表“无论如何”。"
+  },
+  "at birth": {
+    "en2": "He was blind at birth, doctors said.",
+    "cn2": "医生说，他出生时就失明了。",
+    "note": "表“出生那一刻”。"
+  },
+  "at breakfast": {
+    "en2": "We read the news at breakfast.",
+    "cn2": "我们早餐时看新闻。",
+    "note": "表“在吃早餐期间”。"
+  },
+  "at ease": {
+    "en2": "The soft music put me at ease.",
+    "cn2": "轻柔的音乐让我放松下来。",
+    "note": "常作 feel/put sb at ease。"
+  },
+  "at first glance": {
+    "en2": "At first glance, the book looked dull.",
+    "cn2": "乍一看，这本书显得枯燥。",
+    "note": "表“初看时(粗略印象)”。"
+  },
+  "at first sight": {
+    "en2": "We liked the house at first sight.",
+    "cn2": "我们第一眼就喜欢上了这房子。",
+    "note": "表“初见/乍看时”。"
+  },
+  "at hand": {
+    "en2": "Keep your phone at hand, just in case.",
+    "cn2": "把手机放在手边，以防万一。",
+    "note": "义1在手边；义2临近。"
+  },
+  "at length": {
+    "en2": "She explained the rule at length.",
+    "cn2": "她详细地解释了那条规则。",
+    "note": "表“详尽地/长久地”。"
+  },
+  "at midnight": {
+    "en2": "The train to Beijing leaves at midnight.",
+    "cn2": "去北京的火车午夜发车。",
+    "note": "表“在午夜时分”。"
+  },
+  "at most": {
+    "en2": "There were at most twenty guests.",
+    "cn2": "最多只有二十位客人。",
+    "note": "表“不超过(某数)”。"
+  },
+  "at one sitting": {
+    "en2": "He drank the bottle at one sitting.",
+    "cn2": "他一口气喝完了那瓶饮料。",
+    "note": "表“一口气/不间断一次”。"
+  },
+  "at peace": {
+    "en2": "She is at peace with her decision.",
+    "cn2": "她对自己的决定感到平静。",
+    "note": "义1和平；义2内心安宁。"
+  },
+  "at random": {
+    "en2": "The winners were chosen at random.",
+    "cn2": "获胜者是随机选出的。",
+    "note": "表“任意/随机地”。"
+  },
+  "at risk": {
+    "en2": "His job is now at risk of cuts.",
+    "cn2": "他的工作现在面临被裁的危险。",
+    "note": "表“处于危险/风险中”。"
+  },
+  "at short notice": {
+    "en2": "The meeting was called at short notice.",
+    "cn2": "会议是临时仓促召集的。",
+    "note": "表“在很短通知期内”。"
+  },
+  "at the age of...": {
+    "en2": "He retired at the age of sixty.",
+    "cn2": "他六十岁时退休了。",
+    "note": "of 后接具体年龄。"
+  },
+  "at the back of": {
+    "en2": "There is a garden at the back of the building.",
+    "cn2": "大楼后面有个花园。",
+    "note": "表“在…的后部”。"
+  },
+  "at the beginning of": {
+    "en2": "We first met at the beginning of the year.",
+    "cn2": "我们在年初第一次相遇。",
+    "note": "of 后接时段/事件起点。"
+  },
+  "at the bottom of": {
+    "en2": "The fish stayed at the bottom of the lake.",
+    "cn2": "鱼待在湖底。",
+    "note": "表“在…最下端”。"
+  },
+  "at the crossing": {
+    "en2": "Stop and look both ways at the crossing.",
+    "cn2": "在十字路口停下，左右看看。",
+    "note": "表“在十字路口处”。"
+  },
+  "at the end of": {
+    "en2": "We all laughed at the end of the movie.",
+    "cn2": "电影结束时我们都笑了。",
+    "note": "表“在…末端/末尾”。"
+  },
+  "at the entrance to": {
+    "en2": "A guard stood at the entrance to the park.",
+    "cn2": "一名警卫站在公园入口处。",
+    "note": "to 后接场所。"
+  },
+  "at the foot of": {
+    "en2": "The small hotel is at the foot of the hill.",
+    "cn2": "小旅馆在小山脚下。",
+    "note": "表“在…脚下”。"
+  },
+  "at the front of": {
+    "en2": "The driver sits at the front of the bus.",
+    "cn2": "司机坐在公交车前部。",
+    "note": "表“在…最前面”。"
+  },
+  "at the tip of": {
+    "en2": "The cat sat at the tip of the branch.",
+    "cn2": "猫坐在树枝的尖端。",
+    "note": "表“在…最顶端”。"
+  },
+  "at the weekend": {
+    "en2": "We went hiking at the weekend.",
+    "cn2": "我们周末去徒步了。",
+    "note": "英式用法，美式多用 on the weekend。"
+  },
+  "at war": {
+    "en2": "The brothers are at war over the will.",
+    "cn2": "兄弟俩因遗嘱闹不和。",
+    "note": "亦喻“不和/争执”。"
+  },
+  "at work": {
+    "en2": "She is still at work at eight p.m.",
+    "cn2": "晚上八点她还在上班。",
+    "note": "表“在工作/上班中”。"
+  },
+  "because of": {
+    "en2": "He was late because of the storm.",
+    "cn2": "他因为暴风雨迟到了。",
+    "note": "后接名词，表“由于”。"
+  },
+  "between...and...": {
+    "en2": "The small garden lies between the house and the road.",
+    "cn2": "小花园位于房子和马路之间。",
+    "note": "连接两者，表“在…之间”。"
+  },
+  "by accident": {
+    "en2": "I cut my finger by accident.",
+    "cn2": "我意外割伤了手指。",
+    "note": "表“偶然/不小心”。"
+  },
+  "by accident / by chance": {
+    "en2": "She met him by accident in the shop.",
+    "cn2": "她偶然在店里遇见了他。",
+    "note": "by accident 与 by chance 同义。"
+  },
+  "by air/sea": {
+    "en2": "We flew by air to save time.",
+    "cn2": "我们乘飞机以节省时间。",
+    "note": "by 后接交通工具，无冠词。"
+  },
+  "by bus/car/plane": {
+    "en2": "They go to school by bus every day.",
+    "cn2": "他们每天乘公交去上学。",
+    "note": "by 后接交通工具，无冠词。"
+  },
+  "by chance": {
+    "en2": "I found the lost key by chance.",
+    "cn2": "我碰巧找到了丢失的钥匙。",
+    "note": "同 by accident，表“偶然”。"
+  },
+  "by hand": {
+    "en2": "The warm sweater was made by hand.",
+    "cn2": "这件暖毛衣是手工织的。",
+    "note": "表“手工/亲自”。"
+  }
+}
