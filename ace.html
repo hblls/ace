@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="zh-CN" data-page-node-id="K5DpsGExA4t2n68GJNYGEP">
+<head data-page-node-id="dpbRBQAnIJNWeyZRmy5oYL">
+<meta charset="UTF-8" data-page-node-id="ak4uzQfbw7SjU7twhqTMnY" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="NsjumUXwyqoiXMpccSWWJI" />
 <title>ihsan · 英语学习核心手册</title>
 <style>
   :root{
@@ -503,426 +503,454 @@
     color:var(--ink);padding:1px 6px;border-radius:5px;font-size:12.5px}
   .adj-note{font-size:13px;color:var(--muted);line-height:1.7;margin:8px 0}
   .adj-h{font-family:var(--font-serif);font-size:17px;color:var(--brand);font-weight:800;margin:18px 0 8px}
+  .adj-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 14px}
+  .adj-search{flex:1;min-width:150px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:14px;outline:none}
+  .adj-search:focus{border-color:var(--brand)}
+  .adj-seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .adj-seg button{padding:7px 12px;border:none;background:var(--card);color:var(--muted);font-size:13px;cursor:pointer}
+  .adj-seg button.active{background:var(--brand);color:#fff}
+  .adj-btn{padding:7px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:13px;cursor:pointer}
+  .adj-btn:hover{border-color:var(--brand);color:var(--brand)}
+  .adj-card{position:relative;cursor:pointer;transition:box-shadow .15s}
+  .adj-card.reveal{box-shadow:0 0 0 2px var(--brand)}
+  .adj-spk{position:absolute;top:8px;right:8px;border:none;background:transparent;font-size:15px;cursor:pointer;opacity:.5;padding:2px 4px;line-height:1}
+  .adj-spk:hover{opacity:1}
+  .adj-ing{display:inline-block;margin-top:5px;font-size:11.5px;color:var(--teal);font-family:var(--font-serif)}
+  .adj-ing b{color:var(--brand)}
+  .adj-selfmode .adj-zh{visibility:hidden}
+  .adj-selfmode .adj-card.reveal .adj-zh{visibility:visible}
+  .adj-link{color:var(--brand);cursor:pointer;text-decoration:underline;font-weight:600}
 </style>
 </head>
-<body class="locked">
+<body class="locked" data-page-node-id="iAV7sahu0kZZ7r3RvwNUNp">
 
-<div class="login" id="loginGate">
-  <div class="login-card">
-    <span class="login-seal">i</span>
-    <div class="login-brand">ihsan</div>
-    <div class="login-en">IHSAN ENGLISH</div>
-    <p class="login-sub">英语学习核心手册 · 请先登录后使用</p>
-    <form id="loginForm" autocomplete="off" novalidate>
-      <div class="login-field">
-        <label>EMAIL<span class="zh">邮箱 / 用户名</span></label>
-        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="请输入邮箱 / Enter your email" autocomplete="username" />
+<div class="login" id="loginGate" data-page-node-id="wPppoQeM6BpuIkGzAR2CTK">
+  <div class="login-card" data-page-node-id="vws4kbEsRk66HQyGzIC2VS">
+    <span class="login-seal" data-page-node-id="olzCB0jxKL6esgZi1phZI7">i</span>
+    <div class="login-brand" data-page-node-id="f8EwJD3d8PATxRtwnQFpEF">ihsan</div>
+    <div class="login-en" data-page-node-id="FsI8dyjWRCD6pMXnJrYq8q">IHSAN ENGLISH</div>
+    <p class="login-sub" data-page-node-id="8D4wzFU9oIWCU7PnN0TL0o">英语学习核心手册 · 请先登录后使用</p>
+    <form id="loginForm" autocomplete="off" novalidate data-page-node-id="04PNuKQijXu7YVb2X457VR">
+      <div class="login-field" data-page-node-id="ESAQXQ12GYcSKECGUuhA5w">
+        <label data-page-node-id="XF5zPpR40oHDFpqrcgwny3">EMAIL<span class="zh" data-page-node-id="dkWyM2NZrG2nLNyJtE4npy">邮箱 / 用户名</span></label>
+        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="请输入邮箱 / Enter your email" autocomplete="username" data-page-node-id="mKIxIvaPToLjlJuNVIJcQl" />
       </div>
-      <div class="login-field">
-        <label>PASSWORD<span class="zh">密码</span></label>
-        <input class="login-input" id="loginPass" type="password" placeholder="请输入密码" autocomplete="current-password" />
+      <div class="login-field" data-page-node-id="7OvfUN7aXB8VRepobP6ASs">
+        <label data-page-node-id="auhqeyrgOxdtNh3e2ajy6M">PASSWORD<span class="zh" data-page-node-id="HjzdRSG8vzAWWHT5NTmEgU">密码</span></label>
+        <input class="login-input" id="loginPass" type="password" placeholder="请输入密码" autocomplete="current-password" data-page-node-id="dTGIUOKDTUx4uKGcvY5YvV" />
       </div>
-      <div class="login-row">
-        <label class="login-remember"><input type="checkbox" id="loginRemember" checked /> 记住我</label>
-        <span class="login-forgot">忘记密码？</span>
+      <div class="login-row" data-page-node-id="6Nd4IFpaxXpGLQnZSi3uhl">
+        <label class="login-remember" data-page-node-id="yqG7OHJgAlAjvqNbQsLgLT"><input type="checkbox" id="loginRemember" checked data-page-node-id="ffkWrRxNoEP923XeCwMFYi" /> 记住我</label>
+        <span class="login-forgot" data-page-node-id="NfxbSXIqXGbaeW13b4lWiW">忘记密码？</span>
       </div>
-      <button class="login-btn" type="submit">登 录 · SIGN IN</button>
-      <div class="login-err" id="loginErr"></div>
+      <button class="login-btn" type="submit" data-page-node-id="fw9TAhWbIxBYsgAnSBgdOG">登 录 · SIGN IN</button>
+      <div class="login-err" id="loginErr" data-page-node-id="urCu35qSnyF4MAMmjvy3FX"></div>
     </form>
   </div>
 </div>
 
-<div class="app">
-  <header class="mtop">
-    <button class="mtop-btn" id="mtopMenu" aria-label="打开菜单">☰ 菜单</button>
-    <span class="mtop-title" id="mtopTitle">ihsan 英语</span>
-    <button class="mtop-btn" id="mtopMode" aria-label="切换手机版 / 桌面版">🖥 桌面版</button>
+<div class="app" data-page-node-id="PBiLjeSG1fPa46MhuH0AY4">
+  <header class="mtop" data-page-node-id="Bdq5VmftPLCKkj05rODzCc">
+    <button class="mtop-btn" id="mtopMenu" aria-label="打开菜单" data-page-node-id="LgFcf2GELU9WknP1waOgaJ">☰ 菜单</button>
+    <span class="mtop-title" id="mtopTitle" data-page-node-id="Urwv0gsQpLn1y14sJxEcFd">ihsan 英语</span>
+    <button class="mtop-btn" id="mtopMode" aria-label="切换手机版 / 桌面版" data-page-node-id="w2jmAdBkgaPj9wnfWrqIxS">🖥 桌面版</button>
   </header>
-  <aside class="sidebar">
-    <button class="menu-close" id="menuClose" aria-label="关闭菜单">✕</button>
-    <div class="logo">
-      <span class="logo-seal">i</span>
-      <span class="logo-name">ihsan</span>
-      <span class="logo-en">IHSAN ENGLISH</span>
+  <aside class="sidebar" data-page-node-id="L8RyGYFbGTHyfgp6IpdiP6">
+    <button class="menu-close" id="menuClose" aria-label="关闭菜单" data-page-node-id="UhC6PYbftD9AfrPyJ0OmQN">✕</button>
+    <div class="logo" data-page-node-id="TU7zwkskyfF6aCsGFAYVs2">
+      <span class="logo-seal" data-page-node-id="AvTjE5uvRiI6DfGjdHMG9v">i</span>
+      <span class="logo-name" data-page-node-id="OEIRYWKL38RQ3XUkDkkv0X">ihsan</span>
+      <span class="logo-en" data-page-node-id="tPjfmUSiPEgPe9djhx0zna">IHSAN ENGLISH</span>
     </div>
-    <div class="side-seal"><span class="st">印</span><span>IHSAN STUDIO</span></div>
-    <div class="menu">
-      <div class="menu-group">
-        <div class="menu-label">词汇与短语</div>
-        <button class="menu-btn" data-view="phrbank"><span class="mi-no">01</span><span class="mi-tx">🗂 英语词组大全</span></button>
-        <button class="menu-btn" data-view="verb"><span class="mi-no">02</span><span class="mi-tx">📖 动词（动词大全 + 不定式）</span></button>
-        <button class="menu-btn" data-view="sent"><span class="mi-no">03</span><span class="mi-tx">💬 高频句型</span></button>
+    <div class="side-seal" data-page-node-id="tgeazXiokhTD8gUruK58S0"><span class="st" data-page-node-id="Pj1epn6QTF1b9QweJCIhdP">印</span><span data-page-node-id="TcoSC9BnI43CeRvp8uWxts">IHSAN STUDIO</span></div>
+    <div class="menu" data-page-node-id="CtdtLZfWKNknpnSpAPq9vq">
+      <div class="menu-group" data-page-node-id="WuFGCNq45keAecEQukGPnS">
+        <div class="menu-label" data-page-node-id="zzXf4uK8JMDnbgaVmSbnRl">词汇与短语</div>
+        <button class="menu-btn" data-view="phrbank" data-page-node-id="z8lwm88gHT7rna8AEU41QY"><span class="mi-no" data-page-node-id="HeKbR6fiTsqaSkSPiaETU5">01</span><span class="mi-tx" data-page-node-id="k7osCWWONpYaxLrsBpbCzV">🗂 英语词组大全</span></button>
+        <button class="menu-btn" data-view="verb" data-page-node-id="KQFz4Y7OYR0DuGblhNy6gm"><span class="mi-no" data-page-node-id="fJEpqbs3V7shWIjLYFDoK1">02</span><span class="mi-tx" data-page-node-id="9OwxuWfvhRdghd1VCOpFeX">📖 动词（动词大全 + 不定式）</span></button>
+        <button class="menu-btn" data-view="sent" data-page-node-id="24l4NCezhpgjIFSFbMN3uU"><span class="mi-no" data-page-node-id="n4SDsMIUKxwzCiNsaCq8sf">03</span><span class="mi-tx" data-page-node-id="XuKDZJD3igvfRWshBE5ysN">💬 高频句型</span></button>
       </div>
-      <div class="menu-group">
-        <div class="menu-label">教材</div>
-        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">📚 新概念英语</span></button>
+      <div class="menu-group" data-page-node-id="564v2FTLttH5uDflkMV0Xi">
+        <div class="menu-label" data-page-node-id="hlSHLvbUECJEEl1uAz7WsN">教材</div>
+        <button class="menu-btn" data-view="nce2" data-page-node-id="zPNcaK3WJXp0IFGpk6G3ZJ"><span class="mi-no" data-page-node-id="an9jCDTCdkPDN2T2UybZOz">04</span><span class="mi-tx" data-page-node-id="9rceVzH4GgfeVfaPKZUwFy">📚 新概念英语</span></button>
       </div>
-      <div class="menu-group">
-        <div class="menu-label">语法体系</div>
-        <button class="menu-btn" data-view="mnemonics"><span class="mi-no">05</span><span class="mi-tx">📙 语法口诀</span></button>
-        <button class="menu-btn" data-view="tenses"><span class="mi-no">06</span><span class="mi-tx">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="syntax"><span class="mi-no">07</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
-        <button class="menu-btn" data-view="clauses"><span class="mi-no">08</span><span class="mi-tx">🔗 从句与长难句</span></button>
-        <button class="menu-btn" data-view="roots"><span class="mi-no">09</span><span class="mi-tx">🌱 英语词根</span></button>
-        <button class="menu-btn" data-view="adjpassive"><span class="mi-no">10</span><span class="mi-tx">🔍 形似被动的形容词</span></button>
+      <div class="menu-group" data-page-node-id="8LMLNzDYv57GBvAuB1cnO7">
+        <div class="menu-label" data-page-node-id="JoXG0SOxcCYf5CpaCriDLP">语法体系</div>
+        <button class="menu-btn" data-view="mnemonics" data-page-node-id="6fEyvjT8KXocJ4Lj5Dj7jD"><span class="mi-no" data-page-node-id="Veu6RpVkl9heuRhbJTgbw6">05</span><span class="mi-tx" data-page-node-id="0cA9eB5Rtk4wIEqbaC7cPv">📙 语法口诀</span></button>
+        <button class="menu-btn" data-view="tenses" data-page-node-id="nEUQ6pqTwTkP7lDAjqqf9o"><span class="mi-no" data-page-node-id="4g8njXUcbwEshHIfOYbmDa">06</span><span class="mi-tx" data-page-node-id="5JHik2yZnZZBBl0VZJ8Xot">📊 16 时态</span></button>
+        <button class="menu-btn" data-view="syntax" data-page-node-id="7FzBZ6mdaNaj89d1UeB09a"><span class="mi-no" data-page-node-id="MniwBBLy8A0qHICAUkXeuw">07</span><span class="mi-tx" data-page-node-id="wfztwWPyXZsaDo155mZRmO">🧩 句法基础（词性 + 句型）</span></button>
+        <button class="menu-btn" data-view="clauses" data-page-node-id="GZvGnkjXDFBkXQVyhumEFj"><span class="mi-no" data-page-node-id="z47FhZsA505bIEDcz9VegS">08</span><span class="mi-tx" data-page-node-id="XLXzHOiQ9tdy1G006TMPzo">🔗 从句与长难句</span></button>
+        <button class="menu-btn" data-view="roots" data-page-node-id="YQWSyJSDoxhAKo5jVwxxwl"><span class="mi-no" data-page-node-id="Ip1VH5tKFvbBfXCusRVEVt">09</span><span class="mi-tx" data-page-node-id="mkQM7UgabGiYCoMSIAFCBD">🌱 英语词根</span></button>
+        <button class="menu-btn" data-view="adjpassive" data-page-node-id="Dez39P0GNtg4qhoLbV3qeQ"><span class="mi-no" data-page-node-id="CTuGv8n7EpS47h8bS2Pla2">10</span><span class="mi-tx" data-page-node-id="p6uySSTgGamqVVUd51MMUn">🔍 形似被动的形容词</span></button>
       </div>
     </div>
-    <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
-    <div class="side-foot">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音
-      <button id="logoutBtn" class="logout-btn" type="button">退出登录 · Sign out</button>
+    <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览" data-page-node-id="yEebS68g69NxCipO4HTdJL">📱 手机版</button>
+    <div class="side-foot" data-page-node-id="JbB1lmMUy1jjmmrKd0MSAD">🔊 点击单词 / 短语 / 例句旁的喇叭即可听发音
+      <button id="logoutBtn" class="logout-btn" type="button" data-page-node-id="vUS84UYLYHAjdW2Ot8HE2E">退出登录 · Sign out</button>
     </div>
   </aside>
 
-  <main class="content">
-    <header class="hero">
-      <div class="masthead">
-        <span class="mast-kicker">Offline English · Issue 07</span>
-        <h1>英语学习核心手册</h1>
+  <main class="content" data-page-node-id="DwZUMZmMQUEOElrivvHPI0">
+    <header class="hero" data-page-node-id="ewC4uoq2jSj08paAkgTYBR">
+      <div class="masthead" data-page-node-id="7bN5VpDTdh6EXrYKApdGQ8">
+        <span class="mast-kicker" data-page-node-id="lGs06SXYiTWWJLoRpfA9WZ">Offline English · Issue 07</span>
+        <h1 data-page-node-id="U4yYDG6Y5HogTyeP58zQD0">英语学习核心手册</h1>
       </div>
     </header>
 
-  <section class="view" id="mnemonics" data-view="mnemonics">
-    <div class="sec-head"><h2>⑤ 语法口诀</h2><span class="count" id="mnCount"></span></div>
-    <div class="mgrid" id="mnRoot"></div>
+  <section class="view" id="mnemonics" data-view="mnemonics" data-page-node-id="P6HmAUEJaY5whhkf9JTdF2">
+    <div class="sec-head" data-page-node-id="ED4BXoEKQiCCVQwOrm2FTf"><h2 data-page-node-id="ULBmNhhOK1SSs5pKnMJC3d">⑤ 语法口诀</h2><span class="count" id="mnCount" data-page-node-id="QBmThl1vnDIgGfSxgAJQn8"></span></div>
+    <div class="mgrid" id="mnRoot" data-page-node-id="fquD4Vp0YGIaNgfGOaGbsO"></div>
   </section>
 
-  <section class="view" id="tenses" data-view="tenses">
-    <div class="sec-head"><h2>⑥ 16 种时态</h2><span class="count">4 体态 × 4 时间 = 16</span></div>
-    <div class="toolbar">
-      <div class="level-toggle tense-toggle">
-        <button data-tense="aspect" class="active">按体态</button>
-        <button data-tense="time">按时间</button>
+  <section class="view" id="tenses" data-view="tenses" data-page-node-id="zyhmKiUfhT1JR3IkWnaFTp">
+    <div class="sec-head" data-page-node-id="KDYJ18bhJeU1ofLOFlDthV"><h2 data-page-node-id="IszmRGYMhrrRppqy5ltqqs">⑥ 16 种时态</h2><span class="count" data-page-node-id="E6wbL0TrPqOa4dusFcRFbk">4 体态 × 4 时间 = 16</span></div>
+    <div class="toolbar" data-page-node-id="KFANLQBwc2bon9BLCwaPOZ">
+      <div class="level-toggle tense-toggle" data-page-node-id="xzK1BZ1K41AUe6FJg9ta3W">
+        <button data-tense="aspect" class="active" data-page-node-id="GFkonh9rk71e8uO0gkOD7Q">按体态</button>
+        <button data-tense="time" data-page-node-id="ZebhQgYNIlJsu6yVxqbwpW">按时间</button>
       </div>
     </div>
-    <div id="tensesRoot"></div>
+    <div id="tensesRoot" data-page-node-id="NirjKifuoprreGa0JPmR3N"></div>
   </section>
 
-  <section class="view" id="verb" data-view="verb">
-    <div class="sec-head"><h2>② 动词（动词大全 + 不定式）</h2></div>
-    <div class="toolbar">
-      <div class="level-toggle verb-toggle">
-        <button data-vtab="verbs" class="active">📖 动词大全</button>
-        <button data-vtab="inf">➗ 不定式 Infinitive</button>
+  <section class="view" id="verb" data-view="verb" data-page-node-id="InAN5xxKL57C8KaGYf9ELG">
+    <div class="sec-head" data-page-node-id="VI9L5AEdcAXzvgPGU0es2x"><h2 data-page-node-id="DQ2VDsx5245riMJBweIVGX">② 动词（动词大全 + 不定式）</h2></div>
+    <div class="toolbar" data-page-node-id="zhB9usA7SwoYXvYFArj9AZ">
+      <div class="level-toggle verb-toggle" data-page-node-id="pNyl4VArmT27DMLe0kfGaI">
+        <button data-vtab="verbs" class="active" data-page-node-id="fhowtunfRiF8Ik2jHvDXBZ">📖 动词大全</button>
+        <button data-vtab="inf" data-page-node-id="BcDXJXAEaFMelssTTWmpio">➗ 不定式 Infinitive</button>
       </div>
     </div>
-    <div id="verbInf" style="display:none">
-      <div class="sub-sec">
-        <div class="aspect-title">不定式（Infinitive · to do）<span class="count" id="infCount"></span></div>
-        <div id="infRoot"></div>
+    <div id="verbInf" style="display:none" data-page-node-id="VKzkyoCOyA6NhUj5gAHogz">
+      <div class="sub-sec" data-page-node-id="YHDqmWkBXMUrqW0FSM3xhS">
+        <div class="aspect-title" data-page-node-id="EomJ2X1Tc1pr034J4aonN6">不定式（Infinitive · to do）<span class="count" id="infCount" data-page-node-id="jr6AnkslhSJpPgALeT2vS6"></span></div>
+        <div id="infRoot" data-page-node-id="NzSHt8YYGJoDCr8pNFGTbJ"></div>
       </div>
     </div>
-    <div id="verbVerbs">
-      <div class="sub-sec">
-        <div class="aspect-title">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount"></span></div>
-        <div class="toolbar">
-          <select id="irrGroup" class="irr-select"></select>
+    <div id="verbVerbs" data-page-node-id="02a1BeXhOcnkEc6GnGQrNl">
+      <div class="sub-sec" data-page-node-id="NySmRYfufeWeriIS5ajDtc">
+        <div class="aspect-title" data-page-node-id="WCWwUpYgTn886cCXrezG9F">动词大全（Verbs · 不规则动词表）<span class="count" id="irrCount" data-page-node-id="w2neMnGQUyqc0PqmidjpUM"></span></div>
+        <div class="toolbar" data-page-node-id="01k0JSPOPU2F75EDHSspEO">
+          <select id="irrGroup" class="irr-select" data-page-node-id="teEDxNLAV49DgLuBPbQEUm"></select>
         </div>
-        <div class="search"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" /></div>
-        <div id="irrRoot"></div>
+        <div class="search" data-page-node-id="chF02BpmowVFE6k8wDZNJC"><input id="irrSearch" type="text" placeholder="🔍 搜索原形 / 过去式 / 过去分词 / 释义，如 come / 来" data-page-node-id="SDfqRU0xCXVwHRZ15HaDAy" /></div>
+        <div id="irrRoot" data-page-node-id="hSrpUPjU1rcWIhAIm0AuM2"></div>
       </div>
     </div>
   </section>
 
-      <section class="view" id="sent" data-view="sent">
-    <div class="sec-head"><h2>③ 高频句型（常用核心句式 · 分页浏览）</h2><span class="count" id="sentCount"></span></div>
-    <div id="sentRoot"></div>
+      <section class="view" id="sent" data-view="sent" data-page-node-id="zxoS3MuvgrlH3S16ZJjWlF">
+    <div class="sec-head" data-page-node-id="8DXG3YVtltPnYJIlsLBu4y"><h2 data-page-node-id="6UbrqFAPv97pErlFHv3n6c">③ 高频句型（常用核心句式 · 分页浏览）</h2><span class="count" id="sentCount" data-page-node-id="aY1XyrrwxGedBfUbyrlnmY"></span></div>
+    <div id="sentRoot" data-page-node-id="nl7K64j2S3gxJTNrGf84AW"></div>
   </section>
 
-<section class="view" id="roots" data-view="roots">
-    <div class="sec-head"><h2>⑨ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount"></span></div>
-    <div class="toolbar">
-      <div class="level-toggle subnav-toggle">
-        <button data-sub="browse" class="active">🔍 词根词缀</button>
-        <button data-sub="methods">💡 记忆方法</button>
+<section class="view" id="roots" data-view="roots" data-page-node-id="zlOgKBToFWFBaXbPX285W7">
+    <div class="sec-head" data-page-node-id="7N8jTjakqv2bB7Mf4MYG2I"><h2 data-page-node-id="C0Kk6y6EyZcbMsZxSDaOby">⑨ 英语词根（通过词根词缀关联记忆）</h2><span class="count" id="rootsCount" data-page-node-id="kmWNsVmPKf30ymgnbDO8Ap"></span></div>
+    <div class="toolbar" data-page-node-id="mdV8FAH7w5Ku5IbrhlFpV2">
+      <div class="level-toggle subnav-toggle" data-page-node-id="xU9Qb5FoUf65UFoiHiuTZr">
+        <button data-sub="browse" class="active" data-page-node-id="Fs3RsqGCX1glXQ9oxaFN7a">🔍 词根词缀</button>
+        <button data-sub="methods" data-page-node-id="y9UhsTFf37iBTrxais8xbU">💡 记忆方法</button>
       </div>
     </div>
-    <div id="rootsBrowse">
-      <div class="toolbar">
-        <div class="level-toggle rtype-toggle">
-          <button data-rtype="all" class="active">全部</button>
-          <button data-rtype="前缀">前缀 Prefix</button>
-          <button data-rtype="词根">词根 Root</button>
-          <button data-rtype="后缀">后缀 Suffix</button>
+    <div id="rootsBrowse" data-page-node-id="ofta2oGdZfYBm8o9AuX5jq">
+      <div class="toolbar" data-page-node-id="XXRPzVrCd5krUDf5G31Zpe">
+        <div class="level-toggle rtype-toggle" data-page-node-id="BUOauv0zM4wrXFkVgWSI76">
+          <button data-rtype="all" class="active" data-page-node-id="GaWxiFC4BluDxGEJpEHE4A">全部</button>
+          <button data-rtype="前缀" data-page-node-id="72wgMS4JrMyaKc45BKU1dn">前缀 Prefix</button>
+          <button data-rtype="词根" data-page-node-id="0t7DoucFlM2dONQjKsqHVg">词根 Root</button>
+          <button data-rtype="后缀" data-page-node-id="V0bbaCawh4HIqt8SzyGtWu">后缀 Suffix</button>
         </div>
       </div>
-      <div class="search"><input id="rootSearch" type="text" placeholder="🔍 搜索词根 / 含义 / 例词；或点击词根查看全部单词，如 spect / 看 / 视觉" /></div>
-      <div id="rootsRoot"></div>
+      <div class="search" data-page-node-id="su1xABFzWWNOf5Z9AvHE78"><input id="rootSearch" type="text" placeholder="🔍 搜索词根 / 含义 / 例词；或点击词根查看全部单词，如 spect / 看 / 视觉" data-page-node-id="vGMv2AaVQEm3PAn7U5MVkd" /></div>
+      <div id="rootsRoot" data-page-node-id="oVvkiJt2x1fdbDM90aNYrL"></div>
     </div>
-    <div id="rootsMethods" style="display:none">
+    <div id="rootsMethods" style="display:none" data-page-node-id="jaTGPow87o8xAKq7DGIzSH">
 
-      <div class="sec-head"><h2>💡 词根记忆方法</h2></div>
-      <div class="guide">
-        <p class="guide-intro">你有没有这种感觉：单词背了又忘，背了这本忘那本？其实英语里约六成的单词都来自拉丁语和希腊语的词根词缀。一旦你掌握了"词根思维"，很多生词就不再是陌生的乱码，而是一串能拆解、能猜义的"密码"。</p>
-        <p class="guide-intro">本指南配合「🌱 英语词根」模块（收录约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）一起使用，给你 <b>10 条具体、可操作</b> 的记忆方法。建议收藏，作为长期的复习参考。</p>
+      <div class="sec-head" data-page-node-id="hgJODehlm4v3BI5fqKpTOo"><h2 data-page-node-id="OiABaxrhShnAx2zPkxwNHq">💡 词根记忆方法</h2></div>
+      <div class="guide" data-page-node-id="GNBavQshK2C2h86UxYOfNI">
+        <p class="guide-intro" data-page-node-id="rDnDbUeLxXEVREBCE1F6gi">你有没有这种感觉：单词背了又忘，背了这本忘那本？其实英语里约六成的单词都来自拉丁语和希腊语的词根词缀。一旦你掌握了"词根思维"，很多生词就不再是陌生的乱码，而是一串能拆解、能猜义的"密码"。</p>
+        <p class="guide-intro" data-page-node-id="DETIFOVhPPrTOgv3rLrRxI">本指南配合「🌱 英语词根」模块（收录约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）一起使用，给你 <b data-page-node-id="m06fE5l4MnpOuYVxV0b016">10 条具体、可操作</b> 的记忆方法。建议收藏，作为长期的复习参考。</p>
 
-        <h3 class="guide-h">一、10 条词根记忆方法</h3>
+        <h3 class="guide-h" data-page-node-id="JNIrR0JfHW2rTL7ZEYxfSJ">一、10 条词根记忆方法</h3>
 
-        <div class="method">
-          <h4>方法 1：词族归类法</h4>
-          <p><b>原理</b>：同一词根派生的词像一家人，成"族"记忆比单打独斗省力得多。</p>
-          <p><b>怎么做</b>：把含有同一个词根的词集中在一起，对比它们在<b>前缀 / 后缀</b>上的差异，找出"变与不变"，一次记住一整窝。</p>
-          <p><b>例子</b>：以词根 <b>spect / spec（看，视；Latin）</b> 为核心，建立你的"视觉家族"——</p>
-          <ul>
-            <li><b>inspect</b>（in 进入 + spect 看）= 检查——往里面"看"</li>
-            <li><b>spectator</b>（spect 看 + ator 人）= 观众——坐着"看"比赛的人</li>
-            <li><b>respect</b>（re 回 / 再 + spect 看）= 尊敬——回头"看"、仰视</li>
-            <li><b>perspective</b>（per 穿过 + spect 看 + ive）= 视角——穿过看到的那个角度</li>
+        <div class="method" data-page-node-id="H6lQRyFzITnwBjsPxGecOC">
+          <h4 data-page-node-id="uRGGn8yPCOQTXkeyb9DhG5">方法 1：词族归类法</h4>
+          <p data-page-node-id="MTvxsWMeuIk0inw4rlA3fV"><b data-page-node-id="MgkIzkDk8ELpMHPehZzj5L">原理</b>：同一词根派生的词像一家人，成"族"记忆比单打独斗省力得多。</p>
+          <p data-page-node-id="GlORGmy4ib3WWK2GRlhZas"><b data-page-node-id="A6H4CpNQ7T1gcL7Nc0TgQl">怎么做</b>：把含有同一个词根的词集中在一起，对比它们在<b data-page-node-id="be4xamjViSI20pxtJD6QxP">前缀 / 后缀</b>上的差异，找出"变与不变"，一次记住一整窝。</p>
+          <p data-page-node-id="2OxSSdoTf4FEKlEq3yBGg2"><b data-page-node-id="1905W5vqeDKZn35gJBbzff">例子</b>：以词根 <b data-page-node-id="ztpPVhu1uvqDHOzBCvmg8Q">spect / spec（看，视；Latin）</b> 为核心，建立你的"视觉家族"——</p>
+          <ul data-page-node-id="0Zbq3T3M11yGB5yqlVMOpi">
+            <li data-page-node-id="4xTBmQuOxHmU4NgIfFyXXK"><b data-page-node-id="E409yLV7N3gG52vdvVuEsd">inspect</b>（in 进入 + spect 看）= 检查——往里面"看"</li>
+            <li data-page-node-id="YhpsLccsem3fZN0eYmtXBm"><b data-page-node-id="F8HYl1V2ilmeeAj9sjBAyd">spectator</b>（spect 看 + ator 人）= 观众——坐着"看"比赛的人</li>
+            <li data-page-node-id="AD3CpNmXSAB1jl5MA79AZa"><b data-page-node-id="WCSoyj3L2ZkTXS0bGrZmvB">respect</b>（re 回 / 再 + spect 看）= 尊敬——回头"看"、仰视</li>
+            <li data-page-node-id="YDEN8IkjWbh5QM4fBUUsb3"><b data-page-node-id="g1LBVaf1L950lokr5E3gFb">perspective</b>（per 穿过 + spect 看 + ive）= 视角——穿过看到的那个角度</li>
           </ul>
         </div>
 
-        <div class="method">
-          <h4>方法 2：拆解公式法</h4>
-          <p><b>原理</b>：多数单词 = 前缀 + 词根 + 后缀，像套公式一样切开就懂。</p>
-          <p><b>怎么做</b>：遇到词先"三刀切"——① 前缀管方向 / 否定；② 词根管核心义；③ 后缀管词性；然后拼起来。</p>
-          <p><b>例子</b>：</p>
-          <ul>
-            <li><b>pre + dict</b>（预先 + 说）= <b>predict</b> 预测——提前"说"出结果</li>
-            <li><b>e(出) + duc(引导) + ate</b> = <b>educate</b> 教育——把人"引导"出来</li>
-            <li><b>bio(生命) + logy(…学)</b> = <b>biology</b> 生物——研究生命的学科</li>
-            <li><b>inform + ation</b> = information 信息；<b>edu + cate + ion</b> = education 教育</li>
+        <div class="method" data-page-node-id="00JxKo6ZRwJjfk3yMv9VDh">
+          <h4 data-page-node-id="BM5Js0Ez75xI4tvtTuEfFu">方法 2：拆解公式法</h4>
+          <p data-page-node-id="FwXLHFdEbLJTXoqocBHoHq"><b data-page-node-id="Es6I6UU3ghgnQ9L3mq1xwa">原理</b>：多数单词 = 前缀 + 词根 + 后缀，像套公式一样切开就懂。</p>
+          <p data-page-node-id="bNaMQ2H1SFiO7mgeDk4qMW"><b data-page-node-id="3ZkO8XZQRGrcsylagAF3GR">怎么做</b>：遇到词先"三刀切"——① 前缀管方向 / 否定；② 词根管核心义；③ 后缀管词性；然后拼起来。</p>
+          <p data-page-node-id="3JzGASq0HcP2vxTjsV1D0b"><b data-page-node-id="2M5NlpYQV2eqwLyGsR8h4e">例子</b>：</p>
+          <ul data-page-node-id="ggJ4tB6gpIA1c03lx6nszp">
+            <li data-page-node-id="tbJ9ToSCnF1ONg6R5sTfYf"><b data-page-node-id="1yZlPkhCZm2VhETgSPjEtu">pre + dict</b>（预先 + 说）= <b data-page-node-id="Q2fZalviLO7g7zpWI0okJz">predict</b> 预测——提前"说"出结果</li>
+            <li data-page-node-id="l3tW3BwkDgAfajKs6eHxB2"><b data-page-node-id="de2PW07xYt2M00sF59OxAx">e(出) + duc(引导) + ate</b> = <b data-page-node-id="dHtYzm2v0Kr3MO5foZpWOK">educate</b> 教育——把人"引导"出来</li>
+            <li data-page-node-id="swBenA5fdn5pMEhmAYkmn4"><b data-page-node-id="bxEru8qCetPKB7o5CIlyPD">bio(生命) + logy(…学)</b> = <b data-page-node-id="g5nCDBBDRfHJpz1zrN8n3D">biology</b> 生物——研究生命的学科</li>
+            <li data-page-node-id="NG7LuLhrL6KG5wrjzpgaBM"><b data-page-node-id="sGLlJU2m4O158MGxZBuoW2">inform + ation</b> = information 信息；<b data-page-node-id="zfLfGF7knyClXinA1ycSPI">edu + cate + ion</b> = education 教育</li>
           </ul>
         </div>
 
-        <div class="method">
-          <h4>方法 3：词源 / 画面联想法</h4>
-          <p><b>原理</b>：拉丁 / 希腊原义往往就是一幅画，把抽象词根变成具体画面，大脑记得更牢。</p>
-          <p><b>怎么做</b>：查词根的原义，给它编一个"脑内小剧场"，每次看到这个词就调用那幅画面。</p>
-          <p><b>例子</b>：</p>
-          <ul>
-            <li><b>spect = 看</b>：spectator 的画面是"坐着盯赛场的人"= 观众；inspect 是"拿手电筒往里照着看"= 检查。</li>
-            <li><b>bio = 生命（Greek）</b>：biology 是"研究生命"；<b>biography</b>（bio + graph 写 + y）是"把一个人的生命写下来"= 传记。</li>
+        <div class="method" data-page-node-id="PavZuJLdiaCIrD1CVNVkyL">
+          <h4 data-page-node-id="dC9qCw2FzqebGxBJywfxBS">方法 3：词源 / 画面联想法</h4>
+          <p data-page-node-id="q4u7vXF6V7QF7Xhf2fUnma"><b data-page-node-id="dYi0rPgs9TAIyJBPcWOMUx">原理</b>：拉丁 / 希腊原义往往就是一幅画，把抽象词根变成具体画面，大脑记得更牢。</p>
+          <p data-page-node-id="hQ9HrI94n7vxu4dWaaYvKl"><b data-page-node-id="adAFpsCW6QDpL9LSwjwkP6">怎么做</b>：查词根的原义，给它编一个"脑内小剧场"，每次看到这个词就调用那幅画面。</p>
+          <p data-page-node-id="5o8vtYhyI2zGtoyS1nSe5i"><b data-page-node-id="aFQRgew6bGQCDE92Lq44pD">例子</b>：</p>
+          <ul data-page-node-id="OB7weShzoifDDYiQO0BfDN">
+            <li data-page-node-id="RN3m1gXSgQA3MBfUfrjlIs"><b data-page-node-id="SeCpbBDVJPLwWmb2vuF5LE">spect = 看</b>：spectator 的画面是"坐着盯赛场的人"= 观众；inspect 是"拿手电筒往里照着看"= 检查。</li>
+            <li data-page-node-id="U36I77owt9KCph6zZ8VLPh"><b data-page-node-id="nFqZBBo9ITiqQiQ4SfGxm3">bio = 生命（Greek）</b>：biology 是"研究生命"；<b data-page-node-id="44MhiqmsN0kXnhQjODl9v6">biography</b>（bio + graph 写 + y）是"把一个人的生命写下来"= 传记。</li>
           </ul>
         </div>
 
-        <div class="method">
-          <h4>方法 4：对比易混法</h4>
-          <p><b>原理</b>：最易混的不是难词，而是拼写、读音相近的词根，必须摆在一起对比才能分清。</p>
-          <p><b>怎么做</b>：把形近、音近的词根列成"对照表"，标清各自含义，看到词先判断它属于哪一家。</p>
-          <p><b>例子</b>：</p>
-          <ul>
-            <li><b>dict（说）vs duct（引导）</b>：<b>predict</b>（pre + dict 说）= 预测；<b>conduct</b>（con + duct 引导）= 引导 / 管理。读音相近，但一个管"嘴"（说），一个管"手"（引导）。</li>
-            <li><b>-tion vs -sion</b>：都是名词后缀。<b>-tion</b> 更常见（information、education）；<b>-sion</b> 常跟在 d / s 等字母后，如 decide → <b>decision</b> 决定、conclude → conclusion 结论。</li>
+        <div class="method" data-page-node-id="2hTAqVAfNMBjzB4adclj2G">
+          <h4 data-page-node-id="slLpcFKDhQZwxZEEledKTm">方法 4：对比易混法</h4>
+          <p data-page-node-id="6satqm1gm3DzHUpGRjcyDj"><b data-page-node-id="G01TWAU9BWy7tNDGqSFD0v">原理</b>：最易混的不是难词，而是拼写、读音相近的词根，必须摆在一起对比才能分清。</p>
+          <p data-page-node-id="xSnuRWmqxyhOrG1DSNWAzx"><b data-page-node-id="ZgxMixv1swU6nuqjt5FhgN">怎么做</b>：把形近、音近的词根列成"对照表"，标清各自含义，看到词先判断它属于哪一家。</p>
+          <p data-page-node-id="YhmNPFNAJ4N42sJnQJU9IQ"><b data-page-node-id="UXYpYlYHtVYZsMpvFjxVe0">例子</b>：</p>
+          <ul data-page-node-id="VPddMMdzsutl4rGHnrou2u">
+            <li data-page-node-id="6pdCVJ0R9uHhpxoD6cd9TT"><b data-page-node-id="OAL0B5QvtcBYXAdDXcGZYQ">dict（说）vs duct（引导）</b>：<b data-page-node-id="wb9Z5z1NdF4AdZwKXkVNqK">predict</b>（pre + dict 说）= 预测；<b data-page-node-id="QwNB8xkOJ2A4Oj02qNfU83">conduct</b>（con + duct 引导）= 引导 / 管理。读音相近，但一个管"嘴"（说），一个管"手"（引导）。</li>
+            <li data-page-node-id="Bu4SosCWy0dsTlGWH2MJEp"><b data-page-node-id="SSCl4LSJ4wgNtsbDyEi8dV">-tion vs -sion</b>：都是名词后缀。<b data-page-node-id="gPLvZOBHa0uuXJeGt2AAHa">-tion</b> 更常见（information、education）；<b data-page-node-id="9eIP9a9GbSpOD6zgHkD8pG">-sion</b> 常跟在 d / s 等字母后，如 decide → <b data-page-node-id="20H5OZ30zo7p6EAc9E7Nnp">decision</b> 决定、conclude → conclusion 结论。</li>
           </ul>
         </div>
 
-        <div class="method">
-          <h4>方法 5：故事串联法</h4>
-          <p><b>原理</b>：孤立的词是点，串成故事就成了线，情节能把多个同根词一次性绑进记忆。</p>
-          <p><b>怎么做</b>：用一句话或一个小场景，把几个同根词编进去，让它们互相"站台"。</p>
-          <p><b>例子</b>（全员来自 <b>duc / duct = 引导</b>）：</p>
-          <div class="quote">老师先 <b>introduce</b>（介绍，intro 向内 + duc）一个新概念，再 <b>educate</b>（教育，e 出 + duc）学生，最后 <b>conduct</b>（引导，con 一起 + duct）一场讨论。</div>
-          <p>三个词都围绕"引导"，一次记一串。</p>
+        <div class="method" data-page-node-id="BUdP4TY6vPFqCT4gf7V0nY">
+          <h4 data-page-node-id="twbE7p6neuOqtihYQc2QER">方法 5：故事串联法</h4>
+          <p data-page-node-id="Kr74xyjpikJsfh8wRK57B1"><b data-page-node-id="yGA6SF3VC2eLYwL11Elix8">原理</b>：孤立的词是点，串成故事就成了线，情节能把多个同根词一次性绑进记忆。</p>
+          <p data-page-node-id="HRvRsGW0lujGFYf3ITwFOx"><b data-page-node-id="eu8EgWSeExkdzVnZJMOIPH">怎么做</b>：用一句话或一个小场景，把几个同根词编进去，让它们互相"站台"。</p>
+          <p data-page-node-id="kNDZCuNAVhAmiDtPLSSccO"><b data-page-node-id="gdTCPXJ886J21BcfOP1Iox">例子</b>（全员来自 <b data-page-node-id="8kIeyA7CR7ThA2ErnwbaA6">duc / duct = 引导</b>）：</p>
+          <div class="quote" data-page-node-id="WloFrZsEtZAIWpoRzbIC4M">老师先 <b data-page-node-id="MTG5rmTYj9oGEX8gcK4bqB">introduce</b>（介绍，intro 向内 + duc）一个新概念，再 <b data-page-node-id="CsBhbwEEp9FvzXVSEoOd6O">educate</b>（教育，e 出 + duc）学生，最后 <b data-page-node-id="fKxOTBPjxEGYgpPmGEdAzD">conduct</b>（引导，con 一起 + duct）一场讨论。</div>
+          <p data-page-node-id="BuqzFdajlg94GJBQHZIzC3">三个词都围绕"引导"，一次记一串。</p>
         </div>
 
-        <div class="method">
-          <h4>方法 6：例句中记忆法</h4>
-          <p><b>原理</b>：在语境里记的词，比孤立背拼写多一层"用法记忆"，更难忘记。</p>
-          <p><b>怎么做</b>：别只背单词本身，给每个目标词配一句简单、真实的例句，连同释义一起记。</p>
-          <p><b>例子</b>（前缀 <b>a- / an- = 无、非；Greek</b>）：</p>
-          <ul>
-            <li>"His <b>atypical</b> symptoms worried the doctor."（他的<b>非典型</b>症状让医生担心。）</li>
-            <li>"The <b>anonymous</b> letter exposed the truth."（那封<b>匿名</b>信揭露了真相。）</li>
+        <div class="method" data-page-node-id="eSSMvkaaxtcqCq9bCg9bZQ">
+          <h4 data-page-node-id="ooCpDTadpm5jb4uH4puFjc">方法 6：例句中记忆法</h4>
+          <p data-page-node-id="SbCFIstNCmyfF4VYgx8JCm"><b data-page-node-id="iz2Y0YhRHhSB5dnDu0F4yw">原理</b>：在语境里记的词，比孤立背拼写多一层"用法记忆"，更难忘记。</p>
+          <p data-page-node-id="bXOjUSgCzFbNpF2DfEVj11"><b data-page-node-id="GHSp5EP6rZ9FSOeQ3f9vcd">怎么做</b>：别只背单词本身，给每个目标词配一句简单、真实的例句，连同释义一起记。</p>
+          <p data-page-node-id="sCfAA67CygyZALZHWg4QRY"><b data-page-node-id="WESHSZ6PuCB4ReEZoZ9B4e">例子</b>（前缀 <b data-page-node-id="9OUmhjiy1lbfUt0boMfcza">a- / an- = 无、非；Greek</b>）：</p>
+          <ul data-page-node-id="t01fxEPEx6v4wnTzelK5JP">
+            <li data-page-node-id="ZAoXBM0MjFofEGzglZQj8D">"His <b data-page-node-id="qz7gCpdE4QSigW4Kxw4JLX">atypical</b> symptoms worried the doctor."（他的<b data-page-node-id="Y4J2LyDDm3HPtBY2Zj0blD">非典型</b>症状让医生担心。）</li>
+            <li data-page-node-id="6EFXm6NYStA2xdfMaTREmx">"The <b data-page-node-id="EwXCEB4QS88c0wc2ydbKc2">anonymous</b> letter exposed the truth."（那封<b data-page-node-id="0LEZODzWw3Q9wJlfTycdlP">匿名</b>信揭露了真相。）</li>
           </ul>
-          <div class="quote">同样可练 <b>mal-（坏；Latin）</b>："The sensor <b>malfunction</b>ed."（传感器<b>故障</b>了。）/ "The child suffered from <b>malnutrition</b>."（那孩子<b>营养不良</b>。）</div>
+          <div class="quote" data-page-node-id="h5K5B0I4JEpaWDFYmzqG27">同样可练 <b data-page-node-id="fHsBMLwlL6ZmwFXM05xQRQ">mal-（坏；Latin）</b>："The sensor <b data-page-node-id="zzqwA7h26yiEshQtYqOitG">malfunction</b>ed."（传感器<b data-page-node-id="4HbNe0aWK9dFlTFdyaEthX">故障</b>了。）/ "The child suffered from <b data-page-node-id="J8xHjsHKzKAceKNwwEvnMw">malnutrition</b>."（那孩子<b data-page-node-id="MpUEvh3HTgOJzMCippD17s">营养不良</b>。）</div>
         </div>
 
-        <div class="method">
-          <h4>方法 7：间隔重复法</h4>
-          <p><b>原理</b>：记忆会自然衰退，按"先密后疏"的节奏复习，能把短期记忆焊成长期记忆。</p>
-          <p><b>怎么做</b>：用 Anki 或闪卡把词根例词做成卡片；重点配合本页的 <b>🃏 自测模式</b>（翻卡自测）和 <b>掌握度筛选</b>（未学 → 学习中 → 已掌握，点击即可切换）。第 1 天学的 spect 家族，在第 2、4、7 天各复习一次；能流畅说出含义就标记为"已掌握"，减少无效重复。</p>
+        <div class="method" data-page-node-id="zFXp4v17rpiCEakuhvjkEl">
+          <h4 data-page-node-id="lgb4xl3m212C83Hilbt0CA">方法 7：间隔重复法</h4>
+          <p data-page-node-id="0A0raLhCcAYEmABO70VhHU"><b data-page-node-id="y8PPFuohUQZwwGNrQ8A3WO">原理</b>：记忆会自然衰退，按"先密后疏"的节奏复习，能把短期记忆焊成长期记忆。</p>
+          <p data-page-node-id="JTq1c5stCNLGtcnotZ7yIU"><b data-page-node-id="TqcyRoUeB3d8Pmzzdamhtk">怎么做</b>：用 Anki 或闪卡把词根例词做成卡片；重点配合本页的 <b data-page-node-id="ZBUBa8jsBdNNflvQ3uQ3TL">🃏 自测模式</b>（翻卡自测）和 <b data-page-node-id="qzC6Y0B4F78rfajJuPERwi">掌握度筛选</b>（未学 → 学习中 → 已掌握，点击即可切换）。第 1 天学的 spect 家族，在第 2、4、7 天各复习一次；能流畅说出含义就标记为"已掌握"，减少无效重复。</p>
         </div>
 
-        <div class="method">
-          <h4>方法 8：逆推法</h4>
-          <p><b>原理</b>：看到生词先"猜"它的词根构成，再回页面验证，猜对一次的印象胜过背十遍。</p>
-          <p><b>怎么做</b>：遇到新词，先凭前缀 / 词根 / 后缀推断大意，再去「🌱 英语词根」搜索框输入词根验证。</p>
-          <p><b>例子</b>：</p>
-          <ul>
-            <li>看到 <b>retrospect</b>：拆成 retro（向后）+ spect（看）= 回头看 → 推断为"回顾"，搜索 spect 确认无误。</li>
-            <li>看到 <b>prediction</b>：pre（预先）+ dict（说）+ ion（名词）= "预先说出的事" → 预测（名词）。</li>
-          </ul>
-        </div>
-
-        <div class="method">
-          <h4>方法 9：高频优先法</h4>
-          <p><b>原理</b>：少数高频词根覆盖了海量常用词，先拿下它们，性价比最高。</p>
-          <p><b>怎么做</b>：先集中攻克出现频率最高的前缀、词根、后缀，再向低频扩展。</p>
-          <p><b>例子</b>：优先掌握——</p>
-          <ul>
-            <li><b>pre-</b>（在前 / 预先）：preview 预览、predict 预测、prevent 预防</li>
-            <li><b>-tion / -sion</b>（名词后缀）：information 信息、education 教育、decision 决定</li>
-            <li><b>spect</b>（看）：inspect、respect、perspective</li>
-          </ul>
-          <p>等这三组滚瓜烂熟，再去啃 <b>phil（爱）</b>、<b>anonymous</b> 这类低频词根。</p>
-        </div>
-
-        <div class="method">
-          <h4>方法 10：Suffix-first 法</h4>
-          <p><b>原理</b>：后缀几乎直接决定词性，先认后缀定"身份"，再回头填词根含义，理解更稳。</p>
-          <p><b>怎么做</b>：看到长词先看尾巴：是 -tion（名词）、-ate（动词）还是 -logy（学科）？定好词性后，再拆解前面的词根。</p>
-          <p><b>例子</b>：</p>
-          <ul>
-            <li><b>education</b>：尾巴 -tion → 名词；edu（= e + duc 引导）→ "引导出来的东西" = 教育。</li>
-            <li><b>biology</b>：尾巴 -logy → 学科；bio（生命）→ 生命科学 = 生物。</li>
+        <div class="method" data-page-node-id="FzyXvLRMNCzk5GhSYUGsyk">
+          <h4 data-page-node-id="8jrDBKb2IqTwEPlLblmsAR">方法 8：逆推法</h4>
+          <p data-page-node-id="K34BIf7Hg6fDHfTyU9XvC0"><b data-page-node-id="ktVRdU0IHvST3PmxYVI8WR">原理</b>：看到生词先"猜"它的词根构成，再回页面验证，猜对一次的印象胜过背十遍。</p>
+          <p data-page-node-id="lj5wRyYvgcDKP5w1WYFsb8"><b data-page-node-id="wA9cxFwjGLlXUI4VT9hvC5">怎么做</b>：遇到新词，先凭前缀 / 词根 / 后缀推断大意，再去「🌱 英语词根」搜索框输入词根验证。</p>
+          <p data-page-node-id="rGvz7MgyEXO46CCwOjthQ0"><b data-page-node-id="tB3UAej4kpPBhEzgTqNjPn">例子</b>：</p>
+          <ul data-page-node-id="LhL9UkR0tYgZZyDpjf5w0t">
+            <li data-page-node-id="NOwBnLGF9mlKG71RKdH0Do">看到 <b data-page-node-id="gGWEyc7svWcAKKCAxxye9h">retrospect</b>：拆成 retro（向后）+ spect（看）= 回头看 → 推断为"回顾"，搜索 spect 确认无误。</li>
+            <li data-page-node-id="FmULtf5LLFFu2RClOD3zg6">看到 <b data-page-node-id="YiqZLnyd8uaRshiQC61WVC">prediction</b>：pre（预先）+ dict（说）+ ion（名词）= "预先说出的事" → 预测（名词）。</li>
           </ul>
         </div>
 
-        <h3 class="guide-h">二、一周上手计划</h3>
-        <p>目标是前 7 天建立"词根直觉"，不贪多，每天 15–20 分钟：</p>
-        <ul>
-          <li><b>第 1 天 ｜ 建立词族</b>：打开「🌱 英语词根」→ 点开 spect 词根（点卡片展开全部例词），用<b>方法 1</b>把 inspect / spectator / respect / perspective 成族记一遍。</li>
-          <li><b>第 2 天 ｜ 学会拆解</b>：挑 pre- 前缀和 -tion 后缀，用<b>方法 2</b>练手，在纸上写下 pre+dict、bio+logy 这样的"公式"。</li>
-          <li><b>第 3 天 ｜ 编画面 + 串故事</b>：给 bio、duc/duct 造画面（<b>方法 3</b>），并用 duc 家族编一句故事（<b>方法 5</b>）。</li>
-          <li><b>第 4 天 ｜ 对比易混 + 例句</b>：整理 dict vs duct、-tion vs -sion 对照表（<b>方法 4</b>），给 a-/an- 各写一句例句（<b>方法 6</b>）。</li>
-          <li><b>第 5 天 ｜ 逆推实战</b>：随机翻「🃏 自测模式」卡片，用<b>方法 8</b>先猜再翻；猜错的加入"学习中"。</li>
-          <li><b>第 6 天 ｜ 间隔复习</b>：用<b>方法 7</b>回看前 5 天内容，能说出的标"已掌握"，卡壳的留"学习中"。</li>
-          <li><b>第 7 天 ｜ 高频收口 + 后缀定位</b>：用<b>方法 9</b>确认 pre- / -tion / spect 已牢固，再用<b>方法 10</b>快速给一批长词定性。</li>
+        <div class="method" data-page-node-id="AsG6SgORaQEDBzHlSZ2bqn">
+          <h4 data-page-node-id="KLb2VTRAJL5CPM7hpXGE0f">方法 9：高频优先法</h4>
+          <p data-page-node-id="n7YyfBd9yqMUYd69qSFwrn"><b data-page-node-id="bAl85hEFlNeSSrGwW2nQBf">原理</b>：少数高频词根覆盖了海量常用词，先拿下它们，性价比最高。</p>
+          <p data-page-node-id="GAI6PMUzJCc2qXhhM4lJNO"><b data-page-node-id="9VT0RV9Li5JNnc46KW55xs">怎么做</b>：先集中攻克出现频率最高的前缀、词根、后缀，再向低频扩展。</p>
+          <p data-page-node-id="lTRa93WxAn6hUt40I3bnL8"><b data-page-node-id="WTvMFYnQF9ITNov2m3Xwd0">例子</b>：优先掌握——</p>
+          <ul data-page-node-id="czouarKKnHtvnwtCV4icKZ">
+            <li data-page-node-id="eXokLp7m0PDb0k0MFxw3TK"><b data-page-node-id="XPOXzDVhYwG6BcEyVW6MHZ">pre-</b>（在前 / 预先）：preview 预览、predict 预测、prevent 预防</li>
+            <li data-page-node-id="oQAX8a9qDLgG9S3RJp094J"><b data-page-node-id="Rouov8cKYio34b4PGLEnRQ">-tion / -sion</b>（名词后缀）：information 信息、education 教育、decision 决定</li>
+            <li data-page-node-id="pBiPKYFw3HpGhyC5unf3pu"><b data-page-node-id="EXka0hJkIyl7Ii3HtFShOA">spect</b>（看）：inspect、respect、perspective</li>
+          </ul>
+          <p data-page-node-id="JmHM4Dlj3Eo7MCfeHbyGrA">等这三组滚瓜烂熟，再去啃 <b data-page-node-id="l3BZdAtBD6x0rkEvs4gfnp">phil（爱）</b>、<b data-page-node-id="41P4BtViuflNnzw9OzZaBM">anonymous</b> 这类低频词根。</p>
+        </div>
+
+        <div class="method" data-page-node-id="61tTU8CvU2j9PU6JpmPRP6">
+          <h4 data-page-node-id="ZlNCBU1Oi3d9qpXM1EtDVE">方法 10：Suffix-first 法</h4>
+          <p data-page-node-id="EbURxydzgPVvi4PhVegc6R"><b data-page-node-id="Pji2DU6Fv3ExdRrxVSAFDP">原理</b>：后缀几乎直接决定词性，先认后缀定"身份"，再回头填词根含义，理解更稳。</p>
+          <p data-page-node-id="D1hjf3p8783vMsoxAZmtAO"><b data-page-node-id="ZvNcbSoby7kkgtnNeRZVN5">怎么做</b>：看到长词先看尾巴：是 -tion（名词）、-ate（动词）还是 -logy（学科）？定好词性后，再拆解前面的词根。</p>
+          <p data-page-node-id="Lp8XtcXpJ1He7zk59Ci4aB"><b data-page-node-id="UDUZkDKK6Yr1Gn2iUu1Kjd">例子</b>：</p>
+          <ul data-page-node-id="a3JWyYOHsZxCyVIr0vsbEO">
+            <li data-page-node-id="gmwVeNcP5vqpEJm6EpcPCf"><b data-page-node-id="PG3b6dHGswq6GDbIIjSJRm">education</b>：尾巴 -tion → 名词；edu（= e + duc 引导）→ "引导出来的东西" = 教育。</li>
+            <li data-page-node-id="Old8cp6uFKjQYCUrsWLgBs"><b data-page-node-id="VAU31TZsfJ6nTDpOTWoHeu">biology</b>：尾巴 -logy → 学科；bio（生命）→ 生命科学 = 生物。</li>
+          </ul>
+        </div>
+
+        <h3 class="guide-h" data-page-node-id="oH3sEZY5bzC02RWbtmDHs0">二、一周上手计划</h3>
+        <p data-page-node-id="oSDvRKsrSGW7Xmm1bJEn7w">目标是前 7 天建立"词根直觉"，不贪多，每天 15–20 分钟：</p>
+        <ul data-page-node-id="MqD4lzIu6tHDJ0TxsOyueT">
+          <li data-page-node-id="pthgNmQjQAXLOUjNMUNbHi"><b data-page-node-id="cOwYRhtk9T1ZQxheB7XDPp">第 1 天 ｜ 建立词族</b>：打开「🌱 英语词根」→ 点开 spect 词根（点卡片展开全部例词），用<b data-page-node-id="WejrQdsxowboGzW6RdcfdQ">方法 1</b>把 inspect / spectator / respect / perspective 成族记一遍。</li>
+          <li data-page-node-id="01fFT1SiCWgpd9JBs318DD"><b data-page-node-id="qzkIcaZ9OfHHmAdtNBNYPs">第 2 天 ｜ 学会拆解</b>：挑 pre- 前缀和 -tion 后缀，用<b data-page-node-id="tAhMtCZ2DMprUBxDydt87n">方法 2</b>练手，在纸上写下 pre+dict、bio+logy 这样的"公式"。</li>
+          <li data-page-node-id="uMiime6hNh9qQngvFUjIt7"><b data-page-node-id="s9SoEFEwoto3Mbdr03mu4J">第 3 天 ｜ 编画面 + 串故事</b>：给 bio、duc/duct 造画面（<b data-page-node-id="UFfPWSmsAOndhhHqWGHkXl">方法 3</b>），并用 duc 家族编一句故事（<b data-page-node-id="cbJBcPIkFFogifp9hl5USJ">方法 5</b>）。</li>
+          <li data-page-node-id="lYN5fHde9iXdou4Y1FotWO"><b data-page-node-id="1lAJwy7zq1dZEtryZ4njvR">第 4 天 ｜ 对比易混 + 例句</b>：整理 dict vs duct、-tion vs -sion 对照表（<b data-page-node-id="jXXfCImjoHFETC8rj0FL53">方法 4</b>），给 a-/an- 各写一句例句（<b data-page-node-id="0E2hYQoyhbH0kjOivXCGkq">方法 6</b>）。</li>
+          <li data-page-node-id="pZKbFVX6Z3aRO6iV18C8du"><b data-page-node-id="SN42kx0glB4ZKu7LfNf3tN">第 5 天 ｜ 逆推实战</b>：随机翻「🃏 自测模式」卡片，用<b data-page-node-id="h4YZvM3AnhWiVEZULJV1XS">方法 8</b>先猜再翻；猜错的加入"学习中"。</li>
+          <li data-page-node-id="4nGBf576qAb0v0atpAjg5v"><b data-page-node-id="tVWePPGTHVuJ2nFjTFSG2g">第 6 天 ｜ 间隔复习</b>：用<b data-page-node-id="cdffLlAyJw029cs0KBkRAF">方法 7</b>回看前 5 天内容，能说出的标"已掌握"，卡壳的留"学习中"。</li>
+          <li data-page-node-id="ND47X80p1yXui0e0in5SAr"><b data-page-node-id="X7iWo62MFHCbYZUcWjUeBl">第 7 天 ｜ 高频收口 + 后缀定位</b>：用<b data-page-node-id="uIWKfX9WgnGroEzuu3XH51">方法 9</b>确认 pre- / -tion / spect 已牢固，再用<b data-page-node-id="AmJfv9BvX5stR2iiXwliP6">方法 10</b>快速给一批长词定性。</li>
         </ul>
-        <div class="guide-tip">小提示：每天结束前，在页面里把当天学的词根点一下掌握度，让"未学 → 学习中 → 已掌握"真实反映你的进度，复习才有抓手。</div>
+        <div class="guide-tip" data-page-node-id="Zuxz9nB1iBzeljfwbDq2kp">小提示：每天结束前，在页面里把当天学的词根点一下掌握度，让"未学 → 学习中 → 已掌握"真实反映你的进度，复习才有抓手。</div>
 
-        <h3 class="guide-h">三、配套使用说明</h3>
-        <p>本指南里的所有词根与例词，都能在本页「🌱 英语词根」模块中找到对应数据（约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）。建议这样配合：</p>
-        <ul>
-          <li><b>搜索</b>：在词根搜索框输入 spect、看、视觉 等关键词，可定位词根及其全部例词；</li>
-          <li><b>点击展开</b>：点任意词根卡片即可展开，查看它下面的所有单词；</li>
-          <li><b>自测 &amp; 掌握度</b>：用「🃏 自测模式」翻卡自测，用「掌握度」筛选与标记，把本指南的方法落到每天的复习里。</li>
+        <h3 class="guide-h" data-page-node-id="nnBlzMjCrigsAsRPI9hldu">三、配套使用说明</h3>
+        <p data-page-node-id="w02gYSlX4skbkkqDL4oahp">本指南里的所有词根与例词，都能在本页「🌱 英语词根」模块中找到对应数据（约 8000 个例词，按前缀 / 词根 / 后缀分类，每个词素标注"形式 ｜ 含义 ｜ 来源"）。建议这样配合：</p>
+        <ul data-page-node-id="GQIhgBVvQrFZWgHAp4j8c0">
+          <li data-page-node-id="oaZtqMxlBMsGS6ONbrKAYQ"><b data-page-node-id="R7xzz0Hiir36WV43lMcp1H">搜索</b>：在词根搜索框输入 spect、看、视觉 等关键词，可定位词根及其全部例词；</li>
+          <li data-page-node-id="qfor5reYrHAVwoDYqt7Ajf"><b data-page-node-id="3exz6TrKW88NX1Rk66dWPg">点击展开</b>：点任意词根卡片即可展开，查看它下面的所有单词；</li>
+          <li data-page-node-id="UWCzyvf3jVc8HYNJASgvlZ"><b data-page-node-id="zsCHIWCNoO5hQIE4XqpnAX">自测 &amp; 掌握度</b>：用「🃏 自测模式」翻卡自测，用「掌握度」筛选与标记，把本指南的方法落到每天的复习里。</li>
         </ul>
-        <p>把这份指南和网页放在一起，你的词根记忆就有了"方法手册 + 数据字典"的双保险。</p>
+        <p data-page-node-id="pxulJiTLezoNx7ZPe2XA7U">把这份指南和网页放在一起，你的词根记忆就有了"方法手册 + 数据字典"的双保险。</p>
       </div>
     </div>
   </section>
 
-  <section class="view" id="adjpassive" data-view="adjpassive">
-    <div class="sec-head"><h2>⑩ 形似被动的形容词（be + 过去分词）</h2><span class="count">被动语态 vs 形容词 · 辨析大全</span></div>
+  <section class="view" id="adjpassive" data-view="adjpassive" data-page-node-id="4zvhELtCXW6CUUGcKPHbQu">
+    <div class="sec-head" data-page-node-id="RivLDDba3rxheFtrWcRqdH"><h2 data-page-node-id="IF0xqccF7IJ6bEQzoeclHl">⑩ 形似被动的形容词（be + 过去分词）</h2><span class="count" data-page-node-id="UyPElcJ3HhCVUFE9PE9Pz5">被动语态 vs 形容词 · 辨析大全</span></div>
+    <div class="adj-toolbar">
+      <input class="adj-search" id="adjSearch" placeholder="搜索单词 / 中文义…" />
+      <div class="adj-seg" id="adjSeg">
+        <button type="button" data-cat="all" class="active">全部</button>
+        <button type="button" data-cat="emotion">情感类</button>
+        <button type="button" data-cat="state">状态类</button>
+      </div>
+      <button type="button" class="adj-btn" id="adjSelf">自测模式</button>
+      <button type="button" class="adj-btn" id="adjRead">🔊 朗读全部</button>
+    </div>
 
-    <div class="sub-sec">
-      <p class="adj-note">英语里 <b>be + 过去分词</b> 结构有两种完全不同的身份，初学者极易混淆：</p>
-      <ul class="adj-ul">
-        <li><b>被动语态</b>：主语是动作的<em>承受者</em>，通常能补上 <span class="adj-code">by + 施动者</span>。例：<i>The window was broken by a boy.</i>（窗户被男孩打破）</li>
-        <li><b>形容词（表语）</b>：过去分词已"形容词化"，描述主语的<em>感受或状态</em>，不能加 by。例：<i>We were amazed at the news.</i>（我们对此感到惊讶）</li>
+    <div class="sub-sec" data-page-node-id="OgpavDzhxBvgd4UPe9p1zx">
+      <p class="adj-note" data-page-node-id="oWboFlc6VIVSs3y5NIDPeX">英语里 <b data-page-node-id="lhM8QZZljRflmh6VqpsmxE">be + 过去分词</b> 结构有两种完全不同的身份，初学者极易混淆：</p>
+      <ul class="adj-ul" data-page-node-id="ijv8nvjs5SyE1AvztuRYlu">
+        <li data-page-node-id="imExwNHkcxi7rP8MbGEiJh"><b data-page-node-id="C1duiS3a2jAl14rDvIfCbF">被动语态</b>：主语是动作的<em data-page-node-id="QIsqpuF8kM5l7SYEXNZqIN">承受者</em>，通常能补上 <span class="adj-code" data-page-node-id="IDGswZcylxf65JJe68FX3B">by + 施动者</span>。例：<i data-page-node-id="Fii0b1AuslQdztz1CswmtC">The window was broken by a boy.</i>（窗户被男孩打破）</li>
+        <li data-page-node-id="w2fkFzsXwn6ijfbeBNnT1a"><b data-page-node-id="nFe8Ua0MB9zkPdNxYvJYSX">形容词（表语）</b>：过去分词已"形容词化"，描述主语的<em data-page-node-id="ONpmpx7CZCFZItYEAA9B9B">感受或状态</em>，不能加 by。例：<i data-page-node-id="xVy6Cr6MzJUOwMv0kHDk8q">We were amazed at the news.</i>（我们对此感到惊讶）</li>
       </ul>
     </div>
 
-    <h3 class="adj-h">怎么一眼区分？</h3>
-    <div class="adj-tbl-wrap">
-      <table>
-        <thead><tr><th>判断方法</th><th>被动语态</th><th>形容词</th></tr></thead>
-        <tbody>
-          <tr><td>能否加 <span class="adj-code">by + 人/物</span></td><td>✅ 能（被…做）</td><td>❌ 不能</td></tr>
-          <tr><td>常用修饰副词</td><td><span class="adj-code">much</span> / <span class="adj-code">greatly</span></td><td><span class="adj-code">very</span>（very amazed）</td></tr>
-          <tr><td>意思侧重</td><td>一个动作发生了</td><td>一种感受 / 状态</td></tr>
-          <tr><td>例句</td><td><i>The book was printed in 2020.</i></td><td><i>I am interested in the book.</i></td></tr>
+    <h3 class="adj-h" data-page-node-id="fTxB22SqFmBZkGHtRsHwOM">怎么一眼区分？</h3>
+    <div class="adj-tbl-wrap" data-page-node-id="QiQ2tnqypmJdeKl6KLkipg">
+      <table data-page-node-id="hoijfGkY8qeGxYEqYjwPrG">
+        <thead data-page-node-id="3ptqN7W0gDcr3gXcI5EiCU"><tr data-page-node-id="3nUJl9S1pRQZlxiuSKdYFe"><th data-page-node-id="P59sFp8baYsF82hy4hIfl4">判断方法</th><th data-page-node-id="FDkNCF9DE0cFaFUH18ZoAO">被动语态</th><th data-page-node-id="SqcrpnWPRxOaHiYUrEgM7o">形容词</th></tr></thead>
+        <tbody data-page-node-id="5hTeHp1gKi9iyIHWWJ8cHm">
+          <tr data-page-node-id="cyj10lA8Vpy0iIoSGVvqCB"><td data-page-node-id="QQNh5lTV0eyQR928j8f42G">能否加 <span class="adj-code" data-page-node-id="kVyCa0OJoqVM9DxTuGhO9T">by + 人/物</span></td><td data-page-node-id="lMvmAPUw4kAdxYyF6wIQtM">✅ 能（被…做）</td><td data-page-node-id="J4n6xdxGAdpSNRa2dlia7I">❌ 不能</td></tr>
+          <tr data-page-node-id="2ruoaJpCNstwX8j3dphlww"><td data-page-node-id="YyAv3i5TDFVocodws0FeYP">常用修饰副词</td><td data-page-node-id="WCI4ZMojvkXgOmBvx7LZHQ"><span class="adj-code" data-page-node-id="aMj6rjNUB1Kto5f0HrehtY">much</span> / <span class="adj-code" data-page-node-id="V2PAwxN8pV1bdUpu2tupU9">greatly</span></td><td data-page-node-id="yLtfsvHBZ7RcF7yEIafxMl"><span class="adj-code" data-page-node-id="sJYuY81MPe2REZ2vVx6XIS">very</span>（very amazed）</td></tr>
+          <tr data-page-node-id="O1lVFKIOBQIfNIae37uwQ6"><td data-page-node-id="5TmPjfO9HIsQyI41UalBHF">意思侧重</td><td data-page-node-id="uG6CD7VMM8MMQ21pRNoor5">一个动作发生了</td><td data-page-node-id="lYdxhZEP76PsKmuZHUZ345">一种感受 / 状态</td></tr>
+          <tr data-page-node-id="iVQpkODgIwH3axscYnDFBE"><td data-page-node-id="j7gCSQGY7NlVbJdJDyfET3">例句</td><td data-page-node-id="KLQbOyjARPyW5zs1shG9tc"><i data-page-node-id="IYSTVtR1ZIuETpbn6UVCPP">The book was printed in 2020.</i></td><td data-page-node-id="Qqv2mufWWbnkxyvCjPugGo"><i data-page-node-id="CWtHBjWD1YzgtOGwHp81MJ">I am interested in the book.</i></td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3 class="adj-h">一、情感 / 心理类（最常见，-ed 形容词）</h3>
-    <p class="adj-note">这类词几乎都来自及物动词的过去分词，但已变成"感到…的"形容词，主语多是人。</p>
-    <div class="adj-grid">
-      <div class="adj-card"><div class="adj-word">amazed</div><div class="adj-zh">感到惊讶的</div><div class="adj-ex"><i>We were amazed by the result.</i></div></div>
-      <div class="adj-card"><div class="adj-word">interested</div><div class="adj-zh">感兴趣的</div><div class="adj-ex"><i>She is interested in art.</i></div></div>
-      <div class="adj-card"><div class="adj-word">bored</div><div class="adj-zh">感到无聊的</div><div class="adj-ex"><i>He was bored during the lecture.</i></div></div>
-      <div class="adj-card"><div class="adj-word">excited</div><div class="adj-zh">感到兴奋的</div><div class="adj-ex"><i>The kids were excited about the trip.</i></div></div>
-      <div class="adj-card"><div class="adj-word">tired</div><div class="adj-zh">疲倦的</div><div class="adj-ex"><i>I was tired after the long walk.</i></div></div>
-      <div class="adj-card"><div class="adj-word">frightened</div><div class="adj-zh">害怕的</div><div class="adj-ex"><i>The child was frightened of the dog.</i></div></div>
-      <div class="adj-card"><div class="adj-word">surprised</div><div class="adj-zh">惊讶的</div><div class="adj-ex"><i>We were surprised at his decision.</i></div></div>
-      <div class="adj-card"><div class="adj-word">confused</div><div class="adj-zh">困惑的</div><div class="adj-ex"><i>I was confused by the instructions.</i></div></div>
-      <div class="adj-card"><div class="adj-word">annoyed</div><div class="adj-zh">恼火的</div><div class="adj-ex"><i>She was annoyed with the noise.</i></div></div>
-      <div class="adj-card"><div class="adj-word">disappointed</div><div class="adj-zh">失望的</div><div class="adj-ex"><i>He was disappointed with the score.</i></div></div>
-      <div class="adj-card"><div class="adj-word">satisfied</div><div class="adj-zh">满意的</div><div class="adj-ex"><i>The boss was satisfied with our work.</i></div></div>
-      <div class="adj-card"><div class="adj-word">worried</div><div class="adj-zh">担忧的</div><div class="adj-ex"><i>Parents were worried about the exam.</i></div></div>
-      <div class="adj-card"><div class="adj-word">delighted</div><div class="adj-zh">高兴的</div><div class="adj-ex"><i>We were delighted to hear the news.</i></div></div>
-      <div class="adj-card"><div class="adj-word">embarrassed</div><div class="adj-zh">尴尬的</div><div class="adj-ex"><i>He was embarrassed by the mistake.</i></div></div>
-      <div class="adj-card"><div class="adj-word">shocked</div><div class="adj-zh">震惊的</div><div class="adj-ex"><i>They were shocked at the accident.</i></div></div>
-      <div class="adj-card"><div class="adj-word">thrilled</div><div class="adj-zh">极其兴奋的</div><div class="adj-ex"><i>Fans were thrilled by the win.</i></div></div>
-      <div class="adj-card"><div class="adj-word">fascinated</div><div class="adj-zh">入迷的</div><div class="adj-ex"><i>I was fascinated by the story.</i></div></div>
-      <div class="adj-card"><div class="adj-word">exhausted</div><div class="adj-zh">筋疲力尽的</div><div class="adj-ex"><i>She was exhausted after the flight.</i></div></div>
-      <div class="adj-card"><div class="adj-word">depressed</div><div class="adj-zh">沮丧的</div><div class="adj-ex"><i>He felt depressed in winter.</i></div></div>
-      <div class="adj-card"><div class="adj-word">touched</div><div class="adj-zh">受感动的</div><div class="adj-ex"><i>We were touched by her letter.</i></div></div>
-      <div class="adj-card"><div class="adj-word">relieved</div><div class="adj-zh">松口气的</div><div class="adj-ex"><i>I was relieved it was over.</i></div></div>
-      <div class="adj-card"><div class="adj-word">puzzled</div><div class="adj-zh">困惑的</div><div class="adj-ex"><i>The teacher was puzzled by the answer.</i></div></div>
-      <div class="adj-card"><div class="adj-word">astonished</div><div class="adj-zh">惊呆的</div><div class="adj-ex"><i>They were astonished at the price.</i></div></div>
-      <div class="adj-card"><div class="adj-word">amused</div><div class="adj-zh">觉得好笑的</div><div class="adj-ex"><i>We were amused by the cat.</i></div></div>
-      <div class="adj-card"><div class="adj-word">inspired</div><div class="adj-zh">受启发的</div><div class="adj-ex"><i>I was inspired by her talk.</i></div></div>
-      <div class="adj-card"><div class="adj-word">motivated</div><div class="adj-zh">有动力的</div><div class="adj-ex"><i>He was motivated to study.</i></div></div>
-      <div class="adj-card"><div class="adj-word">impressed</div><div class="adj-zh">印象深刻的</div><div class="adj-ex"><i>We were impressed by his skill.</i></div></div>
-      <div class="adj-card"><div class="adj-word">overwhelmed</div><div class="adj-zh">不知所措的</div><div class="adj-ex"><i>She was overwhelmed with joy.</i></div></div>
+    <h3 class="adj-h" data-page-node-id="06EeWGUhcuK5t9koaCfelQ">一、情感 / 心理类（最常见，-ed 形容词）</h3>
+    <p class="adj-note" data-page-node-id="QvUXpPOWOTvwFi8auW7z1Z">这类词几乎都来自及物动词的过去分词，但已变成"感到…的"形容词，主语多是人。</p>
+    <div class="adj-grid" data-page-node-id="CddQOXYACoJ5u2gMlQ5Xf7">
+      <div class="adj-card" data-page-node-id="WFYHv6KlaIqryZnVoRKGfq"><div class="adj-word" data-page-node-id="44aGZsojdEXt5CFESF1rbH">amazed</div><div class="adj-zh" data-page-node-id="Ydc8ppcc2YeMfv12TJAFWL">感到惊讶的</div><div class="adj-ex" data-page-node-id="6y8CPWUSu7J3alF0RprrH9"><i data-page-node-id="qIKJIkkFHVg7yFeT6MjIc2">We were amazed by the result.</i></div></div>
+      <div class="adj-card" data-page-node-id="ApBySA1DAMEi9dNAXorMwX"><div class="adj-word" data-page-node-id="4F45Px6rq35vjQINfJxsYR">interested</div><div class="adj-zh" data-page-node-id="otMhf5DrkjCSaF9K8uN34r">感兴趣的</div><div class="adj-ex" data-page-node-id="Ed9lazl9ejNSAHmJL2R0US"><i data-page-node-id="EtVCkRVm7fECnC5JfJN0I6">She is interested in art.</i></div></div>
+      <div class="adj-card" data-page-node-id="o3fePptwHQCXjojc3E4602"><div class="adj-word" data-page-node-id="yEJpEOpoYCAvINePsFFCap">bored</div><div class="adj-zh" data-page-node-id="2yiKwe26Wpc6ONUkXTCsOX">感到无聊的</div><div class="adj-ex" data-page-node-id="dSeTWfeBUFZQaa0wCXsgRf"><i data-page-node-id="ZNA3hIvtXkAwcDCxVBmS4p">He was bored during the lecture.</i></div></div>
+      <div class="adj-card" data-page-node-id="p91KxBcyNhhaUnWSyUOJCh"><div class="adj-word" data-page-node-id="DIGF6yNMFG6xTOHvgXlLPj">excited</div><div class="adj-zh" data-page-node-id="wK0UFtVlhpCqOHUTjLqB1H">感到兴奋的</div><div class="adj-ex" data-page-node-id="eucoFtSxAVhIkqjXqu9Sn3"><i data-page-node-id="C7CXIdycl4gzJlnZzwqxR8">The kids were excited about the trip.</i></div></div>
+      <div class="adj-card" data-page-node-id="tqBwniiZB2HYBEEIrmT79C"><div class="adj-word" data-page-node-id="z95HWUbVVnPgLCmx6HRfKc">tired</div><div class="adj-zh" data-page-node-id="FvMqssGpFml5bZs7x5JeoB">疲倦的</div><div class="adj-ex" data-page-node-id="zrPFlkTm73HyjeiBpwAoly"><i data-page-node-id="xBJ1q0oiYqsykv4mBoQ3dt">I was tired after the long walk.</i></div></div>
+      <div class="adj-card" data-page-node-id="T8L11iXm6D1WW4LTc1mlmm"><div class="adj-word" data-page-node-id="XN6hOgH2YFoaCry9GXYwN3">frightened</div><div class="adj-zh" data-page-node-id="YDMLKsMgKiqsHTNir5ZKoJ">害怕的</div><div class="adj-ex" data-page-node-id="5OFtosEXgJoCa6Glg2r9KD"><i data-page-node-id="9BUkbGN1DEWveEpaNgxwLy">The child was frightened of the dog.</i></div></div>
+      <div class="adj-card" data-page-node-id="XMRt0qq1fFuy9Y3CiWkIJZ"><div class="adj-word" data-page-node-id="JRRc2iJDUcz19JDQdZpsFF">surprised</div><div class="adj-zh" data-page-node-id="E9nc4GyEUKKUAdXYoTqQeD">惊讶的</div><div class="adj-ex" data-page-node-id="XA9oSAThYhs6y46Xf29wT3"><i data-page-node-id="tIE0KIP9i9EGoxBnCmD8Ko">We were surprised at his decision.</i></div></div>
+      <div class="adj-card" data-page-node-id="sODnytqEDf2KZL81X2njil"><div class="adj-word" data-page-node-id="xVLNHme3WKpP8LzD5ojXc3">confused</div><div class="adj-zh" data-page-node-id="vvfNmIEIAD4PavDNOH57GW">困惑的</div><div class="adj-ex" data-page-node-id="cFefXUOi3vf2sC0rrmVdiH"><i data-page-node-id="GX61MOBOwHwepaPjQnAqJX">I was confused by the instructions.</i></div></div>
+      <div class="adj-card" data-page-node-id="bbHAUrTd1ny6h4sQfihlid"><div class="adj-word" data-page-node-id="2DjRzkaAf68vdcZ7s5ea98">annoyed</div><div class="adj-zh" data-page-node-id="GhtXdhcSckPsg9qN4uksYk">恼火的</div><div class="adj-ex" data-page-node-id="w7KjQDBcfdZokYMBpam6WO"><i data-page-node-id="mkVOAVtFcQ3UyY9fiLAsxJ">She was annoyed with the noise.</i></div></div>
+      <div class="adj-card" data-page-node-id="ltpCWgrHAFoWw7Fm9DR8Mg"><div class="adj-word" data-page-node-id="y4PfjAMsbORHVwyBrErmvE">disappointed</div><div class="adj-zh" data-page-node-id="FDGCxDQSHPHBRPtgkcMGAY">失望的</div><div class="adj-ex" data-page-node-id="hrfUEsLnD8h0bZ1lKDC7i6"><i data-page-node-id="it57fBbJL5kcOAF30WKYH7">He was disappointed with the score.</i></div></div>
+      <div class="adj-card" data-page-node-id="wTPhGOwV3LfcEpJ1iz0zDt"><div class="adj-word" data-page-node-id="t7Exld3BiCjM2UQGLdYibF">satisfied</div><div class="adj-zh" data-page-node-id="bTkXVoknDCt2KwVOaz5J4F">满意的</div><div class="adj-ex" data-page-node-id="NxP7i8EOwodb8NuVFErERx"><i data-page-node-id="pQ5ksCtO5wctsSEF8PdQGH">The boss was satisfied with our work.</i></div></div>
+      <div class="adj-card" data-page-node-id="mEkOBrH1BDQI7rCKRpH78q"><div class="adj-word" data-page-node-id="a2o57QckIpaQuJY4KTPZSG">worried</div><div class="adj-zh" data-page-node-id="52TTZcxtp5ma0ahE9jUOzV">担忧的</div><div class="adj-ex" data-page-node-id="jsJLwdGV8GipnuQRYJNcWz"><i data-page-node-id="fS18V8zbl0Z9X2hRBVaEJ2">Parents were worried about the exam.</i></div></div>
+      <div class="adj-card" data-page-node-id="69k1WnOBaj5hBjxNEBZ5WO"><div class="adj-word" data-page-node-id="EQ0A1aTGh2kqyowBiFkq9q">delighted</div><div class="adj-zh" data-page-node-id="vKwVNzp4FGi6CxhaZ2kk0S">高兴的</div><div class="adj-ex" data-page-node-id="RpwAytAmtmev9VLYo0SXNR"><i data-page-node-id="3WgXOALf9rpwDX9owV0Qvg">We were delighted to hear the news.</i></div></div>
+      <div class="adj-card" data-page-node-id="sAK5klvYbwOiFmUJMIciEs"><div class="adj-word" data-page-node-id="8CnCeco0ahgydr7DUq2GOx">embarrassed</div><div class="adj-zh" data-page-node-id="HwAKWpTv6KEP4DN3vxaJep">尴尬的</div><div class="adj-ex" data-page-node-id="3WHcQwHDOw2ppOOCLNM7xY"><i data-page-node-id="J6tKBfBVevxTGQm6qwfxlR">He was embarrassed by the mistake.</i></div></div>
+      <div class="adj-card" data-page-node-id="PyQHbqxJHcAw20vcFk3LJH"><div class="adj-word" data-page-node-id="PmkIB0lyyN67Gr1NMQn0fD">shocked</div><div class="adj-zh" data-page-node-id="jpqxBNrjGXsINdrEowOijw">震惊的</div><div class="adj-ex" data-page-node-id="yCbinc2hjPlKcySkXduDWe"><i data-page-node-id="dtHHe5S0DlfRLFjmZoGIxk">They were shocked at the accident.</i></div></div>
+      <div class="adj-card" data-page-node-id="GasRYYqzsCB10I2K8JuWIy"><div class="adj-word" data-page-node-id="25F48SiVmb02bnsUwV4iU4">thrilled</div><div class="adj-zh" data-page-node-id="L5Gh7cPbGF4pBwliUB32n2">极其兴奋的</div><div class="adj-ex" data-page-node-id="w687Fm097YlReJ9EDiOEm5"><i data-page-node-id="FCfV5xBcahNMQUs7aHnbzs">Fans were thrilled by the win.</i></div></div>
+      <div class="adj-card" data-page-node-id="Gb9rAQvV8GGvnqONF0GrQg"><div class="adj-word" data-page-node-id="8yMXfyki7h8lxHNnNSsrFp">fascinated</div><div class="adj-zh" data-page-node-id="ukdIxQDEa1PxnLYEO6DM0x">入迷的</div><div class="adj-ex" data-page-node-id="jwWA0KBrhBXK3o6CS69uNA"><i data-page-node-id="BpTj0UTcMYMjfXy1fGWtUF">I was fascinated by the story.</i></div></div>
+      <div class="adj-card" data-page-node-id="r3KkzYM8R6FN8alFHSHRF1"><div class="adj-word" data-page-node-id="0Que90izhIgnauAKFrCYaD">exhausted</div><div class="adj-zh" data-page-node-id="nv5VdYIbFVPRQNRE6cbKqs">筋疲力尽的</div><div class="adj-ex" data-page-node-id="CUIqVPHCsC5psTWi6H9q4u"><i data-page-node-id="Rvgxb7hzOZtTBxyEd7KUaN">She was exhausted after the flight.</i></div></div>
+      <div class="adj-card" data-page-node-id="ILQasx5YMNx74VQAOkDLAM"><div class="adj-word" data-page-node-id="p4tZcSm58OORnGeWO8l98m">depressed</div><div class="adj-zh" data-page-node-id="oFuvp3dhSeQfYubN8k3Ag7">沮丧的</div><div class="adj-ex" data-page-node-id="mEj18htA8DdzvQ7cyoFcNz"><i data-page-node-id="ZlT7Cdxv85Zrt7Jy2QQ0yw">He felt depressed in winter.</i></div></div>
+      <div class="adj-card" data-page-node-id="0QqbovgZ8hLFQFNBaFhFEK"><div class="adj-word" data-page-node-id="W64P0chpRF9v9A6SNibZi5">touched</div><div class="adj-zh" data-page-node-id="GQpWVFnCmgpseewgji3moF">受感动的</div><div class="adj-ex" data-page-node-id="0LYLthd1myHn0QuHOSQ0QN"><i data-page-node-id="C6UpSO8avpGBzxyZN60VwK">We were touched by her letter.</i></div></div>
+      <div class="adj-card" data-page-node-id="PMKS6sIREV12s3gP30J7HB"><div class="adj-word" data-page-node-id="yJFjiNrFwfCcLhAwgq4R8R">relieved</div><div class="adj-zh" data-page-node-id="Quy9hMsMAC7S70od4yAdU2">松口气的</div><div class="adj-ex" data-page-node-id="oopzLAwC8ttxoF6STIfH8T"><i data-page-node-id="fJzqmQMC7NldLCUy7fve4M">I was relieved it was over.</i></div></div>
+      <div class="adj-card" data-page-node-id="6Yi3Z5AvRDx2wR5dCUnrIv"><div class="adj-word" data-page-node-id="QKbf8BzlMxwP5XEmaYszXd">puzzled</div><div class="adj-zh" data-page-node-id="hHBkRRBNiIo17F55Juv3oj">困惑的</div><div class="adj-ex" data-page-node-id="aYqsEIKqjJUNABboE5D6yO"><i data-page-node-id="QpR3adOoHiYVD2p6sHZpkM">The teacher was puzzled by the answer.</i></div></div>
+      <div class="adj-card" data-page-node-id="kqJA7iiFa5h08EujCofuuU"><div class="adj-word" data-page-node-id="zc4Pm5872VB6wAFROnq2OI">astonished</div><div class="adj-zh" data-page-node-id="DgLGPKGRBKNOHzvKBQH4KN">惊呆的</div><div class="adj-ex" data-page-node-id="WQhxvMhPak63gnHbCRIKmN"><i data-page-node-id="FJBe1MSft4rFJsRmo0jViW">They were astonished at the price.</i></div></div>
+      <div class="adj-card" data-page-node-id="Zdi31TGrMcfS2Hr5xFkLfb"><div class="adj-word" data-page-node-id="tB33fUkFpnaDK6kd06EdNq">amused</div><div class="adj-zh" data-page-node-id="hdCZs0jWWJybMPddEtQRpu">觉得好笑的</div><div class="adj-ex" data-page-node-id="3UFrTvxTjOeG5kkyHAvXet"><i data-page-node-id="hif90oXEqCuHclNF1sBeGI">We were amused by the cat.</i></div></div>
+      <div class="adj-card" data-page-node-id="yWyxBrREKHbEtbIPzvTWQ8"><div class="adj-word" data-page-node-id="z2rB7HKpVrEksbrivtOZMN">inspired</div><div class="adj-zh" data-page-node-id="Vw4QC54kfPq2bSuoWhsxM3">受启发的</div><div class="adj-ex" data-page-node-id="OHv902A91RbUVEiw4nlZLg"><i data-page-node-id="sXut5l0Cf17lRSOord9yCt">I was inspired by her talk.</i></div></div>
+      <div class="adj-card" data-page-node-id="sI0tZXqUzWV8pCEw877KDr"><div class="adj-word" data-page-node-id="CL5bfb8Q7KgANxcoP0iXbx">motivated</div><div class="adj-zh" data-page-node-id="sqdRcEDQQSfmLSGsg31rGC">有动力的</div><div class="adj-ex" data-page-node-id="2QT09uxirryWB3gD0TsIVS"><i data-page-node-id="hhNjnignKABvcOeMkCeh7S">He was motivated to study.</i></div></div>
+      <div class="adj-card" data-page-node-id="Cxq6t2TUusbv5E3tp8ATLh"><div class="adj-word" data-page-node-id="4kGRrFdnkblyZqx0mxsLw1">impressed</div><div class="adj-zh" data-page-node-id="78ahQBIevQAVswAYCny58B">印象深刻的</div><div class="adj-ex" data-page-node-id="O1av77dq8CCRRD3BnRosLH"><i data-page-node-id="pATzfUvTsbMQh7SE5cJ08D">We were impressed by his skill.</i></div></div>
+      <div class="adj-card" data-page-node-id="LSySCqZDwPMKTAYEDMR3gq"><div class="adj-word" data-page-node-id="HnBGNFs6CxrKgqh7pkW9B3">overwhelmed</div><div class="adj-zh" data-page-node-id="U9NtZVuU0lt6lricE9BLAq">不知所措的</div><div class="adj-ex" data-page-node-id="5swsEbFzhLCwMmgy80GzD0"><i data-page-node-id="BO3E3z36oAfxYMGxzo4h1a">She was overwhelmed with joy.</i></div></div>
     </div>
 
-    <h3 class="adj-h">二、其他状态类（也常被误认成被动）</h3>
-    <p class="adj-note">这些词同样以 be + 过去分词出现，但表示状态而非"被…"。</p>
-    <div class="adj-grid">
-      <div class="adj-card"><div class="adj-word">married</div><div class="adj-zh">已婚的</div><div class="adj-ex"><i>They have been married for ten years.</i></div></div>
-      <div class="adj-card"><div class="adj-word">lost</div><div class="adj-zh">迷失的</div><div class="adj-ex"><i>The lost child was found at last.</i></div></div>
-      <div class="adj-card"><div class="adj-word">crowded</div><div class="adj-zh">拥挤的</div><div class="adj-ex"><i>The train was crowded this morning.</i></div></div>
-      <div class="adj-card"><div class="adj-word">unknown</div><div class="adj-zh">未知的</div><div class="adj-ex"><i>The cause remains unknown.</i></div></div>
-      <div class="adj-card"><div class="adj-word">finished</div><div class="adj-zh">完成的</div><div class="adj-ex"><i>The work is finished at last.</i></div></div>
-      <div class="adj-card"><div class="adj-word">dressed</div><div class="adj-zh">穿着…的</div><div class="adj-ex"><i>She was dressed in red today.</i></div></div>
-      <div class="adj-card"><div class="adj-word">wounded</div><div class="adj-zh">受伤的</div><div class="adj-ex"><i>The wounded soldier was saved.</i></div></div>
-      <div class="adj-card"><div class="adj-word">missing</div><div class="adj-zh">失踪的</div><div class="adj-ex"><i>The missing book appeared again.</i></div></div>
+    <h3 class="adj-h" data-page-node-id="WE6eSf6Wk85ft7ZwV2WrmA">二、其他状态类（也常被误认成被动）</h3>
+    <p class="adj-note" data-page-node-id="i8taQWXRVJwIoHSDAOLfTl">这些词同样以 be + 过去分词出现，但表示状态而非"被…"。</p>
+    <div class="adj-grid" data-cat="state" data-page-node-id="3dxGr0jh9v3cczMrmgt8TG">
+      <div class="adj-card" data-page-node-id="C4TyA1wG9gSXPWraqoAAln"><div class="adj-word" data-page-node-id="ZmYrF9IXBAji8BCdRGKrV5">married</div><div class="adj-zh" data-page-node-id="qTfQVbSmeievBvdP3QGkIi">已婚的</div><div class="adj-ex" data-page-node-id="h7BSaEr6bvO7SJVZAUQtWM"><i data-page-node-id="U8HQKgSYDdtZEvyHafJ60L">They have been married for ten years.</i></div></div>
+      <div class="adj-card" data-page-node-id="7L8g8VwGGFSxNGCsvH3wvD"><div class="adj-word" data-page-node-id="hsPaZ4F7KjdqbCrsQ71CvT">lost</div><div class="adj-zh" data-page-node-id="5u9JP6Qg2wgnjyRGAkSMMF">迷失的</div><div class="adj-ex" data-page-node-id="vsRMduPWfGAxgiy4yY80tH"><i data-page-node-id="deKg0p8ihkVGuAtcep7hjz">The lost child was found at last.</i></div></div>
+      <div class="adj-card" data-page-node-id="aQC4mx7wjhfFrN4HE9SxBg"><div class="adj-word" data-page-node-id="NB3M0h0yFWtCcuHE8Teo3e">crowded</div><div class="adj-zh" data-page-node-id="CpNGdLHdx9jxJwDiPx2LV8">拥挤的</div><div class="adj-ex" data-page-node-id="tXXq5VE67mQgCNiosxqsoi"><i data-page-node-id="HAeGaDtmBcrQNKzKZ4XO57">The train was crowded this morning.</i></div></div>
+      <div class="adj-card" data-page-node-id="tmEL0KZaX4TumVhEBkkw5a"><div class="adj-word" data-page-node-id="AUvevFzJGGX8jdeBuqvoG1">unknown</div><div class="adj-zh" data-page-node-id="eX5vAi4yVL8rP1vyWXHB10">未知的</div><div class="adj-ex" data-page-node-id="6s8eVDi3WQcAwSPcFCb0ih"><i data-page-node-id="e8ftIsBdBtINwot2tQchS4">The cause remains unknown.</i></div></div>
+      <div class="adj-card" data-page-node-id="G8aAlp4aUnJL67Fzynw7wz"><div class="adj-word" data-page-node-id="xb6OCrXu4SRvPuZAVbhahF">finished</div><div class="adj-zh" data-page-node-id="Grr0hpNhLKl6lJ7Fr0d9wM">完成的</div><div class="adj-ex" data-page-node-id="un44FW1XYfwlwkgfdHLWuL"><i data-page-node-id="Ttg0tslZ886YyNnnIvgWRp">The work is finished at last.</i></div></div>
+      <div class="adj-card" data-page-node-id="8FFPUwZuW4LQhvBtKT7uhD"><div class="adj-word" data-page-node-id="CClzFEEVrwozFhdKeYMVNM">dressed</div><div class="adj-zh" data-page-node-id="YCMgZjop4Pkd2kYzJILFnE">穿着…的</div><div class="adj-ex" data-page-node-id="qdOSxHEGcUfbXe9J09H5Jq"><i data-page-node-id="PKxLSATRsEfHkoAQDLWD22">She was dressed in red today.</i></div></div>
+      <div class="adj-card" data-page-node-id="R8rFdLkJ7Tk9vE8AI7H32E"><div class="adj-word" data-page-node-id="Amq1uyPhu5Z1KI7VUSgc9z">wounded</div><div class="adj-zh" data-page-node-id="ijww6EgQS4Lwz9w3e8pWqk">受伤的</div><div class="adj-ex" data-page-node-id="MdCY6FTQpycybVJJopK9Sy"><i data-page-node-id="bVrMDbBmdFJOJkXBVuMqwK">The wounded soldier was saved.</i></div></div>
+      <div class="adj-card" data-page-node-id="xtuDU3NMnVtGeNQM6oet7g"><div class="adj-word" data-page-node-id="W1AWFoBkH1a5akj0dBVvR9">missing</div><div class="adj-zh" data-page-node-id="ExJFUtv9nnjCe2pPByNSMD">失踪的</div><div class="adj-ex" data-page-node-id="VAj17UON2RrCzPgzRZ0SuL"><i data-page-node-id="3laNEJlNBdoY4e14wHZQOu">The missing book appeared again.</i></div></div>
     </div>
 
-    <h3 class="adj-h">三、易错提醒</h3>
-    <div class="sub-sec">
-      <ul class="adj-ul">
-        <li><b>-ed vs -ing</b>：<i>amazed</i>（人"感到惊讶"）修饰人；<i>amazing</i>（物"令人惊讶"）修饰事物。例：<i>The story is amazing. I am amazed.</i></li>
-        <li><b>同一词两可</b>：<i>broken</i> 可作被动（<i>The window was broken by a stone.</i>）也可作形容词（<i>He felt broken-hearted.</i>），看能否加 by、是否表状态。</li>
-        <li><b>very 测试</b>：能说 <span class="adj-code">very amazed</span> / <span class="adj-code">very interested</span> 就是形容词；被动语态传统上用 <span class="adj-code">much</span> / <span class="adj-code">greatly</span> 修饰。</li>
+    <h3 class="adj-h" data-page-node-id="oi70fnHB7ZT4OBYp22aC3d">三、易错提醒</h3>
+    <div class="sub-sec" data-page-node-id="pYI5QgxllQztoZaHJttdPC">
+      <ul class="adj-ul" data-page-node-id="z214zSJshzhhFEhoYWBCG2">
+        <li data-page-node-id="ypPqXFeoRCqoez7LV7YjAF"><b data-page-node-id="6ELEFMOnQRqAS4d3BVLXu7">-ed vs -ing</b>：<i data-page-node-id="GDhfAqYPvqUQ1dRlfBDI1d">amazed</i>（人"感到惊讶"）修饰人；<i data-page-node-id="iPELjZP6wP8XnBLM1SA528">amazing</i>（物"令人惊讶"）修饰事物。例：<i data-page-node-id="uK0ulod8FiU7gZZOKmOX09">The story is amazing. I am amazed.</i></li>
+        <li data-page-node-id="BhNVLCxgzvfLPI2G2c7CaT"><b data-page-node-id="wA2f6SQ8gknyIsKflzrO0M">同一词两可</b>：<i data-page-node-id="Nu76eD2a2aLThERkn982lK">broken</i> 可作被动（<i data-page-node-id="slmSGgHy8EIehjaxKZHHPu">The window was broken by a stone.</i>）也可作形容词（<i data-page-node-id="Sk3WMgtWeisFo310i6wWtk">He felt broken-hearted.</i>），看能否加 by、是否表状态。</li>
+        <li data-page-node-id="vi9SGYOEmHKQBCZtcmOLf2"><b data-page-node-id="6oHUeufH197Q8rKngs6tIf">very 测试</b>：能说 <span class="adj-code" data-page-node-id="2K78h1Xs4Y61PN3EvfWjLB">very amazed</span> / <span class="adj-code" data-page-node-id="FLYEf4WE2E6ChdfBLYNZLa">very interested</span> 就是形容词；被动语态传统上用 <span class="adj-code" data-page-node-id="kbPcwMZrleqYshjuxo7vkX">much</span> / <span class="adj-code" data-page-node-id="1foCt1C7mJ39xm2DAuEwYR">greatly</span> 修饰。</li>
       </ul>
     </div>
+    <p class="adj-note" style="margin-top:14px">延伸：想知道这些词在 <b>被动语态</b> 里的真身？去 <span class="adj-link" id="adjLinkTenses">⑥ 16 时态 · 被动语态</span> 对照看。</p>
   </section>
 
-  <section class="view" id="syntax" data-view="syntax">
-    <div class="sec-head"><h2>⑦ 句法基础（八大词性 + 五大句型）</h2><span class="count"></span></div>
-    <p class="sec-sub">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
-    <div class="toolbar">
-      <div class="level-toggle syntax-toggle">
-        <button data-vtab="pos" class="active">🧩 八大词性</button>
-        <button data-vtab="pat">📐 五大句型</button>
+  <section class="view" id="syntax" data-view="syntax" data-page-node-id="eiXACG1cqIjTX8mjCeQc6s">
+    <div class="sec-head" data-page-node-id="OnwqQhoO89FUCgBSO2eNZt"><h2 data-page-node-id="s2qnemZ7OidKLABNnrElpw">⑦ 句法基础（八大词性 + 五大句型）</h2><span class="count" data-page-node-id="N2lNT00RKF7ogNAZ3Wdrtf"></span></div>
+    <p class="sec-sub" data-page-node-id="AcjzSydgXvdqu4xp5qagQR">词性告诉你"每个词在句子里做什么"，句型告诉你"词怎么拼成句子"。两件事合起来，就是看懂和写出英文句子的地基。</p>
+    <div class="toolbar" data-page-node-id="WIZUE8IJpLEWZ2Q7FwPnBF">
+      <div class="level-toggle syntax-toggle" data-page-node-id="yMnUgzpG3GnwGPqXX2gkPC">
+        <button data-vtab="pos" class="active" data-page-node-id="FOBSGtnxpNaK70FainAVLx">🧩 八大词性</button>
+        <button data-vtab="pat" data-page-node-id="sY30OgeyERf6KLMDs410Ib">📐 五大句型</button>
       </div>
     </div>
-    <div id="posPanel">
-      <div class="sub-sec">
-        <div class="aspect-title">八大词性（Parts of Speech）</div>
-        <div class="mgrid" id="posRoot"></div>
+    <div id="posPanel" data-page-node-id="Qufl5U5to5G2ARjpQAu1DQ">
+      <div class="sub-sec" data-page-node-id="0BYWho3G3kHEysVD1ft3gD">
+        <div class="aspect-title" data-page-node-id="9Fuym9YADHuqLZ4urEsKsw">八大词性（Parts of Speech）</div>
+        <div class="mgrid" id="posRoot" data-page-node-id="0c6udWVPvbEtybHzP5Oh7X"></div>
       </div>
     </div>
-    <div id="patPanel" style="display:none">
-      <div class="sub-sec">
-        <div class="aspect-title">五大基本句型（Sentence Patterns）</div>
-        <div class="mgrid" id="patRoot"></div>
+    <div id="patPanel" style="display:none" data-page-node-id="XBYraqrOCU3abT4ocFICfW">
+      <div class="sub-sec" data-page-node-id="4NHXvmiMBmKBS4yPQPnkwc">
+        <div class="aspect-title" data-page-node-id="xyoSYN6LdeIBX1yiVZmHbM">五大基本句型（Sentence Patterns）</div>
+        <div class="mgrid" id="patRoot" data-page-node-id="t1OA6COLg0Gq20yZa48GXn"></div>
       </div>
     </div>
   </section>
 
-  <section class="view" id="clauses" data-view="clauses">
-    <div class="sec-head"><h2>⑧ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount"></span></div>
-    <p class="sec-sub">从句帮你把简单句"接长"，长难句拆解 + 写作句型帮你"读懂并写出"复杂句子。点击喇叭即可听例句发音。</p>
-    <div class="sub-sec">
-      <div class="aspect-title">从句（Clauses）</div>
-      <div id="clauseRoot"></div>
+  <section class="view" id="clauses" data-view="clauses" data-page-node-id="oS4tE32iOMztgIa4CDJsff">
+    <div class="sec-head" data-page-node-id="QH1wSt602jwGdPfuREXO4Y"><h2 data-page-node-id="Xqhg00RGtfxWubKSNVBQ9V">⑧ 从句与长难句（Clauses · Sentence Analysis &amp; Writing）</h2><span class="count" id="clauseCount" data-page-node-id="U4QaCCwb6dPnFKCWK87jy7"></span></div>
+    <p class="sec-sub" data-page-node-id="iKhDGGqlGAgSXvt5G33YfF">从句帮你把简单句"接长"，长难句拆解 + 写作句型帮你"读懂并写出"复杂句子。点击喇叭即可听例句发音。</p>
+    <div class="sub-sec" data-page-node-id="iubL3YYBGooDaZIZZXLa4h">
+      <div class="aspect-title" data-page-node-id="vyL2Ge8k4pobfKPoSuQfd7">从句（Clauses）</div>
+      <div id="clauseRoot" data-page-node-id="87FrJGTTBaGOaTQTX576HD"></div>
     </div>
-    <div class="sub-sec">
-      <div class="aspect-title">长难句拆解 + 写作句型（Sentence Analysis &amp; Writing）<span class="count" id="sentCount"></span></div>
-      <div id="sentRoot"></div>
+    <div class="sub-sec" data-page-node-id="yOAwv2tYjAcGmYtzGZ8jsr">
+      <div class="aspect-title" data-page-node-id="y1GyJq9vwoqcHgyooXzU3D">长难句拆解 + 写作句型（Sentence Analysis &amp; Writing）<span class="count" id="sentCount" data-page-node-id="mW2dLQeK7WwRLzJ5BMWaCQ"></span></div>
+      <div id="sentRoot" data-page-node-id="PHrk89hoIYmiL39Zkv6OaZ"></div>
     </div>
   </section>
 
 
-  <section class="view" id="phrbank" data-view="phrbank">
-    <div class="sec-head"><h2>① 英语词组大全</h2><span class="count" id="phrCount"></span></div>
-    <div id="phrRoot"></div>
+  <section class="view" id="phrbank" data-view="phrbank" data-page-node-id="jphdt5dh2bhiSEFiNGIH8L">
+    <div class="sec-head" data-page-node-id="qDAYmPZReEHl0AzdHe2jdw"><h2 data-page-node-id="5D5dUEZl8XuLhtRkZtsyLL">① 英语词组大全</h2><span class="count" id="phrCount" data-page-node-id="ceeEfKa36gqCej1DHDaj6M"></span></div>
+    <div id="phrRoot" data-page-node-id="VCmDUzB9agGQEdxhGxIMhX"></div>
   </section>
 
-  <section class="view" id="nce2" data-view="nce2">
-    <div class="sec-head"><h2>④ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count"></span></div>
-    <p class="sec-sub" id="nce2Intro"></p>
-    <div id="nce2Root"></div>
+  <section class="view" id="nce2" data-view="nce2" data-page-node-id="CGiVxpdeVUD4FQPJNf3IDf">
+    <div class="sec-head" data-page-node-id="gKO2RdAouKHzlGqVPHB91Q"><h2 data-page-node-id="4esQqvjPfidyKMO61YCA0m">④ 新概念英语 第二册（New Concept English 2）</h2><span class="count" id="nce2Count" data-page-node-id="bD16kPDWCFtC8XMuQnml7D"></span></div>
+    <p class="sec-sub" id="nce2Intro" data-page-node-id="R24mtjxdB3Rij1hSW1zHlj"></p>
+    <div id="nce2Root" data-page-node-id="2PvdCbz0QAWutQnFCZAprt"></div>
   </section>
   </main>
 </div>
 
-<footer>EnglishKit · 自包含离线学习页 · 发音依赖浏览器语音合成（Chrome / Edge / Safari 支持最佳）</footer>
+<footer data-page-node-id="jvCxRrzAUFkKgIAmFjYx14">EnglishKit · 自包含离线学习页 · 发音依赖浏览器语音合成（Chrome / Edge / Safari 支持最佳）</footer>
 
 <script>
 /* ---------- DATA (由文案组成员笔澜起草) ---------- */
@@ -10721,6 +10749,97 @@ function spkBtn(text, small){
   return b;
 }
 
+/* ---------- ADJ-PASSIVE MODULE (interactive toolbar) ---------- */
+function initAdjpassive(){
+  const sec = document.getElementById('adjpassive');
+  if(!sec) return;
+  const grids = sec.querySelectorAll('.adj-grid');
+  if(grids[0]) grids[0].dataset.cat = 'emotion';
+  if(grids[1]) grids[1].dataset.cat = 'state';
+  // 情感类词对应的 -ing 形容词（人工校正，避免 delighted->delighting 之类错误）
+  const ING = {
+    amazed:'amazing', interested:'interesting', bored:'boring', excited:'exciting',
+    tired:'tiring', frightened:'frightening', surprised:'surprising', confused:'confusing',
+    annoyed:'annoying', disappointed:'disappointing', satisfied:'satisfying', worried:'worrying',
+    delighted:'delightful', embarrassed:'embarrassing', shocked:'shocking', thrilled:'thrilling',
+    fascinated:'fascinating', exhausted:'exhausting', depressed:'depressing', touched:'touching',
+    relieved:'relieving', puzzled:'puzzling', astonished:'astonishing', amused:'amusing',
+    inspired:'inspiring', motivated:'motivating', impressed:'impressive', overwhelmed:'overwhelming'
+  };
+  const cards = sec.querySelectorAll('.adj-card');
+  cards.forEach(card=>{
+    const word = card.querySelector('.adj-word');
+    if(!word) return;
+    const w = word.textContent.trim();
+    const b = spkBtn(w, true);
+    b.classList.add('adj-spk');
+    card.appendChild(b);
+    if(ING[w]){
+      const ing = document.createElement('span');
+      ing.className = 'adj-ing';
+      ing.innerHTML = '对应 -ing：<b>' + ING[w] + '</b>';
+      card.appendChild(ing);
+    }
+  });
+
+  const search = document.getElementById('adjSearch');
+  const seg = document.getElementById('adjSeg');
+  const selfBtn = document.getElementById('adjSelf');
+  const readBtn = document.getElementById('adjRead');
+
+  function applyFilter(){
+    const q = (search.value || '').trim().toLowerCase();
+    const cat = seg.querySelector('button.active').dataset.cat;
+    cards.forEach(card=>{
+      const w = (card.querySelector('.adj-word')?.textContent || '').toLowerCase();
+      const zh = (card.querySelector('.adj-zh')?.textContent || '').toLowerCase();
+      const cardCat = card.closest('.adj-grid')?.dataset.cat || 'all';
+      const matchCat = (cat === 'all' || cardCat === cat);
+      const matchQ = (!q || w.indexOf(q) !== -1 || zh.indexOf(q) !== -1);
+      card.style.display = (matchCat && matchQ) ? '' : 'none';
+    });
+  }
+  search.addEventListener('input', applyFilter);
+  seg.querySelectorAll('button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      seg.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter();
+    });
+  });
+
+  // 自测模式：隐藏中文义，点卡翻出
+  selfBtn.addEventListener('click', ()=>{
+    const on = sec.classList.toggle('adj-selfmode');
+    selfBtn.classList.toggle('active', on);
+    selfBtn.textContent = on ? '退出自测' : '自测模式';
+  });
+  cards.forEach(card=>{
+    card.addEventListener('click', ()=>{
+      if(sec.classList.contains('adj-selfmode')) card.classList.toggle('reveal');
+    });
+  });
+
+  // 朗读全部：依次朗读每张卡的例句
+  readBtn.addEventListener('click', ()=>{
+    if(!('speechSynthesis' in window)){ alert('当前浏览器不支持语音合成'); return; }
+    speechSynthesis.cancel();
+    cards.forEach(card=>{
+      const ex = card.querySelector('.adj-ex i');
+      if(!ex) return;
+      const u = new SpeechSynthesisUtterance(ex.textContent.trim());
+      u.lang = 'en-US';
+      if(voice) u.voice = voice;
+      u.rate = 0.95;
+      speechSynthesis.speak(u);
+    });
+  });
+
+  // 跨模块跳转：去 ⑥ 16 时态 · 被动语态
+  const link = document.getElementById('adjLinkTenses');
+  if(link) link.addEventListener('click', ()=> showView('tenses'));
+}
+
 /* ---------- MNEMONICS ---------- */
 function renderMnemonics(){
   const root = document.getElementById('mnRoot');
@@ -11666,6 +11785,7 @@ renderClauses();
 renderNce2();
 renderSentPatterns();
 renderPhrBank();
+initAdjpassive();
 showView('phrbank');
 
 document.querySelectorAll('.menu-btn').forEach(b=>{
