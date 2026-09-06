@@ -513,6 +513,22 @@
   .logout-btn{display:block;width:100%;margin-top:10px;padding:9px;border:1px solid var(--line);
     border-radius:999px;background:var(--card);color:var(--muted);font-size:12.5px;font-weight:700;cursor:pointer;transition:.15s}
   .logout-btn:hover{background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
+  /* ===== MODULE: 形似被动的形容词 (adjpassive) ===== */
+  .adj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:12px 0}
+  .adj-card{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);
+    border-radius:10px;padding:11px 13px;box-shadow:var(--shadow)}
+  .adj-word{font-family:var(--font-serif);font-weight:800;color:var(--brand);font-size:16px;letter-spacing:.3px}
+  .adj-zh{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .adj-ex{font-size:13px;color:var(--ink);margin-top:6px;line-height:1.5}
+  .adj-ex i{color:var(--teal)}
+  .adj-tbl-wrap{overflow-x:auto;margin:12px 0;-webkit-overflow-scrolling:touch}
+  .adj-ul{margin:8px 0;padding-left:20px}
+  .adj-ul li{margin:5px 0;line-height:1.6}
+  .adj-ul i{color:var(--teal)}
+  .adj-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#ece6d8;
+    color:var(--ink);padding:1px 6px;border-radius:5px;font-size:12.5px}
+  .adj-note{font-size:13px;color:var(--muted);line-height:1.7;margin:8px 0}
+  .adj-h{font-family:var(--font-serif);font-size:17px;color:var(--brand);font-weight:800;margin:18px 0 8px}
 </style>
 </head>
 <body class="locked">
@@ -575,10 +591,11 @@
         <button class="menu-btn" data-view="syntax"><span class="mi-no">08</span><span class="mi-tx">🧩 句法基础（词性 + 句型）</span></button>
         <button class="menu-btn" data-view="clauses"><span class="mi-no">09</span><span class="mi-tx">🔗 从句与长难句</span></button>
         <button class="menu-btn" data-view="roots"><span class="mi-no">10</span><span class="mi-tx">🌱 英语词根</span></button>
+        <button class="menu-btn" data-view="adjpassive"><span class="mi-no">11</span><span class="mi-tx">🔍 形似被动的形容词</span></button>
       </div>
       <div class="menu-group">
         <div class="menu-label">阅读教材</div>
-        <button class="menu-btn" data-view="zmus"><span class="mi-no">11</span><span class="mi-tx">🇺🇸 走进美国</span></button>
+        <button class="menu-btn" data-view="zmus"><span class="mi-no">12</span><span class="mi-tx">🇺🇸 走进美国</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览">📱 手机版</button>
@@ -803,6 +820,86 @@
         </ul>
         <p>把这份指南和网页放在一起，你的词根记忆就有了"方法手册 + 数据字典"的双保险。</p>
       </div>
+    </div>
+  </section>
+
+  <section class="view" id="adjpassive" data-view="adjpassive">
+    <div class="sec-head"><h2>⑪ 形似被动的形容词（be + 过去分词）</h2><span class="count">被动语态 vs 形容词 · 辨析大全</span></div>
+
+    <div class="sub-sec">
+      <p class="adj-note">英语里 <b>be + 过去分词</b> 结构有两种完全不同的身份，初学者极易混淆：</p>
+      <ul class="adj-ul">
+        <li><b>被动语态</b>：主语是动作的<em>承受者</em>，通常能补上 <span class="adj-code">by + 施动者</span>。例：<i>The window was broken by a boy.</i>（窗户被男孩打破）</li>
+        <li><b>形容词（表语）</b>：过去分词已"形容词化"，描述主语的<em>感受或状态</em>，不能加 by。例：<i>We were amazed at the news.</i>（我们对此感到惊讶）</li>
+      </ul>
+    </div>
+
+    <h3 class="adj-h">怎么一眼区分？</h3>
+    <div class="adj-tbl-wrap">
+      <table>
+        <thead><tr><th>判断方法</th><th>被动语态</th><th>形容词</th></tr></thead>
+        <tbody>
+          <tr><td>能否加 <span class="adj-code">by + 人/物</span></td><td>✅ 能（被…做）</td><td>❌ 不能</td></tr>
+          <tr><td>常用修饰副词</td><td><span class="adj-code">much</span> / <span class="adj-code">greatly</span></td><td><span class="adj-code">very</span>（very amazed）</td></tr>
+          <tr><td>意思侧重</td><td>一个动作发生了</td><td>一种感受 / 状态</td></tr>
+          <tr><td>例句</td><td><i>The book was printed in 2020.</i></td><td><i>I am interested in the book.</i></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="adj-h">一、情感 / 心理类（最常见，-ed 形容词）</h3>
+    <p class="adj-note">这类词几乎都来自及物动词的过去分词，但已变成"感到…的"形容词，主语多是人。</p>
+    <div class="adj-grid">
+      <div class="adj-card"><div class="adj-word">amazed</div><div class="adj-zh">感到惊讶的</div><div class="adj-ex"><i>We were amazed by the result.</i></div></div>
+      <div class="adj-card"><div class="adj-word">interested</div><div class="adj-zh">感兴趣的</div><div class="adj-ex"><i>She is interested in art.</i></div></div>
+      <div class="adj-card"><div class="adj-word">bored</div><div class="adj-zh">感到无聊的</div><div class="adj-ex"><i>He was bored during the lecture.</i></div></div>
+      <div class="adj-card"><div class="adj-word">excited</div><div class="adj-zh">感到兴奋的</div><div class="adj-ex"><i>The kids were excited about the trip.</i></div></div>
+      <div class="adj-card"><div class="adj-word">tired</div><div class="adj-zh">疲倦的</div><div class="adj-ex"><i>I was tired after the long walk.</i></div></div>
+      <div class="adj-card"><div class="adj-word">frightened</div><div class="adj-zh">害怕的</div><div class="adj-ex"><i>The child was frightened of the dog.</i></div></div>
+      <div class="adj-card"><div class="adj-word">surprised</div><div class="adj-zh">惊讶的</div><div class="adj-ex"><i>We were surprised at his decision.</i></div></div>
+      <div class="adj-card"><div class="adj-word">confused</div><div class="adj-zh">困惑的</div><div class="adj-ex"><i>I was confused by the instructions.</i></div></div>
+      <div class="adj-card"><div class="adj-word">annoyed</div><div class="adj-zh">恼火的</div><div class="adj-ex"><i>She was annoyed with the noise.</i></div></div>
+      <div class="adj-card"><div class="adj-word">disappointed</div><div class="adj-zh">失望的</div><div class="adj-ex"><i>He was disappointed with the score.</i></div></div>
+      <div class="adj-card"><div class="adj-word">satisfied</div><div class="adj-zh">满意的</div><div class="adj-ex"><i>The boss was satisfied with our work.</i></div></div>
+      <div class="adj-card"><div class="adj-word">worried</div><div class="adj-zh">担忧的</div><div class="adj-ex"><i>Parents were worried about the exam.</i></div></div>
+      <div class="adj-card"><div class="adj-word">delighted</div><div class="adj-zh">高兴的</div><div class="adj-ex"><i>We were delighted to hear the news.</i></div></div>
+      <div class="adj-card"><div class="adj-word">embarrassed</div><div class="adj-zh">尴尬的</div><div class="adj-ex"><i>He was embarrassed by the mistake.</i></div></div>
+      <div class="adj-card"><div class="adj-word">shocked</div><div class="adj-zh">震惊的</div><div class="adj-ex"><i>They were shocked at the accident.</i></div></div>
+      <div class="adj-card"><div class="adj-word">thrilled</div><div class="adj-zh">极其兴奋的</div><div class="adj-ex"><i>Fans were thrilled by the win.</i></div></div>
+      <div class="adj-card"><div class="adj-word">fascinated</div><div class="adj-zh">入迷的</div><div class="adj-ex"><i>I was fascinated by the story.</i></div></div>
+      <div class="adj-card"><div class="adj-word">exhausted</div><div class="adj-zh">筋疲力尽的</div><div class="adj-ex"><i>She was exhausted after the flight.</i></div></div>
+      <div class="adj-card"><div class="adj-word">depressed</div><div class="adj-zh">沮丧的</div><div class="adj-ex"><i>He felt depressed in winter.</i></div></div>
+      <div class="adj-card"><div class="adj-word">touched</div><div class="adj-zh">受感动的</div><div class="adj-ex"><i>We were touched by her letter.</i></div></div>
+      <div class="adj-card"><div class="adj-word">relieved</div><div class="adj-zh">松口气的</div><div class="adj-ex"><i>I was relieved it was over.</i></div></div>
+      <div class="adj-card"><div class="adj-word">puzzled</div><div class="adj-zh">困惑的</div><div class="adj-ex"><i>The teacher was puzzled by the answer.</i></div></div>
+      <div class="adj-card"><div class="adj-word">astonished</div><div class="adj-zh">惊呆的</div><div class="adj-ex"><i>They were astonished at the price.</i></div></div>
+      <div class="adj-card"><div class="adj-word">amused</div><div class="adj-zh">觉得好笑的</div><div class="adj-ex"><i>We were amused by the cat.</i></div></div>
+      <div class="adj-card"><div class="adj-word">inspired</div><div class="adj-zh">受启发的</div><div class="adj-ex"><i>I was inspired by her talk.</i></div></div>
+      <div class="adj-card"><div class="adj-word">motivated</div><div class="adj-zh">有动力的</div><div class="adj-ex"><i>He was motivated to study.</i></div></div>
+      <div class="adj-card"><div class="adj-word">impressed</div><div class="adj-zh">印象深刻的</div><div class="adj-ex"><i>We were impressed by his skill.</i></div></div>
+      <div class="adj-card"><div class="adj-word">overwhelmed</div><div class="adj-zh">不知所措的</div><div class="adj-ex"><i>She was overwhelmed with joy.</i></div></div>
+    </div>
+
+    <h3 class="adj-h">二、其他状态类（也常被误认成被动）</h3>
+    <p class="adj-note">这些词同样以 be + 过去分词出现，但表示状态而非"被…"。</p>
+    <div class="adj-grid">
+      <div class="adj-card"><div class="adj-word">married</div><div class="adj-zh">已婚的</div><div class="adj-ex"><i>They have been married for ten years.</i></div></div>
+      <div class="adj-card"><div class="adj-word">lost</div><div class="adj-zh">迷失的</div><div class="adj-ex"><i>The lost child was found at last.</i></div></div>
+      <div class="adj-card"><div class="adj-word">crowded</div><div class="adj-zh">拥挤的</div><div class="adj-ex"><i>The train was crowded this morning.</i></div></div>
+      <div class="adj-card"><div class="adj-word">unknown</div><div class="adj-zh">未知的</div><div class="adj-ex"><i>The cause remains unknown.</i></div></div>
+      <div class="adj-card"><div class="adj-word">finished</div><div class="adj-zh">完成的</div><div class="adj-ex"><i>The work is finished at last.</i></div></div>
+      <div class="adj-card"><div class="adj-word">dressed</div><div class="adj-zh">穿着…的</div><div class="adj-ex"><i>She was dressed in red today.</i></div></div>
+      <div class="adj-card"><div class="adj-word">wounded</div><div class="adj-zh">受伤的</div><div class="adj-ex"><i>The wounded soldier was saved.</i></div></div>
+      <div class="adj-card"><div class="adj-word">missing</div><div class="adj-zh">失踪的</div><div class="adj-ex"><i>The missing book appeared again.</i></div></div>
+    </div>
+
+    <h3 class="adj-h">三、易错提醒</h3>
+    <div class="sub-sec">
+      <ul class="adj-ul">
+        <li><b>-ed vs -ing</b>：<i>amazed</i>（人"感到惊讶"）修饰人；<i>amazing</i>（物"令人惊讶"）修饰事物。例：<i>The story is amazing. I am amazed.</i></li>
+        <li><b>同一词两可</b>：<i>broken</i> 可作被动（<i>The window was broken by a stone.</i>）也可作形容词（<i>He felt broken-hearted.</i>），看能否加 by、是否表状态。</li>
+        <li><b>very 测试</b>：能说 <span class="adj-code">very amazed</span> / <span class="adj-code">very interested</span> 就是形容词；被动语态传统上用 <span class="adj-code">much</span> / <span class="adj-code">greatly</span> 修饰。</li>
+      </ul>
     </div>
   </section>
 
