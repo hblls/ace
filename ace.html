@@ -2113,7 +2113,8 @@ var phrFavSet = phrFavLoad();
 function phrFavLoad(){ try{ return new Set(JSON.parse(localStorage.getItem(PHR_FAV_KEY) || "[]")); }catch(e){ return new Set(); } }
 function phrFavSave(){ try{ localStorage.setItem(PHR_FAV_KEY, JSON.stringify(Array.from(phrFavSet))); }catch(e){} }
 function phrIsFav(p){ return phrFavSet.has(p); }
-function phrToggleFav(p){ if(phrFavSet.has(p)) phrFavSet.delete(p); else phrFavSet.add(p); phrFavSave(); }
+var phrFavVer = 0;   // 收藏集合版本号：变动时令过滤缓存失效
+function phrToggleFav(p){ if(phrFavSet.has(p)) phrFavSet.delete(p); else phrFavSet.add(p); phrFavSave(); phrFavVer++; }
 function phrBase(){
   let items = [];
   var favMode = (phrCur === -2);
@@ -2134,8 +2135,14 @@ function phrBase(){
   else if(phrSort === "za") items.sort(function(a, b){ return b.p.localeCompare(a.p); });
   return items;
 }
+var phrBaseKey = null, phrBaseVal = null;
 function phrFiltered(){
-  var items = phrBase();
+  // phrBase() 需遍历全部 1249 条并排序，此处缓存其结果：仅当「分类 / 关键词 / 排序 / 收藏版本」变化时才重算。
+  // phrBase 返回的是每条数据的浅拷贝，缓存复用不会被外部改动污染。
+  var key = phrCur + "\u0001" + phrQ + "\u0001" + phrSort + "\u0001" + phrFavVer;
+  var items;
+  if(key === phrBaseKey && phrBaseVal){ items = phrBaseVal; }
+  else { items = phrBase(); phrBaseKey = key; phrBaseVal = items; }
   if(phrQuizSet){ items = items.filter(function(it){ return phrQuizSet.indexOf(it.p) >= 0; }); }
   return items;
 }
@@ -2259,7 +2266,8 @@ function renderPhrBank(){
     var grid = document.createElement("div"); grid.className = "phr-grid"; grid.id = "phrGrid"; root.appendChild(grid);
     var pager = document.createElement("div"); pager.className = "phr-pager"; pager.id = "phrPager"; root.appendChild(pager);
     tabs.addEventListener("click", function(e){ var b = e.target.closest(".phr-tab"); if(!b) return; phrCur = parseInt(b.dataset.cat, 10); phrPage = 0; tabs.querySelectorAll(".phr-tab").forEach(function(x){ x.classList.toggle("active", x === b); }); phrQuizSet = null; phrFlash = false; var _fb = document.getElementById("phrFlashBtn"); if(_fb) _fb.classList.remove("active"); var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
-    search.querySelector("#phrSearch").addEventListener("input", function(e){ phrQ = e.target.value.trim(); phrPage = 0; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); drawPhrGrid(); });
+    var phrSearchTimer = null;   // 搜索防抖：避免每敲一个键都全量过滤 1249 条并重建 DOM
+    search.querySelector("#phrSearch").addEventListener("input", function(e){ phrQ = e.target.value.trim(); phrPage = 0; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); if(phrSearchTimer) clearTimeout(phrSearchTimer); phrSearchTimer = setTimeout(drawPhrGrid, 180); });
     tools.querySelector("#phrSort").addEventListener("change", function(e){ phrSort = e.target.value; phrPage = 0; drawPhrGrid(); });
     var flashBtn = tools.querySelector("#phrFlashBtn");
     flashBtn.addEventListener("click", function(){ phrFlash = !phrFlash; phrPage = 0; phrQuizSet = null; var _qb = document.getElementById("phrQuizBtn"); if(_qb) _qb.classList.remove("active"); flashBtn.classList.toggle("active", phrFlash); drawPhrGrid(); });
