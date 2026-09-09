@@ -243,7 +243,7 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .nce2-btn {padding:8px 14px;border:1px solid var(--brand);background:var(--brand-soft);color:var(--brand);border-radius:8px;cursor:pointer;font-size:14px}
 .nce2-btn:hover {background:var(--brand);color:#fff}
 .nce2-lesson {background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-top:10px}
-.nce2-lhead {display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:12px}
+.nce2-lhead {display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:16px}
 .nce2-no {font-weight:700;color:var(--brand);font-size:14px}
 .nce2-title {font-weight:700;font-size:17px;color:var(--ink)}
 .nce2-zh {color:var(--muted);font-size:14px}
@@ -257,8 +257,8 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .ana-legend {display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:2px 0 4px}
 .ana-legend span {display:inline-flex;align-items:center;gap:5px}
 .ana-legend i {width:11px;height:11px;border-radius:3px;display:inline-block}
-.ana-sen {margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
-.ana-sen:last-child {border-bottom:none;padding-bottom:0;margin-bottom:0}
+.ana-sen {margin:0 0 18px}
+.ana-sen:last-child {margin-bottom:0}
 .ana-en {font-size:15.5px;line-height:2;color:var(--ink)}
 .ana-en b {font-weight:700;border-radius:4px;padding:0 2px}
 .ana-en .r-subj {background:#fde2e1;color:#b42318;box-shadow:inset 0 -2px 0 #f04438}
@@ -269,6 +269,7 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .ana-en .r-adv {background:#f3e8ff;color:#7e22ce;box-shadow:inset 0 -2px 0 #9333ea}
 .ana-en .r-othe {background:#e5e7eb;color:#475569;box-shadow:inset 0 -2px 0 #94a3b8}
 .ana-roles {font-size:12px;color:var(--muted);margin:4px 0 0;line-height:1.7}
+.nce2-ana.hide-roles .ana-roles {display:none}
 .ana-roles b {font-weight:600}
 .ana-roles .r-subj {color:#b42318}
 .ana-roles .r-pred {color:#1d4ed8}
@@ -331,12 +332,34 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 /* ---- 走进美国 / 走遍美国 dialogue reader ---- */
 .zmus-tabs {margin:10px 0 6px}
 /* 新概念二：参考译文 + 中译英练习 */
-.nce2-trans {margin:10px 0 0;font-size:15px;line-height:1.9;color:var(--ink);background:#fbf8f2;border:1px dashed var(--line);border-radius:8px;padding:10px 14px}
+.nce2-trans {margin:10px 0 0;font-size:15px;line-height:1.9;color:var(--ink);background:var(--brand-soft);border-radius:var(--radius);padding:14px 16px}
+/* ---- 03 新概念：搜索 / 课签 / 折叠 / 原文 ---- */
+.nce2-search {display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.nce2-search input {flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--ink);font-size:14px;font-family:inherit}
+.nce2-search input:focus {outline:none;border-color:var(--brand)}
+.nce2-search .nce2-btn {flex:none}
+.nce2-ltabs {display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.nce2-ltabs button {padding:6px 13px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;transition:.15s}
+.nce2-ltabs button:hover {border-color:var(--brand);color:var(--brand)}
+.nce2-ltabs button.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.nce2-lcard {background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px}
+/* 折叠：译文 / 原文 / 成分说明统一用这套，避免信息一次全摊开 */
+.nce2-fold {margin-top:14px}
+.nce2-fold-btn {padding:6px 13px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;cursor:pointer;font-size:13px;transition:.15s}
+.nce2-fold-btn:hover {border-color:var(--brand);color:var(--brand)}
+.nce2-fold-btn.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.nce2-fold-body {display:none;margin-top:12px}
+.nce2-fold-body.open {display:block}
+.nce2-text {font-size:15.5px;line-height:2;color:var(--ink);background:var(--brand-soft);border-radius:var(--radius);padding:14px 16px}
+.nce2-empty {color:var(--muted);font-size:14px;padding:28px 0;text-align:center}
 .ex-tip {margin:4px 0 12px;font-size:13px;color:var(--muted);background:var(--brand-soft);border-left:3px solid var(--brand);padding:8px 12px;border-radius:0 8px 8px 0;line-height:1.6}
 .ex-item {background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:12px}
 .ex-zh {font-size:15.5px;line-height:1.8;color:var(--ink);font-weight:600;margin-bottom:4px}
-.ex-ans {background:#111;color:transparent;padding:11px 14px;border-radius:8px;font-size:14px;line-height:1.7;margin:8px 0 10px;cursor:pointer;user-select:none;min-height:44px;display:flex;align-items:center}
-.ex-ans.revealed {color:#fff;user-select:text}
+/* 答案默认隐藏：淡底 + 居中提示，点击后转为主题色块显示。替换原先黑底白字的突兀做法 */
+.ex-ans {background:var(--bg);color:transparent;border:1px solid var(--line);border-radius:var(--radius);padding:11px 14px;font-size:14px;line-height:1.7;margin:8px 0 10px;cursor:pointer;user-select:none;position:relative;min-height:44px;display:flex;align-items:center}
+.ex-ans::after {content:"点击显示参考答案";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.ex-ans.revealed {color:var(--ink);user-select:text;background:var(--brand-soft);border-color:var(--brand)}
+.ex-ans.revealed::after {content:none}
 .app.mobile-nav .ex-ans {font-size:13px}
 .pager {display:flex;gap:6px;flex-wrap:wrap;margin-top:18px;align-items:center}
 .pg-btn {min-width:36px;padding:6px 10px;border:1px solid #d8dee8;background:#fff;border-radius:8px;cursor:pointer;font-size:13px;color:#3358a0}
@@ -1986,10 +2009,17 @@ function renderNce2(){
   if(!root) return;
   root.innerHTML = '';
   var intro = document.getElementById('nce2Intro');
-  if(intro) intro.textContent = '新概念英语第二册（96 课）按每 5 课一组浓缩呈现：课文重点语句 + 语法知识点详解 + 中译英练习。不再逐课展示原文。';
+  if(intro) intro.textContent = '新概念英语第二册（96 课）按每 5 课一组组织：课文原文 + 重点语句成分拆解 + 语法知识点 + 中译英练习。支持按标题或句子内容搜索。';
   var lessons = d.lessons;
   var groups = [];
   for(var gi=0; gi<lessons.length; gi+=5){ groups.push(lessons.slice(gi, gi+5)); }
+  /* 搜索：命中课文英文/中文标题或句子内容，回车跳到首个命中课所在组并聚焦该课 */
+  var searchWrap = document.createElement('div'); searchWrap.className = 'nce2-search';
+  var sInput = document.createElement('input'); sInput.type = 'text'; sInput.id = 'nce2Search';
+  sInput.placeholder = '🔍 搜索课文标题 / 中文 / 句子（回车跳转）';
+  var sBtn = document.createElement('button'); sBtn.type = 'button'; sBtn.className = 'nce2-btn'; sBtn.textContent = '清除';
+  searchWrap.appendChild(sInput); searchWrap.appendChild(sBtn);
+  root.appendChild(searchWrap);
   var nav = document.createElement('div'); nav.className = 'nce2-nav';
   var sel = document.createElement('select'); sel.id = 'nce2Sel'; sel.className = 'nce2-sel';
   groups.forEach(function(g, i){
@@ -2000,23 +2030,50 @@ function renderNce2(){
   var next = document.createElement('button'); next.className = 'nce2-btn'; next.textContent = '下一组 →';
   nav.appendChild(prev); nav.appendChild(sel); nav.appendChild(next);
   root.appendChild(nav);
+  /* 课签：组内快速定位到某一课 */
+  var ltabs = document.createElement('div'); ltabs.className = 'nce2-ltabs';
+  root.appendChild(ltabs);
   var tabs = document.createElement('div'); tabs.className = 'nce2-toggle zmus-tabs';
-  var bKey = document.createElement('button'); bKey.textContent = '课文重点语句'; bKey.className = 'active';
-  var bGram = document.createElement('button'); bGram.textContent = '语法知识点详解';
+  var bKey = document.createElement('button'); bKey.textContent = '重点语句拆解'; bKey.className = 'active';
+  var bText = document.createElement('button'); bText.textContent = '课文原文';
+  var bGram = document.createElement('button'); bGram.textContent = '语法知识点';
   var bEx = document.createElement('button'); bEx.textContent = '中译英练习';
-  tabs.appendChild(bKey); tabs.appendChild(bGram); tabs.appendChild(bEx);
+  tabs.appendChild(bKey); tabs.appendChild(bText); tabs.appendChild(bGram); tabs.appendChild(bEx);
   root.appendChild(tabs);
-  var card = document.createElement('div'); card.className = 'nce2-lesson'; card.id = 'nce2Lesson';
+  var card = document.createElement('div'); card.id = 'nce2Lesson';
   root.appendChild(card);
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  /* 通用折叠块：按钮 + 收起的内容，用于译文/原文/成分说明 */
+  function fold(label, buildBody){
+    var wrap = document.createElement('div'); wrap.className = 'nce2-fold';
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nce2-fold-btn'; btn.textContent = label;
+    var body = document.createElement('div'); body.className = 'nce2-fold-body';
+    buildBody(body);
+    btn.addEventListener('click', function(){
+      var open = body.classList.toggle('open');
+      btn.classList.toggle('active', open);
+      btn.textContent = open ? (label.replace(/^显示/, '隐藏')) : label;
+    });
+    wrap.appendChild(btn); wrap.appendChild(body);
+    return wrap;
+  }
   function renderAna(l){
-    var wrap = document.createElement('div'); wrap.className = 'nce2-ana';
+    var wrap = document.createElement('div'); wrap.className = 'nce2-ana hide-roles';
     var legend = document.createElement('div'); legend.className = 'ana-legend';
     legend.innerHTML = '<span><i style="background:#fde2e1"></i>主语</span><span><i style="background:#e2ecff"></i>谓语</span><span><i style="background:#cffafe"></i>表语</span><span><i style="background:#dcfce7"></i>宾语</span><span><i style="background:#fef3c7"></i>定语</span><span><i style="background:#f3e8ff"></i>状语</span><span><i style="background:#e5e7eb"></i>其他</span>';
     wrap.appendChild(legend);
     var list = (NCE2_ANALYSIS && NCE2_ANALYSIS[l.no]) ? NCE2_ANALYSIS[l.no] : [];
     if(NCE2_KEYS && NCE2_KEYS[l.no] && NCE2_KEYS[l.no].length){ list = NCE2_KEYS[l.no].map(function(k){ return list[k]; }).filter(Boolean); }
-    if(!list.length){ var note = document.createElement('div'); note.className = 'ana-roles'; note.textContent = '本课暂未生成重点语句。'; wrap.appendChild(note); return wrap; }
+    if(!list.length){ var note = document.createElement('div'); note.className = 'nce2-empty'; note.textContent = '本课暂未生成重点语句。'; wrap.appendChild(note); return wrap; }
+    /* 上方颜色标注已表达成分，下面那行「主语：xx 谓语：xx」属重复信息，默认收起，需要再看 */
+    var roleBtn = document.createElement('button'); roleBtn.type = 'button'; roleBtn.className = 'nce2-fold-btn';
+    roleBtn.style.margin = '2px 0 12px'; roleBtn.textContent = '显示成分说明';
+    roleBtn.addEventListener('click', function(){
+      var hide = wrap.classList.toggle('hide-roles');
+      roleBtn.classList.toggle('active', !hide);
+      roleBtn.textContent = hide ? '显示成分说明' : '隐藏成分说明';
+    });
+    wrap.appendChild(roleBtn);
     list.forEach(function(sen){
       var block = document.createElement('div'); block.className = 'ana-sen';
       var enDiv = document.createElement('div'); enDiv.className = 'ana-en'; enDiv.innerHTML = esc(sen.s);
@@ -2043,66 +2100,141 @@ function renderNce2(){
   function showKey(g){
     card.innerHTML = '';
     g.forEach(function(l){
+      var lc = document.createElement('div'); lc.className = 'nce2-lcard'; lc.id = 'nce2L' + l.no;
       var lh = document.createElement('div'); lh.className = 'nce2-lhead';
       var no = document.createElement('span'); no.className = 'nce2-no'; no.textContent = 'Lesson ' + l.no;
       var en = document.createElement('span'); en.className = 'nce2-title'; en.textContent = l.en;
       var zh = document.createElement('span'); zh.className = 'nce2-zh'; zh.textContent = l.zh;
-      lh.appendChild(no); lh.appendChild(en); lh.appendChild(zh); card.appendChild(lh);
-      card.appendChild(renderAna(l));
+      lh.appendChild(no); lh.appendChild(en); lh.appendChild(zh); lc.appendChild(lh);
+      lc.appendChild(renderAna(l));
       if(l.trans){
-        var refBtn = document.createElement('button'); refBtn.type = 'button'; refBtn.className = 'nce2-btn'; refBtn.textContent = '参考译文（中文）';
-        var refDiv = document.createElement('div'); refDiv.className = 'nce2-trans'; refDiv.style.display = 'none'; refDiv.textContent = l.trans;
-        refBtn.addEventListener('click', function(){ var open = refDiv.style.display !== 'none'; refDiv.style.display = open ? 'none' : ''; refBtn.textContent = open ? '参考译文（中文）' : '隐藏译文'; });
-        card.appendChild(refBtn); card.appendChild(refDiv);
+        lc.appendChild(fold('显示参考译文', function(body){
+          var t = document.createElement('div'); t.className = 'nce2-trans'; t.textContent = l.trans;
+          body.appendChild(t);
+        }));
       }
+      card.appendChild(lc);
+    });
+  }
+  /* 课文原文：整篇英文 + 中文译文，默认都收起 */
+  function showText(g){
+    card.innerHTML = '';
+    g.forEach(function(l){
+      var lc = document.createElement('div'); lc.className = 'nce2-lcard'; lc.id = 'nce2L' + l.no;
+      var lh = document.createElement('div'); lh.className = 'nce2-lhead';
+      var no = document.createElement('span'); no.className = 'nce2-no'; no.textContent = 'Lesson ' + l.no;
+      var en = document.createElement('span'); en.className = 'nce2-title'; en.textContent = l.en;
+      var zh = document.createElement('span'); zh.className = 'nce2-zh'; zh.textContent = l.zh;
+      lh.appendChild(no); lh.appendChild(en); lh.appendChild(zh); lc.appendChild(lh);
+      if(l.text){
+        lc.appendChild(fold('显示课文原文', function(body){
+          var t = document.createElement('div'); t.className = 'nce2-text'; t.textContent = l.text;
+          body.appendChild(t);
+        }));
+      }
+      if(l.trans){
+        lc.appendChild(fold('显示参考译文', function(body){
+          var t = document.createElement('div'); t.className = 'nce2-trans'; t.textContent = l.trans;
+          body.appendChild(t);
+        }));
+      }
+      card.appendChild(lc);
     });
   }
   function showGram(g){
     card.innerHTML = '';
     g.forEach(function(l){
+      var lc = document.createElement('div'); lc.className = 'nce2-lcard'; lc.id = 'nce2L' + l.no;
       var pts = (NCE2_POINTS && NCE2_POINTS[l.no]) ? NCE2_POINTS[l.no] : [];
       var lh = document.createElement('div'); lh.className = 'nce2-lhead';
       var no = document.createElement('span'); no.className = 'nce2-no'; no.textContent = 'Lesson ' + l.no;
       var en = document.createElement('span'); en.className = 'nce2-title'; en.textContent = l.en;
-      lh.appendChild(no); lh.appendChild(en); card.appendChild(lh);
+      var zh = document.createElement('span'); zh.className = 'nce2-zh'; zh.textContent = l.zh;
+      lh.appendChild(no); lh.appendChild(en); lh.appendChild(zh); lc.appendChild(lh);
       if(pts && pts.length){
         var pt = document.createElement('div'); pt.className = 'nce2-points';
         var ul = document.createElement('ul');
         pts.forEach(function(p){ var li = document.createElement('li'); li.innerHTML = p; ul.appendChild(li); });
-        pt.appendChild(ul); card.appendChild(pt);
-      } else { var e = document.createElement('div'); e.className = 'ana-roles'; e.textContent = '本课暂无知识点。'; card.appendChild(e); }
+        pt.appendChild(ul); lc.appendChild(pt);
+      } else { var e = document.createElement('div'); e.className = 'nce2-empty'; e.textContent = '本课暂无知识点。'; lc.appendChild(e); }
+      card.appendChild(lc);
     });
   }
   function showEx(gi){
     card.innerHTML = '';
     var exs = (NCE2_EX && NCE2_EX[gi]) ? NCE2_EX[gi] : [];
-    if(!exs.length){ var e = document.createElement('div'); e.className = 'ana-roles'; e.textContent = '本组暂无练习。'; card.appendChild(e); return; }
-    var tip = document.createElement('div'); tip.className = 'ex-tip'; tip.textContent = '把中文译成英文，点击黑条显示参考答案（黑底白字）。'; card.appendChild(tip);
+    if(!exs.length){ var e = document.createElement('div'); e.className = 'nce2-empty'; e.textContent = '本组暂无练习。'; card.appendChild(e); return; }
+    var tip = document.createElement('div'); tip.className = 'ex-tip'; tip.textContent = '先自己把中文译成英文，再点击灰色答案区域对照参考答案。'; card.appendChild(tip);
     exs.forEach(function(ex){
       var item = document.createElement('div'); item.className = 'ex-item';
       var zh = document.createElement('div'); zh.className = 'ex-zh'; zh.textContent = ex.zh;
       var ans = document.createElement('div'); ans.className = 'ex-ans'; ans.textContent = ex.en;
-      var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nce2-btn'; btn.textContent = '显示答案';
-      btn.addEventListener('click', function(){ var rev = ans.classList.toggle('revealed'); btn.textContent = rev ? '隐藏答案' : '显示答案'; });
-      item.appendChild(zh); item.appendChild(ans); item.appendChild(btn);
+      /* 点答案区域本身即可显示/隐藏，不必再靠下方按钮 */
+      ans.title = '点击显示 / 隐藏参考答案';
+      ans.addEventListener('click', function(){ ans.classList.toggle('revealed'); });
+      item.appendChild(zh); item.appendChild(ans);
       card.appendChild(item);
     });
   }
   var curTab = 'key';
+  var tabMap = {key:bKey, text:bText, gram:bGram, ex:bEx};
+  function setTab(t){
+    curTab = t;
+    Object.keys(tabMap).forEach(function(k){ tabMap[k].classList.remove('active'); });
+    if(tabMap[t]) tabMap[t].classList.add('active');
+    show(parseInt(sel.value, 10));
+  }
+  /* 课签：组内 5 课各一个按钮，点击滚动定位到该课卡片 */
+  function buildLessonTabs(gi){
+    ltabs.innerHTML = '';
+    groups[gi].forEach(function(l){
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = 'L' + l.no;
+      b.title = l.en + ' · ' + l.zh;
+      b.addEventListener('click', function(){
+        var el = document.getElementById('nce2L' + l.no);
+        if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      ltabs.appendChild(b);
+    });
+  }
   function show(gi){
     gi = Math.max(0, Math.min(groups.length - 1, gi));
     sel.value = String(gi);
     var g = groups[gi];
     if(curTab === 'key') showKey(g);
+    else if(curTab === 'text') showText(g);
     else if(curTab === 'gram') showGram(g);
     else showEx(gi);
+    buildLessonTabs(gi);
   }
-  bKey.addEventListener('click', function(){ curTab = 'key'; bKey.classList.add('active'); bGram.classList.remove('active'); bEx.classList.remove('active'); show(parseInt(sel.value, 10)); });
-  bGram.addEventListener('click', function(){ curTab = 'gram'; bGram.classList.add('active'); bKey.classList.remove('active'); bEx.classList.remove('active'); show(parseInt(sel.value, 10)); });
-  bEx.addEventListener('click', function(){ curTab = 'ex'; bEx.classList.add('active'); bKey.classList.remove('active'); bGram.classList.remove('active'); show(parseInt(sel.value, 10)); });
+  bKey.addEventListener('click', function(){ setTab('key'); });
+  bText.addEventListener('click', function(){ setTab('text'); });
+  bGram.addEventListener('click', function(){ setTab('gram'); });
+  bEx.addEventListener('click', function(){ setTab('ex'); });
   sel.addEventListener('change', function(){ show(parseInt(sel.value, 10)); });
   prev.addEventListener('click', function(){ show(parseInt(sel.value, 10) - 1); });
   next.addEventListener('click', function(){ show(parseInt(sel.value, 10) + 1); });
+  /* 搜索：匹配课文英文/中文标题或句子内容，回车跳到首个命中课所在组并滚动定位 */
+  function doSearch(){
+    var kw = (sInput.value || '').trim();
+    if(!kw) return;
+    var q = kw.toLowerCase();
+    var hit = null;
+    for(var i = 0; i < lessons.length && !hit; i++){
+      var l = lessons[i];
+      if((l.en && l.en.toLowerCase().indexOf(q) >= 0) || (l.zh && l.zh.indexOf(q) >= 0)){ hit = l; break; }
+      var arr = (NCE2_ANALYSIS && NCE2_ANALYSIS[l.no]) || [];
+      for(var k = 0; k < arr.length; k++){
+        if(arr[k].s && arr[k].s.toLowerCase().indexOf(q) >= 0){ hit = l; break; }
+      }
+    }
+    if(!hit){ alert('没有找到包含「' + kw + '」的课文或句子，换个关键词试试。'); return; }
+    show(Math.floor((hit.no - 1) / 5));
+    var el = document.getElementById('nce2L' + hit.no);
+    if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  sInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  sBtn.addEventListener('click', function(){ sInput.value = ''; sInput.focus(); });
   show(0);
   var pc = document.getElementById('nce2Count'); if(pc) pc.textContent = groups.length + ' 组（' + lessons.length + ' 课）';
 }
