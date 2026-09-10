@@ -244,12 +244,13 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .nce2-btn:hover {background:var(--brand);color:#fff}
 .nce2-lesson {background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-top:10px}
 .nce2-lhead {display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-.nce2-no {font-weight:700;color:var(--brand);font-size:14px}
-.nce2-title {font-weight:700;font-size:17px;color:var(--ink)}
-.nce2-zh {color:var(--muted);font-size:14px}
+.nce2-no {font-weight:700;color:var(--brand);font-size:13px;flex:none}
+.nce2-title {font-family:var(--font-serif);font-weight:700;font-size:18px;color:var(--ink);line-height:1.3}
+.nce2-zh {display:block;flex-basis:100%;color:var(--muted);font-size:13px;margin-top:4px;line-height:1.5}
 .nce2-points {margin-top:6px}
 .nce2-points ul {margin:0;padding-left:20px}
-.nce2-points li {font-size:14px;line-height:1.8;margin-bottom:6px;color:var(--ink)}
+.nce2-points li {font-size:14px;line-height:1.9;margin-bottom:8px;color:var(--ink)}
+.nce2-points li code, .nce2-points li b {color:var(--brand);background:var(--brand-soft);border-radius:4px;padding:1px 5px;font-size:.92em;font-weight:600}
 /* 句子成分分析 */
 .nce2-toggle {display:flex;gap:8px;margin:4px 0 10px;flex-wrap:wrap;align-items:center}
 .nce2-toggle button {padding:7px 14px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:8px;cursor:pointer;font-size:13.5px}
@@ -332,17 +333,19 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 /* ---- 走进美国 / 走遍美国 dialogue reader ---- */
 .zmus-tabs {margin:10px 0 6px}
 /* 新概念二：参考译文 + 中译英练习 */
-.nce2-trans {margin:10px 0 0;font-size:15px;line-height:1.9;color:var(--ink);background:var(--brand-soft);border-radius:var(--radius);padding:14px 16px}
+.nce2-trans {margin:10px 0 0;font-size:14.5px;line-height:1.95;color:var(--ink);background:var(--brand-soft);border-radius:var(--radius);padding:14px 16px}
 /* ---- 03 新概念：搜索 / 课签 / 折叠 / 原文 ---- */
 .nce2-search {display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
 .nce2-search input {flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--ink);font-size:14px;font-family:inherit}
 .nce2-search input:focus {outline:none;border-color:var(--brand)}
 .nce2-search .nce2-btn {flex:none}
-.nce2-ltabs {display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.nce2-ltabs {display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 14px}
 .nce2-ltabs button {padding:6px 13px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;transition:.15s}
 .nce2-ltabs button:hover {border-color:var(--brand);color:var(--brand)}
-.nce2-ltabs button.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
-.nce2-lcard {background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px}
+.nce2-ltabs button.active {border-color:var(--brand);background:var(--brand);color:#fff}
+.nce2-lcard {background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:var(--radius);padding:22px 26px;margin-bottom:18px}
+@keyframes nce2Flash {0%{background:var(--brand-soft)}100%{background:var(--card)}}
+.nce2-lcard.nce2-flash {animation:nce2Flash 1.2s ease-out}
 /* 折叠：译文 / 原文 / 成分说明统一用这套，避免信息一次全摊开 */
 .nce2-fold {margin-top:14px}
 .nce2-fold-btn {padding:6px 13px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;cursor:pointer;font-size:13px;transition:.15s}
@@ -350,11 +353,15 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .nce2-fold-btn.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
 .nce2-fold-body {display:none;margin-top:12px}
 .nce2-fold-body.open {display:block}
-.nce2-text {font-size:15.5px;line-height:2;color:var(--ink);background:var(--brand-soft);border-radius:var(--radius);padding:14px 16px}
+.nce2-text {font-family:var(--font-serif);font-size:16px;line-height:2.1;color:var(--ink);background:var(--card);border-left:3px solid var(--brand);border-radius:var(--radius);padding:14px 18px}
+.nce2-text p {margin:0 0 10px}
+.nce2-text p:last-child {margin-bottom:0}
 .nce2-empty {color:var(--muted);font-size:14px;padding:28px 0;text-align:center}
 .ex-tip {margin:4px 0 12px;font-size:13px;color:var(--muted);background:var(--brand-soft);border-left:3px solid var(--brand);padding:8px 12px;border-radius:0 8px 8px 0;line-height:1.6}
-.ex-item {background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:12px}
-.ex-zh {font-size:15.5px;line-height:1.8;color:var(--ink);font-weight:600;margin-bottom:4px}
+.ex-item {background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px}
+.ex-zh {font-size:15.5px;line-height:1.8;color:var(--ink);font-weight:600}
+.ex-head {display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+.ex-no {display:inline-block;flex:none;min-width:20px;color:var(--muted);font-size:13px;font-weight:600}
 /* 答案默认隐藏：淡底 + 居中提示，点击后转为主题色块显示。替换原先黑底白字的突兀做法 */
 .ex-ans {background:var(--bg);color:transparent;border:1px solid var(--line);border-radius:var(--radius);padding:11px 14px;font-size:14px;line-height:1.7;margin:8px 0 10px;cursor:pointer;user-select:none;position:relative;min-height:44px;display:flex;align-items:center}
 .ex-ans::after {content:"点击显示参考答案";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
@@ -2615,6 +2622,16 @@ function renderNce2(){
   var card = document.createElement('div'); card.id = 'nce2Lesson';
   root.appendChild(card);
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  /* 仅用于展示：按英文句号/叹号/问号 + 空格切分成段，不改原始数据 */
+  function splitSentences(text){
+    var out = [], buf = '', i, ch;
+    for(i = 0; i < text.length; i++){
+      ch = text[i]; buf += ch;
+      if((ch === '.' || ch === '!' || ch === '?') && text[i + 1] === ' '){ out.push(buf.trim()); buf = ''; }
+    }
+    if(buf.trim()) out.push(buf.trim());
+    return out;
+  }
   /* 通用折叠块：按钮 + 收起的内容，用于译文/原文/成分说明 */
   function fold(label, buildBody){
     var wrap = document.createElement('div'); wrap.className = 'nce2-fold';
@@ -2700,7 +2717,10 @@ function renderNce2(){
       lh.appendChild(no); lh.appendChild(en); lh.appendChild(zh); lc.appendChild(lh);
       if(l.text){
         lc.appendChild(fold('显示课文原文', function(body){
-          var t = document.createElement('div'); t.className = 'nce2-text'; t.textContent = l.text;
+          var t = document.createElement('div'); t.className = 'nce2-text';
+          var paras = splitSentences(l.text);
+          if(paras.length > 1){ paras.forEach(function(p){ var pp = document.createElement('p'); pp.textContent = p; t.appendChild(pp); }); }
+          else { t.textContent = l.text; }
           body.appendChild(t);
         }));
       }
@@ -2737,14 +2757,17 @@ function renderNce2(){
     var exs = (NCE2_EX && NCE2_EX[gi]) ? NCE2_EX[gi] : [];
     if(!exs.length){ var e = document.createElement('div'); e.className = 'nce2-empty'; e.textContent = '本组暂无练习。'; card.appendChild(e); return; }
     var tip = document.createElement('div'); tip.className = 'ex-tip'; tip.textContent = '先自己把中文译成英文，再点击灰色答案区域对照参考答案。'; card.appendChild(tip);
-    exs.forEach(function(ex){
+    exs.forEach(function(ex, i){
       var item = document.createElement('div'); item.className = 'ex-item';
-      var zh = document.createElement('div'); zh.className = 'ex-zh'; zh.textContent = ex.zh;
+      var head = document.createElement('div'); head.className = 'ex-head';
+      var no = document.createElement('span'); no.className = 'ex-no'; no.textContent = (i + 1) + '.';
+      var zh = document.createElement('span'); zh.className = 'ex-zh'; zh.textContent = ex.zh;
+      head.appendChild(no); head.appendChild(zh);
       var ans = document.createElement('div'); ans.className = 'ex-ans'; ans.textContent = ex.en;
       /* 点答案区域本身即可显示/隐藏，不必再靠下方按钮 */
       ans.title = '点击显示 / 隐藏参考答案';
       ans.addEventListener('click', function(){ ans.classList.toggle('revealed'); });
-      item.appendChild(zh); item.appendChild(ans);
+      item.appendChild(head); item.appendChild(ans);
       card.appendChild(item);
     });
   }
@@ -2765,6 +2788,7 @@ function renderNce2(){
       b.addEventListener('click', function(){
         var el = document.getElementById('nce2L' + l.no);
         if(el && el.scrollIntoView) el.scrollIntoView({behavior:'smooth', block:'start'});
+        if(el){ el.classList.remove('nce2-flash'); void el.offsetWidth; el.classList.add('nce2-flash'); }
       });
       ltabs.appendChild(b);
     });
