@@ -429,7 +429,51 @@ body:not(.locked) .login {display:none}
 .adj-ing b {color:var(--brand)}
 .adj-selfmode .adj-zh {visibility:hidden}
 .adj-selfmode .adj-card.reveal .adj-zh {visibility:visible}
-.adj-link {color:var(--brand);cursor:pointer;text-decoration:underline;font-weight:600}</style>
+.adj-link {color:var(--brand);cursor:pointer;text-decoration:underline;font-weight:600}
+/* ===== MODULE: 新概念英语第一册·语法精要 (nce1) ===== */
+.nce1-toolbar {display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 16px}
+.nce1-search {flex:1;min-width:160px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:14px;outline:none}
+.nce1-search:focus {border-color:var(--brand)}
+.nce1-btn {padding:8px 13px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:13px;cursor:pointer;white-space:nowrap}
+.nce1-btn:hover {border-color:var(--brand);color:var(--brand)}
+.nce1-btn.active {background:var(--brand);color:#fff;border-color:var(--brand)}
+.nce1-list {display:flex;flex-direction:column;gap:14px}
+.nce1-card {background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:12px;padding:16px 18px}
+.nce1-card.hide {display:none}
+.nce1-top {display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.nce1-diff {font-size:12px;color:var(--amber);letter-spacing:1px;flex:none}
+.nce1-title {font-family:var(--font-serif);font-weight:800;color:var(--ink);font-size:16px;line-height:1.5;flex:1;min-width:0}
+.nce1-mean {font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.7}
+.nce1-mean b, .nce1-feat b {color:var(--ink);font-weight:700}
+.nce1-feat {font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.7}
+.nce1-struct {margin-top:10px;padding:10px 12px;background:var(--brand-soft);border-radius:9px;font-family:var(--font-serif);color:var(--brand);font-size:14px;line-height:1.6}
+.nce1-struct .lbl {display:block;font-family:var(--font-sans);font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--teal);margin-bottom:4px}
+.nce1-toggle {margin-top:11px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--brand);cursor:pointer;user-select:none}
+.nce1-toggle .arw {transition:transform .2s;font-size:10px}
+.nce1-card.open .nce1-toggle .arw {transform:rotate(90deg)}
+.nce1-detail {margin-top:10px;display:none}
+.nce1-card.open .nce1-detail {display:block}
+.nce1-exs {display:flex;flex-direction:column;gap:8px}
+.nce1-ex {display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--bg)}
+.nce1-ex .en {flex:1;min-width:0;font-family:var(--font-serif);color:var(--teal);font-size:14px;line-height:1.55}
+.nce1-ex .cn {display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.nce1-ex .spk {margin-top:2px;flex:none}
+.nce1-tip {margin-top:11px;padding:10px 12px;border-radius:9px;background:#ece6d8;font-size:13px;color:var(--ink);line-height:1.7}
+.nce1-tip .lbl {font-weight:800;color:var(--amber);margin-right:4px}
+.nce1-quiz {display:none;flex-direction:column;gap:14px;margin-top:6px}
+.nce1-quiz.show {display:flex}
+.nce1-q {background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.nce1-q .prompt {font-size:14px;color:var(--ink);font-weight:600;margin-bottom:9px;line-height:1.6}
+.nce1-q textarea {width:100%;min-height:56px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font-size:14px;font-family:var(--font-sans);resize:vertical;outline:none}
+.nce1-q textarea:focus {border-color:var(--brand)}
+.nce1-q .ans {display:none;margin-top:9px;font-size:13px;color:var(--muted);line-height:1.65}
+.nce1-q .ans .ref {color:var(--ink)}
+.nce1-q .ans b {color:var(--brand)}
+.nce1-q .ans .ok {color:var(--brand);font-weight:800}
+.nce1-q .ans .miss {color:var(--vermilion);font-weight:700}
+.nce1-actions {display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+.nce1-result {font-size:15px;font-weight:800;color:var(--brand);margin:2px 0}
+.nce1-empty {color:var(--muted);font-size:14px;padding:20px 0}</style>
 </head>
 <body class="locked" data-page-node-id="iAV7sahu0kZZ7r3RvwNUNp">
 
@@ -487,6 +531,7 @@ body:not(.locked) .login {display:none}
         <button class="menu-btn" data-view="mnemonics" data-page-node-id="6fEyvjT8KXocJ4Lj5Dj7jD"><span class="mi-no" data-page-node-id="Veu6RpVkl9heuRhbJTgbw6">04</span><span class="mi-tx" data-page-node-id="0cA9eB5Rtk4wIEqbaC7cPv">📙 语法口诀</span></button>
         <button class="menu-btn" data-view="tenses" data-page-node-id="nEUQ6pqTwTkP7lDAjqqf9o"><span class="mi-no" data-page-node-id="4g8njXUcbwEshHIfOYbmDa">05</span><span class="mi-tx" data-page-node-id="5JHik2yZnZZBBl0VZJ8Xot">📊 16 时态</span></button>
         <button class="menu-btn" data-view="adjpassive" data-page-node-id="Dez39P0GNtg4qhoLbV3qeQ"><span class="mi-no" data-page-node-id="CTuGv8n7EpS47h8bS2Pla2">06</span><span class="mi-tx" data-page-node-id="p6uySSTgGamqVVUd51MMUn">🔍 形似被动的形容词</span></button>
+        <button class="menu-btn" data-view="nce1"><span class="mi-no">07</span><span class="mi-tx">📚 新概念英语第一册·语法精要</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览" data-page-node-id="yEebS68g69NxCipO4HTdJL">📱 手机版</button>
@@ -635,6 +680,18 @@ body:not(.locked) .login {display:none}
       </ul>
     </div>
     <p class="adj-note" style="margin-top:14px">延伸：想知道这些词在 <b>被动语态</b> 里的真身？去 <span class="adj-link" id="adjLinkTenses">⑤ 16 时态 · 被动语态</span> 对照看。</p>
+  </section>
+
+
+  <section class="view" id="nce1" data-view="nce1">
+    <div class="sec-head"><h2>⑦ 新概念英语第一册·语法精要</h2><span class="count">10 条核心语法 · 可朗读 / 搜索 / 自测</span></div>
+    <div class="nce1-toolbar">
+      <input class="nce1-search" id="nce1Search" type="text" placeholder="搜索关键词，如 倒装 / 强调 / 比较 / hardly / no sooner" />
+      <button type="button" class="nce1-btn" id="nce1Toggle">全部展开</button>
+      <button type="button" class="nce1-btn" id="nce1Quiz">自测模式</button>
+    </div>
+    <div class="nce1-list" id="nce1List"></div>
+    <div class="nce1-quiz" id="nce1QuizBox"></div>
   </section>
 
 
@@ -1804,6 +1861,341 @@ function initAdjpassive(){
   if(link) link.addEventListener('click', ()=> showView('tenses'));
 }
 
+/* ---------- NCE1 · 新概念英语第一册语法精要 ---------- */
+const NCE1 = [
+  {
+    diff:'★★★',
+    title:'Hardly / Scarcely + had + 主语 + done … when + 一般过去时',
+    meaning:'刚……就……',
+    feature:'前半句用过去完成时，且否定副词放句首要部分倒装；NCE2 故事里常用来让叙述更"文学化"。',
+    struct:'Hardly / Scarcely had + 主语 + done sth. + when + 主语 + did sth.',
+    examples:[
+      {en:'Hardly had I opened the door when the cat ran out.', zh:'我刚开门，猫就跑出去了。'},
+      {en:'Scarcely had we sat down when the phone rang.', zh:'我们刚坐下，电话就响了。'},
+      {en:'Hardly had the train left when it started to rain.', zh:'火车刚开走，天就下起雨来。'},
+      {en:'Scarcely had he finished his speech when the audience applauded.', zh:'他刚讲完话，观众就鼓起掌来。'}
+    ],
+    tip:'口语常说 as soon as；写作/复述故事用 hardly…when 更"新概念"。注意 hardly / scarcely 本身已含否定，句中不再加 not，且 when 不能换成 than。',
+    quiz:{
+      prompt:'用 hardly / scarcely … when 翻译："我刚开门，猫就跑出去了。"',
+      keys:[['hardly','scarcely'],'had','when']
+    }
+  },
+  {
+    diff:'★★★',
+    title:'No sooner + had + 主语 + done … than + 一般过去时',
+    meaning:'一……就……（刚……就……）',
+    feature:'与 hardly…when 同义且同样用过去完成时 + 部分倒装；区别在连词：no sooner 接 than，不是 when。',
+    struct:'No sooner had + 主语 + done sth. + than + 主语 + did sth.',
+    examples:[
+      {en:'No sooner had I got into bed than the doorbell rang.', zh:'我刚上床，门铃就响了。'},
+      {en:'No sooner had the show begun than the lights went out.', zh:'演出刚开始，灯就灭了。'},
+      {en:'No sooner had she left than it began to snow.', zh:'她刚离开，天就下起雪来。'},
+      {en:'No sooner had we arrived than the meeting started.', zh:'我们刚到，会议就开始了。'}
+    ],
+    tip:'易错——no sooner 后面接 than，hardly / scarcely 后面接 when，别混搭。这个句型比 hardly…when 更书面化。',
+    quiz:{
+      prompt:'用 no sooner … than 翻译："我刚上床，门铃就响了。"',
+      keys:['no sooner','had','than']
+    }
+  },
+  {
+    diff:'★★☆',
+    title:'Not only + 助动词 + 主语 + 动词 … but (also) + 主语 + 动词',
+    meaning:'不但……而且……',
+    feature:'not only 置于句首时，其所在分句要部分倒装（助动词/情态动词提前）；but also 所在分句不倒装。',
+    struct:'Not only + 助动词/情态动词 + 主语 + 谓语 … + but (also) + 主语 + 谓语.',
+    examples:[
+      {en:'Not only did he pass the exam, but (also) he got full marks.', zh:'他不但通过了考试，而且拿了满分。'},
+      {en:'Not only can she sing, but she can also dance.', zh:'她不但会唱歌，还会跳舞。'},
+      {en:'Not only is he tall, but he is also handsome.', zh:'他不但高，而且帅。'},
+      {en:'Not only did we lose the game, but we also lost our captain.', zh:'我们不仅输了比赛，还伤了队长。'}
+    ],
+    tip:'倒装只在 not only 那一半；but also 一半仍是正常语序。also 在 but 后可省略，读起来依然通顺。',
+    quiz:{
+      prompt:'用 not only … but also 倒装翻译："他不但通过了考试，而且拿了满分。"',
+      keys:['not only','but']
+    }
+  },
+  {
+    diff:'★★☆',
+    title:'It is / was + 被强调部分 + that / who + 其余部分',
+    meaning:'正是……（强调某成分）',
+    feature:'强调人用 who / that，强调物/时间/地点用 that；把 It is/was … that 去掉，剩下仍是完整句子。',
+    struct:'It is/was + 强调成分（主语/宾语/状语）+ that/who + 句子其余部分.',
+    examples:[
+      {en:'It was Tom who broke the window.', zh:'正是汤姆打破了窗户。'},
+      {en:'It is tomorrow that we will leave.', zh:'我们是在明天离开。'},
+      {en:'It was in the park that they met.', zh:'他们是在公园里相遇的。'},
+      {en:'It is English that I like best.', zh:'我最喜欢的正是英语。'}
+    ],
+    tip:'强调句与定语从句区别：强调句去掉 It is/was…that 意思仍完整；定语从句去掉后缺成分。强调谓语要用 do/does/did，不能用 It is…that。',
+    quiz:{
+      prompt:'用强调句 It is/was … that/who 翻译："正是汤姆打破了窗户。"',
+      keys:[['it is','it was'],['that','who']]
+    }
+  },
+  {
+    diff:'★☆☆',
+    title:'as + 形容词/副词原级 + as（否定：not as / so … as）',
+    meaning:'和……一样（不）……',
+    feature:'肯定用 as … as；否定常用 not as(so) … as；倍数表达用 twice / three times as + 原级 + as。',
+    struct:'肯定：as + adj./adv. 原级 + as　|　否定：not as / so + adj./adv. 原级 + as　|　倍数：倍数 + as + 原级 + as',
+    examples:[
+      {en:'He is as tall as his brother.', zh:'他和他哥哥一样高。'},
+      {en:'This book is not as interesting as that one.', zh:'这本书不如那本有趣。'},
+      {en:'She runs as fast as a deer.', zh:'她跑得和鹿一样快。'},
+      {en:'This room is twice as large as that one.', zh:'这个房间是那个的两倍大。'}
+    ],
+    tip:'as … as 中间必须是原级（不是比较级）；"不如"用 not so/as … as，口语多用 not as … as。倍数放在最前面：twice/three times as … as。',
+    quiz:{
+      prompt:'用 as … as 原级比较翻译："他和他哥哥一样高。"（提示：肯定用 as…as）',
+      keys:['as']
+    }
+  },
+  {
+    diff:'★★☆',
+    title:'The + 比较级 …, the + 比较级 …',
+    meaning:'越……，越……',
+    feature:'前后都用 "the + 比较级"，通常用逗号隔开；前句常是从句，后句是主句。',
+    struct:'The + 比较级 + 主语 + 谓语, the + 比较级 + 主语 + 谓语.',
+    examples:[
+      {en:'The more you read, the more you know.', zh:'你读得越多，懂得越多。'},
+      {en:'The harder you work, the luckier you get.', zh:'你越努力，越幸运。'},
+      {en:'The earlier we leave, the sooner we arrive.', zh:'我们走得越早，到得越快。'},
+      {en:'The more carefully you listen, the fewer mistakes you make.', zh:'你听得越认真，犯的错越少。'}
+    ],
+    tip:'两个 the 都是副词，后面直接跟比较级（不接冠词 a/an）；"the + 比较级"不必是主谓完整结构，光形容词也可：The more, the merrier.（人越多越热闹）。',
+    quiz:{
+      prompt:'用 the more … the more 翻译："你读得越多，懂得越多。"',
+      keys:['the','more']
+    }
+  },
+  {
+    diff:'★★★',
+    title:'would rather do … than do / used to do / be used to doing',
+    meaning:'宁愿……而不愿 / 过去常常 / 习惯于',
+    feature:'三者易混：would rather A than B（宁愿，后接动词原形）；used to do（过去习惯，现在已不）；be used to doing（现在习惯于，to 是介词）。',
+    struct:'would rather + 动词原形 + than + 动词原形　|　used to + 动词原形　|　be/get used to + 动名词',
+    examples:[
+      {en:'I would rather walk than take a bus.', zh:'我宁愿走路也不坐公交。'},
+      {en:'He used to smoke, but he quit.', zh:'他过去抽烟，但戒了。'},
+      {en:'She is used to getting up early.', zh:'她习惯早起。'},
+      {en:'I would rather stay home than go to the party.', zh:'我宁愿待在家也不去聚会。'}
+    ],
+    tip:'关键看 to——used to 的 to 是不定式（后接原形），be used to 的 to 是介词（后接 doing）。would rather 后永远接原形。',
+    quiz:{
+      prompt:'用 would rather … than 翻译："我宁愿走路也不坐公交。"',
+      keys:['would rather','than']
+    }
+  },
+  {
+    diff:'★★☆',
+    title:'so + 形容词/副词 + that / such (+a/an) + 名词 + that',
+    meaning:'如此……以至于……',
+    feature:'so 修饰形容词/副词；such 修饰名词。such 遇可数单数用 such a/an + 形容词 + 名词。',
+    struct:'so + adj./adv. + that 从句　|　such (+ a/an) + (adj.) + 名词 + that 从句（名前 such，形副前 so）',
+    examples:[
+      {en:'He was so tired that he fell asleep.', zh:'他累得睡着了。'},
+      {en:'It was such a difficult test that nobody passed.', zh:'那是一场如此难的考试，没人及格。'},
+      {en:'She spoke so quickly that I could not follow.', zh:'她说得太快，我跟不上。'},
+      {en:'He has so many books that he cannot read them all.', zh:'他有那么多书，根本读不完。'}
+    ],
+    tip:'易错——such a + 形容词 + 单数名词；但 so + many/much/few/little（表数量）要用 so。little 表"小"时用 such：such a little boy（这么小的男孩）。',
+    quiz:{
+      prompt:'用 so … that 或 such … that 翻译："他累得睡着了。"',
+      keys:['that',['so','such']]
+    }
+  },
+  {
+    diff:'★★☆',
+    title:'have/has + done（持续/影响到现在） vs did（过去时点）',
+    meaning:'已完成/影响到现在 vs 单纯过去动作',
+    feature:'现在完成时（have done）强调与现在的联系、动作延续到现在或影响仍在；一般过去时（did）只说过去某时发生，与现在无关。',
+    struct:'现在完成时：have/has + 过去分词（常配 for/since/already/yet/ever）　|　一般过去时：动词过去式（常配 yesterday/last…/ago）',
+    examples:[
+      {en:'I have lived here for ten years.', zh:'我在这儿住了十年（现在还住）。'},
+      {en:'I lived there in 2010.', zh:'我 2010 年住在那儿（现在不住了）。'},
+      {en:'She has lost her key.', zh:'她把钥匙弄丢了（现在进不了门）。'},
+      {en:'She lost her key yesterday.', zh:'她昨天丢了钥匙（只是陈述过去）。'}
+    ],
+    tip:'含具体过去时间（yesterday / last week / ago）绝不用现在完成时；含 since/for 或"至今仍有影响"用现在完成时。',
+    quiz:{
+      prompt:'用现在完成时翻译："我在这儿住了十年（现在还住）。"',
+      keys:['have','lived']
+    }
+  },
+  {
+    diff:'★☆☆',
+    title:'What (+ a/an) + 形容词 + 名词 ! / How + 形容词/副词 !',
+    meaning:'多么……啊！',
+    feature:'what 感叹名词（单数可数加 a/an，复数/不可数不加）；how 感叹形容词或副词（how 后直接跟 adj./adv.）。',
+    struct:'What (a/an) + (adj.) + 名词 (+ 主语 + 谓语)!　|　How + adj./adv. (+ 主语 + 谓语)!',
+    examples:[
+      {en:'What a beautiful day (it is)!', zh:'多好的一天啊！'},
+      {en:'What clever children (they are)!', zh:'多聪明的孩子啊！'},
+      {en:'How beautiful the day is!', zh:'天气多好啊！'},
+      {en:'How fast he runs!', zh:'他跑得多快啊！'}
+    ],
+    tip:'判断口诀——看被感叹的词：是名词用 What（单数可数别忘 a/an），是形容词/副词用 How。How 后面紧跟 adj./adv.，不接名词。',
+    quiz:{
+      prompt:'用 What 或 How 感叹句翻译："多好的一天啊！"',
+      keys:[['what','how']]
+    }
+  }
+];
+
+function initNce1(){
+  const sec = document.getElementById('nce1');
+  if(!sec) return;
+  const root = document.getElementById('nce1List');
+  const search = document.getElementById('nce1Search');
+  const quizBtn = document.getElementById('nce1Quiz');
+  const togBtn = document.getElementById('nce1Toggle');
+  const quizBox = document.getElementById('nce1QuizBox');
+  if(!root) return;
+
+  function buildCard(it){
+    const card = document.createElement('div');
+    card.className = 'nce1-card';
+    const hay = (it.title + ' ' + it.meaning + ' ' + it.feature + ' ' + it.struct + ' ' + it.tip + ' ' +
+      it.examples.map(e=>e.en+' '+e.zh).join(' ')).toLowerCase();
+    card.dataset.search = hay;
+
+    const top = document.createElement('div'); top.className='nce1-top';
+    const diff = document.createElement('span'); diff.className='nce1-diff'; diff.textContent=it.diff;
+    const title = document.createElement('div'); title.className='nce1-title'; title.textContent=it.title;
+    top.append(diff, title);
+
+    const mean = document.createElement('div'); mean.className='nce1-mean';
+    mean.innerHTML = '<b>意思：</b>' + it.meaning;
+    const feat = document.createElement('div'); feat.className='nce1-feat';
+    feat.innerHTML = '<b>特点：</b>' + it.feature;
+    const struct = document.createElement('div'); struct.className='nce1-struct';
+    struct.innerHTML = '<span class="lbl">结构</span>' + it.struct;
+
+    const tog = document.createElement('div'); tog.className='nce1-toggle';
+    tog.innerHTML = '<span class="arw">▶</span><span class="tx">展开例子与小贴士</span>';
+
+    const detail = document.createElement('div'); detail.className='nce1-detail';
+    const exs = document.createElement('div'); exs.className='nce1-exs';
+    it.examples.forEach(ex=>{
+      const row = document.createElement('div'); row.className='nce1-ex';
+      const en = document.createElement('div'); en.className='en';
+      const enText = document.createElement('span'); enText.textContent = ex.en;
+      const cn = document.createElement('span'); cn.className='cn'; cn.textContent = ex.zh;
+      en.append(enText, cn);
+      row.append(en, spkBtn(ex.en, true));
+      exs.appendChild(row);
+    });
+    const tip = document.createElement('div'); tip.className='nce1-tip';
+    tip.innerHTML = '<span class="lbl">小贴士</span>' + it.tip;
+    detail.append(exs, tip);
+
+    card.append(top, mean, feat, struct, tog, detail);
+    tog.addEventListener('click', ()=>{
+      const open = card.classList.toggle('open');
+      tog.querySelector('.tx').textContent = open ? '收起例子与小贴士' : '展开例子与小贴士';
+    });
+    return card;
+  }
+
+  const cards = NCE1.map(it=>{
+    const c = buildCard(it);
+    root.appendChild(c);
+    return c;
+  });
+
+  // 搜索
+  if(search){
+    search.addEventListener('input', ()=>{
+      const q = (search.value || '').trim().toLowerCase();
+      cards.forEach(c=>{
+        c.classList.toggle('hide', !!(q && c.dataset.search.indexOf(q) === -1));
+      });
+    });
+  }
+
+  // 全部展开 / 收起
+  if(togBtn){
+    togBtn.addEventListener('click', ()=>{
+      const anyClosed = cards.some(c=>!c.classList.contains('open'));
+      cards.forEach(c=>c.classList.toggle('open', anyClosed));
+      cards.forEach(c=>{
+        const tx = c.querySelector('.nce1-toggle .tx');
+        if(tx) tx.textContent = anyClosed ? '收起例子与小贴士' : '展开例子与小贴士';
+      });
+      togBtn.textContent = anyClosed ? '全部收起' : '全部展开';
+    });
+  }
+
+  // 自测模式
+  if(quizBtn){
+    quizBtn.addEventListener('click', ()=>{
+      const on = sec.classList.toggle('nce1-quizmode');
+      quizBtn.classList.toggle('active', on);
+      quizBtn.textContent = on ? '退出自测' : '自测模式';
+      root.style.display = on ? 'none' : '';
+      quizBox.classList.toggle('show', on);
+      if(on){ startQuiz(); window.scrollTo({top:0, behavior:'smooth'}); }
+      else { quizBox.innerHTML=''; }
+    });
+  }
+
+  function startQuiz(){
+    quizBox.innerHTML='';
+    const pool = NCE1.slice();
+    for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const t=pool[i]; pool[i]=pool[j]; pool[j]=t; }
+    const items = pool.slice(0, 5);
+    items.forEach((it, idx)=>{
+      const q = document.createElement('div'); q.className='nce1-q';
+      const p = document.createElement('div'); p.className='prompt';
+      p.innerHTML = '【' + (idx+1) + '】' + it.quiz.prompt;
+      const ta = document.createElement('textarea');
+      ta.placeholder = '在此用英文写出对应的句子…';
+      const ans = document.createElement('div'); ans.className='ans';
+      q.append(p, ta, ans);
+      q._it = it; q._ans = ans; q._ta = ta;
+      quizBox.appendChild(q);
+    });
+    const actions = document.createElement('div'); actions.className='nce1-actions';
+    const submit = document.createElement('button'); submit.className='nce1-btn active'; submit.textContent='提交并评分';
+    const again = document.createElement('button'); again.className='nce1-btn'; again.textContent='换一组';
+    const result = document.createElement('div'); result.className='nce1-result';
+    actions.append(submit, again);
+    quizBox.append(actions, result);
+
+    submit.addEventListener('click', ()=>{
+      let total = 0;
+      quizBox.querySelectorAll('.nce1-q').forEach(q=>{
+        const it = q._it, ans = q._ans, ta = q._ta;
+        const val = ta.value.trim().toLowerCase();
+        let matched = 0; const found = []; const missed = [];
+        it.quiz.keys.forEach(k=>{
+          const ok = Array.isArray(k) ? k.some(x=>val.indexOf(x) !== -1) : (val.indexOf(k) !== -1);
+          if(ok){ matched++; found.push(Array.isArray(k)?k.find(x=>val.indexOf(x)!==-1):k); }
+          else { missed.push(Array.isArray(k)?k.join('/'):k); }
+        });
+        const pts = Math.round((matched / it.quiz.keys.length) * 2 * 10) / 10;
+        total += pts;
+        const refEn = it.examples[0].en;
+        const keyHtml = missed.length
+          ? '未命中关键词：<span class="miss">' + missed.join('、') + '</span>'
+          : '<span class="ok">关键词已命中 ✓</span>';
+        ans.innerHTML = keyHtml +
+          '<br><span class="ref">参考译文：<b>' + refEn + '</b>　' + it.examples[0].zh + '</span>' +
+          '<br><span class="ref">错点说明：' + it.tip + '</span>';
+        ans.style.display = 'block';
+        ta.setAttribute('readonly', 'readonly');
+      });
+      result.textContent = '本次得分：' + total.toFixed(1) + ' / 10　（评分仅供参考，重点看错点说明）';
+      result.scrollIntoView({behavior:'smooth', block:'nearest'});
+    });
+
+    again.addEventListener('click', startQuiz);
+  }
+}
+
 /* ---------- MNEMONICS ---------- */
 function renderMnemonics(){
   const root = document.getElementById('mnRoot');
@@ -2637,6 +3029,7 @@ renderIrregular();
 renderNce2();
 renderPhrBank();
 initAdjpassive();
+initNce1();
 showView('phrbank');
 
 document.querySelectorAll('.menu-btn').forEach(b=>{
