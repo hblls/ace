@@ -193,8 +193,21 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .app.mobile-nav .level-toggle button {padding:7px 12px;font-size:13.5px}
 /* INFINITIVE */
   .inf-intro {background:var(--brand-soft);color:#2c3a38;padding:14px 16px;border-radius:12px;margin-bottom:16px;font-size:15px;line-height:1.7}
+.inf-point {border-left:3px solid var(--brand);margin-bottom:14px}
+.inf-point .name {font-weight:700;color:var(--ink);font-size:16px;margin-bottom:2px;font-family:var(--font-serif)}
 .inf-point .text {font-size:14px;color:#3a352c;margin:8px 0 10px}
 .inf-ex {display:grid;gap:8px}
+.inf-point.collapsed .text, .inf-point.collapsed .inf-ex {display:none}
+.in-hide {display:none !important}
+.inf-empty {padding:24px;text-align:center;color:var(--muted);font-size:14px;background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);margin-bottom:14px}
+.inf-chips {display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.inf-chip {padding:6px 14px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;cursor:pointer;font-size:13px;transition:.15s}
+.inf-chip:hover {border-color:var(--brand);color:var(--brand)}
+.inf-chip.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand);font-weight:600}
+.inf-fold-ctl {display:flex;gap:8px;margin-bottom:16px}
+.inf-fold-btn {padding:6px 14px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;cursor:pointer;font-size:13px;transition:.15s}
+.inf-fold-btn:hover {border-color:var(--brand);color:var(--brand)}
+.inf-fold-btn.active {border-color:var(--brand);background:var(--brand-soft);color:var(--brand);font-weight:600}
 .hl {background:#fff3bf;color:inherit;border-radius:3px;padding:0 1px}
 .guide {max-width:880px;line-height:1.75;font-size:15px}
 .root-pager {display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 8px}
@@ -553,7 +566,7 @@ body:not(.locked) .login {display:none}
   </section>
 
   <section class="view" id="verb" data-view="verb" data-page-node-id="InAN5xxKL57C8KaGYf9ELG">
-    <div class="sec-head" data-page-node-id="VI9L5AEdcAXzvgPGU0es2x"><h2 data-page-node-id="DQ2VDsx5245riMJBweIVGX">② 动词（动词大全 + 不定式）</h2></div>
+    <div class="sec-head" data-page-node-id="VI9L5AEdcAXzvgPGU0es2x"><h2 data-page-node-id="DQ2VDsx5245riMJBweIVGX">① 动词（动词大全 + 不定式）</h2></div>
     <div class="toolbar" data-page-node-id="zhB9usA7SwoYXvYFArj9AZ">
       <div class="level-toggle verb-toggle" data-page-node-id="pNyl4VArmT27DMLe0kfGaI">
         <button data-vtab="verbs" class="active" data-page-node-id="fhowtunfRiF8Ik2jHvDXBZ">📖 动词大全</button>
@@ -563,6 +576,19 @@ body:not(.locked) .login {display:none}
     <div id="verbInf" style="display:none" data-page-node-id="VKzkyoCOyA6NhUj5gAHogz">
       <div class="sub-sec" data-page-node-id="YHDqmWkBXMUrqW0FSM3xhS">
         <div class="aspect-title" data-page-node-id="EomJ2X1Tc1pr034J4aonN6">不定式（Infinitive · to do）<span class="count" id="infCount" data-page-node-id="jr6AnkslhSJpPgALeT2vS6"></span></div>
+        <div class="inf-tools" data-page-node-id="infToolsBar">
+          <div class="search" data-page-node-id="infSearchWrap"><input id="infSearch" type="text" placeholder="🔍 搜索用法 / 例句，如 主语 / 目的 / To learn" data-page-node-id="infSearchInput" /></div>
+          <div class="inf-chips" id="infChips" data-page-node-id="infChips">
+            <button type="button" class="inf-chip active" data-cat="all" data-page-node-id="infChipAll">全部</button>
+            <button type="button" class="inf-chip" data-cat="syntax" data-page-node-id="infChipSyntax">句法功能</button>
+            <button type="button" class="inf-chip" data-cat="special" data-page-node-id="infChipSpecial">特殊结构</button>
+            <button type="button" class="inf-chip" data-cat="mix" data-page-node-id="infChipMix">易混辨析</button>
+          </div>
+          <div class="inf-fold-ctl" data-page-node-id="infFoldCtl">
+            <button type="button" class="inf-fold-btn" id="infCollapseAll" data-page-node-id="infCollapseBtn">全部收起</button>
+            <button type="button" class="inf-fold-btn active" id="infExpandAll" data-page-node-id="infExpandBtn">全部展开</button>
+          </div>
+        </div>
         <div id="infRoot" data-page-node-id="NzSHt8YYGJoDCr8pNFGTbJ"></div>
       </div>
     </div>
@@ -684,7 +710,7 @@ body:not(.locked) .login {display:none}
 
 
   <section class="view" id="phrbank" data-view="phrbank" data-page-node-id="jphdt5dh2bhiSEFiNGIH8L">
-    <div class="sec-head" data-page-node-id="qDAYmPZReEHl0AzdHe2jdw"><h2 data-page-node-id="5D5dUEZl8XuLhtRkZtsyLL">① 英语词组大全</h2><span class="count" id="phrCount" data-page-node-id="ceeEfKa36gqCej1DHDaj6M"></span></div>
+    <div class="sec-head" data-page-node-id="qDAYmPZReEHl0AzdHe2jdw"><h2 data-page-node-id="5D5dUEZl8XuLhtRkZtsyLL">② 英语词组大全</h2><span class="count" id="phrCount" data-page-node-id="ceeEfKa36gqCej1DHDaj6M"></span></div>
     <div id="phrRoot" data-page-node-id="VCmDUzB9agGQEdxhGxIMhX"></div>
   </section>
 
@@ -2254,13 +2280,18 @@ function renderTenses(){
 }
 
 /* ---------- INFINITIVE ---------- */
+// 19 个用法按句法角色归类，用于分类筛选 chip（与 DATA.infinitive.points 顺序一一对应，不改动数据）
+const INF_CAT = ['syntax','syntax','syntax','special','special','special','syntax','syntax','syntax','syntax','mix','special','syntax','syntax','special','special','special','special','special'];
+
 function renderInfinitive(){
   const root = document.getElementById('infRoot');
   root.innerHTML = '';
   const intro = document.createElement('p'); intro.className = 'inf-intro'; intro.textContent = DATA.infinitive.intro;
   root.appendChild(intro);
-  DATA.infinitive.points.forEach(p=>{
+  DATA.infinitive.points.forEach((p,i)=>{
     const c = document.createElement('div'); c.className = 'card inf-point';
+    c.dataset.cat = INF_CAT[i] || 'special';
+    c.dataset.search = (p.title + ' ' + p.text + ' ' + p.examples.map(e=>e.en + ' ' + e.cn).join(' ')).toLowerCase();
     const t = document.createElement('div'); t.className = 'name'; t.textContent = p.title;
     const txt = document.createElement('div'); txt.className = 'text'; txt.textContent = p.text;
     c.append(t, txt);
@@ -2275,6 +2306,8 @@ function renderInfinitive(){
     c.appendChild(exWrap);
     root.appendChild(c);
   });
+  const empty = document.createElement('div'); empty.className = 'inf-empty'; empty.id = 'infEmpty'; empty.textContent = '未找到相关用法'; empty.style.display = 'none';
+  root.appendChild(empty);
   const tipTitle = document.createElement('div'); tipTitle.className = 'aspect-title'; tipTitle.textContent = '易错提醒';
   root.appendChild(tipTitle);
   const tipsWrap = document.createElement('div'); tipsWrap.className = 'mgrid';
@@ -2284,6 +2317,52 @@ function renderInfinitive(){
   });
   root.appendChild(tipsWrap);
   document.getElementById('infCount').textContent = `${DATA.infinitive.points.length} 个用法`;
+  initInfinitiveControls();
+}
+
+function initInfinitiveControls(){
+  const root = document.getElementById('infRoot');
+  if(!root) return;
+  const cards = root.querySelectorAll('.inf-point');
+  const search = document.getElementById('infSearch');
+  const chips = document.getElementById('infChips');
+  const empty = document.getElementById('infEmpty');
+  const collapseAll = document.getElementById('infCollapseAll');
+  const expandAll = document.getElementById('infExpandAll');
+  let activeCat = 'all';
+  let q = '';
+
+  function apply(){
+    let shown = 0;
+    cards.forEach(c=>{
+      const okCat = activeCat === 'all' || c.dataset.cat === activeCat;
+      const okQ = !q || (c.dataset.search && c.dataset.search.indexOf(q) !== -1);
+      const ok = okCat && okQ;
+      c.classList.toggle('in-hide', !ok);
+      if(ok) shown++;
+    });
+    if(empty) empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  if(search) search.addEventListener('input', ()=>{ q = (search.value || '').trim().toLowerCase(); apply(); });
+  if(chips) chips.addEventListener('click', e=>{
+    const btn = e.target.closest('.inf-chip');
+    if(!btn) return;
+    chips.querySelectorAll('.inf-chip').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat || 'all';
+    apply();
+  });
+  if(collapseAll) collapseAll.addEventListener('click', ()=>{
+    cards.forEach(c=>c.classList.add('collapsed'));
+    collapseAll.classList.add('active');
+    if(expandAll) expandAll.classList.remove('active');
+  });
+  if(expandAll) expandAll.addEventListener('click', ()=>{
+    cards.forEach(c=>c.classList.remove('collapsed'));
+    expandAll.classList.add('active');
+    if(collapseAll) collapseAll.classList.remove('active');
+  });
 }
 
 
