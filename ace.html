@@ -372,8 +372,10 @@ footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted)
 .pg-btn {min-width:36px;padding:6px 10px;border:1px solid #d8dee8;background:#fff;border-radius:8px;cursor:pointer;font-size:13px;color:#3358a0}
 .pg-btn.active {background:#3358a0;color:#fff;border-color:#3358a0}
 .pg-btn:disabled {opacity:.4;cursor:default}
-/* ===== LOGIN GATE（登陆门禁） ===== */
+/* ===== LOGIN GATE（邀请码门禁） ===== */
   body.locked .app {display:none}
+#loginForm {margin-top:26px}
+.login-btn {margin-top:4px}
 .login {position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
     background:linear-gradient(180deg,#f4f0e8,#ece5d6);padding:24px}
 body:not(.locked) .login {display:none}
@@ -384,23 +386,13 @@ body:not(.locked) .login {display:none}
     border-radius:8px;margin-bottom:14px;box-shadow:0 2px 6px rgba(33,30,25,.22)}
 .login-brand {font-family:var(--font-serif);font-weight:800;color:var(--brand);font-size:26px;letter-spacing:3px;line-height:1}
 .login-en {font-size:10px;letter-spacing:.22em;color:var(--teal);text-transform:uppercase;font-weight:700;margin-top:5px}
-.login-sub {font-size:12.5px;color:var(--muted);margin:12px 0 24px}
 .login-field {text-align:left;margin-bottom:14px}
-.login-field label {display:block;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--teal);
-    margin-bottom:6px;text-transform:uppercase}
-.login-field label .zh {font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);
-    margin-left:7px;font-size:11px}
 .login-input {width:100%;padding:12px 14px;font-size:15px;border:1px solid var(--line);border-radius:10px;
     background:#fff;color:var(--ink);outline:none;font-family:var(--font-sans);transition:.15s}
 .login-input:focus {border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
-.login-row {display:flex;align-items:center;justify-content:space-between;margin:2px 0 18px;font-size:13px;color:var(--muted)}
-.login-remember {display:inline-flex;align-items:center;gap:7px;cursor:pointer;user-select:none}
-.login-remember input {width:15px;height:15px;accent-color:var(--brand);cursor:pointer}
-.login-forgot {opacity:.6;cursor:default}
 .login-btn {width:100%;padding:13px;border:none;border-radius:10px;cursor:pointer;background:var(--brand);
     color:#fff;font-size:15px;font-weight:800;letter-spacing:2px;font-family:var(--font-sans);transition:.15s}
 .login-btn:hover {background:var(--teal)}
-.login-err {color:var(--vermilion);font-size:13px;font-weight:600;min-height:18px;margin-top:12px}
 .logout-btn {display:block;width:100%;margin-top:10px;padding:9px;border:1px solid var(--line);
     border-radius:999px;background:var(--card);color:var(--muted);font-size:12.5px;font-weight:700;cursor:pointer;transition:.15s}
 .logout-btn:hover {background:var(--brand-soft);color:var(--brand);border-color:var(--brand)}
@@ -489,22 +481,11 @@ body:not(.locked) .login {display:none}
     <span class="login-seal" data-page-node-id="olzCB0jxKL6esgZi1phZI7">i</span>
     <div class="login-brand" data-page-node-id="f8EwJD3d8PATxRtwnQFpEF">ihsan</div>
     <div class="login-en" data-page-node-id="FsI8dyjWRCD6pMXnJrYq8q">IHSAN ENGLISH</div>
-    <p class="login-sub" data-page-node-id="8D4wzFU9oIWCU7PnN0TL0o">英语学习核心手册 · 请先登录后使用</p>
     <form id="loginForm" autocomplete="off" novalidate data-page-node-id="04PNuKQijXu7YVb2X457VR">
-      <div class="login-field" data-page-node-id="ESAQXQ12GYcSKECGUuhA5w">
-        <label data-page-node-id="XF5zPpR40oHDFpqrcgwny3">EMAIL<span class="zh" data-page-node-id="dkWyM2NZrG2nLNyJtE4npy">邮箱 / 用户名</span></label>
-        <input class="login-input" id="loginEmail" type="text" inputmode="email" placeholder="请输入邮箱 / Enter your email" autocomplete="username" data-page-node-id="mKIxIvaPToLjlJuNVIJcQl" />
-      </div>
       <div class="login-field" data-page-node-id="7OvfUN7aXB8VRepobP6ASs">
-        <label data-page-node-id="auhqeyrgOxdtNh3e2ajy6M">PASSWORD<span class="zh" data-page-node-id="HjzdRSG8vzAWWHT5NTmEgU">密码</span></label>
-        <input class="login-input" id="loginPass" type="password" placeholder="请输入密码" autocomplete="current-password" data-page-node-id="dTGIUOKDTUx4uKGcvY5YvV" />
+        <input class="login-input" id="loginCode" type="password" inputmode="numeric" maxlength="8" placeholder="邀请码" autocomplete="off" data-page-node-id="dTGIUOKDTUx4uKGcvY5YvV" />
       </div>
-      <div class="login-row" data-page-node-id="6Nd4IFpaxXpGLQnZSi3uhl">
-        <label class="login-remember" data-page-node-id="yqG7OHJgAlAjvqNbQsLgLT"><input type="checkbox" id="loginRemember" checked data-page-node-id="ffkWrRxNoEP923XeCwMFYi" /> 记住我</label>
-        <span class="login-forgot" data-page-node-id="NfxbSXIqXGbaeW13b4lWiW">忘记密码？</span>
-      </div>
-      <button class="login-btn" type="submit" data-page-node-id="fw9TAhWbIxBYsgAnSBgdOG">登 录 · SIGN IN</button>
-      <div class="login-err" id="loginErr" data-page-node-id="urCu35qSnyF4MAMmjvy3FX"></div>
+      <button class="login-btn" type="submit" data-page-node-id="fw9TAhWbIxBYsgAnSBgdOG">进 入 · ENTER</button>
     </form>
   </div>
 </div>
@@ -526,8 +507,8 @@ body:not(.locked) .login {display:none}
     <div class="menu" data-page-node-id="CtdtLZfWKNknpnSpAPq9vq">
       <div class="menu-group" data-page-node-id="WuFGCNq45keAecEQukGPnS">
         <div class="menu-label" data-page-node-id="zzXf4uK8JMDnbgaVmSbnRl">词汇与短语</div>
-        <button class="menu-btn" data-view="phrbank" data-page-node-id="z8lwm88gHT7rna8AEU41QY"><span class="mi-no" data-page-node-id="HeKbR6fiTsqaSkSPiaETU5">01</span><span class="mi-tx" data-page-node-id="k7osCWWONpYaxLrsBpbCzV">🗂 英语词组大全</span></button>
-        <button class="menu-btn" data-view="verb" data-page-node-id="KQFz4Y7OYR0DuGblhNy6gm"><span class="mi-no" data-page-node-id="fJEpqbs3V7shWIjLYFDoK1">02</span><span class="mi-tx" data-page-node-id="9OwxuWfvhRdghd1VCOpFeX">📖 动词（动词大全 + 不定式）</span></button>
+        <button class="menu-btn" data-view="verb" data-page-node-id="KQFz4Y7OYR0DuGblhNy6gm"><span class="mi-no" data-page-node-id="fJEpqbs3V7shWIjLYFDoK1">01</span><span class="mi-tx" data-page-node-id="9OwxuWfvhRdghd1VCOpFeX">📖 动词（动词大全 + 不定式）</span></button>
+        <button class="menu-btn" data-view="phrbank" data-page-node-id="z8lwm88gHT7rna8AEU41QY"><span class="mi-no" data-page-node-id="HeKbR6fiTsqaSkSPiaETU5">02</span><span class="mi-tx" data-page-node-id="k7osCWWONpYaxLrsBpbCzV">🗂 英语词组大全</span></button>
       </div>
       <div class="menu-group" data-page-node-id="564v2FTLttH5uDflkMV0Xi">
         <div class="menu-label" data-page-node-id="hlSHLvbUECJEEl1uAz7WsN">教材</div>
@@ -3105,8 +3086,7 @@ document.querySelectorAll('.verb-toggle button').forEach(b=>{
 
 <script>
 (function(){
-  var ALLOWED_EMAIL = "ihsan.lee@outlook.com";
-  var ALLOWED_PASS = "123";
+  var INVITE_CODE = "1120";
   var KEY = "ace_auth";
   var body = document.body;
   function getAuth(){
@@ -3115,22 +3095,16 @@ document.querySelectorAll('.verb-toggle button').forEach(b=>{
       return a ? JSON.parse(a) : null;
     }catch(e){ return null; }
   }
-  function setAuth(remember){
-    var payload = JSON.stringify({ok:true, email:ALLOWED_EMAIL, ts:Date.now()});
-    try{
-      if(remember){ localStorage.setItem(KEY, payload); sessionStorage.removeItem(KEY); }
-      else { sessionStorage.setItem(KEY, payload); localStorage.removeItem(KEY); }
-    }catch(e){}
+  function setAuth(){
+    var payload = JSON.stringify({ok:true, ts:Date.now()});
+    try{ localStorage.setItem(KEY, payload); }catch(e){}
   }
   function clearAuth(){ try{ localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); }catch(e){} }
   function unlock(){ body.classList.remove("locked"); }
   function lock(){ body.classList.add("locked"); }
 
   var form = document.getElementById("loginForm");
-  var emailEl = document.getElementById("loginEmail");
-  var passEl = document.getElementById("loginPass");
-  var remEl = document.getElementById("loginRemember");
-  var errEl = document.getElementById("loginErr");
+  var codeEl = document.getElementById("loginCode");
 
   var auth = getAuth();
   if(auth && auth.ok){ unlock(); }
@@ -3138,26 +3112,16 @@ document.querySelectorAll('.verb-toggle button').forEach(b=>{
   if(form){
     form.addEventListener("submit", function(e){
       e.preventDefault();
-      if(errEl) errEl.textContent = "";
-      var email = (emailEl.value || "").trim().toLowerCase();
-      var pass = passEl.value || "";
-      if(!pass){ if(errEl) errEl.textContent = "请输入密码 / Please enter your password"; return; }
-      if(email !== ALLOWED_EMAIL.toLowerCase() || pass !== ALLOWED_PASS){
-        if(errEl) errEl.textContent = "用户名或密码错误 / Invalid username or password";
-        passEl.value = "";
-        return;
-      }
-      setAuth(remEl.checked);
-      unlock();
+      var code = (codeEl.value || "").trim();
+      if(code === INVITE_CODE){ setAuth(); unlock(); }
+      else { codeEl.value = ""; }
     });
   }
   var logoutBtn = document.getElementById("logoutBtn");
   if(logoutBtn){
     logoutBtn.addEventListener("click", function(){
       clearAuth();
-      if(emailEl) emailEl.value = "";
-      if(passEl) passEl.value = "";
-      if(errEl) errEl.textContent = "";
+      if(codeEl) codeEl.value = "";
       lock();
     });
   }
