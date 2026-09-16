@@ -1,0 +1,1271 @@
+{
+  "meta": {
+    "title": "词根词缀",
+    "total": 90,
+    "counts": { "prefix": 30, "suffix": 30, "root": 30 },
+    "note": "供离线英语构词法查询：搜索、按类筛选、展开看例词、点例词朗读。",
+    "builtAt": "2026-09-17"
+  },
+  "items": [
+    {
+      "id": "p01",
+      "type": "prefix",
+      "form": "un-",
+      "meaning": "不、无；相反动作",
+      "examples": [
+        { "w": "unhappy", "zh": "不快乐的" },
+        { "w": "unlock", "zh": "开锁；解锁" },
+        { "w": "unusual", "zh": "不寻常的" },
+        { "w": "unfair", "zh": "不公平的" },
+        { "w": "unpack", "zh": "拆开包裹" }
+      ],
+      "tip": "un- 加形容词表否定，加动词表相反动作（lock 锁 → unlock 解锁）。"
+    },
+    {
+      "id": "p02",
+      "type": "prefix",
+      "form": "re-",
+      "meaning": "再；重新；回",
+      "examples": [
+        { "w": "return", "zh": "返回" },
+        { "w": "review", "zh": "复习；评论" },
+        { "w": "recall", "zh": "回忆；召回" },
+        { "w": "rebuild", "zh": "重建" },
+        { "w": "reform", "zh": "改革" }
+      ],
+      "tip": "re- 常表『再一次』（review 复习、rebuild 重建），有时表『回』（return 返回）。"
+    },
+    {
+      "id": "p03",
+      "type": "prefix",
+      "form": "in-(im-/il-/ir-)",
+      "meaning": "不、非",
+      "examples": [
+        { "w": "incorrect", "zh": "不正确的" },
+        { "w": "informal", "zh": "非正式的" },
+        { "w": "impossible", "zh": "不可能的" },
+        { "w": "illegal", "zh": "非法的" },
+        { "w": "irregular", "zh": "不规则的" }
+      ],
+      "tip": "in- 受后面辅音同化：b/m/p 前变 im-（impossible），l 前变 il-（illegal），r 前变 ir-（irregular）。"
+    },
+    {
+      "id": "p04",
+      "type": "prefix",
+      "form": "dis-",
+      "meaning": "不；相反；除去",
+      "examples": [
+        { "w": "disagree", "zh": "不同意" },
+        { "w": "disappear", "zh": "消失" },
+        { "w": "discover", "zh": "发现" },
+        { "w": "dislike", "zh": "不喜欢" },
+        { "w": "dismiss", "zh": "解雇；解散" }
+      ],
+      "tip": "dis- 表否定或相反（agree 同意 → disagree 不同意；appear 出现 → disappear 消失）。"
+    },
+    {
+      "id": "p05",
+      "type": "prefix",
+      "form": "mis-",
+      "meaning": "错；坏",
+      "examples": [
+        { "w": "mistake", "zh": "错误" },
+        { "w": "misunderstand", "zh": "误解" },
+        { "w": "mislead", "zh": "误导" },
+        { "w": "misspell", "zh": "拼错" },
+        { "w": "misbehave", "zh": "行为不端" }
+      ],
+      "tip": "mis- 表『错误、坏』（understand 理解 → misunderstand 误解）。"
+    },
+    {
+      "id": "p06",
+      "type": "prefix",
+      "form": "pre-",
+      "meaning": "在前；预先",
+      "examples": [
+        { "w": "preview", "zh": "预览" },
+        { "w": "predict", "zh": "预测" },
+        { "w": "prevent", "zh": "防止" },
+        { "w": "prepare", "zh": "准备" },
+        { "w": "precaution", "zh": "预防" }
+      ],
+      "tip": "pre- 表『在…之前』（view 看 → preview 预览；dict 说 → predict 预测）。"
+    },
+    {
+      "id": "p07",
+      "type": "prefix",
+      "form": "post-",
+      "meaning": "后；之后",
+      "examples": [
+        { "w": "postwar", "zh": "战后的" },
+        { "w": "postpone", "zh": "推迟" },
+        { "w": "postgraduate", "zh": "研究生" },
+        { "w": "postscript", "zh": "附言" },
+        { "w": "postnatal", "zh": "出生后的" }
+      ],
+      "tip": "post- 与 pre- 相对，表『在…之后』（war 战争 → postwar 战后的）。"
+    },
+    {
+      "id": "p08",
+      "type": "prefix",
+      "form": "sub-",
+      "meaning": "下；次；副",
+      "examples": [
+        { "w": "subway", "zh": "地铁" },
+        { "w": "submarine", "zh": "潜水艇" },
+        { "w": "submit", "zh": "提交；服从" },
+        { "w": "subtract", "zh": "减去" },
+        { "w": "suburb", "zh": "郊区" }
+      ],
+      "tip": "sub- 表『在下方、次级』（way 路 → subway 地下铁道；marine 海 → submarine 潜水艇）。"
+    },
+    {
+      "id": "p09",
+      "type": "prefix",
+      "form": "super-",
+      "meaning": "上；超",
+      "examples": [
+        { "w": "supermarket", "zh": "超市" },
+        { "w": "superman", "zh": "超人" },
+        { "w": "superficial", "zh": "表面的" },
+        { "w": "superstar", "zh": "超级明星" },
+        { "w": "supervise", "zh": "监督" }
+      ],
+      "tip": "super- 表『上、超过、超级』（market 市场 → supermarket 超市）。"
+    },
+    {
+      "id": "p10",
+      "type": "prefix",
+      "form": "inter-",
+      "meaning": "在…之间",
+      "examples": [
+        { "w": "international", "zh": "国际的" },
+        { "w": "interview", "zh": "面试；采访" },
+        { "w": "interact", "zh": "互动" },
+        { "w": "internet", "zh": "互联网" },
+        { "w": "interior", "zh": "内部的" }
+      ],
+      "tip": "inter- 表『在…之间、相互』（national 国家的 → international 国际的）。"
+    },
+    {
+      "id": "p11",
+      "type": "prefix",
+      "form": "trans-",
+      "meaning": "跨越；转移",
+      "examples": [
+        { "w": "transport", "zh": "运输" },
+        { "w": "translate", "zh": "翻译" },
+        { "w": "transfer", "zh": "转移" },
+        { "w": "transform", "zh": "转变" },
+        { "w": "transparent", "zh": "透明的" }
+      ],
+      "tip": "trans- 表『横越、转移』（port 运 → transport 运输；form 形 → transform 转变）。"
+    },
+    {
+      "id": "p12",
+      "type": "prefix",
+      "form": "anti-",
+      "meaning": "反对；抗",
+      "examples": [
+        { "w": "antibody", "zh": "抗体" },
+        { "w": "antiwar", "zh": "反战的" },
+        { "w": "antisocial", "zh": "反社会的" },
+        { "w": "antibiotic", "zh": "抗生素" },
+        { "w": "antithesis", "zh": "对立面" }
+      ],
+      "tip": "anti- 来自希腊语，表『反对、对抗』（war 战争 → antiwar 反战的）。"
+    },
+    {
+      "id": "p13",
+      "type": "prefix",
+      "form": "semi-",
+      "meaning": "半",
+      "examples": [
+        { "w": "semicircle", "zh": "半圆" },
+        { "w": "semiconductor", "zh": "半导体" },
+        { "w": "semifinal", "zh": "半决赛" },
+        { "w": "semicolon", "zh": "分号" },
+        { "w": "semiannual", "zh": "半年一次的" }
+      ],
+      "tip": "semi- 表『一半』（circle 圆 → semicircle 半圆）。"
+    },
+    {
+      "id": "p14",
+      "type": "prefix",
+      "form": "bi-",
+      "meaning": "二；双",
+      "examples": [
+        { "w": "bicycle", "zh": "自行车" },
+        { "w": "bilingual", "zh": "双语的" },
+        { "w": "bilateral", "zh": "双边的" },
+        { "w": "biped", "zh": "两足动物" },
+        { "w": "biceps", "zh": "二头肌" }
+      ],
+      "tip": "bi- 表『二、双』（lingual 语言的 → bilingual 双语的）。注意 biology 的 bi- 来自『生命』而非『二』。"
+    },
+    {
+      "id": "p15",
+      "type": "prefix",
+      "form": "multi-",
+      "meaning": "多",
+      "examples": [
+        { "w": "multiple", "zh": "多重的" },
+        { "w": "multiply", "zh": "乘；繁殖" },
+        { "w": "multimedia", "zh": "多媒体" },
+        { "w": "multinational", "zh": "多国的" },
+        { "w": "multifunction", "zh": "多功能的" }
+      ],
+      "tip": ""
+    },
+    {
+      "id": "p16",
+      "type": "prefix",
+      "form": "over-",
+      "meaning": "过度；在…上方",
+      "examples": [
+        { "w": "overwork", "zh": "过度工作" },
+        { "w": "overcome", "zh": "克服" },
+        { "w": "overweight", "zh": "超重的" },
+        { "w": "overlook", "zh": "俯瞰；忽略" },
+        { "w": "overuse", "zh": "过度使用" }
+      ],
+      "tip": "over- 表『在上方』或『过度』（work 工作 → overwork 过度工作）。"
+    },
+    {
+      "id": "p17",
+      "type": "prefix",
+      "form": "under-",
+      "meaning": "不足；在…下方",
+      "examples": [
+        { "w": "underground", "zh": "地下的" },
+        { "w": "underline", "zh": "在…下划线" },
+        { "w": "underestimate", "zh": "低估" },
+        { "w": "undergo", "zh": "经历；承受" },
+        { "w": "underweight", "zh": "体重不足的" }
+      ],
+      "tip": "under- 表『下方』或『不足』（estimate 估计 → underestimate 低估），与 over- 相对。"
+    },
+    {
+      "id": "p18",
+      "type": "prefix",
+      "form": "out-",
+      "meaning": "超过；在外",
+      "examples": [
+        { "w": "outdoor", "zh": "户外的" },
+        { "w": "outcome", "zh": "结果" },
+        { "w": "outline", "zh": "大纲；轮廓" },
+        { "w": "output", "zh": "产量；输出" },
+        { "w": "outdo", "zh": "胜过" }
+      ],
+      "tip": "out- 表『向外』或『超过』（do 做 → outdo 胜过；door 门 → outdoor 户外的）。"
+    },
+    {
+      "id": "p19",
+      "type": "prefix",
+      "form": "up-",
+      "meaning": "向上；加强",
+      "examples": [
+        { "w": "upgrade", "zh": "升级" },
+        { "w": "upload", "zh": "上传" },
+        { "w": "uphold", "zh": "支持；维护" },
+        { "w": "update", "zh": "更新" },
+        { "w": "upset", "zh": "使心烦；弄翻" }
+      ],
+      "tip": "up- 表『向上』或动作加强（grade 等级 → upgrade 升级；load 装载 → upload 上传）。"
+    },
+    {
+      "id": "p20",
+      "type": "prefix",
+      "form": "down-",
+      "meaning": "向下；降低",
+      "examples": [
+        { "w": "download", "zh": "下载" },
+        { "w": "downhill", "zh": "下坡的" },
+        { "w": "downgrade", "zh": "降级" },
+        { "w": "downfall", "zh": "垮台" },
+        { "w": "downstairs", "zh": "在楼下" }
+      ],
+      "tip": "down- 表『向下、降低』，与 up- 相对（load 装载 → download 下载）。"
+    },
+    {
+      "id": "p21",
+      "type": "prefix",
+      "form": "fore-",
+      "meaning": "前；预先",
+      "examples": [
+        { "w": "forecast", "zh": "预报" },
+        { "w": "foresee", "zh": "预见" },
+        { "w": "foreword", "zh": "前言" },
+        { "w": "forehead", "zh": "前额" },
+        { "w": "forearm", "zh": "前臂" }
+      ],
+      "tip": "fore- 表『在前面、预先』（cast 投 → forecast 预报；see 看 → foresee 预见）。"
+    },
+    {
+      "id": "p22",
+      "type": "prefix",
+      "form": "co-",
+      "meaning": "共同；一起",
+      "examples": [
+        { "w": "cooperate", "zh": "合作" },
+        { "w": "coauthor", "zh": "合著者" },
+        { "w": "coworker", "zh": "同事" },
+        { "w": "coexist", "zh": "共存" },
+        { "w": "coordinate", "zh": "协调" }
+      ],
+      "tip": "co- 表『共同、一起』（operate 操作 → cooperate 合作），常拼作 com-/con-（combine, connect）。"
+    },
+    {
+      "id": "p23",
+      "type": "prefix",
+      "form": "de-",
+      "meaning": "去；下；否定",
+      "examples": [
+        { "w": "decrease", "zh": "减少" },
+        { "w": "decode", "zh": "解码" },
+        { "w": "depart", "zh": "离开" },
+        { "w": "decline", "zh": "下降；拒绝" },
+        { "w": "delete", "zh": "删除" }
+      ],
+      "tip": "de- 常表『去除、向下、否定』（code 代码 → decode 解码；crease 增长 → decrease 减少）。"
+    },
+    {
+      "id": "p24",
+      "type": "prefix",
+      "form": "en-(em-)",
+      "meaning": "使；进入",
+      "examples": [
+        { "w": "enable", "zh": "使能够" },
+        { "w": "enlarge", "zh": "扩大" },
+        { "w": "encourage", "zh": "鼓励" },
+        { "w": "employ", "zh": "雇佣" },
+        { "w": "embrace", "zh": "拥抱；包含" }
+      ],
+      "tip": "en- 表『使…、进入』，在 b/m/p 前变 em-（ploy 用 → employ 雇佣）。"
+    },
+    {
+      "id": "p25",
+      "type": "prefix",
+      "form": "ex-",
+      "meaning": "出；前",
+      "examples": [
+        { "w": "exit", "zh": "出口" },
+        { "w": "export", "zh": "出口；输出" },
+        { "w": "exclude", "zh": "排除" },
+        { "w": "expose", "zh": "暴露" },
+        { "w": "ex-wife", "zh": "前妻" }
+      ],
+      "tip": "ex- 表『出、向外』或『前任』（port 运 → export 出口；wife 妻子 → ex-wife 前妻）。"
+    },
+    {
+      "id": "p26",
+      "type": "prefix",
+      "form": "non-",
+      "meaning": "不；非",
+      "examples": [
+        { "w": "nonstop", "zh": "不停的" },
+        { "w": "nonsense", "zh": "胡说" },
+        { "w": "nonprofit", "zh": "非营利的" },
+        { "w": "nonfiction", "zh": "非虚构" },
+        { "w": "nonsmoker", "zh": "不吸烟的人" }
+      ],
+      "tip": "non- 表『不、非』（fiction 小说 → nonfiction 非虚构作品），语气比 un-/in- 更中性。"
+    },
+    {
+      "id": "p27",
+      "type": "prefix",
+      "form": "pro-",
+      "meaning": "前；支持；向前",
+      "examples": [
+        { "w": "progress", "zh": "进步" },
+        { "w": "project", "zh": "项目；投射" },
+        { "w": "propose", "zh": "提议" },
+        { "w": "promote", "zh": "促进；提升" },
+        { "w": "protect", "zh": "保护" }
+      ],
+      "tip": "pro- 表『向前、支持』（gress 走 → progress 进步；pose 放 → propose 提议）。"
+    },
+    {
+      "id": "p28",
+      "type": "prefix",
+      "form": "auto-",
+      "meaning": "自",
+      "examples": [
+        { "w": "automatic", "zh": "自动的" },
+        { "w": "automobile", "zh": "汽车" },
+        { "w": "autobiography", "zh": "自传" },
+        { "w": "autonomous", "zh": "自治的" },
+        { "w": "automate", "zh": "使自动化" }
+      ],
+      "tip": "auto- 来自希腊语，表『自己、自动』（biography 传记 → autobiography 自传）。"
+    },
+    {
+      "id": "p29",
+      "type": "prefix",
+      "form": "micro-",
+      "meaning": "微小",
+      "examples": [
+        { "w": "microscope", "zh": "显微镜" },
+        { "w": "microphone", "zh": "麦克风" },
+        { "w": "microwave", "zh": "微波" },
+        { "w": "microcomputer", "zh": "微型计算机" },
+        { "w": "microbiology", "zh": "微生物学" }
+      ],
+      "tip": "micro- 表『微小』（scope 镜 → microscope 显微镜）。"
+    },
+    {
+      "id": "p30",
+      "type": "prefix",
+      "form": "tele-",
+      "meaning": "远",
+      "examples": [
+        { "w": "telephone", "zh": "电话" },
+        { "w": "television", "zh": "电视" },
+        { "w": "telescope", "zh": "望远镜" },
+        { "w": "telegram", "zh": "电报" },
+        { "w": "telecommunication", "zh": "电信" }
+      ],
+      "tip": "tele- 来自希腊语，表『远』（phone 声音 → telephone 电话；scope 镜 → telescope 望远镜）。"
+    },
+    {
+      "id": "s01",
+      "type": "suffix",
+      "form": "-able/-ible",
+      "meaning": "可…的（形容词）",
+      "examples": [
+        { "w": "comfortable", "zh": "舒适的" },
+        { "w": "possible", "zh": "可能的" },
+        { "w": "responsible", "zh": "负责任的" },
+        { "w": "flexible", "zh": "灵活的" },
+        { "w": "accessible", "zh": "可进入的" }
+      ],
+      "tip": "以 -able 多见（comfortable），以 -ible 多见于拉丁来源词（possible, flexible）。"
+    },
+    {
+      "id": "s02",
+      "type": "suffix",
+      "form": "-al",
+      "meaning": "…的（形容词）",
+      "examples": [
+        { "w": "natural", "zh": "自然的" },
+        { "w": "final", "zh": "最终的" },
+        { "w": "original", "zh": "原始的" },
+        { "w": "medical", "zh": "医学的" },
+        { "w": "physical", "zh": "身体的" }
+      ],
+      "tip": ""
+    },
+    {
+      "id": "s03",
+      "type": "suffix",
+      "form": "-ance,-ence",
+      "meaning": "名词：性质、动作",
+      "examples": [
+        { "w": "importance", "zh": "重要性" },
+        { "w": "difference", "zh": "差异" },
+        { "w": "reference", "zh": "参考" },
+        { "w": "patience", "zh": "耐心" },
+        { "w": "existence", "zh": "存在" }
+      ],
+      "tip": "发清辅音后用 -ance（importance），浊辅音或某些词用 -ence（difference）。"
+    },
+    {
+      "id": "s04",
+      "type": "suffix",
+      "form": "-tion,-ation",
+      "meaning": "名词：动作、状态",
+      "examples": [
+        { "w": "information", "zh": "信息" },
+        { "w": "education", "zh": "教育" },
+        { "w": "mention", "zh": "提及" },
+        { "w": "operation", "zh": "操作" },
+        { "w": "invitation", "zh": "邀请" }
+      ],
+      "tip": "-ate 动词多对应 -ation（educate→education），其他常接 -tion（inform→information）。"
+    },
+    {
+      "id": "s05",
+      "type": "suffix",
+      "form": "-dom",
+      "meaning": "名词：领域、状态",
+      "examples": [
+        { "w": "freedom", "zh": "自由" },
+        { "w": "kingdom", "zh": "王国" },
+        { "w": "wisdom", "zh": "智慧" },
+        { "w": "boredom", "zh": "厌烦" },
+        { "w": "officialdom", "zh": "官僚阶层" }
+      ],
+      "tip": "-dom 表『领域、状态或群体』（free 自由 → freedom 自由；king 国王 → kingdom 王国）。"
+    },
+    {
+      "id": "s06",
+      "type": "suffix",
+      "form": "-ee",
+      "meaning": "名词：受事者",
+      "examples": [
+        { "w": "employee", "zh": "雇员" },
+        { "w": "trainee", "zh": "受训者" },
+        { "w": "refugee", "zh": "难民" },
+        { "w": "interviewee", "zh": "被面试者" },
+        { "w": "absentee", "zh": "缺席者" }
+      ],
+      "tip": "-ee 表『动作承受者』（employ 雇佣 → employee 被雇者），与 -er/-or 施事者相对。"
+    },
+    {
+      "id": "s07",
+      "type": "suffix",
+      "form": "-er,-or",
+      "meaning": "名词：施事者",
+      "examples": [
+        { "w": "teacher", "zh": "教师" },
+        { "w": "writer", "zh": "作家" },
+        { "w": "actor", "zh": "演员" },
+        { "w": "director", "zh": "导演" },
+        { "w": "inventor", "zh": "发明家" }
+      ],
+      "tip": "通常 -er（teacher），-or 多见于拉丁来源（actor, director）。"
+    },
+    {
+      "id": "s08",
+      "type": "suffix",
+      "form": "-ess",
+      "meaning": "名词：女性",
+      "examples": [
+        { "w": "actress", "zh": "女演员" },
+        { "w": "princess", "zh": "公主" },
+        { "w": "hostess", "zh": "女主人" },
+        { "w": "waitress", "zh": "女服务员" },
+        { "w": "goddess", "zh": "女神" }
+      ],
+      "tip": "-ess 表女性（actor→actress 女演员），现代英语中部分用法被认为过时。"
+    },
+    {
+      "id": "s09",
+      "type": "suffix",
+      "form": "-ful",
+      "meaning": "充满…的（形容词）",
+      "examples": [
+        { "w": "careful", "zh": "小心的" },
+        { "w": "helpful", "zh": "有帮助的" },
+        { "w": "beautiful", "zh": "美丽的" },
+        { "w": "useful", "zh": "有用的" },
+        { "w": "grateful", "zh": "感激的" }
+      ],
+      "tip": "加在名词后表『充满…的』（care 关心 → careful 小心的）。"
+    },
+    {
+      "id": "s10",
+      "type": "suffix",
+      "form": "-fy",
+      "meaning": "使…（动词化）",
+      "examples": [
+        { "w": "simplify", "zh": "简化" },
+        { "w": "identify", "zh": "识别" },
+        { "w": "clarify", "zh": "澄清" },
+        { "w": "notify", "zh": "通知" },
+        { "w": "purify", "zh": "净化" }
+      ],
+      "tip": "-fy 表『使…化』（simple 简单 → simplify 简化；clear 清楚 → clarify 澄清）。"
+    },
+    {
+      "id": "s11",
+      "type": "suffix",
+      "form": "-hood",
+      "meaning": "名词：状态、身份",
+      "examples": [
+        { "w": "childhood", "zh": "童年" },
+        { "w": "neighborhood", "zh": "邻里" },
+        { "w": "brotherhood", "zh": "兄弟情谊" },
+        { "w": "motherhood", "zh": "母性" },
+        { "w": "likelihood", "zh": "可能性" }
+      ],
+      "tip": "-hood 表『时期、身份或群体』（child 儿童 → childhood 童年）。"
+    },
+    {
+      "id": "s12",
+      "type": "suffix",
+      "form": "-ic",
+      "meaning": "…的（形容词）",
+      "examples": [
+        { "w": "historic", "zh": "历史的" },
+        { "w": "scientific", "zh": "科学的" },
+        { "w": "economic", "zh": "经济的" },
+        { "w": "academic", "zh": "学术的" },
+        { "w": "specific", "zh": "具体的" }
+      ],
+      "tip": "与 -ical 常成对出现且意义有别（economic 经济的 / economical 节约的）。"
+    },
+    {
+      "id": "s13",
+      "type": "suffix",
+      "form": "-ical",
+      "meaning": "…的（形容词）",
+      "examples": [
+        { "w": "historical", "zh": "历史的" },
+        { "w": "political", "zh": "政治的" },
+        { "w": "musical", "zh": "音乐的" },
+        { "w": "logical", "zh": "逻辑学的" },
+        { "w": "technical", "zh": "技术的" }
+      ],
+      "tip": "与 -ic 近义，但常表『与…相关的学问/学科』（history→historical 历史的）。"
+    },
+    {
+      "id": "s14",
+      "type": "suffix",
+      "form": "-ish",
+      "meaning": "有点…的；…语的",
+      "examples": [
+        { "w": "childish", "zh": "孩子气的" },
+        { "w": "foolish", "zh": "愚蠢的" },
+        { "w": "selfish", "zh": "自私的" },
+        { "w": "British", "zh": "英国的" },
+        { "w": "reddish", "zh": "微红的" }
+      ],
+      "tip": "加形容词表『有点…』（fool 傻 → foolish），加国名表『…语的』（Britain→British）。"
+    },
+    {
+      "id": "s15",
+      "type": "suffix",
+      "form": "-ism",
+      "meaning": "主义、学说（名词）",
+      "examples": [
+        { "w": "tourism", "zh": "旅游业" },
+        { "w": "capitalism", "zh": "资本主义" },
+        { "w": "realism", "zh": "现实主义" },
+        { "w": "racism", "zh": "种族主义" },
+        { "w": "optimism", "zh": "乐观主义" }
+      ],
+      "tip": "表『主义、学说或倾向』（real 现实 → realism 现实主义）。"
+    },
+    {
+      "id": "s16",
+      "type": "suffix",
+      "form": "-ist",
+      "meaning": "…主义者、专家",
+      "examples": [
+        { "w": "scientist", "zh": "科学家" },
+        { "w": "artist", "zh": "艺术家" },
+        { "w": "tourist", "zh": "游客" },
+        { "w": "journalist", "zh": "记者" },
+        { "w": "dentist", "zh": "牙医" }
+      ],
+      "tip": "表『从事…的人、…主义者』（science 科学 → scientist 科学家）。"
+    },
+    {
+      "id": "s17",
+      "type": "suffix",
+      "form": "-ity",
+      "meaning": "名词：性质、状态",
+      "examples": [
+        { "w": "ability", "zh": "能力" },
+        { "w": "possibility", "zh": "可能性" },
+        { "w": "reality", "zh": "现实" },
+        { "w": "equality", "zh": "平等" },
+        { "w": "security", "zh": "安全" }
+      ],
+      "tip": "形容词 + -ity 构成抽象名词（possible→possibility 可能性）。"
+    },
+    {
+      "id": "s18",
+      "type": "suffix",
+      "form": "-ive",
+      "meaning": "倾向…的（形容词）",
+      "examples": [
+        { "w": "active", "zh": "活跃的" },
+        { "w": "creative", "zh": "创造性的" },
+        { "w": "attractive", "zh": "吸引人的" },
+        { "w": "effective", "zh": "有效的" },
+        { "w": "protective", "zh": "保护的" }
+      ],
+      "tip": "表『有…倾向或性质的』（act 行动 → active 活跃的）。"
+    },
+    {
+      "id": "s19",
+      "type": "suffix",
+      "form": "-ize",
+      "meaning": "使…（动词化）",
+      "examples": [
+        { "w": "realize", "zh": "实现" },
+        { "w": "organize", "zh": "组织" },
+        { "w": "modernize", "zh": "使现代化" },
+        { "w": "memorize", "zh": "记忆" },
+        { "w": "summarize", "zh": "总结" }
+      ],
+      "tip": "英式常作 -ise（organise），美式多作 -ize；表『使成为…』。"
+    },
+    {
+      "id": "s20",
+      "type": "suffix",
+      "form": "-less",
+      "meaning": "无…的（形容词）",
+      "examples": [
+        { "w": "homeless", "zh": "无家可归的" },
+        { "w": "careless", "zh": "粗心的" },
+        { "w": "useless", "zh": "无用的" },
+        { "w": "endless", "zh": "无尽的" },
+        { "w": "fearless", "zh": "无畏的" }
+      ],
+      "tip": "表『没有…』（home 家 → homeless 无家可归的），是 -ful 的反义。"
+    },
+    {
+      "id": "s21",
+      "type": "suffix",
+      "form": "-ly",
+      "meaning": "副词化；…的",
+      "examples": [
+        { "w": "quickly", "zh": "快速地" },
+        { "w": "friendly", "zh": "友好的" },
+        { "w": "daily", "zh": "日常的" },
+        { "w": "badly", "zh": "糟糕地" },
+        { "w": "lonely", "zh": "孤独的" }
+      ],
+      "tip": "最常见副词后缀（quick→quickly）；加名词常成形容词（friend→friendly 友好的）。"
+    },
+    {
+      "id": "s22",
+      "type": "suffix",
+      "form": "-ment",
+      "meaning": "名词：结果、状态",
+      "examples": [
+        { "w": "development", "zh": "发展" },
+        { "w": "environment", "zh": "环境" },
+        { "w": "government", "zh": "政府" },
+        { "w": "movement", "zh": "运动" },
+        { "w": "agreement", "zh": "协议" }
+      ],
+      "tip": "动词 + -ment 成名词（develop→development 发展）。"
+    },
+    {
+      "id": "s23",
+      "type": "suffix",
+      "form": "-ness",
+      "meaning": "名词：性质、状态",
+      "examples": [
+        { "w": "happiness", "zh": "幸福" },
+        { "w": "kindness", "zh": "善良" },
+        { "w": "illness", "zh": "疾病" },
+        { "w": "weakness", "zh": "弱点" },
+        { "w": "darkness", "zh": "黑暗" }
+      ],
+      "tip": "形容词 + -ness 成抽象名词（happy→happiness 幸福）。"
+    },
+    {
+      "id": "s24",
+      "type": "suffix",
+      "form": "-ous",
+      "meaning": "充满…的（形容词）",
+      "examples": [
+        { "w": "dangerous", "zh": "危险的" },
+        { "w": "famous", "zh": "著名的" },
+        { "w": "nervous", "zh": "紧张的" },
+        { "w": "enormous", "zh": "巨大的" },
+        { "w": "curious", "zh": "好奇的" }
+      ],
+      "tip": "表『充满…的、具有…性质的』（danger 危险 → dangerous 危险的）。"
+    },
+    {
+      "id": "s25",
+      "type": "suffix",
+      "form": "-ship",
+      "meaning": "名词：身份、技能",
+      "examples": [
+        { "w": "friendship", "zh": "友谊" },
+        { "w": "leadership", "zh": "领导力" },
+        { "w": "membership", "zh": "会员资格" },
+        { "w": "scholarship", "zh": "奖学金" },
+        { "w": "relationship", "zh": "关系" }
+      ],
+      "tip": "表『身份、关系或技能』（friend 朋友 → friendship 友谊）。"
+    },
+    {
+      "id": "s26",
+      "type": "suffix",
+      "form": "-ward",
+      "meaning": "向…方向",
+      "examples": [
+        { "w": "forward", "zh": "向前" },
+        { "w": "backward", "zh": "向后" },
+        { "w": "upward", "zh": "向上" },
+        { "w": "downward", "zh": "向下" },
+        { "w": "inward", "zh": "向内" }
+      ],
+      "tip": "-ward 表方向（forward 向前），复数 -wards 也常见（towards）。"
+    },
+    {
+      "id": "s27",
+      "type": "suffix",
+      "form": "-eer",
+      "meaning": "从事…的人",
+      "examples": [
+        { "w": "engineer", "zh": "工程师" },
+        { "w": "volunteer", "zh": "志愿者" },
+        { "w": "pioneer", "zh": "先驱" },
+        { "w": "mountaineer", "zh": "登山者" },
+        { "w": "auctioneer", "zh": "拍卖师" }
+      ],
+      "tip": "表『从事…职业的人』（mountain 山 → mountaineer 登山者），常带积极或专业色彩。"
+    },
+    {
+      "id": "s28",
+      "type": "suffix",
+      "form": "-en",
+      "meaning": "使…；由…制成",
+      "examples": [
+        { "w": "sharpen", "zh": "削尖" },
+        { "w": "weaken", "zh": "削弱" },
+        { "w": "wooden", "zh": "木制的" },
+        { "w": "golden", "zh": "金色的" },
+        { "w": "lengthen", "zh": "加长" }
+      ],
+      "tip": "作动词后缀表『使…』（sharp→sharpen 削尖）；作形容词表『由…制成』（wood→wooden 木制的）。"
+    },
+    {
+      "id": "s29",
+      "type": "suffix",
+      "form": "-ary",
+      "meaning": "…的；场所、人",
+      "examples": [
+        { "w": "library", "zh": "图书馆" },
+        { "w": "secretary", "zh": "秘书" },
+        { "w": "military", "zh": "军事的" },
+        { "w": "voluntary", "zh": "自愿的" },
+        { "w": "dictionary", "zh": "字典" }
+      ],
+      "tip": "作形容词表『与…相关的』（military 军事的），作名词表场所或人（library 图书馆）。"
+    },
+    {
+      "id": "s30",
+      "type": "suffix",
+      "form": "-ate",
+      "meaning": "使…；…的",
+      "examples": [
+        { "w": "create", "zh": "创造" },
+        { "w": "celebrate", "zh": "庆祝" },
+        { "w": "activate", "zh": "激活" },
+        { "w": "motivate", "zh": "激励" },
+        { "w": "separate", "zh": "分开" }
+      ],
+      "tip": "动词后缀表『使…』（active→activate 激活）；也构成形容词（separate 分开的）。"
+    },
+    {
+      "id": "r01",
+      "type": "root",
+      "form": "spect",
+      "meaning": "看（常以 -spect / -spic 出现）",
+      "examples": [
+        { "w": "inspect", "zh": "检查；视察" },
+        { "w": "respect", "zh": "尊敬；方面" },
+        { "w": "aspect", "zh": "方面；外观" },
+        { "w": "prospect", "zh": "前景" },
+        { "w": "perspective", "zh": "视角；观点" }
+      ],
+      "tip": "spect 表『看』，变体 -spic（conspicuous 显眼的）；in- 向里看=检查，per- 透过看=视角。"
+    },
+    {
+      "id": "r02",
+      "type": "root",
+      "form": "port",
+      "meaning": "拿、运（常以 -port 出现）",
+      "examples": [
+        { "w": "import", "zh": "进口" },
+        { "w": "export", "zh": "出口" },
+        { "w": "transport", "zh": "运输" },
+        { "w": "portable", "zh": "便携的" },
+        { "w": "passport", "zh": "护照" }
+      ],
+      "tip": "port 表『搬运、携带』（im- 进 + port = import 进口；pass 过 + port = passport 护照）。"
+    },
+    {
+      "id": "r03",
+      "type": "root",
+      "form": "dict",
+      "meaning": "说（常以 -dict / -dic 出现）",
+      "examples": [
+        { "w": "dictionary", "zh": "字典" },
+        { "w": "dictate", "zh": "口述；命令" },
+        { "w": "predict", "zh": "预测" },
+        { "w": "contradict", "zh": "反驳" },
+        { "w": "verdict", "zh": "裁决" }
+      ],
+      "tip": "dict 表『说』，变体 -dic（indicate 指示）；pre- 先说=预测，contra- 反说=反驳。"
+    },
+    {
+      "id": "r04",
+      "type": "root",
+      "form": "scribe,script",
+      "meaning": "写、记录（常以 -scribe / -script 出现）",
+      "examples": [
+        { "w": "describe", "zh": "描述" },
+        { "w": "prescribe", "zh": "开处方" },
+        { "w": "manuscript", "zh": "手稿" },
+        { "w": "transcript", "zh": "转录本" },
+        { "w": "scripture", "zh": "经文" }
+      ],
+      "tip": "scribe 为动词形（describe 描写），script 为名词形（manuscript 手稿）。"
+    },
+    {
+      "id": "r05",
+      "type": "root",
+      "form": "struct",
+      "meaning": "建造（常以 -struct 出现）",
+      "examples": [
+        { "w": "structure", "zh": "结构" },
+        { "w": "construct", "zh": "建造" },
+        { "w": "obstruct", "zh": "阻碍" },
+        { "w": "instruct", "zh": "指导" },
+        { "w": "infrastructure", "zh": "基础设施" }
+      ],
+      "tip": "struct 表『建造』，de- 拆毁=destroy；in- 建入=instruct 指导。"
+    },
+    {
+      "id": "r06",
+      "type": "root",
+      "form": "tract",
+      "meaning": "拉（常以 -tract 出现）",
+      "examples": [
+        { "w": "attract", "zh": "吸引" },
+        { "w": "contract", "zh": "合同；收缩" },
+        { "w": "distract", "zh": "使分心" },
+        { "w": "tractor", "zh": "拖拉机" },
+        { "w": "abstract", "zh": "抽象的" }
+      ],
+      "tip": "tract 表『拉』；at- 拉向=attract 吸引，con- 拉到一起=contract 合同。"
+    },
+    {
+      "id": "r07",
+      "type": "root",
+      "form": "rupt",
+      "meaning": "破、断（常以 -rupt 出现）",
+      "examples": [
+        { "w": "interrupt", "zh": "打断" },
+        { "w": "erupt", "zh": "爆发" },
+        { "w": "corrupt", "zh": "腐败的" },
+        { "w": "bankrupt", "zh": "破产的" },
+        { "w": "disrupt", "zh": "扰乱" }
+      ],
+      "tip": "rupt 表『断裂、破』；inter- 中间断=interrupt，e- 向外破=erupt 爆发。"
+    },
+    {
+      "id": "r08",
+      "type": "root",
+      "form": "ject",
+      "meaning": "投掷（常以 -ject 出现）",
+      "examples": [
+        { "w": "reject", "zh": "拒绝" },
+        { "w": "inject", "zh": "注射" },
+        { "w": "object", "zh": "物体；反对" },
+        { "w": "eject", "zh": "弹出" },
+        { "w": "project", "zh": "项目；投射" }
+      ],
+      "tip": "ject 表『投掷』；re- 掷回=reject，in- 投入=inject 注射，pro- 向前投=project。"
+    },
+    {
+      "id": "r09",
+      "type": "root",
+      "form": "flect,flex",
+      "meaning": "弯、曲（常以 -flect / -flex 出现）",
+      "examples": [
+        { "w": "reflect", "zh": "反映；反射" },
+        { "w": "flexible", "zh": "灵活的" },
+        { "w": "deflect", "zh": "使偏转" },
+        { "w": "reflex", "zh": "反射（作用）" },
+        { "w": "inflection", "zh": "屈折；变调" }
+      ],
+      "tip": "flect 为动词形（reflect 反射），flex 为名词/形容词形（flexible 灵活的）。"
+    },
+    {
+      "id": "r10",
+      "type": "root",
+      "form": "mit,miss",
+      "meaning": "送、派（常以 -mit / -miss 出现）",
+      "examples": [
+        { "w": "commit", "zh": "承诺" },
+        { "w": "permit", "zh": "允许" },
+        { "w": "admit", "zh": "承认" },
+        { "w": "mission", "zh": "任务" },
+        { "w": "emit", "zh": "发出" }
+      ],
+      "tip": "mit 为动词形（commit 委托），miss 为名词形（mission 任务）；皆表『送、派』。"
+    },
+    {
+      "id": "r11",
+      "type": "root",
+      "form": "pos,pon",
+      "meaning": "放、置（常以 -pose / -pon 出现）",
+      "examples": [
+        { "w": "position", "zh": "位置" },
+        { "w": "compose", "zh": "组成" },
+        { "w": "deposit", "zh": "存款；沉积" },
+        { "w": "postpone", "zh": "推迟" },
+        { "w": "expose", "zh": "暴露" }
+      ],
+      "tip": "pos 为动词形（compose 组成），pon 为名词形（position 位置）；ex- 放出=expose。"
+    },
+    {
+      "id": "r12",
+      "type": "root",
+      "form": "ven,vent",
+      "meaning": "来（常以 -ven / -vent 出现）",
+      "examples": [
+        { "w": "event", "zh": "事件" },
+        { "w": "invent", "zh": "发明" },
+        { "w": "adventure", "zh": "冒险" },
+        { "w": "convene", "zh": "召集" },
+        { "w": "venture", "zh": "冒险（事业）" }
+      ],
+      "tip": "ven 为动词形（invent 发明），vent 为名词形（event 事件）；ad- 来到=adventure。"
+    },
+    {
+      "id": "r13",
+      "type": "root",
+      "form": "vert,vers",
+      "meaning": "转（常以 -vert / -vers 出现）",
+      "examples": [
+        { "w": "convert", "zh": "转变" },
+        { "w": "reverse", "zh": "反转" },
+        { "w": "universe", "zh": "宇宙" },
+        { "w": "diverse", "zh": "多样的" },
+        { "w": "anniversary", "zh": "周年纪念" }
+      ],
+      "tip": "vert 为动词形（convert 转变），vers 为名词/形容词形（reverse 反转）；uni- 转向一=universe。"
+    },
+    {
+      "id": "r14",
+      "type": "root",
+      "form": "vid,vis",
+      "meaning": "看（常以 -vid / -vis 出现）",
+      "examples": [
+        { "w": "video", "zh": "视频" },
+        { "w": "vision", "zh": "视觉" },
+        { "w": "visit", "zh": "参观" },
+        { "w": "visible", "zh": "可见的" },
+        { "w": "revise", "zh": "修订" }
+      ],
+      "tip": "vid 为名词形（video 视频），vis 为动词/形容词形（visit 参观，visible 可见的）。"
+    },
+    {
+      "id": "r15",
+      "type": "root",
+      "form": "aud",
+      "meaning": "听（常以 -aud 出现）",
+      "examples": [
+        { "w": "audience", "zh": "观众；听众" },
+        { "w": "audio", "zh": "音频" },
+        { "w": "audible", "zh": "听得见的" },
+        { "w": "auditorium", "zh": "礼堂" },
+        { "w": "audit", "zh": "审计" }
+      ],
+      "tip": "aud 表『听』；audience 听众，audio 听觉的，audit 原指『听账』即审计。"
+    },
+    {
+      "id": "r16",
+      "type": "root",
+      "form": "cred",
+      "meaning": "信、相信（常以 -cred 出现）",
+      "examples": [
+        { "w": "credit", "zh": "信用；学分" },
+        { "w": "credible", "zh": "可信的" },
+        { "w": "incredible", "zh": "难以置信的" },
+        { "w": "credibility", "zh": "可信度" },
+        { "w": "credential", "zh": "证书" }
+      ],
+      "tip": "cred 表『相信』；in- 不可信=incredible，cred + it = credit 信用。"
+    },
+    {
+      "id": "r17",
+      "type": "root",
+      "form": "cap,cept,cip",
+      "meaning": "拿、取（常以 -cap / -cept / -cip 出现）",
+      "examples": [
+        { "w": "capture", "zh": "捕获" },
+        { "w": "accept", "zh": "接受" },
+        { "w": "except", "zh": "除…之外" },
+        { "w": "concept", "zh": "概念" },
+        { "w": "recipient", "zh": "接收者" }
+      ],
+      "tip": "cap 为动词形（capture 捕获），cept 为分词形（accept 接受），cip 亦为变体（receive 接收）。"
+    },
+    {
+      "id": "r18",
+      "type": "root",
+      "form": "duc,duct",
+      "meaning": "引导、带领（常以 -duc / -duct 出现）",
+      "examples": [
+        { "w": "conduct", "zh": "引导；行为" },
+        { "w": "educate", "zh": "教育" },
+        { "w": "introduce", "zh": "介绍" },
+        { "w": "reduce", "zh": "减少" },
+        { "w": "product", "zh": "产品" }
+      ],
+      "tip": "duc 为动词形（educate 教育），duct 为名词形（product 产品）；e- 引出=educate。"
+    },
+    {
+      "id": "r19",
+      "type": "root",
+      "form": "form",
+      "meaning": "形状、形式（常以 -form 出现）",
+      "examples": [
+        { "w": "format", "zh": "格式" },
+        { "w": "transform", "zh": "转变" },
+        { "w": "inform", "zh": "通知" },
+        { "w": "uniform", "zh": "制服；统一的" },
+        { "w": "formula", "zh": "公式" }
+      ],
+      "tip": "form 表『形状、形式』；trans- 变形=transform，uni- 同一形=uniform 制服。"
+    },
+    {
+      "id": "r20",
+      "type": "root",
+      "form": "gen",
+      "meaning": "生、产生（常以 -gen 出现）",
+      "examples": [
+        { "w": "generate", "zh": "产生" },
+        { "w": "gene", "zh": "基因" },
+        { "w": "general", "zh": "一般的" },
+        { "w": "genius", "zh": "天才" },
+        { "w": "genuine", "zh": "真正的" }
+      ],
+      "tip": "gen 表『出生、产生』；gene 基因，generate 生成，genuine 真正出生的=真正的。"
+    },
+    {
+      "id": "r21",
+      "type": "root",
+      "form": "graph",
+      "meaning": "写、图（常以 -graph / -gram 出现）",
+      "examples": [
+        { "w": "photograph", "zh": "照片" },
+        { "w": "paragraph", "zh": "段落" },
+        { "w": "autograph", "zh": "亲笔签名" },
+        { "w": "geography", "zh": "地理" },
+        { "w": "telegraph", "zh": "电报" }
+      ],
+      "tip": "graph 表『写、画』，变体 -gram（telegram 电报）；photo + graph = photograph 照片。"
+    },
+    {
+      "id": "r22",
+      "type": "root",
+      "form": "log,logue",
+      "meaning": "言、学（常以 -log / -logue / -logy 出现）",
+      "examples": [
+        { "w": "logic", "zh": "逻辑" },
+        { "w": "dialogue", "zh": "对话" },
+        { "w": "catalogue", "zh": "目录" },
+        { "w": "biology", "zh": "生物学" },
+        { "w": "prologue", "zh": "序言" }
+      ],
+      "tip": "log 表『言、学』；-logue 对话（dialogue），-logy …学（biology 生物学）。"
+    },
+    {
+      "id": "r23",
+      "type": "root",
+      "form": "meter",
+      "meaning": "测量（常以 -meter / -metr 出现）",
+      "examples": [
+        { "w": "thermometer", "zh": "温度计" },
+        { "w": "kilometer", "zh": "千米" },
+        { "w": "parameter", "zh": "参数" },
+        { "w": "barometer", "zh": "气压计" },
+        { "w": "diameter", "zh": "直径" }
+      ],
+      "tip": "meter 表『测量、计量』；thermo- 热 + meter = thermometer 温度计。"
+    },
+    {
+      "id": "r24",
+      "type": "root",
+      "form": "path",
+      "meaning": "感、苦；病（常以 -path 出现）",
+      "examples": [
+        { "w": "empathy", "zh": "同理心" },
+        { "w": "sympathy", "zh": "同情" },
+        { "w": "pathetic", "zh": "可怜的；悲情的" },
+        { "w": "apathy", "zh": "冷漠" },
+        { "w": "pathology", "zh": "病理学" }
+      ],
+      "tip": "path 表『感受、痛苦』；em- 共感=empathy，sym- 同感=sympathy，亦表『病』（pathology）。"
+    },
+    {
+      "id": "r25",
+      "type": "root",
+      "form": "ped",
+      "meaning": "脚；儿童（常以 -ped 出现）",
+      "examples": [
+        { "w": "pedal", "zh": "踏板" },
+        { "w": "pedestrian", "zh": "行人" },
+        { "w": "pediatrician", "zh": "儿科医生" },
+        { "w": "impede", "zh": "阻碍" },
+        { "w": "quadruped", "zh": "四足动物" }
+      ],
+      "tip": "ped 表『脚』（pedal 踏板）亦表『儿童』（pediatrician 儿科医生）；im- 绊脚=impede。"
+    },
+    {
+      "id": "r26",
+      "type": "root",
+      "form": "phon",
+      "meaning": "声音（常以 -phon 出现）",
+      "examples": [
+        { "w": "telephone", "zh": "电话" },
+        { "w": "microphone", "zh": "麦克风" },
+        { "w": "symphony", "zh": "交响乐" },
+        { "w": "phonetic", "zh": "语音的" },
+        { "w": "phoneme", "zh": "音素" }
+      ],
+      "tip": "phon 表『声音』；tele- 远 + phon = telephone，micro- 小 + phon = microphone。"
+    },
+    {
+      "id": "r27",
+      "type": "root",
+      "form": "sect",
+      "meaning": "切、分（常以 -sect 出现）",
+      "examples": [
+        { "w": "section", "zh": "部分" },
+        { "w": "insect", "zh": "昆虫" },
+        { "w": "intersect", "zh": "交叉" },
+        { "w": "bisect", "zh": "平分" },
+        { "w": "sector", "zh": "部门" }
+      ],
+      "tip": "sect 表『切、分』；in- 切成段=insect（原指『切开的』），bi- 切成二=bisect。"
+    },
+    {
+      "id": "r28",
+      "type": "root",
+      "form": "sens,sent",
+      "meaning": "感觉（常以 -sens / -sent 出现）",
+      "examples": [
+        { "w": "sense", "zh": "感觉；意义" },
+        { "w": "sensitive", "zh": "敏感的" },
+        { "w": "consent", "zh": "同意" },
+        { "w": "sentiment", "zh": "情感" },
+        { "w": "nonsense", "zh": "胡说" }
+      ],
+      "tip": "sens 表『感觉』；con- 同感=consent 同意，sentiment 情感，sensitive 敏感的。"
+    },
+    {
+      "id": "r29",
+      "type": "root",
+      "form": "terr",
+      "meaning": "地；恐惧（常以 -terr 出现）",
+      "examples": [
+        { "w": "territory", "zh": "领土" },
+        { "w": "terrain", "zh": "地形" },
+        { "w": "terror", "zh": "恐怖" },
+        { "w": "terrible", "zh": "可怕的" },
+        { "w": "extraterrestrial", "zh": "外星人" }
+      ],
+      "tip": "terr 表『土地』（territory 领土）亦表『恐惧』（terror 恐怖，terrible 可怕的）。"
+    },
+    {
+      "id": "r30",
+      "type": "root",
+      "form": "vit,viv",
+      "meaning": "生命（常以 -vit / -viv 出现）",
+      "examples": [
+        { "w": "vital", "zh": "至关重要的" },
+        { "w": "vivid", "zh": "生动的" },
+        { "w": "survive", "zh": "幸存" },
+        { "w": "revive", "zh": "使复苏" },
+        { "w": "vitamin", "zh": "维生素" }
+      ],
+      "tip": "vit/viv 表『生命』；sur- 活下来=survive，re- 再活=revive，viv + id = vivid 生动的。"
+    }
+  ]
+}
