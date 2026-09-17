@@ -534,7 +534,28 @@ body:not(.locked) .login {display:none}
 .nc2av .center{text-align:center}
 .nc2av .muted{color:#9a8aae;font-size:13px}
 .nc2av .big{font-size:28px;font-weight:800}
-@media(max-width:520px){.nc2av .logo{font-size:18px}.word{font-size:25px}.opt,.quiz-opt{padding:12px;font-size:14px}.tab{font-size:13px;min-width:0}}
+@media(max-width:520px){.nc2av .logo{font-size:18px}.nc2av .word{font-size:25px}.nc2av .opt,.nc2av .quiz-opt{padding:12px;font-size:14px}.nc2av .tab{font-size:13px;min-width:0}}
+/* 单元折叠 */
+.nc2av .unit.collapsed .lessons{display:none}
+.nc2av .unit-arrow{display:inline-block;margin-left:4px;font-size:12px;color:#9a8aae}
+/* ===== NCE2 · 手机版适配 =====
+   ace 的「手机版预览」是给 .app 加 .is-mobile / .mobile-nav（视口宽度不变），
+   所以单靠 @media(max-width) 不会触发，必须显式写 .app.mobile-nav 规则。 */
+.app.mobile-nav .nc2av .tabs{gap:6px}
+.app.mobile-nav .nc2av .tab{flex:1 1 28%;min-width:0;font-size:13px;padding:9px 6px}
+.app.mobile-nav .nc2av .lesson-bar{flex-direction:column;align-items:flex-start;gap:6px}
+.app.mobile-nav .nc2av .lessons{grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px}
+.app.mobile-nav .nc2av .lc{padding:8px 4px}
+.app.mobile-nav .nc2av .lc .lt{font-size:10px;height:auto;min-height:26px}
+.app.mobile-nav .nc2av .word{font-size:24px}
+.app.mobile-nav .nc2av .opts{grid-template-columns:1fr;max-width:none}
+.app.mobile-nav .nc2av .opt,.app.mobile-nav .nc2av .quiz-opt{padding:12px;font-size:14px}
+.app.mobile-nav .nc2av .reward-grid{grid-template-columns:1fr 1fr;gap:10px}
+.app.mobile-nav .nc2av .cal-grid{gap:4px}
+.app.mobile-nav .nc2av .card{padding:14px}
+.app.mobile-nav .nc2av .flash{padding:16px}
+.app.mobile-nav .nc2av .btn{flex:1 1 auto;min-width:0}
+.app.mobile-nav .nc2av .chips{flex-wrap:wrap}
 
 </style>
 </head>
@@ -2643,11 +2664,12 @@ function calcStreak(){let s=0;let d=new Date();while(true){const ds=d.getFullYea
 /* ---- 渲染顶栏 ---- */
 function renderTop(){$('#stat-lesson').textContent='通关 '+doneCount()+'/96';state.streak=calcStreak();$('#stat-streak').textContent='🔥 连续 '+state.streak+' 天';$('#stat-star').textContent='⭐ '+state.stars;save();}
 /* ============ 视图：地图 ============ */
+const collapsedUnits=new Set();
 function renderMap(){
   let h='<div class="card"><div class="section-title">🗺️ 课时通关地图</div><div class="muted">按课时顺序闯关：先背词汇再练语法，全通一课才算通关 ✅</div></div>';
   for(let u=1;u<=8;u++){
-    const p=unitProgress(u);const done=unitDone(u);
-    h+='<div class="unit"><div class="unit-h" onclick="toggleUnit('+u+')"><span class="unit-name">'+(done?'🏆':'📦')+' '+UNIT_NAMES[u]+'</span><span class="unit-prog">'+p+'/12 '+(done?'已通关 ✅':'')+'</span></div>';
+    const p=unitProgress(u);const done=unitDone(u);const col=collapsedUnits.has(u);
+    h+='<div class="unit'+(col?' collapsed':'')+'"><div class="unit-h" onclick="toggleUnit('+u+')"><span class="unit-name">'+(done?'🏆':'📦')+' '+UNIT_NAMES[u]+'</span><span class="unit-prog">'+p+'/12 '+(done?'已通关 ✅':'')+' <span class="unit-arrow">'+(col?'▸':'▾')+'</span></span></div>';
     h+='<div id="unit-'+u+'" class="lessons">';
     for(let i=(u-1)*12+1;i<=u*12;i++){const L=LESSONS.find(l=>l.id===i);if(!L)continue;const d=lessonDone(i);const v=state.vocabPass[i],g=state.grammarPass[i];const unlocked=i===1||lessonDone(i-1);
       h+='<div class="lc'+(d?' done':'')+(unlocked?'':' locked')+'" onclick="'+(unlocked?'openLesson('+i+')':'toast(\'先通关第'+(i-1)+'课解锁 🔒\')')+'"><div class="ln">L'+i+'</div><div class="lt">'+L.zh+'</div>'+(v?'<span class="badge">📖</span>':'')+(g?'<span class="badge">✏️</span>':'')+'</div>';}
@@ -2655,13 +2677,13 @@ function renderMap(){
   }
   app.innerHTML=h;
 }
-function toggleUnit(u){/* 可折叠，暂留 */}
+function toggleUnit(u){if(collapsedUnits.has(u))collapsedUnits.delete(u);else collapsedUnits.add(u);render();}
 /* ============ 视图：课详情 ============ */
 function openLesson(id){if(id>1&&!lessonDone(id-1)){toast('请先通关第'+(id-1)+'课再解锁本课 🔒');return;}curLesson=id;renderLesson();}
 function renderLesson(){
   const L=LESSONS.find(l=>l.id===curLesson);if(!L){renderMap();return;}
   const v=state.vocabPass[curLesson],g=state.grammarPass[curLesson];
-  let h='<span class="back" onclick="view=\'map\';render()">← 返回地图</span>';
+  let h='<span class="back" onclick="nc2Go(\'map\')">← 返回地图</span>';
   h+='<div class="card"><div class="lesson-bar"><div><div class="ti">📖 第'+curLesson+'课 '+L.t+'</div><div class="sub">'+L.zh+'</div></div><div class="muted">语法点：'+L.g+'</div></div>';
   h+='<div class="chips"><span class="chip '+(v?'ok':'no')+'">词汇 '+(v?'已通关':'未通关')+'</span><span class="chip '+(g?'ok':'no')+'">语法 '+(g?'已通关':'未通关')+'</span></div>';
   h+='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">';
@@ -2680,11 +2702,11 @@ function renderVocab(){
   if(vocabPhase==='learn'){
     const w=vocabQueue[vocabIdx];
     let h='<span class="back" onclick="renderLesson()">← 返回</span><div class="card"><div class="section-title">📖 背词汇 · 第'+vocabIdx+'/'+vocabQueue.length+'个</div>';
-    h+='<div class="flash"><div class="flip" onclick="flipOn=!flipOn;this.querySelector(\'div\').classList.toggle(\'flipped\')"><div class="flip-in'+(flipOn?' flipped':'')+'">';
-    h+='<div class="face front"><div class="word">'+w.w+' <span class="spk" data-w="'+w.w+'" onclick="event.stopPropagation();speakWord(this)">🔊</span></div><div class="ph">'+w.ph+'</div><div class="tap">👆 点卡片看释义 · 点 🔊 朗读</div></div>';
+    h+='<div class="flash"><div class="flip" onclick="nc2Flip(this)"><div class="flip-in'+(flipOn?' flipped':'')+'">';
+    h+='<div class="face front"><div class="word">'+w.w+' <span class="spk" data-w="'+w.w+'" onclick="nc2Speak(this,event)">🔊</span></div><div class="ph">'+w.ph+'</div><div class="tap">👆 点卡片看释义 · 点 🔊 朗读</div></div>';
     h+='<div class="face back"><div class="meaning">'+w.m+'</div><div class="ex">e.g. '+w.ex+'</div></div></div></div>';
-    h+='<div style="display:flex;gap:10px"><button class="btn gray sm" onclick="flipOn=false;vocabIdx=Math.max(0,vocabIdx-1);renderVocab()">上一个</button>';
-    h+='<button class="btn sm" onclick="flipOn=false;vocabIdx++;if(vocabIdx>=vocabQueue.length){vocabPhase=\'test\';vocabIdx=0;renderVocab();}else renderVocab()">下一个 👉</button></div></div></div>';
+    h+='<div style="display:flex;gap:10px"><button class="btn gray sm" onclick="nc2VocabPrev()">← 上一个</button>';
+    h+='<button class="btn sm" onclick="nc2VocabNext()">下一个 👉</button></div></div></div>';
     app.innerHTML=h;setTimeout(()=>speak(w.w),150);
   }else{
     /* 测试：英文选中文 */
@@ -2694,7 +2716,7 @@ function renderVocab(){
     let h='<span class="back" onclick="renderLesson()">← 返回</span><div class="card"><div class="section-title">🧪 词汇测试 · 第'+(vocabIdx+1)+'/'+vocabQueue.length+'个</div>';
     h+='<div class="progress-dots" style="margin-bottom:14px">';
     for(let i=0;i<vocabQueue.length;i++)h+='<span class="dot'+(i<vocabIdx?' on':'')+(i===vocabIdx?'':'')+'"></span>';
-    h+='</div><div class="flash"><div class="word">'+w.w+' <span class="spk" data-w="'+w.w+'" onclick="speakWord(this)">🔊</span></div><div class="ph">'+w.ph+'</div><div class="muted">选出正确的中文释义 · 点 🔊 朗读</div>';
+    h+='</div><div class="flash"><div class="word">'+w.w+' <span class="spk" data-w="'+w.w+'" onclick="nc2Speak(this,event)">🔊</span></div><div class="ph">'+w.ph+'</div><div class="muted">选出正确的中文释义 · 点 🔊 朗读</div>';
     h+='<div class="opts">';
     opts.forEach(o=>{h+='<div class="opt" onclick="vocabAnswer(this,'+JSON.stringify(o.m).replace(/"/g,'&quot;')+','+JSON.stringify(w.m).replace(/"/g,'&quot;')+')">'+o.m+'</div>';});
     h+='</div></div></div>';
@@ -2766,8 +2788,8 @@ function renderTask(){
   let h='<div class="card"><div class="section-title">🎯 今日任务</div><div class="muted">每天背一课词汇 + 练一课语法，打卡累积 ✨</div></div>';
   h+='<div class="card"><div class="lesson-bar"><div><div class="ti">第'+next.id+'课 '+next.t+'</div><div class="sub">'+next.zh+'</div></div></div>';
   h+='<div class="chips"><span class="chip '+(state.vocabPass[next.id]?'ok':'no')+'">词汇</span><span class="chip '+(state.grammarPass[next.id]?'ok':'no')+'">语法</span></div>';
-  h+='<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn pink" onclick="curLesson='+next.id+';startVocab()">📖 '+(needV?'背词汇':'复习词汇')+'</button>';
-  h+='<button class="btn blue" onclick="curLesson='+next.id+';startGrammar()">✏️ '+(needG?'练语法':'重做语法')+'</button></div></div>';
+  h+='<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn pink" onclick="nc2StartVocab('+next.id+')">📖 '+(needV?'背词汇':'复习词汇')+'</button>';
+  h+='<button class="btn blue" onclick="nc2StartGrammar('+next.id+')">✏️ '+(needG?'练语法':'重做语法')+'</button></div></div>';
   /* 打卡按钮 */
   const doneV=vocabDoneCount(),doneG=grammarDoneCount();
   const canCheck=!isTodayDone()&&needV===false&&needG===false||(!isTodayDone()&&doneV>0&&doneG>0);
@@ -2836,6 +2858,16 @@ document.querySelectorAll('.nc2av .tab').forEach(t=>t.addEventListener('click',(
 render();
 
 
+/* 桥接：inline onclick 里不能访问 IIFE 作用域变量，也不能对其赋值，
+   所以所有「改状态」的操作都必须走这里包一层函数。 */
+function nc2Go(v){view=v;render();}
+function nc2Flip(el){flipOn=!flipOn;renderVocab();}
+function nc2VocabPrev(){flipOn=false;vocabIdx=Math.max(0,vocabIdx-1);renderVocab();}
+function nc2VocabNext(){flipOn=false;vocabIdx++;if(vocabIdx>=vocabQueue.length){vocabPhase='test';vocabIdx=0;}renderVocab();}
+function nc2StartVocab(id){curLesson=id;startVocab();}
+function nc2StartGrammar(id){curLesson=id;startGrammar();}
+function nc2EditReward(u,v){editReward(u,v);}
+function nc2Speak(el,ev){if(ev&&ev.stopPropagation)ev.stopPropagation();speakWord(el);}
 /* expose inline onclick handlers (IIFE-scoped fns must be reachable from global inline handlers) */
 window.toggleUnit=toggleUnit;
 window.startVocab=startVocab;
@@ -2845,6 +2877,18 @@ window.speakWord=speakWord;
 window.vocabAnswer=vocabAnswer;
 window.grammarAnswer=grammarAnswer;
 window.checkin=checkin;
+window.openLesson=openLesson;
+window.toast=toast;
+window.renderVocab=renderVocab;
+window.editReward=editReward;
+window.nc2Go=nc2Go;
+window.nc2Flip=nc2Flip;
+window.nc2VocabPrev=nc2VocabPrev;
+window.nc2VocabNext=nc2VocabNext;
+window.nc2StartVocab=nc2StartVocab;
+window.nc2StartGrammar=nc2StartGrammar;
+window.nc2EditReward=nc2EditReward;
+window.nc2Speak=nc2Speak;
 })();
 
 /* ---------- INIT ---------- */
