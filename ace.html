@@ -5,22 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="NsjumUXwyqoiXMpccSWWJI" />
 <title>ihsan</title>
 <style>:root {
-    --bg:#f4f0e8;
-    --card:#faf7f1;
-    --ink:#211e18;
-    --muted:#6d665a;
-    --line:#ddd5c5;
-    --brand:#15706a;
-    --brand-soft:#e5efea;
-    --teal:#1f7a70;
-    --amber:#9c5a1e;
-    --ochre:#9c5a1e;
-    --vermilion:#b5432f;
+    /* ===== 设计令牌：自然绿实验室版（对齐 e.newkit.site 视觉语言） ===== */
+    --bg:#f5f7f0;          /* 纸底 */
+    --card:#ffffff;        /* 白卡 */
+    --card-soft:#fafcf6;   /* 柔白卡 */
+    --card-soft-2:#fafcf7; /* 侧栏卡 */
+    --ink:#294636;         /* 深墨绿（主文字） */
+    --ink-2:#35472f;
+    --muted:#728665;       /* 中绿（副文字） */
+    --muted-2:#7c8c6c;
+    --muted-3:#8a987d;
+    --line:#dee6d5;        /* 细描边 */
+    --line-2:#e0e6d9;
+    --line-3:#e3e8da;
+    --brand:#486638;       /* 主绿 */
+    --brand-soft:#edf3e5;  /* 浅绿底 */
+    --teal:#2d6a4f;
+    --accent-green:#759d53;
+    --accent-green-soft:#809c6b;
+    --accent-purple:#9c8ed2;
+    --amber:#9c7b3c;
+    --ochre:#9c7b3c;
+    --vermilion:#b5543c;
     --radius:12px;
-    --shadow:0 1px 2px rgba(33,30,25,.035);
+    --radius-lg:16px;
+    --radius-sm:8px;
+    --shadow:0 1px 2px rgba(41,70,54,.035);
     --gap:18px;
-    --font-serif:Georgia,"Times New Roman","Songti SC","STSong","Noto Serif SC","SimSun",serif;
-    --font-sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    /* 新框架：标题改用无衬线（原报刊衬线整体退出） */
+    --font-serif:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;
+    --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
   }
 * {box-sizing:border-box}
 html {scroll-behavior:smooth}
@@ -31,50 +45,78 @@ body {
 a {color:inherit;text-decoration:none}
 /* 标题统一衬线（报刊书卷感） */
   h1, h2, .logo-name, .aspect-title, .tname, .mn .name, .mn-ex-label {font-family:var(--font-serif)}
-/* LAYOUT */
-  .app {display:flex;min-height:100vh;align-items:flex-start}
+/* ===== LAYOUT：236px 侧栏卡 + 内容列，gap 28px  ===== */
+  .app {display:grid;grid-template-columns:236px minmax(0,1fr);gap:28px;
+        max-width:1580px;margin:0 auto;padding:0 32px;align-items:start;min-height:100vh}
 .sidebar {
-    position:sticky;top:0;align-self:flex-start;height:100vh;width:236px;flex:none;
-    background:var(--bg);border-right:1px solid var(--line);
-    padding:30px 20px;display:flex;flex-direction:column;gap:8px;overflow:auto;
+    position:sticky;top:28px;align-self:start;width:auto;flex:none;
+    max-height:calc(100vh - 56px);
+    background:var(--card-soft-2);border:1px solid var(--line);border-radius:16px;
+    padding:24px 14px;display:flex;flex-direction:column;gap:6px;overflow:auto;
   }
-.sidebar .logo {display:flex;flex-direction:column;gap:1px;margin-bottom:20px;padding:0 6px}
-/* 印章由实心朱红块弱化为朱红细描边，去掉投影 */
-.logo-seal {display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:transparent;color:var(--vermilion);font-family:var(--font-serif);font-weight:800;border:1px solid var(--vermilion);border-radius:5px;font-size:16px;margin-bottom:10px}
-.logo-name {font-weight:800;color:var(--brand);font-size:21px;letter-spacing:2px}
-.logo-en {font-size:10px;letter-spacing:.2em;color:var(--teal);text-transform:uppercase;font-weight:700}
+/* 品牌：绿色圆角方块 + 中文/英文两行 */
+.sidebar .logo {display:flex;flex-direction:row;align-items:center;gap:9px;margin:0 0 20px;padding:0 6px}
+.logo-text {display:flex;flex-direction:column;gap:0;min-width:0}
+.logo-seal {display:inline-flex;align-items:center;justify-content:center;flex:none;width:34px;height:36px;background:transparent;color:#6d924e;font-weight:400;border:1px solid #6d924e;border-radius:10px;font-size:28px;margin:0;line-height:1}
+.logo-name {font-weight:650;color:#486638;font-size:14px;letter-spacing:0;line-height:1.35}
+.logo-en {font-size:10px;letter-spacing:.16em;color:var(--muted-3);text-transform:uppercase;font-weight:600;line-height:1.4}
 /* 去掉边框与底色，仅留一行小字 */
-.side-seal {display:inline-flex;align-items:center;gap:8px;margin:0 6px 18px;padding:0;border:none;background:transparent;color:var(--muted);font-family:var(--font-serif);font-weight:700;font-size:11px;letter-spacing:2px;opacity:.8}
-.side-seal .st {color:var(--vermilion)}
-.menu {display:flex;flex-direction:column;gap:4px}
+.side-seal {display:inline-flex;align-items:center;gap:8px;margin:0 6px 18px;padding:0;border:none;background:transparent;color:var(--muted-3);font-weight:600;font-size:11px;letter-spacing:.1em;opacity:.9}
+.side-seal .st {color:#b5543c}
+/* 导航列表：grid gap 7px */
+.menu {display:grid;gap:7px}
+/* 导航项：图标 + 中文/英文标签 + chevron */
 .menu-btn {
-    display:flex;align-items:center;gap:10px;text-align:left;border:none;background:transparent;padding:10px 12px;border-radius:var(--radius);
-    font-size:15px;font-weight:700;color:var(--muted);cursor:pointer;transition:.15s;width:100%;border-left:3px solid transparent;
+    display:flex;align-items:center;gap:2px;width:100%;text-align:left;
+    border:1px solid transparent;background:transparent;padding:7px 9px;border-radius:7px;
+    font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.15s;
   }
-.menu-btn:hover {background:var(--brand-soft);color:var(--brand)}
-.menu-btn.active {background:var(--brand-soft);color:var(--brand);border-left:3px solid var(--brand)}
-.menu-group {display:flex;flex-direction:column;gap:4px;margin-top:10px}
+.menu-btn:hover {background:#fff;border-color:var(--line-2);color:var(--ink)}
+.menu-btn.active {background:#fff;border-color:#d5e0c8;color:var(--ink)}
+.menu-group {display:grid;gap:7px;margin-top:14px}
 .menu-group:first-child {margin-top:0}
-.menu-label {font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--teal);padding:2px 14px 3px}
-/* 序号去底色去描边，纯文字呈现 */
-.mi-no {flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 2px;background:transparent;border:none;color:var(--muted);font-size:11px;font-weight:700;font-family:var(--font-serif);letter-spacing:.5px;opacity:.7}
-.mi-tx {flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.menu-btn:hover .mi-no {color:var(--brand);opacity:1}
-.menu-btn.active .mi-no {color:var(--brand);opacity:1}
-.side-foot {margin-top:auto;font-size:12px;color:var(--muted);padding:14px 6px;line-height:1.7;opacity:.85}
-.content {flex:1;min-width:0;max-width:1040px;padding:34px 44px 90px;margin:0 auto}
-@media (max-width:760px) {
-  .app {flex-direction:column}
+.menu-label {font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--muted-3);padding:0 9px 1px}
+/* 序号 → 图标位 */
+.mi-no {flex:none;display:inline-flex;align-items:center;justify-content:center;width:23px;background:transparent;border:none;color:var(--accent-green-soft);font-size:17px;font-weight:400;letter-spacing:0;opacity:1;line-height:1}
+.mi-labels {flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;padding:0 2px}
+.mi-tx {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:600;color:var(--muted)}
+.mi-en {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:600;color:#a1b684;letter-spacing:.04em}
+.mi-go {flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:7px;color:#839971;font-size:20px;line-height:1}
+.menu-btn:hover .mi-no {color:var(--accent-green)}
+.menu-btn.active .mi-no {color:var(--accent-green)}
+.menu-btn.active .mi-tx {color:var(--ink)}
+.menu-btn:hover .mi-go {background:var(--brand-soft);color:var(--accent-green)}
+.menu-btn.active .mi-go {color:var(--accent-green)}
+.side-foot {margin-top:auto;font-size:11px;color:var(--muted-3);padding:12px 6px 0;line-height:1.7;opacity:.9}
+/* 模式切换按钮：与「收起导航」同款描边胶囊 */
+.mode-toggle {display:flex;align-items:center;gap:8px;width:100%;margin:14px 0 0;padding:7px 12px;
+  border:1px solid var(--line-2);border-radius:8px;background:transparent;color:#7a8d68;
+  font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.mode-toggle:hover {background:#fff;border-color:#d5e0c8}
+.mode-toggle.active {background:#fff;color:var(--accent-green)}
+.content {min-width:0;padding:28px 0 90px;margin:0}
+/* 内容区标题：kicker + 大标题 + 副标题 */
+.sec-head {display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-bottom:22px;flex-wrap:wrap}
+.sec-kicker {font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-3)}
+.sec-head h2 {font-size:26px;font-weight:650;letter-spacing:-.6px;line-height:1.28;margin:0;color:var(--ink)}
+.sec-head .count {font-size:12.5px;color:var(--muted);font-weight:400}
+/* 卡片统一：细描边 + 白底 + 12px 圆角 */
+.sub-sec {margin:20px 0;padding:20px 22px;background:var(--card);border:1px solid var(--line-3);border-radius:var(--radius)}
+/* 窄屏 */
+@media (max-width:900px) {
+  .app {grid-template-columns:1fr;padding:0 16px;gap:16px}
+  .sidebar {position:static;max-height:none;top:auto}
+  .content {padding:20px 0 60px}
 }
 /* MOBILE MODE TOGGLE (手机版预览：居中 430) */
-  .app.is-mobile {flex-direction:column;max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden;
-    box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(33,30,25,.10)}
+  .app.is-mobile {display:block;max-width:430px;margin:0 auto;padding:0;min-height:100vh;overflow-x:hidden;
+    box-shadow:0 0 0 1px var(--line),0 10px 40px rgba(41,70,54,.10)}
 /* ===== MOBILE NAV：全屏菜单 + 右上角收起按钮（真实手机 & 手机版共用） ===== */
   .menu-close {display:none}
-.app.mobile-nav {position:relative}
+.app.mobile-nav {position:relative;display:block;padding:0}
 .app.mobile-nav .sidebar {
-    position:fixed;inset:0;z-index:50;width:100%;height:100%;
-    flex-direction:column;overflow-y:auto;
+    position:fixed;inset:0;z-index:50;width:100%;height:100%;max-height:none;
+    flex-direction:column;overflow-y:auto;border:none;border-radius:0;
     background:var(--bg);padding:22px 18px 30px;
     transform:translateY(0);transition:transform .28s ease,opacity .25s ease}
 .app.mobile-nav:not(.menu-open) .sidebar {
@@ -84,12 +126,15 @@ a {color:inherit;text-decoration:none}
 .app.mobile-nav .menu {flex-direction:column;gap:6px;margin-top:8px}
 .app.mobile-nav .menu-group {margin-top:14px}
 .app.mobile-nav .menu-label {padding:0 4px 5px}
-.app.mobile-nav .menu-btn {width:100%;padding:14px 16px;font-size:16px;border-left:3px solid transparent;border-bottom:none}
-.app.mobile-nav .menu-btn.active {border-left:3px solid var(--brand);border-bottom:none}
+.app.mobile-nav .menu-btn {width:100%;padding:12px 14px;font-size:15px;gap:6px}
+.app.mobile-nav .mi-no {width:26px;font-size:19px}
+.app.mobile-nav .mi-tx {font-size:15px}
+.app.mobile-nav .menu-btn.active {border-color:#d5e0c8}
 .app.mobile-nav .side-foot {display:block;margin-top:18px}
-.app.mobile-nav .mode-toggle {width:100%;margin:18px 0 0;font-size:15px;padding:12px}
+.app.mobile-nav .mode-toggle {width:100%;margin:14px 0 0;font-size:13px;padding:10px 12px}
 .app.mobile-nav .content {display:none}
 .app.mobile-nav:not(.menu-open) .content {display:block;padding:64px 16px 56px}
+.app.mobile-nav .sec-head h2 {font-size:22px}
 .app.mobile-nav .menu-close {
     position:fixed;top:16px;right:16px;z-index:55;
     width:40px;height:40px;border-radius:11px;border:none;
@@ -118,10 +163,6 @@ a {color:inherit;text-decoration:none}
 .view {display:none}
 .view.active {display:block}
 section {margin-top:34px;scroll-margin-top:70px}
-/* 去掉分隔线，改用留白区分层级 */
-.sec-head {display:flex;align-items:baseline;gap:10px;margin-bottom:26px;flex-wrap:wrap}
-.sec-head h2 {font-size:22px;margin:0}
-.sec-head .count {font-size:13px;color:var(--muted);font-weight:600}
 /* WORD SEARCH */
   .search {display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
 .search input {flex:1;min-width:220px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;
@@ -152,10 +193,10 @@ tbody tr:nth-child(even) {background:#f1ece1}
 .tname {font-weight:700}
 .formula {font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700;white-space:nowrap}
 .usage {color:#3a352c}
-.aspect-title {font-size:16px;font-weight:700;color:var(--teal);margin:28px 0 12px}
+.aspect-title {font-size:15px;font-weight:650;color:var(--accent-green);margin:24px 0 10px;letter-spacing:-.2px}
+.aspect-title .count {font-size:12px;color:var(--muted-3);font-weight:400;margin-left:6px}
 /* 已有淡底作区分，去掉描边 */
-.sub-sec {margin:24px 0;padding:20px 22px;background:var(--brand-soft);border-radius:var(--radius)}
-.sub-sec .aspect-title {margin-top:4px}
+.sub-sec .aspect-title {margin-top:2px}
 /* TENSE CARDS */
   .tenses-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:6px}
 .tcard {background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px}
@@ -583,26 +624,22 @@ body:not(.locked) .login {display:none}
     <button class="menu-close" id="menuClose" aria-label="关闭菜单" data-page-node-id="UhC6PYbftD9AfrPyJ0OmQN">✕</button>
     <div class="logo" data-page-node-id="TU7zwkskyfF6aCsGFAYVs2">
       <span class="logo-seal" data-page-node-id="AvTjE5uvRiI6DfGjdHMG9v">i</span>
-      <span class="logo-name" data-page-node-id="OEIRYWKL38RQ3XUkDkkv0X">ihsan</span>
-      <span class="logo-en" data-page-node-id="tPjfmUSiPEgPe9djhx0zna">IHSAN ENGLISH</span>
+      <span class="logo-text"><span class="logo-name" data-page-node-id="OEIRYWKL38RQ3XUkDkkv0X">ihsan</span><span class="logo-en" data-page-node-id="tPjfmUSiPEgPe9djhx0zna">IHSAN ENGLISH</span></span>
     </div>
     <div class="side-seal" data-page-node-id="tgeazXiokhTD8gUruK58S0"><span class="st" data-page-node-id="Pj1epn6QTF1b9QweJCIhdP">印</span><span data-page-node-id="TcoSC9BnI43CeRvp8uWxts">IHSAN STUDIO</span></div>
     <div class="menu" data-page-node-id="CtdtLZfWKNknpnSpAPq9vq">
       <div class="menu-group" data-page-node-id="WuFGCNq45keAecEQukGPnS">
         <div class="menu-label" data-page-node-id="zzXf4uK8JMDnbgaVmSbnRl">词汇与短语</div>
-        <button class="menu-btn" data-view="verb" data-page-node-id="KQFz4Y7OYR0DuGblhNy6gm"><span class="mi-no" data-page-node-id="fJEpqbs3V7shWIjLYFDoK1">01</span><span class="mi-tx" data-page-node-id="9OwxuWfvhRdghd1VCOpFeX">📖 动词与不定式</span></button>
-        <button class="menu-btn" data-view="phrbank" data-page-node-id="z8lwm88gHT7rna8AEU41QY"><span class="mi-no" data-page-node-id="HeKbR6fiTsqaSkSPiaETU5">02</span><span class="mi-tx" data-page-node-id="k7osCWWONpYaxLrsBpbCzV">🗂 英语词组</span></button>
-        <button class="menu-btn" data-view="roots"><span class="mi-no">03</span><span class="mi-tx">🌱 词根词缀</span></button>
-        <button class="menu-btn" data-view="nce2"><span class="mi-no">04</span><span class="mi-tx">🎮 NCE2</span></button>
-      </div>
-      <div class="menu-group" data-page-node-id="564v2FTLttH5uDflkMV0Xi">
-        <div class="menu-label" data-page-node-id="hlSHLvbUECJEEl1uAz7WsN">教材</div>
+        <button class="menu-btn" data-view="verb" data-page-node-id="KQFz4Y7OYR0DuGblhNy6gm"><span class="mi-no">📖</span><span class="mi-labels"><span class="mi-tx" data-page-node-id="9OwxuWfvhRdghd1VCOpFeX">动词与不定式</span><span class="mi-en">Verb patterns</span></span><span class="mi-go">›</span></button>
+        <button class="menu-btn" data-view="phrbank" data-page-node-id="z8lwm88gHT7rna8AEU41QY"><span class="mi-no">🗂</span><span class="mi-labels"><span class="mi-tx" data-page-node-id="k7osCWWONpYaxLrsBpbCzV">英语词组</span><span class="mi-en">Phrase bank</span></span><span class="mi-go">›</span></button>
+        <button class="menu-btn" data-view="roots"><span class="mi-no">🌱</span><span class="mi-labels"><span class="mi-tx">词根词缀</span><span class="mi-en">Roots &amp; affixes</span></span><span class="mi-go">›</span></button>
+        <button class="menu-btn" data-view="nce2"><span class="mi-no">🎮</span><span class="mi-labels"><span class="mi-tx">新概念二 · 通关</span><span class="mi-en">NCE 2 · Adventure</span></span><span class="mi-go">›</span></button>
       </div>
       <div class="menu-group" data-page-node-id="8LMLNzDYv57GBvAuB1cnO7">
         <div class="menu-label" data-page-node-id="JoXG0SOxcCYf5CpaCriDLP">语法体系</div>
-        <button class="menu-btn" data-view="tenses" data-page-node-id="nEUQ6pqTwTkP7lDAjqqf9o"><span class="mi-no" data-page-node-id="4g8njXUcbwEshHIfOYbmDa">05</span><span class="mi-tx" data-page-node-id="5JHik2yZnZZBBl0VZJ8Xot">📊 16 时态</span></button>
-        <button class="menu-btn" data-view="adjpassive" data-page-node-id="Dez39P0GNtg4qhoLbV3qeQ"><span class="mi-no" data-page-node-id="CTuGv8n7EpS47h8bS2Pla2">06</span><span class="mi-tx" data-page-node-id="p6uySSTgGamqVVUd51MMUn">🔍 形似被动的形容词</span></button>
-        <button class="menu-btn" data-view="nce1"><span class="mi-no">07</span><span class="mi-tx">📚 新概念一·语法精要</span></button>
+        <button class="menu-btn" data-view="tenses" data-page-node-id="nEUQ6pqTwTkP7lDAjqqf9o"><span class="mi-no">📊</span><span class="mi-labels"><span class="mi-tx" data-page-node-id="5JHik2yZnZZBBl0VZJ8Xot">16 种时态</span><span class="mi-en">Tenses</span></span><span class="mi-go">›</span></button>
+        <button class="menu-btn" data-view="adjpassive" data-page-node-id="Dez39P0GNtg4qhoLbV3qeQ"><span class="mi-no">🔍</span><span class="mi-labels"><span class="mi-tx" data-page-node-id="p6uySSTgGamqVVUd51MMUn">形似被动的形容词</span><span class="mi-en">Adjective / passive</span></span><span class="mi-go">›</span></button>
+        <button class="menu-btn" data-view="nce1"><span class="mi-no">📚</span><span class="mi-labels"><span class="mi-tx">新概念一 · 语法精要</span><span class="mi-en">NCE 1 · Grammar</span></span><span class="mi-go">›</span></button>
       </div>
     </div>
     <button class="mode-toggle" id="modeToggle" title="切换手机版 / 桌面版预览" data-page-node-id="yEebS68g69NxCipO4HTdJL">📱 手机版</button>
@@ -2897,6 +2934,27 @@ renderPhrBank();
 initAdjpassive();
 initNce1();
 showView('verb');
+
+/* ---------- 内容区标题：补一行英文 kicker（新框架招牌元素） ---------- */
+(function(){
+  const KICKER = {
+    verb:'Verbs & infinitives',
+    phrbank:'Phrase bank',
+    roots:'Roots & affixes',
+    nce2:'NCE 2 · adventure',
+    tenses:'Tenses',
+    adjpassive:'Adjective / passive',
+    nce1:'NCE 1 · grammar'
+  };
+  document.querySelectorAll('section.view').forEach(sec=>{
+    const head = sec.querySelector('.sec-head');
+    if(!head || head.querySelector('.sec-kicker')) return;
+    const k = document.createElement('span');
+    k.className = 'sec-kicker';
+    k.textContent = KICKER[sec.dataset.view] || 'English lab';
+    head.insertBefore(k, head.firstChild);
+  });
+})();
 
 document.querySelectorAll('.menu-btn').forEach(b=>{
   b.addEventListener('click', ()=>showView(b.dataset.view));
