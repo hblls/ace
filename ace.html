@@ -195,20 +195,77 @@ tbody tr:nth-child(even) {background:#f1ece1}
 .usage {color:#3a352c}
 .aspect-title {font-size:15px;font-weight:650;color:var(--accent-green);margin:24px 0 10px;letter-spacing:-.2px}
 .aspect-title .count {font-size:12px;color:var(--muted-3);font-weight:400;margin-left:6px}
+.aspect-title .aspect-tail {display:inline-flex;align-items:center;gap:5px;margin-left:10px;font-size:11.5px;font-weight:600;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:1px 9px;vertical-align:middle}
+.aspect-title .aspect-tail b {font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700}
 /* 已有淡底作区分，去掉描边 */
 .sub-sec .aspect-title {margin-top:2px}
+/* TENSE RULE PANEL */
+  .tense-rule {background:var(--brand-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.tr-head {font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.6;margin-bottom:10px}
+.tr-head b {color:var(--brand);font-weight:800}
+.tr-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tr-step {display:flex;align-items:flex-start;gap:9px;background:var(--card);border-radius:10px;padding:9px 11px}
+.tr-no {flex:none;width:19px;height:19px;border-radius:50%;background:var(--brand);color:#fff;font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+.tr-k {display:block;font-size:13.5px;font-weight:800;color:var(--ink)}
+.tr-d {display:block;font-size:12px;color:var(--muted);margin-top:2px;line-height:1.5}
+.tr-tails {display:flex;flex-wrap:wrap;gap:7px;margin-top:11px;align-items:center}
+.tr-tail {display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12px}
+.tr-tail i {font-style:normal;color:var(--ink);font-weight:700}
+.tr-tail b {font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700;font-size:12.5px}
+.tr-legend {margin-left:auto;font-size:11.5px;color:var(--muted-3);display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+.tr-legend .fp-a,.tr-legend .fp-c {font-size:12px;padding:1px 6px}
+/* TENSE MATRIX 4x4 */
+.tense-matrix {margin-bottom:16px}
+.mx-wrap {border:1px solid var(--line);border-radius:14px;background:var(--card);padding:12px 14px 10px}
+.mx-title {font-size:13px;font-weight:800;color:var(--ink);margin-bottom:8px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.mx-hint {font-size:11.5px;font-weight:400;color:var(--muted-3)}
+.mx {width:100%;min-width:0;border-collapse:separate;border-spacing:0;table-layout:fixed}
+.mx thead th {background:var(--brand);color:#fff;font-size:12px;font-weight:700;padding:7px 6px;text-align:center;border:1px solid var(--line)}
+.mx thead th:first-child {background:var(--brand-soft);border-color:var(--line)}
+.mx tbody th {background:var(--brand-soft);font-size:12px;font-weight:800;color:var(--ink);padding:7px 4px;text-align:center;border:1px solid var(--line);width:76px}
+.mx tbody th em {display:block;font-style:normal;font-family:"Cambria Math",Georgia,serif;font-size:11px;color:var(--ochre);font-weight:700;margin-top:1px}
+.mx tbody td {padding:7px 5px;text-align:center;border:1px solid var(--line);cursor:pointer;transition:background .15s;vertical-align:middle}
+.mx tbody td:hover {background:var(--brand-soft)}
+.mx-aux {display:block;font-family:"Cambria Math",Georgia,serif;font-size:12.5px;font-weight:700;color:var(--brand);line-height:1.3}
+.mx-core {display:block;font-family:"Cambria Math",Georgia,serif;font-size:12.5px;font-weight:700;color:var(--ochre);line-height:1.3}
+.mx-foot {font-size:11.5px;color:var(--muted-3);margin-top:8px;line-height:1.6}
+.mx-swipe {display:none}
+.tense-mx-btn {border:1px solid var(--line);background:var(--card);color:var(--brand);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:var(--font-sans)}
+.tense-mx-btn:hover {background:var(--brand-soft)}
+.tense-mx-btn.on {background:var(--brand);color:#fff;border-color:var(--brand)}
 /* TENSE CARDS */
   .tenses-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:6px}
-.tcard {background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px}
-.tcard .tname {font-weight:800;font-size:15px;color:var(--ink);display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.tcard .aspect-badge {display:inline-block;font-size:11px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:1px 8px;flex:0 0 auto}
-.tcard .formula {font-family:"Cambria Math",Georgia,serif;color:var(--ochre);font-weight:700;font-size:14px;background:#f6efe2;border-radius:6px;padding:3px 8px;align-self:flex-start}
+.tcard {background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 1px 3px rgba(33,30,25,.05);display:flex;flex-direction:column;gap:7px;scroll-margin-top:76px}
+.tcard.flash {animation:tcFlash 1.3s ease}
+@keyframes tcFlash {0%,100%{box-shadow:0 1px 3px rgba(33,30,25,.05);border-color:var(--line)}18%{box-shadow:0 0 0 3px var(--brand-soft);border-color:var(--brand)}}
+.tc-names {display:flex;flex-direction:column;gap:2px;min-width:0}
+.tname-en {font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.2px;line-height:1.25}
+.tname-zh {font-size:12.5px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.tcard .aspect-badge {display:inline-block;font-size:10.5px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:1px 8px;flex:0 0 auto}
+.tcard .formula {display:flex;align-items:center;flex-wrap:wrap;gap:5px;align-self:flex-start;font-size:14px;line-height:1.5}
+.fp-a {font-family:"Cambria Math",Georgia,serif;font-weight:700;color:var(--brand);background:var(--brand-soft);border-radius:6px;padding:2px 8px}
+.fp-c {font-family:"Cambria Math",Georgia,serif;font-weight:700;color:var(--ochre);background:#f6efe2;border-radius:6px;padding:2px 8px}
+.fp-o {color:var(--muted-3);font-weight:700}
 .tcard .usage {font-size:13px;color:#3a352c;line-height:1.45}
 .tcard .ex {display:flex;flex-direction:column;gap:3px;margin-top:2px;padding-top:8px;border-top:1px dashed var(--line)}
 .tcard .ex-en {display:flex;align-items:center;gap:6px}
 .tcard .ex-en .en {font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.4}
 .tcard .ex .cn {color:var(--muted);font-size:12.5px;line-height:1.45}
 .tcard .ex .spk {margin-left:2px;flex:0 0 auto}
+/* TENSE TIMELINE */
+.tl {position:relative;height:46px;margin:0}
+.tl-line {position:absolute;left:0;right:6px;top:24px;height:2px;background:var(--line);border-radius:2px}
+.tl-line::after {content:"";position:absolute;right:-6px;top:-3px;border-left:7px solid var(--line);border-top:4px solid transparent;border-bottom:4px solid transparent}
+.tl-ref {position:absolute;left:50%;top:6px;height:26px;width:0;border-left:2px dashed var(--accent-green-soft)}
+.tl-bar {position:absolute;top:20px;height:10px;border-radius:5px;background:var(--brand)}
+.tl-more {position:absolute;top:20px;height:10px;border-radius:0 5px 5px 0;background:var(--brand);opacity:.3}
+.tl-dot {position:absolute;top:17px;width:16px;height:16px;border-radius:50%;background:var(--brand);transform:translateX(-50%);box-shadow:0 0 0 3px var(--brand-soft)}
+.tl-lab {position:absolute;left:50%;transform:translateX(-50%);top:33px;font-size:10px;color:var(--muted-3);white-space:nowrap}
+.app.mobile-nav .tr-grid {grid-template-columns:1fr}
+.app.mobile-nav .tenses-grid {grid-template-columns:1fr}
+.app.mobile-nav .mx-wrap {overflow-x:auto}
+.app.mobile-nav .mx {min-width:430px}
+.app.mobile-nav .mx-swipe {display:inline;margin-left:6px;color:var(--brand);font-weight:700}
 footer {max-width:1000px;margin:0 auto;padding:24px 16px 50px;color:var(--muted);font-size:13px;text-align:center;border-top:3px double var(--line)}
 .empty {padding:30px;text-align:center;color:var(--muted)}
 /* TOOLBAR */
@@ -738,13 +795,25 @@ body:not(.locked) .login {display:none}
 
 
 <section class="view" id="tenses" data-view="tenses" data-page-node-id="zyhmKiUfhT1JR3IkWnaFTp">
-    <div class="sec-head" data-page-node-id="KDYJ18bhJeU1ofLOFlDthV"><h2 data-page-node-id="IszmRGYMhrrRppqy5ltqqs">⑤ 16 种时态</h2><span class="count" data-page-node-id="E6wbL0TrPqOa4dusFcRFbk">4 体态 × 4 时间 = 16</span></div>
+    <div class="sec-head" data-page-node-id="KDYJ18bhJeU1ofLOFlDthV"><h2 data-page-node-id="IszmRGYMhrrRppqy5ltqqs">⑤ 16 种时态</h2><span class="count" data-page-node-id="E6wbL0TrPqOa4dusFcRFbk">4 体态 × 4 时间 = 16 · 先懂规律，再记公式</span></div>
+
+    <div class="tense-rule">
+      <div class="tr-head">时态 = <b>时间</b>（何时发生）× <b>体态</b>（怎么发生）</div>
+      <div class="tr-grid">
+        <div class="tr-step"><span class="tr-no">1</span><div><b class="tr-k">先定体态</b><span class="tr-d">决定动词的「尾巴」，同一行永远不变</span></div></div>
+        <div class="tr-step"><span class="tr-no">2</span><div><b class="tr-k">再定时间</b><span class="tr-d">只决定前面的助动词（现在 / 过去 / will / would）</span></div></div>
+      </div>
+      <div class="tr-tails" id="trTails"></div>
+    </div>
+
     <div class="toolbar" data-page-node-id="KFANLQBwc2bon9BLCwaPOZ">
       <div class="level-toggle tense-toggle" data-page-node-id="xzK1BZ1K41AUe6FJg9ta3W">
         <button data-tense="aspect" class="active" data-page-node-id="GFkonh9rk71e8uO0gkOD7Q">按体态</button>
         <button data-tense="time" data-page-node-id="ZebhQgYNIlJsu6yVxqbwpW">按时间</button>
       </div>
+      <button type="button" class="tense-mx-btn on" id="tenseMxBtn">总览 4×4 表</button>
     </div>
+    <div class="tense-matrix" id="tenseMatrix"></div>
     <div id="tensesRoot" data-page-node-id="NirjKifuoprreGa0JPmR3N"></div>
   </section>
 
@@ -1574,29 +1643,29 @@ const DATA = {
   ]}
 ],
   tenses: [
-    { aspect:"一般时态", rows:[
-      {name:"Simple Present 一般现在时", formula:"do / does", usage:"表示习惯性动作、客观真理或当前状态。", en:"I drink coffee every morning.", cn:"我每天早上喝咖啡。"},
-      {name:"Simple Past 一般过去时", formula:"did", usage:"表示过去某个时间发生的动作或状态。", en:"She visited Beijing last year.", cn:"她去年去了北京。"},
-      {name:"Simple Future 一般将来时", formula:"will + do", usage:"表示将来要发生的动作或状态。", en:"I will call you tomorrow.", cn:"我明天给你打电话。"},
-      {name:"Simple Past Future 过去将来时", formula:"would + do", usage:"过去视角看将来，多用于从句。", en:"He said he would come.", cn:"他说他会来。"}
+    { aspect:"一般时态", tail:"do / did", rows:[
+      {e:"Simple Present", z:"一般现在时", parts:[{t:"do / does",k:"core"}], usage:"习惯性动作、客观真理或当前状态。", en:"I drink coffee every morning.", cn:"我每天早上喝咖啡。"},
+      {e:"Simple Past", z:"一般过去时", parts:[{t:"did",k:"core"}], usage:"过去某个时间发生的动作或状态。", en:"She visited Beijing last year.", cn:"她去年去了北京。"},
+      {e:"Simple Future", z:"一般将来时", parts:[{t:"will",k:"aux"},{t:"+",k:"op"},{t:"do",k:"core"}], usage:"将来要发生的动作或状态。", en:"I will call you tomorrow.", cn:"我明天给你打电话。"},
+      {e:"Simple Past Future", z:"过去将来时", parts:[{t:"would",k:"aux"},{t:"+",k:"op"},{t:"do",k:"core"}], usage:"站在过去看将来，多用于从句。", en:"He said he would come.", cn:"他说他会来。"}
     ]},
-    { aspect:"进行时态", rows:[
-      {name:"Present Continuous 现在进行时", formula:"am / is / are + doing", usage:"表示此刻或现阶段正在进行的动作。", en:"They are watching TV now.", cn:"他们正在看电视。"},
-      {name:"Past Continuous 过去进行时", formula:"was / were + doing", usage:"表示过去某一时刻正在进行的动作。", en:"I was reading at 8 p.m.", cn:"晚上八点我在读书。"},
-      {name:"Future Continuous 将来进行时", formula:"will be + doing", usage:"表示将来某一时刻正在进行的动作。", en:"This time tomorrow I will be flying.", cn:"明天此时我将在飞行途中。"},
-      {name:"Past Future Continuous 过去将来进行时", formula:"would be + doing", usage:"过去视角、将来某刻正在进行。", en:"He said he would be sleeping then.", cn:"他说那时他将在睡觉。"}
+    { aspect:"进行时态", tail:"doing", rows:[
+      {e:"Present Continuous", z:"现在进行时", parts:[{t:"am / is / are",k:"aux"},{t:"+",k:"op"},{t:"doing",k:"core"}], usage:"此刻或现阶段正在进行的动作。", en:"They are watching TV now.", cn:"他们正在看电视。"},
+      {e:"Past Continuous", z:"过去进行时", parts:[{t:"was / were",k:"aux"},{t:"+",k:"op"},{t:"doing",k:"core"}], usage:"过去某一时刻正在进行的动作。", en:"I was reading at 8 p.m.", cn:"晚上八点我在读书。"},
+      {e:"Future Continuous", z:"将来进行时", parts:[{t:"will be",k:"aux"},{t:"+",k:"op"},{t:"doing",k:"core"}], usage:"将来某一时刻正在进行的动作。", en:"This time tomorrow I will be flying.", cn:"明天此时我将在飞行途中。"},
+      {e:"Past Future Continuous", z:"过去将来进行时", parts:[{t:"would be",k:"aux"},{t:"+",k:"op"},{t:"doing",k:"core"}], usage:"站在过去看，将来某刻正在进行。", en:"He said he would be sleeping then.", cn:"他说那时他将在睡觉。"}
     ]},
-    { aspect:"完成时态", rows:[
-      {name:"Present Perfect 现在完成时", formula:"have / has + done", usage:"表示过去动作对现在的影响，或持续到现在。", en:"I have finished my homework.", cn:"我已完成作业。"},
-      {name:"Past Perfect 过去完成时", formula:"had + done", usage:"表示在过去某动作之前已完成的动作（“过去的过去”）。", en:"She had left before I arrived.", cn:"我到之前她已离开。"},
-      {name:"Future Perfect 将来完成时", formula:"will have + done", usage:"表示将来某时之前已完成的动作。", en:"I will have graduated by 2026.", cn:"到 2026 年我将已毕业。"},
-      {name:"Past Future Perfect 过去将来完成时", formula:"would have + done", usage:"过去视角、将来某时前已完成。", en:"He said he would have finished by then.", cn:"他说到那时他将已完成。"}
+    { aspect:"完成时态", tail:"done", rows:[
+      {e:"Present Perfect", z:"现在完成时", parts:[{t:"have / has",k:"aux"},{t:"+",k:"op"},{t:"done",k:"core"}], usage:"过去动作对现在的影响，或持续到现在。", en:"I have finished my homework.", cn:"我已完成作业。"},
+      {e:"Past Perfect", z:"过去完成时", parts:[{t:"had",k:"aux"},{t:"+",k:"op"},{t:"done",k:"core"}], usage:"在过去某动作之前已完成（“过去的过去”）。", en:"She had left before I arrived.", cn:"我到之前她已离开。"},
+      {e:"Future Perfect", z:"将来完成时", parts:[{t:"will have",k:"aux"},{t:"+",k:"op"},{t:"done",k:"core"}], usage:"将来某时之前已完成的动作。", en:"I will have graduated by 2026.", cn:"到 2026 年我将已毕业。"},
+      {e:"Past Future Perfect", z:"过去将来完成时", parts:[{t:"would have",k:"aux"},{t:"+",k:"op"},{t:"done",k:"core"}], usage:"站在过去看，将来某时前已完成。", en:"He said he would have finished by then.", cn:"他说到那时他将已完成。"}
     ]},
-    { aspect:"完成进行时态", rows:[
-      {name:"Present Perfect Continuous 现在完成进行时", formula:"have / has been + doing", usage:"表示动作从过去持续到现在且仍在进行。", en:"I have been waiting for an hour.", cn:"我已等了一个小时。"},
-      {name:"Past Perfect Continuous 过去完成进行时", formula:"had been + doing", usage:"表示在过去某时前一直在进行中的动作。", en:"She had been working there for years.", cn:"她在那里工作了好几年。"},
-      {name:"Future Perfect Continuous 将来完成进行时", formula:"will have been + doing", usage:"表示到将来某时前一直在进行中的动作。", en:"I will have been teaching for 10 years.", cn:"到时我将已教书 10 年。"},
-      {name:"Past Future Perfect Continuous 过去将来完成进行时", formula:"would have been + doing", usage:"过去视角、将来某时前一直进行。", en:"He said he would have been waiting for two hours.", cn:"他说到那时他将已等了两小时。"}
+    { aspect:"完成进行时态", tail:"been doing", rows:[
+      {e:"Present Perfect Continuous", z:"现在完成进行时", parts:[{t:"have / has",k:"aux"},{t:"+",k:"op"},{t:"been doing",k:"core"}], usage:"从过去持续到现在，且仍在进行。", en:"I have been waiting for an hour.", cn:"我已等了一个小时。"},
+      {e:"Past Perfect Continuous", z:"过去完成进行时", parts:[{t:"had",k:"aux"},{t:"+",k:"op"},{t:"been doing",k:"core"}], usage:"在过去某时之前一直在进行。", en:"She had been working there for years.", cn:"她在那里工作了好几年。"},
+      {e:"Future Perfect Continuous", z:"将来完成进行时", parts:[{t:"will have",k:"aux"},{t:"+",k:"op"},{t:"been doing",k:"core"}], usage:"到将来某时前一直在进行。", en:"I will have been teaching for 10 years.", cn:"到时我将已教书 10 年。"},
+      {e:"Past Future Perfect Continuous", z:"过去将来完成进行时", parts:[{t:"would have",k:"aux"},{t:"+",k:"op"},{t:"been doing",k:"core"}], usage:"站在过去看，将来某时前一直进行。", en:"He said he would have been waiting for two hours.", cn:"他说到那时他将已等了两小时。"}
     ]}
   ]
 };
@@ -2061,30 +2130,72 @@ function initNce1(){
 /* ---------- TENSES ---------- */
 let tenseMode = 'aspect';
 const TENSE_TIMES = ["现在", "过去", "将来", "过去将来"];
+const TENSE_SHAPE = ['dot','mid','end','cont'];
 function tenseBlocks(){
   if(tenseMode === 'time'){
     // 按时间分组：每一“时间”块包含 4 种体态的卡片
     return TENSE_TIMES.map((t, i)=>({
       title: t + "时",
-      rows: DATA.tenses.map(b=>( Object.assign({}, b.rows[i], { aspect: b.aspect }) ))
+      rows: DATA.tenses.map((b, ai)=> Object.assign({}, b.rows[i], { aspect: b.aspect, _a: ai, _t: i }))
     }));
   }
-  return DATA.tenses;
+  return DATA.tenses.map((b, ai)=>({
+    title: b.aspect,
+    tail: b.tail,
+    rows: b.rows.map((r, ti)=> Object.assign({}, r, { _a: ai, _t: ti }))
+  }));
+}
+/* 时间轴小图：虚线＝参照点，形状＝动作与参照点的关系（只由体态决定） */
+function tenseTimeline(shape, label){
+  const d = document.createElement('div'); d.className = 'tl';
+  const shapeHtml = shape === 'dot'
+    ? '<span class="tl-dot" style="left:50%"></span>'
+    : shape === 'mid'
+      ? '<span class="tl-bar" style="left:28%;width:44%"></span>'
+      : shape === 'end'
+        ? '<span class="tl-bar" style="left:10%;width:40%"></span>'
+        : '<span class="tl-bar" style="left:10%;width:40%"></span><span class="tl-more" style="left:50%;width:18%"></span>';
+  d.innerHTML = '<span class="tl-line"></span><span class="tl-ref"></span>' + shapeHtml;
+  const lb = document.createElement('span'); lb.className = 'tl-lab'; lb.textContent = '参照点 · ' + label;
+  d.appendChild(lb);
+  return d;
+}
+function tenseFormula(r){
+  const fm = document.createElement('div'); fm.className = 'formula';
+  const parts = r.parts || [{ t: r.formula || '', k: 'core' }];
+  parts.forEach(p=>{
+    const s = document.createElement('span'); s.className = 'fp-' + p.k; s.textContent = p.t;
+    fm.appendChild(s);
+  });
+  return fm;
 }
 function renderTenses(){
   const root = document.getElementById('tensesRoot');
   root.innerHTML = '';
   tenseBlocks().forEach(block=>{
     const head = document.createElement('div'); head.className='aspect-title'; head.textContent = block.title || block.aspect;
+    if(block.tail){
+      const tp = document.createElement('span'); tp.className='aspect-tail';
+      tp.innerHTML = '尾巴 <b></b>';
+      tp.querySelector('b').textContent = block.tail;
+      head.appendChild(tp);
+    }
     const grid = document.createElement('div'); grid.className='tenses-grid';
-    block.rows.forEach(r=>{
+    block.rows.forEach((r, i)=>{
       const c = document.createElement('div'); c.className='tcard';
-      const nm = document.createElement('div'); nm.className='tname'; nm.textContent = r.name;
+      const ai = (r._a != null) ? r._a : i, ti = (r._t != null) ? r._t : i;
+      c.id = 'tc-' + ai + '-' + ti;
+
+      const nm = document.createElement('div'); nm.className='tc-names';
+      const nmEn = document.createElement('div'); nmEn.className='tname-en'; nmEn.textContent = r.e || r.name || '';
+      const nmZh = document.createElement('div'); nmZh.className='tname-zh'; nmZh.textContent = r.z || '';
       if(r.aspect){
-        const ab = document.createElement('span'); ab.className='aspect-badge'; ab.textContent = r.aspect;
-        nm.appendChild(ab);
+        const ab = document.createElement('span'); ab.className='aspect-badge'; ab.textContent = r.aspect.replace(/时态$/,'');
+        nmZh.appendChild(ab);
       }
-      const fm = document.createElement('div'); fm.className='formula'; fm.textContent = r.formula;
+      nm.append(nmEn, nmZh);
+
+      const tl = tenseTimeline(TENSE_SHAPE[ai] || 'dot', TENSE_TIMES[ti] || '');
       const us = document.createElement('div'); us.className='usage'; us.textContent = r.usage;
       const ex = document.createElement('div'); ex.className='ex';
       const enRow = document.createElement('div'); enRow.className='ex-en';
@@ -2092,10 +2203,53 @@ function renderTenses(){
       enRow.append(en, spkBtn(r.en, true));
       const cn = document.createElement('div'); cn.className='cn'; cn.textContent = r.cn;
       ex.append(enRow, cn);
-      c.append(nm, fm, us, ex);
+      c.append(nm, tl, tenseFormula(r), us, ex);
       grid.appendChild(c);
     });
     root.append(head, grid);
+  });
+}
+/* 顶部「尾巴」胶囊：一眼看到同一体态的动词尾巴不变 */
+function renderTenseTails(){
+  const box = document.getElementById('trTails');
+  if(!box) return;
+  box.innerHTML = '';
+  DATA.tenses.forEach(b=>{
+    const s = document.createElement('span'); s.className = 'tr-tail';
+    const i = document.createElement('i'); i.textContent = b.aspect.replace(/时态$/,'');
+    const t = document.createElement('b'); t.textContent = b.tail;
+    s.append(i, t);
+    box.appendChild(s);
+  });
+  const lg = document.createElement('span'); lg.className = 'tr-legend';
+  lg.innerHTML = '<span class="fp-a">助动词</span>随时间变 · <span class="fp-c">尾巴</span>永远不变';
+  box.appendChild(lg);
+}
+/* 4×4 速查表 */
+function renderTenseMatrix(){
+  const box = document.getElementById('tenseMatrix');
+  if(!box) return;
+  let h = '<div class="mx-wrap"><div class="mx-title">4×4 速查表<span class="mx-hint">点任意格子 → 跳到对应卡片</span></div>';
+  h += '<table class="mx"><thead><tr><th></th>' + TENSE_TIMES.map(t=>'<th>'+t+'</th>').join('') + '</tr></thead><tbody>';
+  DATA.tenses.forEach((b, ai)=>{
+    h += '<tr><th>' + b.aspect.replace(/时态$/,'') + '<em>' + b.tail + '</em></th>';
+    b.rows.forEach((r, ti)=>{
+      const aux = (r.parts||[]).filter(p=>p.k==='aux').map(p=>p.t).join(' ');
+      const core = (r.parts||[]).filter(p=>p.k==='core').map(p=>p.t).join(' ');
+      h += '<td data-a="'+ai+'" data-t="'+ti+'">' + (aux ? '<span class="mx-aux">'+aux+'</span>' : '') + '<span class="mx-core">'+core+'</span></td>';
+    });
+    h += '</tr>';
+  });
+  h += '</tbody></table><div class="mx-foot">同一行 → 尾巴相同；同一列 → 时间相同。一般时态没有助动词，由动词本身变形（除 will / would）。<span class="mx-swipe">← 左右滑动看全表 →</span></div></div>';
+  box.innerHTML = h;
+  box.querySelectorAll('.mx tbody td').forEach(td=>{
+    td.addEventListener('click', ()=>{
+      const el = document.getElementById('tc-' + td.dataset.a + '-' + td.dataset.t);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+      setTimeout(()=>el.classList.remove('flash'), 1400);
+    });
   });
 }
 
@@ -2929,6 +3083,8 @@ window.nc2Speak=nc2Speak;
 })();
 
 /* ---------- INIT ---------- */
+renderTenseTails();
+renderTenseMatrix();
 renderTenses();
 renderInfinitive();
 renderIrregular();
@@ -2989,6 +3145,12 @@ document.querySelectorAll('.tense-toggle button').forEach(b=>{
     tenseMode = b.dataset.tense;
     renderTenses();
   });
+});
+const mxBtn = document.getElementById('tenseMxBtn');
+if(mxBtn) mxBtn.addEventListener('click', ()=>{
+  const box = document.getElementById('tenseMatrix');
+  const on = mxBtn.classList.toggle('on');
+  if(box) box.style.display = on ? '' : 'none';
 });
 
 
