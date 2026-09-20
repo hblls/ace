@@ -479,6 +479,58 @@ body:not(.locked) .login {display:none}
 .rt-tip {font-size:12px;color:var(--muted);background:var(--bg);border-left:3px solid var(--line);padding:8px 11px;border-radius:0 var(--radius) var(--radius) 0;line-height:1.6;white-space:pre-line}
 .rt-empty {text-align:center;color:var(--muted);padding:42px 0;font-size:14px}
 @media (max-width:640px){ .rt-list {grid-template-columns:1fr} .rt-form{font-size:20px} }
+/* ===== MODULE: PHRBANK (phrbank · 英语词组) ===== */
+  .phr-tabs {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.phr-tab {border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;transition:.15s;font-family:var(--font-sans)}
+.phr-tab:hover {border-color:var(--brand);color:var(--brand)}
+.phr-tab.active {background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.phr-tab-fav {border-style:dashed}
+.phr-tab-fav.active {background:var(--amber);border-color:var(--amber);color:#fff}
+.phr-tools {display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.phr-sort {display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.phr-sort select {border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:13px;font-family:var(--font-sans);cursor:pointer;outline:none}
+.phr-sort select:focus {border-color:var(--brand)}
+.phr-tool-btn {border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s;font-family:var(--font-sans)}
+.phr-tool-btn:hover {border-color:var(--brand);color:var(--brand)}
+.phr-tool-btn.active {background:var(--brand);border-color:var(--brand);color:#fff}
+.phr-tools .phr-search {flex:1 1 220px;min-width:170px;margin:0}
+.phr-search input {min-width:0;padding:7px 15px;font-size:13.5px;border-radius:999px}
+.phr-grid {display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.phr-card {position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 12px;display:flex;flex-direction:column;gap:7px;transition:border-color .15s,box-shadow .15s}
+.phr-card:hover {border-color:#c7d6b6;box-shadow:0 2px 8px rgba(41,70,54,.07)}
+.phr-star {position:absolute;top:8px;right:9px;border:none;background:transparent;color:var(--muted-3);font-size:16px;line-height:1;cursor:pointer;padding:2px 4px;border-radius:6px;transition:.15s}
+.phr-star:hover {color:var(--amber);background:var(--brand-soft)}
+.phr-p {display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding-right:26px;font-size:17px;font-weight:800;color:var(--ink);letter-spacing:-.2px;line-height:1.3}
+.phr-zh {font-size:13.5px;color:var(--muted);line-height:1.5}
+.phr-card .inf-ex {display:grid;gap:7px;margin:0}
+.phr-card .inf-ex .ex {margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;row-gap:2px;align-items:start;padding:8px 11px;background:var(--card-soft);border-left:3px solid var(--accent-green-soft);border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.phr-card .inf-ex .ex .spk.sm {grid-column:2;grid-row:1 / span 2;align-self:center}
+.phr-card .inf-ex .ex .en {font-style:normal;font-size:13px;font-weight:600;color:var(--ink);line-height:1.5}
+.phr-card .inf-ex .ex .cn {font-size:12px;color:var(--muted);line-height:1.5}
+.phr-card .inf-ex .ex .spk.sm {width:22px;height:22px;font-size:10px;background:var(--brand-soft);border-color:var(--line)}
+.phr-ex2 {display:flex;gap:8px;align-items:flex-start}
+.phr-ex2 .ex {flex:1;min-width:0}
+.phr-tag2 {flex:none;font-size:10.5px;font-weight:700;color:var(--teal);background:var(--brand-soft);border-radius:999px;padding:2px 7px;margin-top:1px}
+.phr-note {font-size:12px;color:var(--muted);background:var(--brand-soft);border-left:3px solid var(--accent-green-soft);padding:8px 11px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;line-height:1.6}
+.phr-note b {color:var(--brand)}
+.phr-cat {align-self:flex-start;font-size:11px;font-weight:700;color:var(--muted-3);background:var(--bg);border:1px solid var(--line-2);border-radius:999px;padding:2px 9px;margin-top:1px}
+/* 闪卡模式：默认盖住释义与例句 */
+.phr-ans-hint {display:none}
+.phr-card.flash {cursor:pointer}
+.phr-card.flash:not(.revealed) .phr-zh,
+.phr-card.flash:not(.revealed) .inf-ex {display:none}
+.phr-card.flash:not(.revealed) .phr-ans-hint {display:block;margin-top:2px;text-align:center;font-size:12px;color:var(--muted-3);border:1px dashed var(--line);border-radius:999px;padding:5px 0}
+.phr-pager {display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:18px}
+.phr-pg-btn {min-width:34px;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:var(--radius-sm);padding:6px 10px;font-size:13px;cursor:pointer;transition:.15s;font-family:var(--font-sans)}
+.phr-pg-btn:hover:not(:disabled) {border-color:var(--brand);color:var(--brand)}
+.phr-pg-btn:disabled {opacity:.4;cursor:default}
+.phr-pg-btn.active {background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.phr-empty {grid-column:1 / -1;text-align:center;color:var(--muted);padding:40px 0;font-size:14px}
+.app.mobile-nav .phr-grid {grid-template-columns:1fr}
+.app.mobile-nav .phr-tabs {gap:6px}
+.app.mobile-nav .phr-tab {padding:5px 11px;font-size:12.5px}
+.app.mobile-nav .phr-tools {gap:8px}
+.app.mobile-nav .phr-tool-btn {padding:5px 11px;font-size:12.5px}
 /* ===== MODULE: NCE2 (nce2) ===== */
 
 .nc2av *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -2576,7 +2628,7 @@ function renderPhrBank(){
     root.appendChild(tools);
     var search = document.createElement("div"); search.className = "search phr-search";
     search.innerHTML = '<input id="phrSearch" type="text" placeholder="🔍 搜索英文词组或中文释义" />';
-    root.appendChild(search);
+    tools.appendChild(search);   // 搜索框并入工具栏，少占一行
     var gridc = document.createElement("div"); gridc.style.margin = "6px 0 12px"; gridc.innerHTML = '<span class="count" id="phrGridCount"></span>';
     root.appendChild(gridc);
     var grid = document.createElement("div"); grid.className = "phr-grid"; grid.id = "phrGrid"; root.appendChild(grid);
